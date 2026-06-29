@@ -1,69 +1,133 @@
 "use client";
 
-import { motion } from "framer-motion";
+import React from "react";
+import { motion, useReducedMotion } from "framer-motion";
+import { HeroTitle } from "../ui/HeroTitle";
 import { Button } from "../ui/Button";
+import { ParallaxBackground } from "../ui/ParallaxBackground";
 
 export function Hero() {
+  const prefersReducedMotion = useReducedMotion();
+
   return (
-    <section className="relative min-h-screen flex items-center justify-center pt-24 px-6 overflow-hidden">
-      {/* Decorative SVG background */}
-      <div className="absolute inset-0 z-0 flex items-center justify-center opacity-[0.03] pointer-events-none">
-        <svg viewBox="0 0 400 400" className="w-[80vw] max-w-4xl max-h-screen">
-          <circle cx="200" cy="200" r="180" fill="none" stroke="currentColor" strokeWidth="1" />
-          <polygon points="200,20 355.88,110 355.88,290 200,380 44.12,290 44.12,110" fill="none" stroke="currentColor" strokeWidth="1" />
-          <circle cx="200" cy="110" r="90" fill="none" stroke="currentColor" strokeWidth="0.5" />
-          <circle cx="277.94" cy="245" r="90" fill="none" stroke="currentColor" strokeWidth="0.5" />
-          <circle cx="122.06" cy="245" r="90" fill="none" stroke="currentColor" strokeWidth="0.5" />
-        </svg>
-      </div>
+    <section className="relative min-h-screen flex flex-col justify-center bg-peach overflow-hidden px-6 pt-24 pb-12">
+      {/* Decorative Parallax Background */}
+      <ParallaxBackground fadeRange={[300, 1000]} driftRate={0.15} />
 
-      <div className="relative z-10 flex flex-col items-center text-center max-w-4xl mx-auto">
-        <motion.span
-          initial={{ opacity: 0, y: 10 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, ease: "easeOut" }}
-          className="font-display italic text-burntOrange tracking-[0.2em] text-sm md:text-base uppercase mb-6 block"
-        >
-          International Society of Humanity and Nature
-        </motion.span>
+      {/* Main Content Grid */}
+      <div className="relative z-10 grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-8 max-w-7xl mx-auto w-full items-center min-h-[70vh]">
         
-        <motion.h1
-          initial={{ opacity: 0, scale: 0.95 }}
-          animate={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 1.2, ease: "easeOut", delay: 0.2 }}
-          className="font-display font-light text-7xl sm:text-8xl lg:text-9xl text-deepAmber uppercase tracking-widest mb-8"
-        >
-          ISHAN
-        </motion.h1>
+        {/* Left Column: Text Content */}
+        <div className="flex flex-col items-center lg:items-start text-center lg:text-left mt-16 lg:mt-0">
+          <motion.p
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, ease: "easeOut" }}
+            className="font-display italic text-burntOrange text-lg md:text-xl tracking-wider mb-6"
+          >
+            International Society of Humanity & Nature
+          </motion.p>
+          
+          <div className="flex justify-center lg:justify-start w-full mb-6">
+            <HeroTitle text="ISHAN" />
+          </div>
 
-        <motion.h2
-          initial={{ opacity: 0, y: 10 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, ease: "easeOut", delay: 0.6 }}
-          className="font-display italic text-2xl md:text-3xl text-burntOrange max-w-3xl mb-8 leading-relaxed"
-        >
-          Harmonising Humanity with Nature through Wisdom, Wellness, and Collective Responsibility
-        </motion.h2>
+          <motion.p
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 1, delay: 0.8 }}
+            className="font-display italic text-burntOrange text-xl md:text-2xl max-w-lg leading-relaxed mb-12"
+          >
+            Harmonising humanity with nature through wisdom, wellness & collective responsibility.
+          </motion.p>
 
-        <motion.p
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 1, ease: "easeOut", delay: 0.8 }}
-          className="font-sans font-light text-deepAmber max-w-xl leading-relaxed mb-12"
-        >
-          A global movement dedicated to nurturing conscious living, ecological balance, and holistic wellbeing across communities worldwide.
-        </motion.p>
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 1 }}
+            className="flex flex-col sm:flex-row items-center gap-6"
+          >
+            <Button variant="primary" href="#ecosystem">Explore Our Work</Button>
+            <Button variant="ghost" href="/contact">Join the Movement</Button>
+          </motion.div>
+        </div>
 
-        <motion.div
-          initial={{ opacity: 0, y: 10 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, ease: "easeOut", delay: 1 }}
-          className="flex flex-col sm:flex-row gap-4 sm:gap-6"
-        >
-          <Button href="#ecosystem" variant="primary">Explore Our Work</Button>
-          <Button href="/about" variant="ghost">About ISHAN</Button>
-        </motion.div>
+        {/* Right Column: Masked Sacred Geometry Collage */}
+        <div className="relative flex justify-center items-center w-full aspect-square max-w-[480px] lg:max-w-[560px] mx-auto">
+          
+          {/* Floating Accent Dots */}
+          <motion.div
+            animate={{ y: prefersReducedMotion ? 0 : [-10, 10, -10] }}
+            transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
+            className="absolute top-10 right-10 w-3 h-3 bg-mandarin rounded-full z-20"
+          />
+          <motion.div
+            animate={{ y: prefersReducedMotion ? 0 : [-8, 8, -8] }}
+            transition={{ duration: 3.5, repeat: Infinity, ease: "easeInOut", delay: 1 }}
+            className="absolute bottom-24 right-4 w-2 h-2 bg-sacredGold rounded-full z-20"
+          />
+          <motion.div
+            animate={{ y: prefersReducedMotion ? 0 : [-12, 12, -12] }}
+            transition={{ duration: 5, repeat: Infinity, ease: "easeInOut", delay: 2 }}
+            className="absolute top-1/2 left-4 w-4 h-4 bg-burntOrange rounded-full z-20"
+          />
+          <motion.div
+            animate={{ y: prefersReducedMotion ? 0 : [-15, 15, -15] }}
+            transition={{ duration: 4.5, repeat: Infinity, ease: "easeInOut", delay: 0.5 }}
+            className="absolute bottom-10 left-16 w-2.5 h-2.5 bg-mandarin rounded-full z-20"
+          />
+
+          {/* SVG Clip Path Definition (Lotus Petal Silhouette) */}
+          <svg width="0" height="0" className="absolute">
+            <defs>
+              <clipPath id="sacred-petal" clipPathUnits="objectBoundingBox">
+                <path d="M 0.5 0 C 0.9 0.3 1 0.65 1 0.85 C 1 0.95 0.9 1 0.5 1 C 0.1 1 0 0.95 0 0.85 C 0 0.65 0.1 0.3 0.5 0 Z" />
+              </clipPath>
+            </defs>
+          </svg>
+
+          {/* Masked Collage Container */}
+          <motion.div
+            initial={{ opacity: 0, scale: 0.92 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 1.2, delay: 1.2, ease: "easeOut" }}
+            className="relative w-full h-full"
+            style={{ clipPath: "url(#sacred-petal)" }}
+          >
+            <div className="absolute inset-0 bg-deepAmber/5 border-2 border-sacredGold/20" />
+            
+            {/* Photo Placeholder 1 (Background) */}
+            <div className="absolute inset-0 bg-gradient-to-br from-burntOrange/30 to-deepAmber/40 flex items-center justify-center opacity-80 mix-blend-multiply">
+              <span className="font-sans text-[0.6rem] uppercase tracking-widest text-deepAmber/50 -rotate-12">Replace With Photo</span>
+            </div>
+            
+            {/* Photo Placeholder 2 (Offset layer) */}
+            <div className="absolute top-[10%] right-[10%] w-[120%] h-[120%] bg-gradient-to-t from-mandarin/20 to-transparent -rotate-6 border border-sacredGold/30 flex items-center justify-center mix-blend-overlay">
+              <span className="font-sans text-[0.6rem] uppercase tracking-widest text-sacredGold/70 rotate-12">Replace With Photo</span>
+            </div>
+
+            {/* Photo Placeholder 3 (Foreground accent) */}
+            <div className="absolute bottom-[5%] left-[5%] w-[80%] h-[70%] bg-gradient-to-tr from-sacredGold/30 to-peach/20 rotate-3 border border-peach/40 flex items-end justify-start p-6 backdrop-blur-sm">
+               <span className="font-sans text-[0.6rem] uppercase tracking-widest text-deepAmber/80">Replace With Photo</span>
+            </div>
+          </motion.div>
+        </div>
       </div>
+
+      {/* Scroll Indicator */}
+      <motion.div
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ delay: 1.5, duration: 1 }}
+        className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center justify-center z-10"
+      >
+        <span className="text-[0.65rem] uppercase tracking-widest text-burntOrange mb-2">Scroll</span>
+        <motion.div
+          animate={{ y: prefersReducedMotion ? 0 : [0, 8, 0] }}
+          transition={{ duration: 2.4, repeat: Infinity, ease: "easeInOut" }}
+          className="w-px h-12 bg-gradient-to-b from-burntOrange to-transparent"
+        />
+      </motion.div>
     </section>
   );
 }

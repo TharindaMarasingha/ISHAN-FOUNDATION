@@ -1,153 +1,168 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { motion, AnimatePresence } from "framer-motion";
+import { motion, AnimatePresence, useScroll } from "framer-motion";
 import { Menu, X } from "lucide-react";
+import { MagneticButton } from "./ui/MagneticButton";
 
-const NAV_LINKS = [
-  { label: "Home", href: "/" },
-  { label: "About", href: "/about" },
-  { label: "Arogya Ashram", href: "/arogya" },
-  { label: "Inner Immersion", href: "/samanvaya" },
+const navLinks = [
+  { label: "HOME", href: "/" },
+  { label: "ABOUT", href: "/about" },
+  { label: "AROGYA ASHRAM", href: "/arogya" },
+  { label: "INNER IMMERSION", href: "/samanvaya" },
   { label: "USS", href: "/uss" },
 ];
 
 export default function Navbar() {
-  const [scrolled, setScrolled] = useState(false);
-  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const pathname = usePathname();
+  const isHomepage = pathname === "/";
+  
+  const [isScrolled, setIsScrolled] = useState(false);
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const { scrollY } = useScroll();
 
   useEffect(() => {
-    const handleScroll = () => {
-      setScrolled(window.scrollY > 20);
+    const handleScroll = (latest: number) => {
+      setIsScrolled(latest > 60);
     };
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
+    
+    // Initial check
+    handleScroll(scrollY.get());
+
+    const unsubscribe = scrollY.on("change", handleScroll);
+    return () => unsubscribe();
+  }, [scrollY]);
+
+  // If not on homepage, navbar is permanently in "scrolled" (solid) state
+  const isSolid = !isHomepage || isScrolled;
+
+  const baseTextClass = isSolid ? "text-softApricot" : "text-burntOrange";
+  const hoverTextClass = "hover:text-sacredGold";
 
   return (
     <>
-      <header
-        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
-          scrolled
-            ? "bg-darkBrown shadow-lg shadow-black/10"
-            : "bg-transparent"
+      <motion.nav
+        initial={false}
+        animate={{
+          backgroundColor: isSolid ? "color-mix(in srgb, var(--color-darkBrown) 96%, transparent)" : "transparent",
+          borderBottomColor: isSolid ? "color-mix(in srgb, var(--color-sacredGold) 35%, transparent)" : "transparent",
+          paddingTop: isSolid ? "1rem" : "1.5rem",
+          paddingBottom: isSolid ? "1rem" : "1.5rem",
+        }}
+        transition={{ duration: 0.5, ease: "easeInOut" }}
+        className={`fixed top-0 left-0 w-full z-50 border-b ${
+          isSolid ? "backdrop-blur-md" : ""
         }`}
       >
-        <div className="max-w-7xl mx-auto px-6 h-24 flex items-center justify-between">
-          <Link href="/" className="flex flex-col">
-            <span className={`font-display text-2xl md:text-3xl uppercase tracking-[0.3em] transition-colors duration-500 ${
-              scrolled ? "text-sacredGold" : "text-sacredGold"
-            }`}>
+        <div className="max-w-7xl mx-auto px-6 md:px-12 flex items-center justify-between">
+          
+          {/* Left: Logo Lockup */}
+          <Link href="/" className="flex flex-col items-start group">
+            <h1 className="font-display text-2xl md:text-3xl uppercase tracking-widest text-sacredGold leading-none mb-1">
               ISHAN
-            </span>
-            <span className={`text-[0.55rem] md:text-[0.6rem] uppercase tracking-[0.25em] mt-1.5 transition-colors duration-500 ${
-              scrolled ? "text-softApricot/70" : "text-burntOrange/80"
-            }`}>
-              International Society of Humanity and Nature
-            </span>
+            </h1>
+            <p
+              className={`text-[0.65rem] md:text-xs uppercase tracking-wider transition-colors duration-500 ${baseTextClass} group-hover:text-sacredGold`}
+            >
+              Humanity · Nature · Consciousness
+            </p>
           </Link>
 
-          <nav className="hidden lg:flex items-center gap-8">
-            {NAV_LINKS.map((link) => {
+          {/* Center/Right: Desktop Nav Links */}
+          <div className="hidden lg:flex items-center space-x-8">
+            {navLinks.map((link) => {
               const isActive = pathname === link.href;
               return (
                 <Link
                   key={link.label}
                   href={link.href}
-                  className={`uppercase text-[0.6rem] font-medium tracking-[0.25em] transition-colors duration-500 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-burntOrange focus-visible:ring-offset-2 focus-visible:ring-offset-transparent ${
-                    scrolled
-                      ? isActive
-                        ? "text-sacredGold"
-                        : "text-softApricot/80 hover:text-sacredGold"
-                      : isActive
-                        ? "text-deepAmber"
-                        : "text-burntOrange/80 hover:text-deepAmber"
+                  className={`text-xs uppercase tracking-widest transition-colors duration-300 ${
+                    isActive ? "text-sacredGold" : `${baseTextClass} ${hoverTextClass}`
                   }`}
                 >
                   {link.label}
                 </Link>
               );
             })}
-            <Link
-              href="/contact"
-              className={`ml-6 uppercase text-[0.6rem] font-medium tracking-[0.2em] px-8 py-2.5 rounded-full transition-all duration-500 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-burntOrange focus-visible:ring-offset-2 focus-visible:ring-offset-transparent ${
-                scrolled
-                  ? "text-sacredGold border border-sacredGold/40 hover:bg-sacredGold hover:text-darkBrown"
-                  : "text-deepAmber border border-deepAmber/30 hover:bg-deepAmber hover:text-peach"
-              }`}
-            >
-              Connect
-            </Link>
-          </nav>
 
+            {/* Far Right: Connect CTA */}
+            <Link href="/contact" className="block">
+              <MagneticButton>
+                <div className="px-6 py-2 rounded-full border border-sacredGold text-sacredGold text-xs uppercase tracking-widest transition-colors duration-300 hover:bg-sacredGold hover:text-darkBrown">
+                  Connect
+                </div>
+              </MagneticButton>
+            </Link>
+          </div>
+
+          {/* Mobile Menu Toggle */}
           <button
-            className={`lg:hidden p-2 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-burntOrange rounded-md transition-colors duration-500 ${
-              scrolled ? "text-sacredGold" : "text-burntOrange"
-            }`}
-            onClick={() => setMobileMenuOpen(true)}
+            className="lg:hidden text-sacredGold p-2"
+            onClick={() => setIsMobileMenuOpen(true)}
             aria-label="Open Menu"
-            aria-expanded={mobileMenuOpen}
           >
-            <Menu className="w-6 h-6" />
+            <Menu size={24} />
           </button>
         </div>
-      </header>
+      </motion.nav>
 
+      {/* Mobile Drawer */}
       <AnimatePresence>
-        {mobileMenuOpen && (
+        {isMobileMenuOpen && (
           <>
             <motion.div
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
-              className="fixed inset-0 bg-black/60 z-50 lg:hidden"
-              onClick={() => setMobileMenuOpen(false)}
+              transition={{ duration: 0.3 }}
+              className="fixed inset-0 bg-darkBrown/80 backdrop-blur-sm z-50 lg:hidden"
+              onClick={() => setIsMobileMenuOpen(false)}
             />
             <motion.div
               initial={{ x: "100%" }}
               animate={{ x: 0 }}
               exit={{ x: "100%" }}
-              transition={{ type: "tween", duration: 0.3 }}
-              className="fixed top-0 right-0 bottom-0 w-80 bg-darkBrown border-l border-sacredGold/20 z-50 flex flex-col p-8 lg:hidden"
+              transition={{ type: "tween", ease: "easeInOut", duration: 0.4 }}
+              className="fixed top-0 right-0 w-4/5 max-w-sm h-full bg-darkBrown border-l border-sacredGold/20 z-50 flex flex-col p-8 shadow-2xl lg:hidden"
             >
               <div className="flex justify-end mb-12">
                 <button
-                  className="text-sacredGold p-2 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-burntOrange rounded-md"
-                  onClick={() => setMobileMenuOpen(false)}
+                  className="text-sacredGold p-2"
+                  onClick={() => setIsMobileMenuOpen(false)}
                   aria-label="Close Menu"
                 >
-                  <X className="w-6 h-6" />
+                  <X size={28} />
                 </button>
               </div>
-              <nav className="flex flex-col gap-6">
-                {NAV_LINKS.map((link) => {
+
+              <div className="flex flex-col space-y-8">
+                {navLinks.map((link) => {
                   const isActive = pathname === link.href;
                   return (
                     <Link
                       key={link.label}
                       href={link.href}
-                      onClick={() => setMobileMenuOpen(false)}
-                      className={`uppercase text-sm tracking-widest transition-colors duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-burntOrange focus-visible:ring-offset-2 focus-visible:ring-offset-darkBrown ${
-                        isActive
-                          ? "text-sacredGold"
-                          : "text-softApricot hover:text-sacredGold"
+                      onClick={() => setIsMobileMenuOpen(false)}
+                      className={`text-lg uppercase tracking-widest transition-colors duration-300 ${
+                        isActive ? "text-sacredGold" : "text-softApricot hover:text-sacredGold"
                       }`}
                     >
                       {link.label}
                     </Link>
                   );
                 })}
-                <Link
-                  href="/contact"
-                  onClick={() => setMobileMenuOpen(false)}
-                  className="mt-6 uppercase text-sm tracking-widest text-sacredGold border border-sacredGold px-6 py-3 text-center transition-colors duration-300 hover:bg-sacredGold hover:text-darkBrown focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-burntOrange focus-visible:ring-offset-2 focus-visible:ring-offset-darkBrown"
-                >
-                  Connect
-                </Link>
-              </nav>
+                <div className="pt-8 border-t border-sacredGold/20">
+                  <Link
+                    href="/contact"
+                    onClick={() => setIsMobileMenuOpen(false)}
+                    className="inline-block px-8 py-3 rounded-full border border-sacredGold text-sacredGold text-sm uppercase tracking-widest hover:bg-sacredGold hover:text-darkBrown transition-colors duration-300"
+                  >
+                    Connect
+                  </Link>
+                </div>
+              </div>
             </motion.div>
           </>
         )}

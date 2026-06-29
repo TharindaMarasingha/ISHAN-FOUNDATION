@@ -2,62 +2,62 @@
 
 import { SectionHeading } from "../ui/SectionHeading";
 import { RevealOnScroll } from "../ui/RevealOnScroll";
-import { motion } from "framer-motion";
+import { motion, useReducedMotion } from "framer-motion";
 
 export function Vision() {
+  const prefersReducedMotion = useReducedMotion();
+
   return (
-    <section className="bg-deepAmber/[0.02] py-24 px-6 border-y border-burntOrange/10">
+    <section className="py-24 px-6 md:px-12">
       <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-        <div className="flex flex-col">
+        {/* Left Column: Vision Copy */}
+        <div className="flex flex-col space-y-8">
           <SectionHeading
             eyebrow="The Masterplan"
-            heading="Engineering a Conscious Society"
+            heading="A Blueprint for the Future of Human Settlement"
           />
-          <RevealOnScroll delay={0.2} className="mt-8">
-            <p className="font-sans font-light text-deepAmber leading-relaxed mb-6">
-              Modern urban planning prioritizes efficiency and commerce, often at the expense of human connection and psychological well-being. The Brindavan Project inverts this paradigm.
+          <RevealOnScroll delay={0.1}>
+            <p className="font-sans font-light text-deepAmber/90 leading-relaxed text-lg">
+              The Brindavan Project is not merely a real estate development; it is an architectural and sociological manifestation of ISHAN's core philosophies. Designed as a self-sustaining ecosystem, the township integrates advanced ecological infrastructure with ancient spatial design principles (Vastu and Sacred Geometry).
             </p>
-            <p className="font-sans font-light text-deepAmber leading-relaxed mb-6">
-              Our 150-acre masterplan is designed around the natural topography, preserving ancient trees and natural waterways. The architecture draws from sacred geometry and Vastu Shastra principles, ensuring that the built environment harmonizes perfectly with the natural landscape.
-            </p>
-            <p className="font-sans font-light text-deepAmber leading-relaxed">
-              From pedestrian-first greenways to integrated wellness clinics and cultural amphitheatres, every square meter is dedicated to fostering physical vitality, mental clarity, and profound social cohesion.
+          </RevealOnScroll>
+          <RevealOnScroll delay={0.2}>
+            <p className="font-sans font-light text-deepAmber/80 leading-relaxed text-lg">
+              Here, the built environment serves as a conduit for human elevation. From carbon-neutral residential clusters and organic agrarian zones to state-of-the-art integrative medical facilities and silent meditative sanctuaries—every acre is purposefully planned to foster a community living in conscious harmony with nature and one another.
             </p>
           </RevealOnScroll>
         </div>
 
-        <RevealOnScroll delay={0.4} className="flex justify-center lg:justify-end relative h-[400px]">
-          {/* Decorative abstract site plan SVG */}
-          <div className="relative w-full max-w-lg h-full flex items-center justify-center opacity-80">
-            <motion.svg
-              viewBox="0 0 300 300"
-              className="w-full h-full text-burntOrange"
-              animate={{ rotate: 360 }}
-              transition={{ duration: 180, repeat: Infinity, ease: "linear" }}
-            >
-              {/* Outer boundary */}
-              <circle cx="150" cy="150" r="140" fill="none" stroke="currentColor" strokeWidth="0.5" strokeDasharray="4 4" className="opacity-30" />
-              
-              {/* Internal zones and pathways */}
-              <circle cx="150" cy="150" r="40" fill="none" stroke="currentColor" strokeWidth="1.5" className="opacity-60" />
-              <path d="M 150 10 L 150 110" fill="none" stroke="currentColor" strokeWidth="0.5" className="opacity-40" />
-              <path d="M 150 290 L 150 190" fill="none" stroke="currentColor" strokeWidth="0.5" className="opacity-40" />
-              <path d="M 10 150 L 110 150" fill="none" stroke="currentColor" strokeWidth="0.5" className="opacity-40" />
-              <path d="M 290 150 L 190 150" fill="none" stroke="currentColor" strokeWidth="0.5" className="opacity-40" />
-              
-              {/* Zone nodes */}
-              <circle cx="80" cy="80" r="20" fill="none" stroke="currentColor" strokeWidth="1" className="opacity-50" />
-              <circle cx="220" cy="80" r="25" fill="none" stroke="currentColor" strokeWidth="1" className="opacity-50" />
-              <circle cx="80" cy="220" r="30" fill="none" stroke="currentColor" strokeWidth="1" className="opacity-50" />
-              <circle cx="220" cy="220" r="15" fill="none" stroke="currentColor" strokeWidth="1" className="opacity-50" />
-              
-              {/* Organic pathways */}
-              <path d="M 80 80 Q 150 20 220 80 T 220 220 T 80 220 T 80 80" fill="none" stroke="currentColor" strokeWidth="0.5" className="opacity-30" />
-            </motion.svg>
-            <div className="absolute inset-0 flex items-center justify-center">
-              <span className="font-display italic text-sm text-sacredGold bg-darkBrown/80 px-4 py-1 rounded-full backdrop-blur-sm">Masterplan Core</span>
-            </div>
-          </div>
+        {/* Right Column: Abstract SVG Site-Plan Graphic */}
+        <RevealOnScroll delay={0.3} className="relative w-full aspect-square max-w-md mx-auto flex items-center justify-center p-8">
+          <div className="absolute inset-0 bg-deepAmber/[0.02] border border-sacredGold/20 rounded-full" />
+          
+          <motion.svg
+            viewBox="0 0 100 100"
+            className="w-full h-full text-sacredGold/40"
+            animate={{ rotate: prefersReducedMotion ? 0 : 360 }}
+            transition={{ duration: 180, repeat: Infinity, ease: "linear" }}
+          >
+            {/* Outer Boundary */}
+            <circle cx="50" cy="50" r="48" fill="none" stroke="currentColor" strokeWidth="0.5" strokeDasharray="2 1" />
+            
+            {/* Internal Zones (Hexagonal Geometry) */}
+            <polygon points="50,10 85,30 85,70 50,90 15,70 15,30" fill="none" stroke="var(--color-burntOrange)" strokeWidth="0.5" className="opacity-30" />
+            
+            {/* Central Node */}
+            <circle cx="50" cy="50" r="15" fill="none" stroke="var(--color-deepAmber)" strokeWidth="0.8" className="opacity-50" />
+            <circle cx="50" cy="50" r="5" fill="var(--color-sacredGold)" className="opacity-20" />
+            
+            {/* Pathways / Radiating Lines */}
+            <line x1="50" y1="50" x2="50" y2="10" stroke="currentColor" strokeWidth="0.3" />
+            <line x1="50" y1="50" x2="85" y2="70" stroke="currentColor" strokeWidth="0.3" />
+            <line x1="50" y1="50" x2="15" y2="70" stroke="currentColor" strokeWidth="0.3" />
+            
+            {/* Scattered Nodes */}
+            <circle cx="35" cy="35" r="3" fill="var(--color-burntOrange)" className="opacity-40" />
+            <circle cx="65" cy="35" r="4" fill="currentColor" className="opacity-60" />
+            <circle cx="50" cy="75" r="3" fill="var(--color-deepAmber)" className="opacity-40" />
+          </motion.svg>
         </RevealOnScroll>
       </div>
     </section>

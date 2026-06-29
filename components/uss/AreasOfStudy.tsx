@@ -1,70 +1,59 @@
 import { SectionHeading } from "../ui/SectionHeading";
-import { Card } from "../ui/Card";
 import { RevealOnScroll } from "../ui/RevealOnScroll";
-import { BrainCircuit, BookOpen, Scale, Microscope, ScrollText, Sparkles } from "lucide-react";
+import { Card } from "../ui/Card";
 
-const AREAS_OF_STUDY = [
+const AREAS = [
   {
-    icon: BrainCircuit,
     title: "Consciousness Research",
-    description: "Investigating the fundamental nature of awareness, the mind-body connection, and the states of expanded consciousness achieved through contemplative practice.",
+    description: "Empirical studies into the nature of subjective experience, non-ordinary states of consciousness, and the neurobiological correlates of profound awakening.",
   },
   {
-    icon: Sparkles,
-    title: "Contemplative Traditions",
-    description: "A deep dive into the experiential methodologies of meditation, mindfulness, and breathwork utilized across ancient lineages to achieve inner transformation.",
+    title: "Contemplative Practice",
+    description: "Systematizing and decoding the methodologies of ancient meditative traditions to make their psychological and physiological benefits accessible to the modern world.",
   },
   {
-    icon: BookOpen,
     title: "Comparative Philosophy",
-    description: "Synthesizing the wisdom of Eastern metaphysics and Western philosophical thought to form a universal understanding of the human condition.",
+    description: "Bridging Eastern spiritual frameworks—such as Vedanta, Buddhism, and Yoga—with Western philosophical paradigms to create a unified understanding of human existence.",
   },
   {
-    icon: Scale,
     title: "Ethics & Inner Development",
-    description: "Studying how the cultivation of inner virtues—such as compassion, equanimity, and responsibility—translates into ethical action and social harmony.",
+    description: "Investigating how disciplined inner work and heightened awareness naturally give rise to spontaneous ethical behavior, empathy, and social responsibility.",
   },
   {
-    icon: Microscope,
     title: "Scientific Studies of Meditation",
-    description: "Partnering with neuroscientists and psychologists to empirically map the physiological and neurological benefits of sustained spiritual practices.",
+    description: "Measuring the long-term impact of deep contemplative states on neuroplasticity, immune response, cellular aging, and overall psycho-emotional resilience.",
   },
   {
-    icon: ScrollText,
     title: "Ancient Wisdom Traditions",
-    description: "Preserving and translating primary texts from ancient philosophical schools, making their timeless insights accessible to the modern seeker.",
+    description: "Preserving and authenticating esoteric knowledge systems, ensuring that ancient truths are accurately transmitted without dogmatic distortion.",
   },
 ];
 
 export function AreasOfStudy() {
   return (
     <section className="py-24 px-6 max-w-7xl mx-auto">
-      <SectionHeading
-        eyebrow="What We Study"
-        heading="Domains of Inquiry"
-        description="The Institute categorizes its research into distinct but overlapping fields, providing a comprehensive framework for understanding the self."
-        align="center"
-      />
+      <div className="mb-16">
+        <SectionHeading
+          align="center"
+          eyebrow="Domains of Inquiry"
+          heading="Core Areas of Study"
+          description="Our research spans the spectrum from empirical neuroscience to ancient philosophical frameworks, uniting objective measurement with profound subjective realization."
+        />
+      </div>
 
-      <div className="mt-20 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-        {AREAS_OF_STUDY.map((item, index) => {
-          const Icon = item.icon;
-          return (
-            <RevealOnScroll key={item.title} delay={index * 0.1}>
-              <Card className="h-full flex flex-col p-8 group">
-                <div className="w-14 h-14 border border-burntOrange/20 rounded-full flex items-center justify-center mb-6 text-burntOrange group-hover:bg-burntOrange group-hover:text-peach transition-colors duration-300">
-                  <Icon className="w-6 h-6" strokeWidth={1.5} />
-                </div>
-                <h3 className="font-display uppercase tracking-widest text-lg text-deepAmber mb-4">
-                  {item.title}
-                </h3>
-                <p className="font-sans font-light text-deepAmber text-sm leading-relaxed flex-grow">
-                  {item.description}
-                </p>
-              </Card>
-            </RevealOnScroll>
-          );
-        })}
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        {AREAS.map((area, index) => (
+          <RevealOnScroll key={area.title} delay={index * 0.1} className="h-full">
+            <Card className="h-full p-8 border-[#1B4332]/20 hover:-translate-y-1 hover:border-[#1B4332]/40 transition-all duration-300">
+              <h3 className="font-display font-light text-2xl text-deepAmber mb-4">
+                {area.title}
+              </h3>
+              <p className="font-sans font-light text-sm text-deepAmber/80 leading-relaxed">
+                {area.description}
+              </p>
+            </Card>
+          </RevealOnScroll>
+        ))}
       </div>
     </section>
   );

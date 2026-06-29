@@ -1,42 +1,55 @@
+import React from "react";
 import Link from "next/link";
-import { ButtonHTMLAttributes, ReactNode } from "react";
+import { MagneticButton } from "./MagneticButton";
 
-interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
+interface ButtonProps {
   variant?: "primary" | "ghost";
   href?: string;
-  children: ReactNode;
+  onClick?: () => void;
+  children: React.ReactNode;
   className?: string;
+  type?: "button" | "submit" | "reset";
+  disabled?: boolean;
+  magnetic?: boolean;
 }
 
 export function Button({
   variant = "primary",
   href,
+  onClick,
   children,
   className = "",
-  ...props
+  type = "button",
+  disabled = false,
+  magnetic = true,
 }: ButtonProps) {
   const baseClasses =
-    "uppercase text-xs tracking-[0.2em] px-8 py-3 transition-colors duration-300 font-sans inline-block text-center";
+    "inline-block uppercase text-xs tracking-[0.15em] px-10 py-4 transition-colors duration-300 rounded-sm";
+  
+  const variantClasses =
+    variant === "primary"
+      ? "bg-burntOrange text-peach hover:bg-mandarin disabled:opacity-50 disabled:hover:bg-burntOrange"
+      : "bg-transparent border border-burntOrange text-burntOrange hover:border-mandarin hover:text-mandarin disabled:opacity-50 disabled:hover:border-burntOrange disabled:hover:text-burntOrange";
 
-  const baseStyles = {
-    primary: "bg-burntOrange text-peach hover:bg-mandarin",
-    ghost:
-      "bg-transparent border border-burntOrange text-burntOrange hover:bg-mandarin hover:text-peach",
+  const combinedClasses = `${baseClasses} ${variantClasses} ${className} ${disabled ? 'cursor-not-allowed' : ''}`;
+
+  const renderInner = () => {
+    if (href) {
+      return (
+        <Link href={href} className={combinedClasses}>
+          {children}
+        </Link>
+      );
+    }
+    return (
+      <button type={type} disabled={disabled} onClick={onClick} className={combinedClasses}>
+        {children}
+      </button>
+    );
   };
 
-  const combinedClasses = `inline-flex items-center justify-center px-8 py-3.5 font-sans text-[0.65rem] uppercase tracking-[0.2em] transition-all duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-burntOrange focus-visible:ring-offset-2 focus-visible:ring-offset-peach ${baseStyles[variant]} ${className}`;
-
-  if (href) {
-    return (
-      <Link href={href} className={combinedClasses}>
-        {children}
-      </Link>
-    );
+  if (magnetic && !disabled) {
+    return <MagneticButton>{renderInner()}</MagneticButton>;
   }
-
-  return (
-    <button className={combinedClasses} {...props}>
-      {children}
-    </button>
-  );
+  return renderInner();
 }

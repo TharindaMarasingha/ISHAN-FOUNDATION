@@ -1,10 +1,10 @@
 "use client";
 
-import { ReactNode } from "react";
+import React from "react";
 import { motion } from "framer-motion";
 
 interface RevealOnScrollProps {
-  children: ReactNode;
+  children: React.ReactNode;
   delay?: number;
   className?: string;
 }

@@ -1,3 +1,8 @@
+"use client";
+
+import React from "react";
+import { motion, useReducedMotion } from "framer-motion";
+
 const VALUES = [
   "Pristine Wisdom",
   "Preventive Wellness",
@@ -10,20 +15,33 @@ const VALUES = [
 ];
 
 export function Ticker() {
-  const tickerContent = [...VALUES, ...VALUES, ...VALUES]; // Tripled to ensure seamless loop
+  const prefersReducedMotion = useReducedMotion();
+  
+  // Create a seamless loop array
+  const tickerItems = [...VALUES, ...VALUES];
 
   return (
-    <div className="w-full overflow-hidden bg-darkBrown/5 border-y border-sacredGold/20 py-4 flex items-center group relative">
-      <div className="flex whitespace-nowrap animate-marquee group-hover:[animation-play-state:paused]">
-        {tickerContent.map((value, i) => (
-          <div key={i} className="flex items-center">
-            <span className="font-display uppercase tracking-widest text-sacredGold text-sm px-6">
-              {value}
-            </span>
-            <span className="text-sacredGold/50 text-xs">•</span>
-          </div>
-        ))}
-      </div>
+    <div className="w-full bg-darkBrown/5 border-y border-sacredGold/20 py-4 overflow-hidden flex items-center group relative z-10">
+      <motion.div
+        className="flex whitespace-nowrap items-center"
+        animate={{ x: prefersReducedMotion ? 0 : ["0%", "-50%"] }}
+        transition={{ duration: 35, repeat: Infinity, ease: "linear" }}
+        style={{
+          // Pause on hover
+          animationPlayState: 'paused'
+        }}
+      >
+        <div className="flex items-center group-hover:[animation-play-state:paused]">
+          {tickerItems.map((val, idx) => (
+            <React.Fragment key={idx}>
+              <span className="font-display uppercase tracking-widest text-sacredGold text-sm md:text-base px-6">
+                {val}
+              </span>
+              <span className="text-mandarin opacity-40 text-xs">✦</span>
+            </React.Fragment>
+          ))}
+        </div>
+      </motion.div>
     </div>
   );
 }

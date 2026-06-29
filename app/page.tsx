@@ -19,7 +19,8 @@ export const metadata = {
 
 export default function Home() {
   return (
-    <>
+    // We add negative margin-top to pull the hero up under the transparent navbar on the homepage
+    <div className="-mt-24">
       <Hero />
       <Ticker />
       
@@ -49,6 +50,6 @@ export default function Home() {
       <VisionQuote />
       
       <ContactCTA />
-    </>
+    </div>
   );
 }

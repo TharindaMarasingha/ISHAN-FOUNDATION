@@ -1,79 +1,115 @@
+import React from "react";
 import { SectionHeading } from "../ui/SectionHeading";
-import { Card } from "../ui/Card";
+import { SectionIllustration } from "../ui/SectionIllustration";
 import { RevealOnScroll } from "../ui/RevealOnScroll";
 import Link from "next/link";
+import { EcosystemCard as EcosystemCardType } from "@/lib/types";
 
-const ECOSYSTEM = [
+const ECOSYSTEM_CARDS: EcosystemCardType[] = [
   {
-    tag: "Arogya Ashram International",
-    title: "Holistic Health",
-    subtitle: "Sanctuaries of Healing",
-    description: "Centers dedicated to preventive and restorative wellness, blending ancient Ayurvedic principles with modern understanding.",
+    tag: "Preventive Wellness · Proactive Wellbeing",
+    title: "Arogya Ashram International",
+    subtitle: "AAI — Sri Lanka Chapter",
+    description: "Holistic wellness education, preventive healthcare and integrative wellbeing — rooted in the world's oldest healing heritage.",
     href: "/arogya",
-    color: "bg-mandarin",
+    accentColor: "var(--color-burntOrange)",
   },
   {
-    tag: "Universal Spiritual Science",
-    title: "Spiritual Science",
-    subtitle: "The Academy",
-    description: "An educational wing focused on researching, preserving, and teaching the universal truths of human spirituality.",
+    tag: "Research · Consciousness · Ethics",
+    title: "Universal Spiritual Science",
+    subtitle: "USS — Inner Knowledge Institute",
+    description: "Research, education and consciousness studies across contemplative traditions, ethics, philosophy and inner development.",
     href: "/uss",
-    color: "bg-sacredGold",
+    accentColor: "#1B4332",
   },
   {
-    tag: "Samanvaya",
-    title: "Community Welfare",
-    subtitle: "Harmonious Action",
-    description: "Outreach programs designed to uplift the underprivileged through education, resources, and sustainable development.",
+    tag: "The Inner Immersion",
+    title: "Samanvaya",
+    subtitle: "ISHAN's Flagship Immersive Experience",
+    description: "A flagship immersive experience for profound inner exploration through nature, silence, wisdom and experiential learning.",
     href: "/samanvaya",
-    color: "bg-warmGilt",
+    accentColor: "var(--color-mandarin)",
   },
   {
-    tag: "The Brindavan Project",
-    title: "Ecological Balance",
-    subtitle: "Nature's Restoration",
-    description: "Environmental initiatives focused on reforestation, sustainable agriculture, and living in rhythm with the Earth.",
+    tag: "Divine Spiritual Wellness Township",
+    title: "The Brindavan Project",
+    subtitle: "Sri Lanka's First Conscious Living Township",
+    description: "A 150-acre living community where spirituality, conscious living, holistic wellness, nature and cultural life come together.",
     href: "/brindavan",
-    color: "bg-softApricot",
+    accentColor: "var(--color-deepAmber)",
   },
 ];
 
+function EcosystemCard({ card, delay }: { card: EcosystemCardType; delay: number }) {
+  return (
+    <RevealOnScroll delay={delay} className="h-full">
+      <Link href={card.href} className="block h-full outline-none group/eco motion-safe:hover:-translate-y-1.5 transition-transform duration-500">
+        <div className="h-full flex flex-col bg-darkBrown/5 border border-burntOrange/20 p-8 sm:p-10 relative overflow-hidden transition-all duration-500 ease-out shadow-[0_2px_10px_rgba(46,26,14,0.03)] motion-safe:group-hover/eco:shadow-[0_12px_35px_rgba(46,26,14,0.08)] group-hover/eco:border-burntOrange/50">
+          
+          {/* Shine sweep */}
+          <div className="absolute inset-0 -translate-x-[150%] bg-gradient-to-r from-transparent via-white/5 to-transparent motion-safe:group-hover/eco:translate-x-[150%] transition-transform duration-[1.5s] ease-in-out pointer-events-none" />
+
+          {/* Top Accent Bar */}
+          <div
+            className="absolute top-0 left-0 right-0 h-[3px] transition-all duration-300 group-hover/eco:h-[5px]"
+            style={{ backgroundColor: card.accentColor }}
+          />
+          
+          <div className="mb-6 relative z-10">
+            <span
+              className="inline-block px-3 py-1 rounded-full border border-burntOrange/30 text-[0.65rem] uppercase tracking-widest text-burntOrange"
+              style={{ borderColor: `color-mix(in srgb, ${card.accentColor} 40%, transparent)`, color: card.accentColor }}
+            >
+              {card.tag}
+            </span>
+          </div>
+
+          <h3 className="font-display font-light text-3xl md:text-4xl text-deepAmber mb-2 relative z-10">
+            {card.title}
+          </h3>
+          <p
+            className="font-display italic text-lg tracking-wider mb-6 relative z-10"
+            style={{ color: card.accentColor }}
+          >
+            {card.subtitle}
+          </p>
+
+          <p className="font-sans font-light text-deepAmber/80 leading-relaxed mb-10 flex-grow relative z-10">
+            {card.description}
+          </p>
+
+          <div className="mt-auto flex items-center font-display italic text-lg tracking-widest text-deepAmber group-hover/eco:text-burntOrange transition-colors duration-300 relative z-10">
+            <span>Explore {card.title.split(' ')[0]}</span>
+            <span className="ml-2 inline-block transition-transform duration-300 motion-safe:group-hover/eco:translate-x-2 motion-safe:group-hover/eco:-rotate-3">
+              →
+            </span>
+          </div>
+        </div>
+      </Link>
+    </RevealOnScroll>
+  );
+}
+
 export function Ecosystem() {
   return (
-    <section id="ecosystem" className="bg-deepAmber/[0.02] py-24 px-6 border-y border-burntOrange/10">
+    <section id="ecosystem" className="py-24 px-6 md:px-12 bg-deepAmber/[0.02] border-y border-sacredGold/10">
       <div className="max-w-7xl mx-auto">
-        <SectionHeading
-          eyebrow="Our Ecosystem"
-          heading="Four Pathways to Conscious Living"
-          description="ISHAN operates through four specialized branches, each addressing a critical aspect of the human-nature relationship."
-          align="center"
-        />
+        <div className="mb-16 relative flex justify-center text-center">
+          <SectionIllustration
+            variant="wave"
+            className="absolute -top-12 -left-4 w-32 h-32 text-burntOrange opacity-10 pointer-events-none"
+          />
+          <SectionHeading
+            align="center"
+            eyebrow="Our Ecosystem"
+            heading="Four pathways to conscious living"
+            description="ISHAN functions through specialised initiatives that collectively advance its vision of human and ecological wellbeing."
+          />
+        </div>
 
-        <div className="mt-16 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-          {ECOSYSTEM.map((item, index) => (
-            <RevealOnScroll key={item.tag} delay={index * 0.1} className="h-full">
-              <Card className="h-full flex flex-col group">
-                <div className={`h-1 w-12 ${item.color} mb-6 transition-all duration-300 group-hover:w-full`} />
-                <span className="font-sans text-[0.65rem] uppercase tracking-[0.2em] text-burntOrange mb-4 block">
-                  {item.tag}
-                </span>
-                <h3 className="font-display text-2xl text-deepAmber uppercase tracking-widest mb-1">
-                  {item.title}
-                </h3>
-                <h4 className="font-display italic text-lg text-sacredGold mb-6">
-                  {item.subtitle}
-                </h4>
-                <p className="font-sans font-light text-sm text-deepAmber leading-relaxed mb-8 flex-grow">
-                  {item.description}
-                </p>
-                <Link
-                  href={item.href}
-                  className="font-sans text-xs uppercase tracking-[0.2em] text-burntOrange hover:text-mandarin transition-colors mt-auto inline-block focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-burntOrange focus-visible:ring-offset-2 focus-visible:ring-offset-peach"
-                >
-                  Explore {item.title} &rarr;
-                </Link>
-              </Card>
-            </RevealOnScroll>
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+          {ECOSYSTEM_CARDS.map((card, index) => (
+            <EcosystemCard key={card.title} card={card} delay={index * 0.09} />
           ))}
         </div>
       </div>

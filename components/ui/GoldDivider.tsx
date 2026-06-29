@@ -1,12 +1,7 @@
-interface GoldDividerProps {
-  className?: string;
-}
+import React from "react";
 
-export function GoldDivider({ className = "" }: GoldDividerProps) {
+export function GoldDivider() {
   return (
-    <div
-      className={`h-px w-full bg-gradient-to-r from-transparent via-burntOrange to-transparent opacity-30 ${className}`}
-      aria-hidden="true"
-    />
+    <div className="w-full h-px bg-gradient-to-r from-transparent via-burntOrange to-transparent my-16 opacity-30" />
   );
 }

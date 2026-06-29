@@ -1,81 +1,99 @@
+import React from "react";
 import { SectionHeading } from "../ui/SectionHeading";
-import { Card } from "../ui/Card";
+import { SectionIllustration } from "../ui/SectionIllustration";
 import { RevealOnScroll } from "../ui/RevealOnScroll";
+import { Card } from "../ui/Card";
+import { TeamMember } from "@/lib/types";
 
-const TEAM = [
+const TEAM: TeamMember[] = [
   {
     archetype: "The Guru",
-    role: "Founder & Spiritual Head",
-    name: "Sevakanand Ji",
-    description: "The visionary behind ISHAN, guiding the global community with profound spiritual insight and compassionate action.",
-    nationality: "Global",
-    highlight: true,
-  },
-  {
-    archetype: "The Pioneer",
-    role: "Co-Founder",
-    name: "Dr. Kobayashi",
-    description: "Bridging Eastern wisdom with scientific rigor to establish ISHAN's holistic health protocols.",
-    nationality: "Japan",
-  },
-  {
-    archetype: "The Teacher",
-    role: "Head of Education",
-    name: "Master Indrani Sharma",
-    description: "Curating and disseminating the Universal Spiritual Science curriculum worldwide.",
+    role: "Spiritual Guide & Anchor",
+    name: "Sevakanand Ji 'Buddhu'",
+    description: "Ethics, traditional wisdom & consciousness direction for all programmes.",
     nationality: "India",
   },
   {
-    archetype: "The Builder",
-    role: "Director of Operations",
+    archetype: "Yogeshwari",
+    role: "Founder & Visionary — AAI",
+    name: "Dr. Hon. S. Kobayashi",
+    description: "Japanese wellness traditions, mindful movement & sound healing.",
+    nationality: "Japan",
+  },
+  {
+    archetype: "Adiyogini",
+    role: "Core Member — AAI",
+    name: "Master Indrani Sharma",
+    description: "Himalayan yogic sciences, meditation & energy practices.",
+    nationality: "Nepal",
+  },
+  {
+    archetype: "The Strategist Sage",
+    role: "Country Director — Sri Lanka",
     name: "Ranga Soysa",
-    description: "Translating spiritual vision into tangible infrastructure and global outreach programs.",
+    description: "Strategic planning, institutional development & governance.",
     nationality: "Sri Lanka",
   },
   {
-    archetype: "The Healer",
-    role: "Lead Ayurvedic Physician",
+    archetype: "The Unity Alchemist",
+    role: "Programme Coordination",
     name: "Mansoor Ali",
-    description: "Overseeing the Arogya Ashram protocols, ensuring authentic restorative treatments.",
-    nationality: "UAE",
+    description: "Strategic partnerships, community building & international collaboration.",
+    nationality: "India",
   },
 ];
 
 export function Team() {
   return (
-    <section className="bg-deepAmber/[0.02] py-24 px-6 border-y border-burntOrange/10">
-      <div className="max-w-7xl mx-auto">
-        <SectionHeading
-          eyebrow="Leadership"
-          heading="The Founding Team"
-          description="A diverse collective of seers, scientists, and social builders united by a singular vision for humanity."
-          align="center"
-        />
+    <section className="py-24 px-6 md:px-12 bg-deepAmber/[0.02] border-y border-sacredGold/10">
+      <div className="max-w-screen-2xl mx-auto">
+        <div className="mb-20 max-w-4xl mx-auto text-center relative flex justify-center">
+          <SectionIllustration
+            variant="hands"
+            className="absolute -top-16 w-36 h-36 text-burntOrange opacity-10 pointer-events-none"
+          />
+          <SectionHeading
+            align="center"
+            eyebrow="Leadership"
+            heading="The founding team"
+            description="Guided by a visionary core of internationally credentialed practitioners, architects, and humanitarian leaders — united across nations in a shared purpose."
+          />
+        </div>
 
-        <div className="mt-16 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-6">
-          {TEAM.map((member, index) => (
-            <RevealOnScroll key={member.name} delay={index * 0.1} className={`h-full ${member.highlight ? 'md:col-span-2 lg:col-span-3 xl:col-span-1 xl:row-span-2' : ''}`}>
-              <Card className={`h-full flex flex-col ${member.highlight ? 'bg-sacredGold/10 border-sacredGold/30' : ''}`}>
-                <span className="font-sans text-[0.65rem] uppercase tracking-[0.2em] text-burntOrange mb-2 block">
-                  {member.archetype}
-                </span>
-                <span className="font-sans font-medium text-xs text-deepAmber/60 uppercase tracking-widest mb-4 block">
-                  {member.role}
-                </span>
-                <h3 className="font-display text-2xl text-deepAmber uppercase tracking-widest mb-4">
-                  {member.name}
-                </h3>
-                <p className="font-sans font-light text-sm text-deepAmber leading-relaxed mb-6 flex-grow">
-                  {member.description}
-                </p>
-                <div className="mt-auto pt-4 border-t border-burntOrange/10">
-                  <span className="font-sans text-xs italic text-deepAmber/50">
-                    Based in {member.nationality}
-                  </span>
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-6">
+          {TEAM.map((member, index) => {
+            const isAnchor = index === 0;
+            return (
+              <RevealOnScroll key={member.name} delay={index * 0.09} className="h-full">
+                <div
+                  className={`h-full flex flex-col items-center text-center p-8 sm:p-10 transition-all duration-300 hover:-translate-y-1.5 border ${
+                    isAnchor
+                      ? "border-sacredGold/50 bg-sacredGold/[0.06] hover:border-sacredGold"
+                      : "border-burntOrange/20 bg-darkBrown/5 hover:border-burntOrange/50"
+                  }`}
+                >
+                  <p className="font-display italic text-sacredGold text-lg mb-2">
+                    {member.archetype}
+                  </p>
+                  <p className="text-[0.6rem] md:text-xs uppercase tracking-widest text-burntOrange mb-6">
+                    {member.role}
+                  </p>
+                  
+                  <h4 className="font-display text-2xl text-deepAmber mb-4">
+                    {member.name}
+                  </h4>
+                  
+                  <p className="font-sans font-light text-sm text-deepAmber/80 leading-relaxed flex-grow mb-8">
+                    {member.description}
+                  </p>
+
+                  <div className="mt-auto px-4 py-1.5 rounded-full border border-burntOrange/30 text-[0.65rem] uppercase tracking-widest text-burntOrange">
+                    {member.nationality}
+                  </div>
                 </div>
-              </Card>
-            </RevealOnScroll>
-          ))}
+              </RevealOnScroll>
+            );
+          })}
         </div>
       </div>
     </section>
