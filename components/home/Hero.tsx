@@ -106,8 +106,8 @@ export function Hero() {
             {/* Parallax Image */}
             <motion.div className="absolute -inset-12" style={{ y: prefersReducedMotion ? 0 : y }}>
               <Image
-                src="/images/hero-nature-v2.png"
-                alt="Nature and Humanity"
+                src="/images/hero-sri-vrindavan.png"
+                alt="Sri Vrindavan Project"
                 fill
                 className="object-cover"
                 priority

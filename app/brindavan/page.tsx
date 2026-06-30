@@ -9,7 +9,7 @@ import { Button } from "@/components/ui/Button";
 import { RevealOnScroll } from "@/components/ui/RevealOnScroll";
 
 export const metadata = {
-  title: "The Brindavan Project — ISHAN",
+  title: "Sri Vrindavan Project — ISHAN",
   description: "Sri Lanka's First Conscious Living Township—a 150-acre integrated settlement for spiritual and ecological harmony.",
 };
 

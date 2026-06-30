@@ -21,7 +21,7 @@ export function PageHero() {
           transition={{ duration: 1, ease: "easeOut", delay: 0.2 }}
           className="font-display font-light text-5xl md:text-6xl lg:text-7xl text-deepAmber tracking-wide mb-4"
         >
-          The Brindavan Project
+          Sri Vrindavan Project
         </motion.h1>
 
         <motion.p
@@ -48,7 +48,7 @@ export function PageHero() {
           transition={{ duration: 1, ease: "easeOut", delay: 0.8 }}
           className="font-sans font-light text-deepAmber max-w-2xl leading-relaxed"
         >
-          The Brindavan Project represents a bold reimagining of human habitation. By integrating state-of-the-art wellness infrastructure with sustainable agriculture, sacred spaces, and residential sanctuaries, this township is engineered to elevate the human experience on a grand, communal scale. It is a living, breathing testament to what a conscious civilization can be.
+          Sri Vrindavan Project represents a bold reimagining of human habitation. By integrating state-of-the-art wellness infrastructure with sustainable agriculture, sacred spaces, and residential sanctuaries, this township is engineered to elevate the human experience on a grand, communal scale. It is a living, breathing testament to what a conscious civilization can be.
         </motion.p>
       </div>
     </section>

@@ -18,7 +18,7 @@ export function Vision() {
           />
           <RevealOnScroll delay={0.1}>
             <p className="font-sans font-light text-deepAmber/90 leading-relaxed text-lg">
-              The Brindavan Project is not merely a real estate development; it is an architectural and sociological manifestation of ISHAN's core philosophies. Designed as a self-sustaining ecosystem, the township integrates advanced ecological infrastructure with ancient spatial design principles (Vastu and Sacred Geometry).
+              Sri Vrindavan Project is not merely a real estate development; it is an architectural and sociological manifestation of ISHAN's core philosophies. Designed as a self-sustaining ecosystem, the township integrates advanced ecological infrastructure with ancient spatial design principles (Vastu and Sacred Geometry).
             </p>
           </RevealOnScroll>
           <RevealOnScroll delay={0.2}>

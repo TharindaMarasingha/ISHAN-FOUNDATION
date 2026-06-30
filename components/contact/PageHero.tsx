@@ -39,7 +39,7 @@ export function PageHero() {
           transition={{ duration: 1, ease: "easeOut", delay: 0.6 }}
           className="font-sans font-light text-deepAmber max-w-2xl leading-relaxed"
         >
-          We warmly welcome wellness practitioners, institutional partners, visionary investors, the media, and sincere seekers to reach out. Whether you wish to contribute to The Brindavan Project, attend a Samanvaya immersion, or align your organization with our mission, your journey begins here.
+          We warmly welcome wellness practitioners, institutional partners, visionary investors, the media, and sincere seekers to reach out. Whether you wish to contribute to Sri Vrindavan Project, attend a Samanvaya immersion, or align your organization with our mission, your journey begins here.
         </motion.p>
       </div>
     </section>

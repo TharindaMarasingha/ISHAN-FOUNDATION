@@ -217,7 +217,7 @@ export function ContactLayout() {
                 { label: "Arogya Ashram", href: "/arogya" },
                 { label: "Universal Spiritual Science", href: "/uss" },
                 { label: "Samanvaya Immersion", href: "/samanvaya" },
-                { label: "The Brindavan Project", href: "/brindavan" },
+                { label: "Sri Vrindavan Project", href: "/brindavan" },
               ].map((link) => (
                 <Link
                   key={link.label}

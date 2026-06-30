@@ -13,7 +13,7 @@ export function Involvement() {
       <SectionHeading
         eyebrow="Get Involved"
         heading="A Collaborative Creation"
-        description="A project of this scale requires a coalition of the willing. We are actively seeking partners, experts, and pioneers to join us in bringing The Brindavan Project to life."
+        description="A project of this scale requires a coalition of the willing. We are actively seeking partners, experts, and pioneers to join us in bringing Sri Vrindavan Project to life."
         align="center"
       />
 

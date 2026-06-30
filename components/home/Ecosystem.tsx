@@ -32,7 +32,7 @@ const ECOSYSTEM_CARDS: EcosystemCardType[] = [
   },
   {
     tag: "Divine Spiritual Wellness Township",
-    title: "The Brindavan Project",
+    title: "Sri Vrindavan Project",
     subtitle: "Sri Lanka's First Conscious Living Township",
     description: "A 150-acre living community where spirituality, conscious living, holistic wellness, nature and cultural life come together.",
     href: "/brindavan",

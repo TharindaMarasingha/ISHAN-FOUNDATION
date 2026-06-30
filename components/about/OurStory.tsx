@@ -17,7 +17,7 @@ const STORY_ITEMS = [
   },
   {
     title: "Our Approach",
-    description: "ISHAN operates as an integrated ecosystem of distinct but interconnected branches. Rather than addressing symptoms in isolation, we treat the whole—whether through physical healing at the Arogya Ashram, spiritual inquiry at USS, social welfare via Samanvaya, or ecological restoration in Brindavan.",
+    description: "ISHAN operates as an integrated ecosystem of distinct but interconnected branches. Rather than addressing symptoms in isolation, we treat the whole—whether through physical healing at the Arogya Ashram, spiritual inquiry at USS, social welfare via Samanvaya, or ecological restoration in Sri Vrindavan.",
   },
 ];
 

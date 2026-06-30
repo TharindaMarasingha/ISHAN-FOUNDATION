@@ -41,7 +41,7 @@ export function ContactInfo() {
             <span className="opacity-0 -translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-300">→</span>
           </Link>
           <Link href="/brindavan" className="font-sans font-light text-sm text-deepAmber hover:text-burntOrange flex items-center justify-between group">
-            The Brindavan Project
+            Sri Vrindavan Project
             <span className="opacity-0 -translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-300">→</span>
           </Link>
         </nav>

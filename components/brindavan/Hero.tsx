@@ -23,7 +23,7 @@ export function Hero() {
           transition={{ duration: 1, ease: "easeOut", delay: 0.2 }}
           className="font-display font-light text-5xl md:text-7xl lg:text-8xl text-deepAmber tracking-wide mb-2"
         >
-          The Brindavan<br />
+          Sri Vrindavan<br />
           <span className="text-burntOrange">Project</span>
         </motion.h1>
 
@@ -42,7 +42,7 @@ export function Hero() {
           transition={{ duration: 1, ease: "easeOut", delay: 0.6 }}
           className="font-sans font-light text-deepAmber max-w-2xl leading-relaxed mb-8"
         >
-          Spanning 150 acres of pristine geography, The Brindavan Project is a visionary, integrated settlement where spirituality, conscious living, holistic wellness, deep ecological harmony, and vibrant cultural life converge into a single purposeful community.
+          Spanning 150 acres of pristine geography, Sri Vrindavan Project is a visionary, integrated settlement where spirituality, conscious living, holistic wellness, deep ecological harmony, and vibrant cultural life converge into a single purposeful community.
         </motion.p>
       </div>
     </section>
