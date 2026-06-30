@@ -120,20 +120,7 @@ export function Hero() {
         </div>
       </div>
 
-      {/* Scroll Indicator */}
-      <motion.div
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ delay: 1.5, duration: 1 }}
-        className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center justify-center z-10"
-      >
-        <span className="text-[0.65rem] uppercase tracking-widest text-burntOrange mb-2">Scroll</span>
-        <motion.div
-          animate={{ y: prefersReducedMotion ? 0 : [0, 8, 0] }}
-          transition={{ duration: 2.4, repeat: Infinity, ease: "easeInOut" }}
-          className="w-px h-12 bg-gradient-to-b from-burntOrange to-transparent"
-        />
-      </motion.div>
+
     </section>
   );
 }
