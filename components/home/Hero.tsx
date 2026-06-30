@@ -1,16 +1,23 @@
 "use client";
 
-import React from "react";
-import { motion, useReducedMotion } from "framer-motion";
+import React, { useRef } from "react";
+import { motion, useReducedMotion, useScroll, useTransform } from "framer-motion";
+import Image from "next/image";
 import { HeroTitle } from "../ui/HeroTitle";
 import { Button } from "../ui/Button";
 import { ParallaxBackground } from "../ui/ParallaxBackground";
 
 export function Hero() {
   const prefersReducedMotion = useReducedMotion();
+  const sectionRef = useRef<HTMLElement>(null);
+  const { scrollYProgress } = useScroll({
+    target: sectionRef,
+    offset: ["start start", "end start"],
+  });
+  const y = useTransform(scrollYProgress, [0, 1], [0, -30]);
 
   return (
-    <section className="relative min-h-screen flex flex-col justify-center bg-peach overflow-hidden px-6 pt-24 pb-12">
+    <section ref={sectionRef} className="relative min-h-screen flex flex-col justify-center bg-peach overflow-hidden px-6 pt-24 pb-12">
       {/* Decorative Parallax Background */}
       <ParallaxBackground fadeRange={[300, 1000]} driftRate={0.15} />
 
@@ -94,22 +101,21 @@ export function Hero() {
             className="relative w-full h-full"
             style={{ clipPath: "url(#sacred-petal)" }}
           >
-            <div className="absolute inset-0 bg-deepAmber/5 border-2 border-sacredGold/20" />
+            <div className="absolute inset-0 bg-deepAmber/5 border-2 border-sacredGold/20 z-20 pointer-events-none" />
             
-            {/* Photo Placeholder 1 (Background) */}
-            <div className="absolute inset-0 bg-gradient-to-br from-burntOrange/30 to-deepAmber/40 flex items-center justify-center opacity-80 mix-blend-multiply">
-              <span className="font-sans text-[0.6rem] uppercase tracking-widest text-deepAmber/50 -rotate-12">Replace With Photo</span>
-            </div>
+            {/* Parallax Image */}
+            <motion.div className="absolute -inset-12" style={{ y: prefersReducedMotion ? 0 : y }}>
+              <Image
+                src="/images/hero-nature-v2.png"
+                alt="Nature and Humanity"
+                fill
+                className="object-cover"
+                priority
+              />
+            </motion.div>
             
-            {/* Photo Placeholder 2 (Offset layer) */}
-            <div className="absolute top-[10%] right-[10%] w-[120%] h-[120%] bg-gradient-to-t from-mandarin/20 to-transparent -rotate-6 border border-sacredGold/30 flex items-center justify-center mix-blend-overlay">
-              <span className="font-sans text-[0.6rem] uppercase tracking-widest text-sacredGold/70 rotate-12">Replace With Photo</span>
-            </div>
-
-            {/* Photo Placeholder 3 (Foreground accent) */}
-            <div className="absolute bottom-[5%] left-[5%] w-[80%] h-[70%] bg-gradient-to-tr from-sacredGold/30 to-peach/20 rotate-3 border border-peach/40 flex items-end justify-start p-6 backdrop-blur-sm">
-               <span className="font-sans text-[0.6rem] uppercase tracking-widest text-deepAmber/80">Replace With Photo</span>
-            </div>
+            {/* Warm Overlay */}
+            <div className="absolute inset-0 bg-deepAmber/10 pointer-events-none z-10" />
           </motion.div>
         </div>
       </div>
