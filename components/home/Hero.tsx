@@ -142,10 +142,10 @@ export function Hero() {
             transition={{ duration: 0.8, delay: 0.6 }}
             className="flex flex-col sm:flex-row items-center justify-start gap-4 w-full mt-6"
           >
-            <button className="w-full sm:w-auto min-w-[180px] bg-gradient-to-r from-[#ffe4e1] to-[#e0ffff] text-[#4A4A4A] border-none px-8 py-3.5 rounded-full hover:shadow-xl hover:-translate-y-0.5 transition-all duration-300 font-sans font-light tracking-wide uppercase text-[13px]">
+            <button className="w-full sm:w-auto min-w-[180px] bg-gradient-to-r from-[#FFC120] to-[#F8A39B] text-[#2E1A0E] border-none px-8 py-3.5 rounded-full hover:shadow-xl hover:-translate-y-0.5 transition-all duration-300 font-sans font-medium tracking-wide uppercase text-[13px]">
               Explore Our Work
             </button>
-            <button className="w-full sm:w-auto min-w-[180px] bg-gradient-to-r from-[#ffe4e1] to-[#e0ffff] text-[#4A4A4A] border-none px-8 py-3.5 rounded-full hover:shadow-xl hover:-translate-y-0.5 transition-all duration-300 font-sans font-light tracking-wide uppercase text-[13px]">
+            <button className="w-full sm:w-auto min-w-[180px] bg-gradient-to-r from-[#FFC120] to-[#F8A39B] text-[#2E1A0E] border-none px-8 py-3.5 rounded-full hover:shadow-xl hover:-translate-y-0.5 transition-all duration-300 font-sans font-medium tracking-wide uppercase text-[13px]">
               About ISHAN
             </button>
           </motion.div>

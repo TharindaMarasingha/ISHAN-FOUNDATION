@@ -84,7 +84,7 @@ export default function Navbar() {
           <div className="flex items-center gap-4">
             <Link href="/contact" className="hidden md:block">
               <MagneticButton>
-                <div className="px-5 py-2 rounded-full bg-sacredGold text-[#0A0A0A] font-sans font-semibold text-[12px] uppercase tracking-[0.1em] hover:bg-mandarin hover:text-white transition-colors duration-300">
+                <div className="px-5 py-2 rounded-full bg-gradient-to-r from-[#FFC120] to-[#F8A39B] text-[#2E1A0E] font-sans font-semibold text-[12px] uppercase tracking-[0.1em] hover:shadow-lg hover:-translate-y-0.5 transition-all duration-300">
                   Connect
                 </div>
               </MagneticButton>
@@ -151,7 +151,7 @@ export default function Navbar() {
                   <Link
                     href="/contact"
                     onClick={() => setIsMobileMenuOpen(false)}
-                    className="inline-block px-8 py-3 rounded-full border border-sacredGold bg-transparent text-sacredGold text-sm uppercase tracking-widest hover:bg-sacredGold hover:text-darkBrown transition-colors duration-300"
+                    className="inline-block px-8 py-3 rounded-full bg-gradient-to-r from-[#FFC120] to-[#F8A39B] text-[#2E1A0E] font-medium text-sm uppercase tracking-widest hover:shadow-lg transition-all duration-300 border-none"
                   >
                     Connect
                   </Link>
