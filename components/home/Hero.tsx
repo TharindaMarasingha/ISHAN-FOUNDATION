@@ -1,126 +1,118 @@
 "use client";
 
-import React, { useRef } from "react";
-import { motion, useReducedMotion, useScroll, useTransform } from "framer-motion";
+import React, { useRef, useState, useEffect } from "react";
+import { motion, useReducedMotion, useScroll, useTransform, AnimatePresence } from "framer-motion";
 import Image from "next/image";
 import { HeroTitle } from "../ui/HeroTitle";
 import { Button } from "../ui/Button";
-import { ParallaxBackground } from "../ui/ParallaxBackground";
 
 export function Hero() {
   const prefersReducedMotion = useReducedMotion();
   const sectionRef = useRef<HTMLElement>(null);
+  
+  const [currentImageIndex, setCurrentImageIndex] = useState(0);
+  const images = ["/images/h1.jpg", "/images/h2.jpg", "/images/h3.jpg", "/images/h4.jpg"];
+
+  useEffect(() => {
+    if (prefersReducedMotion) return;
+    const interval = setInterval(() => {
+      setCurrentImageIndex((prev) => (prev + 1) % images.length);
+    }, 8000); // 8 seconds per slide
+    return () => clearInterval(interval);
+  }, [images.length, prefersReducedMotion]);
+
+  // Optional: subtle parallax for the background image
   const { scrollYProgress } = useScroll({
     target: sectionRef,
     offset: ["start start", "end start"],
   });
-  const y = useTransform(scrollYProgress, [0, 1], [0, -30]);
+  const y = useTransform(scrollYProgress, [0, 1], [0, 50]);
 
   return (
-    <section ref={sectionRef} className="relative min-h-screen flex flex-col justify-center bg-peach overflow-hidden px-6 pt-24 pb-12">
-      {/* Decorative Parallax Background */}
-      <ParallaxBackground fadeRange={[300, 1000]} driftRate={0.15} />
+    <section ref={sectionRef} className="relative min-h-screen flex items-center bg-white overflow-hidden">
+      
+      {/* Right Background Image Slideshow */}
+      <div className="absolute inset-0 w-full h-full bg-white">
+        <motion.div className="absolute inset-0 bg-white" style={{ y: prefersReducedMotion ? 0 : y }}>
+          <AnimatePresence mode="popLayout">
+            <motion.div
+              key={currentImageIndex}
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              transition={{ duration: 2.5, ease: "easeInOut" }}
+              className="absolute inset-0"
+            >
+              <Image
+                src={images[currentImageIndex]}
+                alt={`Hero Background ${currentImageIndex + 1}`}
+                fill
+                className="object-cover object-center md:object-right"
+                priority
+              />
+            </motion.div>
+          </AnimatePresence>
+        </motion.div>
+      </div>
+
+      {/* Mobile Overlay for text readability (hidden on md and up) */}
+      <div className="absolute inset-0 bg-white/85 md:hidden z-10" />
+
+      {/* Desktop Wave Overlay (creates the split-screen curve) */}
+      <div className="hidden md:block absolute top-0 left-0 w-[65%] lg:w-[55%] h-full z-10 pointer-events-none">
+        <svg 
+          viewBox="0 0 100 100" 
+          preserveAspectRatio="none" 
+          className="w-full h-full text-white fill-current drop-shadow-[10px_0_15px_rgba(0,0,0,0.05)]"
+        >
+          <path d="M 0 0 L 100 0 C 100 25, 75 40, 75 50 C 75 60, 100 75, 100 100 L 0 100 Z" />
+        </svg>
+      </div>
 
       {/* Main Content Grid */}
-      <div className="relative z-10 grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-8 max-w-7xl mx-auto w-full items-center min-h-[70vh]">
+      <div className="relative z-20 w-full max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-2 pt-24 pb-12">
         
         {/* Left Column: Text Content */}
-        <div className="flex flex-col items-center lg:items-start text-center lg:text-left mt-16 lg:mt-0">
-          <motion.p
+        <div className="flex flex-col items-center justify-center text-center px-4 md:px-12 w-full max-w-md mx-auto md:mx-0">
+          
+          <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, ease: "easeOut" }}
-            className="font-display italic text-burntOrange text-lg md:text-xl tracking-wider mb-6"
+            className="flex flex-col items-center mb-6"
           >
-            International Society of Humanity & Nature
-          </motion.p>
-          
-          <div className="flex justify-center lg:justify-start w-full mb-6">
-            <HeroTitle text="ISHAN" />
-          </div>
+            <h1 className="font-display text-7xl md:text-8xl lg:text-9xl text-[#4A4A4A] leading-tight mb-[-10px] md:mb-[-15px]">
+              ISHAN
+            </h1>
+            <span className="font-sans font-light text-5xl md:text-6xl lg:text-7xl text-[#6B6B6B] tracking-wide">
+              society
+            </span>
+          </motion.div>
 
           <motion.p
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
-            transition={{ duration: 1, delay: 0.8 }}
-            className="font-display italic text-burntOrange text-xl md:text-2xl max-w-lg leading-relaxed mb-12"
+            transition={{ duration: 1, delay: 0.4 }}
+            className="font-sans font-light text-[#8A8A8A] text-sm md:text-base max-w-sm tracking-wider mb-10"
           >
-            Harmonising humanity with nature through wisdom, wellness & collective responsibility.
+            The harmony of your body and soul starts here
           </motion.p>
 
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 1 }}
-            className="flex flex-col sm:flex-row items-center gap-6"
+            transition={{ duration: 0.8, delay: 0.6 }}
           >
-            <Button variant="primary" href="#ecosystem">Explore Our Work</Button>
-            <Button variant="ghost" href="/contact">Join the Movement</Button>
+            <button className="bg-gradient-to-r from-[#ffe4e1] to-[#e0ffff] text-[#6B6B6B] border-none px-10 py-3 rounded-full hover:shadow-lg transition-shadow duration-300 font-sans font-light tracking-wide">
+              Get free trial lesson
+            </button>
           </motion.div>
         </div>
 
-        {/* Right Column: Masked Sacred Geometry Collage */}
-        <div className="relative flex justify-center items-center w-full aspect-square max-w-[480px] lg:max-w-[560px] mx-auto">
-          
-          {/* Floating Accent Dots */}
-          <motion.div
-            animate={{ y: prefersReducedMotion ? 0 : [-10, 10, -10] }}
-            transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
-            className="absolute top-10 right-10 w-3 h-3 bg-mandarin rounded-full z-20"
-          />
-          <motion.div
-            animate={{ y: prefersReducedMotion ? 0 : [-8, 8, -8] }}
-            transition={{ duration: 3.5, repeat: Infinity, ease: "easeInOut", delay: 1 }}
-            className="absolute bottom-24 right-4 w-2 h-2 bg-sacredGold rounded-full z-20"
-          />
-          <motion.div
-            animate={{ y: prefersReducedMotion ? 0 : [-12, 12, -12] }}
-            transition={{ duration: 5, repeat: Infinity, ease: "easeInOut", delay: 2 }}
-            className="absolute top-1/2 left-4 w-4 h-4 bg-burntOrange rounded-full z-20"
-          />
-          <motion.div
-            animate={{ y: prefersReducedMotion ? 0 : [-15, 15, -15] }}
-            transition={{ duration: 4.5, repeat: Infinity, ease: "easeInOut", delay: 0.5 }}
-            className="absolute bottom-10 left-16 w-2.5 h-2.5 bg-mandarin rounded-full z-20"
-          />
-
-          {/* SVG Clip Path Definition (Lotus Petal Silhouette) */}
-          <svg width="0" height="0" className="absolute">
-            <defs>
-              <clipPath id="sacred-petal" clipPathUnits="objectBoundingBox">
-                <path d="M 0.5 0 C 0.9 0.3 1 0.65 1 0.85 C 1 0.95 0.9 1 0.5 1 C 0.1 1 0 0.95 0 0.85 C 0 0.65 0.1 0.3 0.5 0 Z" />
-              </clipPath>
-            </defs>
-          </svg>
-
-          {/* Masked Collage Container */}
-          <motion.div
-            initial={{ opacity: 0, scale: 0.92 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 1.2, delay: 1.2, ease: "easeOut" }}
-            className="relative w-full h-full"
-            style={{ clipPath: "url(#sacred-petal)" }}
-          >
-            <div className="absolute inset-0 bg-deepAmber/5 border-2 border-sacredGold/20 z-20 pointer-events-none" />
-            
-            {/* Parallax Image */}
-            <motion.div className="absolute -inset-12" style={{ y: prefersReducedMotion ? 0 : y }}>
-              <Image
-                src="/images/hero-sri-vrindavan.png"
-                alt="Sri Vrindavan Project"
-                fill
-                className="object-cover"
-                priority
-              />
-            </motion.div>
-            
-            {/* Warm Overlay */}
-            <div className="absolute inset-0 bg-deepAmber/10 pointer-events-none z-10" />
-          </motion.div>
-        </div>
+        {/* Right Column: Empty (allows image to show through) */}
+        <div className="hidden md:block" />
+        
       </div>
-
-
     </section>
   );
 }
