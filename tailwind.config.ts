@@ -20,8 +20,8 @@ const config: Config = {
         bark: "var(--color-bark)",
       },
       fontFamily: {
-        display: ["var(--font-cormorant)", "serif"],
-        sans: ["var(--font-inter)", "sans-serif"],
+        display: ["var(--font-forum)", "serif"],
+        sans: ["var(--font-raleway)", "sans-serif"],
       },
     },
   },

@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Inter, Cormorant_Garamond } from "next/font/google";
+import { Raleway, Forum } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
@@ -7,17 +7,16 @@ import { ScrollProgress } from "@/components/ui/ScrollProgress";
 import { CursorGlow } from "@/components/ui/CursorGlow";
 import { ParallaxGeometry } from "@/components/ui/ParallaxGeometry";
 
-const inter = Inter({
-  variable: "--font-inter",
+const raleway = Raleway({
+  variable: "--font-raleway",
   subsets: ["latin"],
-  weight: ["300", "400", "500"],
+  weight: ["300", "400", "500", "600"],
 });
 
-const cormorant = Cormorant_Garamond({
-  variable: "--font-cormorant",
+const forum = Forum({
+  variable: "--font-forum",
   subsets: ["latin"],
-  weight: ["300", "400", "600"],
-  style: ["normal", "italic"],
+  weight: ["400"],
 });
 
 export const metadata: Metadata = {
@@ -33,9 +32,9 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${inter.variable} ${cormorant.variable} h-full antialiased`}
+      className={`${raleway.variable} ${forum.variable} h-full antialiased`}
     >
-      <body className={`${inter.className} min-h-full flex flex-col bg-peach text-deepAmber`}>
+      <body className={`${raleway.className} min-h-full flex flex-col bg-peach text-deepAmber`}>
         <ScrollProgress />
         <CursorGlow />
         <ParallaxGeometry />
