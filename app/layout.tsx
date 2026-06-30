@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Raleway, Forum } from "next/font/google";
+import { Raleway, Forum, Tenor_Sans } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
@@ -19,6 +19,12 @@ const forum = Forum({
   weight: ["400"],
 });
 
+const tenor = Tenor_Sans({
+  variable: "--font-tenor",
+  subsets: ["latin"],
+  weight: ["400"],
+});
+
 export const metadata: Metadata = {
   title: "ISHAN - International Society of Humanity and Nature",
   description: "A spiritual wellness and conscious-living organisation.",
@@ -32,7 +38,7 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${raleway.variable} ${forum.variable} h-full antialiased`}
+      className={`${raleway.variable} ${forum.variable} ${tenor.variable} h-full antialiased`}
     >
       <body className={`${raleway.className} min-h-full flex flex-col bg-peach text-deepAmber`}>
         <ScrollProgress />

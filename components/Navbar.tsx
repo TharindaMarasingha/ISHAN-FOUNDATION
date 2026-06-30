@@ -46,7 +46,7 @@ export default function Navbar() {
           borderWidth: "1px",
           borderStyle: "solid",
         }}
-        className="fixed top-5 left-6 right-6 md:left-0 md:right-0 md:mx-auto max-w-[900px] z-50 rounded-full px-6 py-2.5 shadow-[0_4px_24px_rgba(0,0,0,0.18)]"
+        className="fixed top-5 left-6 right-6 md:left-0 md:right-0 md:mx-auto max-w-[840px] z-50 rounded-full px-6 py-2 shadow-[0_4px_24px_rgba(0,0,0,0.18)] flex items-center"
       >
         <div className="flex items-center justify-between w-full">
           
@@ -63,7 +63,7 @@ export default function Navbar() {
           </Link>
 
           {/* Center: Desktop Nav Links */}
-          <div className="hidden md:flex items-center justify-center flex-grow gap-4 lg:gap-8 mx-4">
+          <div className="hidden md:flex items-center justify-center flex-grow gap-6 lg:gap-10 mx-4">
             {navLinks.map((link) => {
               const isActive = pathname === link.href;
               return (

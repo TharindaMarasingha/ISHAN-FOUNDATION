@@ -3,8 +3,14 @@
 import React, { useRef, useState, useEffect } from "react";
 import { motion, useReducedMotion, useScroll, useTransform, AnimatePresence } from "framer-motion";
 import Image from "next/image";
+import { Great_Vibes } from "next/font/google";
 import { HeroTitle } from "../ui/HeroTitle";
 import { Button } from "../ui/Button";
+
+const greatVibes = Great_Vibes({
+  subsets: ["latin"],
+  weight: ["400"],
+});
 
 export function Hero() {
   const prefersReducedMotion = useReducedMotion();
@@ -56,55 +62,91 @@ export function Hero() {
       </div>
 
       {/* Mobile Overlay for text readability (hidden on md and up) */}
-      <div className="absolute inset-0 bg-white/85 md:hidden z-10" />
+      <div className="absolute inset-0 bg-gradient-to-br from-[#ffaf80] via-[#fffaf7] to-[#ff9859] opacity-90 md:hidden z-10" />
 
       {/* Desktop Wave Overlay (creates the split-screen curve) */}
       <div className="hidden md:block absolute top-0 left-0 w-[65%] lg:w-[55%] h-full z-10 pointer-events-none">
         <svg 
           viewBox="0 0 100 100" 
           preserveAspectRatio="none" 
-          className="w-full h-full text-white fill-current drop-shadow-[10px_0_15px_rgba(0,0,0,0.05)]"
+          className="w-full h-full drop-shadow-[10px_0_15px_rgba(0,0,0,0.05)]"
         >
-          <path d="M 0 0 L 100 0 C 100 25, 75 40, 75 50 C 75 60, 100 75, 100 100 L 0 100 Z" />
+          <defs>
+            <linearGradient id="orangeGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" stopColor="#ffb88e" />
+              <stop offset="25%" stopColor="#fff8f5" />
+              <stop offset="75%" stopColor="#fff8f5" />
+              <stop offset="100%" stopColor="#ff9a5e" />
+            </linearGradient>
+          </defs>
+          <path d="M 0 0 L 100 0 C 100 25, 75 40, 75 50 C 75 60, 100 75, 100 100 L 0 100 Z" fill="url(#orangeGradient)" />
         </svg>
       </div>
 
       {/* Main Content Grid */}
-      <div className="relative z-20 w-full max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-2 pt-24 pb-12">
+      <div className="relative z-20 w-full max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-2 pt-32 lg:pt-40 pb-20">
         
         {/* Left Column: Text Content */}
-        <div className="flex flex-col items-center justify-center text-center px-4 md:px-12 w-full max-w-md mx-auto md:mx-0">
+        <div className="flex flex-col items-start justify-center text-left px-4 md:pl-0 lg:-ml-8 w-full max-w-2xl mx-auto md:mr-auto">
           
-          <motion.div
+          <motion.p
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, ease: "easeOut" }}
-            className="flex flex-col items-center mb-6"
+            className="font-sans font-light text-[#8A8A8A] text-[9px] md:text-[10px] tracking-[0.3em] uppercase mb-8 -mt-8"
           >
-            <h1 className="font-display text-7xl md:text-8xl lg:text-9xl text-[#4A4A4A] leading-tight mb-[-10px] md:mb-[-15px]">
-              ISHAN
+            International Society of Humanity and Nature
+          </motion.p>
+
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
+            className="flex flex-col items-start mb-4"
+          >
+            <h1 
+              style={{
+                fontSize: 'clamp(6rem, 15vw, 12rem)',
+                letterSpacing: '0em',
+                color: '#2E1A0E',
+                fontWeight: 400,
+                paddingRight: '0.2em'
+              }}
+              className={`${greatVibes.className} leading-none`}
+            >
+              Ishan
             </h1>
-            <span className="font-sans font-light text-5xl md:text-6xl lg:text-7xl text-[#6B6B6B] tracking-wide">
-              society
-            </span>
           </motion.div>
 
           <motion.p
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 1, delay: 0.4 }}
-            className="font-sans font-light text-[#8A8A8A] text-sm md:text-base max-w-sm tracking-wider mb-10"
+            className="font-sans italic text-[#6B6B6B] text-lg md:text-xl max-w-lg tracking-wide mb-3"
           >
-            The harmony of your body and soul starts here
+            Harmonising Humanity with Nature through Wisdom, Wellness, and Collective Responsibility
+          </motion.p>
+
+          <motion.p
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 1, delay: 0.5 }}
+            className="font-sans font-light text-[#8A8A8A] text-sm md:text-base max-w-lg leading-snug mb-8"
+          >
+            ISHAN is an international organisation committed to integrating timeless wisdom, preventive wellness, environmental stewardship, and conscious community development into practical initiatives that benefit individuals, society, and the planet.
           </motion.p>
 
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.6 }}
+            className="flex flex-col sm:flex-row items-center justify-start gap-4 w-full mt-6"
           >
-            <button className="bg-gradient-to-r from-[#ffe4e1] to-[#e0ffff] text-[#6B6B6B] border-none px-10 py-3 rounded-full hover:shadow-lg transition-shadow duration-300 font-sans font-light tracking-wide">
-              Get free trial lesson
+            <button className="w-full sm:w-auto min-w-[180px] bg-gradient-to-r from-[#ffe4e1] to-[#e0ffff] text-[#4A4A4A] border-none px-8 py-3.5 rounded-full hover:shadow-xl hover:-translate-y-0.5 transition-all duration-300 font-sans font-light tracking-wide uppercase text-[13px]">
+              Explore Our Work
+            </button>
+            <button className="w-full sm:w-auto min-w-[180px] bg-gradient-to-r from-[#ffe4e1] to-[#e0ffff] text-[#4A4A4A] border-none px-8 py-3.5 rounded-full hover:shadow-xl hover:-translate-y-0.5 transition-all duration-300 font-sans font-light tracking-wide uppercase text-[13px]">
+              About ISHAN
             </button>
           </motion.div>
         </div>
