@@ -76,22 +76,6 @@ export function CursorGlow() {
         }}
       />
       
-      {/* Dot */}
-      <div 
-        ref={dotRef} 
-        className="fixed top-0 left-0 pointer-events-none z-[60]" 
-        style={{ willChange: "transform" }}
-      >
-        <motion.div
-          className="rounded-full"
-          style={{ width: 9, height: 9 }}
-          animate={{
-            scale: isHovering ? 2.5 : 1,
-            backgroundColor: isHovering ? "var(--color-sacredGold)" : "var(--color-burntOrange)",
-          }}
-          transition={{ duration: 0.15, ease: "easeOut" }}
-        />
-      </div>
     </>
   );
 }
