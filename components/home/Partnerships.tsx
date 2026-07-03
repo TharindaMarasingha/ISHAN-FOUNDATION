@@ -12,7 +12,12 @@ const CONTRIBUTIONS = [
 
 export function Partnerships() {
   return (
-    <section className="py-24 px-6 md:px-12 bg-peach">
+    <section 
+      className="py-24 px-6 md:px-12"
+      style={{
+        background: 'linear-gradient(135deg, rgba(255, 200, 150, 0.12) 0%, rgba(255, 255, 255, 0.6) 50%, rgba(255, 220, 180, 0.1) 100%)'
+      }}
+    >
       <div className="max-w-7xl mx-auto">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-16 md:gap-24">
           

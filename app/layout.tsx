@@ -40,7 +40,7 @@ export default function RootLayout({
       lang="en"
       className={`${raleway.variable} ${forum.variable} ${tenor.variable} h-full antialiased`}
     >
-      <body className={`${raleway.className} min-h-full flex flex-col bg-peach text-deepAmber`}>
+      <body className={`${raleway.className} min-h-full flex flex-col text-deepAmber`}>
         <ScrollProgress />
         <CursorGlow />
         <ParallaxGeometry />

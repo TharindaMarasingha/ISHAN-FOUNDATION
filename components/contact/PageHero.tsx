@@ -4,7 +4,14 @@ import { motion } from "framer-motion";
 
 export function PageHero() {
   return (
-    <section className="relative min-h-[50vh] flex flex-col justify-end pb-24 pt-32 px-6 overflow-hidden bg-deepAmber/[0.03] border-b border-burntOrange/10">
+    <section className="relative min-h-[50vh] flex flex-col justify-end pb-24 pt-32 px-6 overflow-hidden border-b border-burntOrange/10">
+      {/* Left-side radial glow */}
+      <div 
+        className="absolute inset-0 pointer-events-none z-0"
+        style={{
+          background: 'radial-gradient(ellipse 60% 80% at 0% 50%, rgba(255, 160, 100, 0.25) 0%, rgba(255, 200, 150, 0.12) 40%, transparent 70%)'
+        }}
+      />
       <div className="relative z-10 max-w-7xl mx-auto w-full flex flex-col items-start">
         <motion.span
           initial={{ opacity: 0, y: 10 }}

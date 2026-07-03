@@ -35,7 +35,14 @@ export function Hero() {
   const y = useTransform(scrollYProgress, [0, 1], [0, 50]);
 
   return (
-    <section ref={sectionRef} className="relative min-h-screen flex items-center bg-white overflow-hidden">
+    <section ref={sectionRef} className="relative min-h-screen flex items-center overflow-hidden">
+      {/* Left-side radial glow */}
+      <div 
+        className="absolute inset-0 pointer-events-none z-0"
+        style={{
+          background: 'radial-gradient(ellipse 60% 80% at 0% 50%, rgba(255, 160, 100, 0.25) 0%, rgba(255, 200, 150, 0.12) 40%, transparent 70%)'
+        }}
+      />
       
       {/* Right Background Image Slideshow */}
       <div className="absolute inset-0 w-full h-full bg-white">

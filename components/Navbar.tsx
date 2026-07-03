@@ -37,9 +37,9 @@ export default function Navbar() {
       <motion.nav
         initial={false}
         animate={{
-          backgroundColor: isScrolled ? "rgba(20, 10, 5, 0.55)" : "rgba(20, 10, 5, 0.35)",
+          backgroundColor: isScrolled ? "rgba(138, 130, 125, 0.85)" : "rgba(138, 130, 125, 0.45)",
           backdropFilter: isScrolled ? "blur(20px) saturate(160%)" : "blur(16px) saturate(160%)",
-          borderColor: isScrolled ? "rgba(201, 168, 76, 0.35)" : "rgba(201, 168, 76, 0.25)",
+          borderColor: isScrolled ? "rgba(247, 190, 67, 0.35)" : "rgba(247, 190, 67, 0.25)",
         }}
         transition={{ duration: 0.5, ease: "easeInOut" }}
         style={{
@@ -71,7 +71,7 @@ export default function Navbar() {
                   key={link.label}
                   href={link.href}
                   className={`font-sans font-normal text-[13px] uppercase tracking-[0.08em] transition-colors duration-300 ${
-                    isActive ? "text-sacredGold" : "text-white/75 hover:text-sacredGold"
+                    isActive ? "text-[#F7BE43]" : "text-white/75 hover:text-[#F5A85C]"
                   }`}
                 >
                   {link.label}
@@ -84,7 +84,7 @@ export default function Navbar() {
           <div className="flex items-center gap-4">
             <Link href="/contact" className="hidden md:block">
               <MagneticButton>
-                <div className="px-5 py-2 rounded-full bg-gradient-to-r from-[#FFC120] to-[#F8A39B] text-[#2E1A0E] font-sans font-semibold text-[12px] uppercase tracking-[0.1em] hover:shadow-lg hover:-translate-y-0.5 transition-all duration-300">
+                <div className="px-5 py-2 rounded-full bg-gradient-to-r from-[#F7BE43] via-[#F5A85C] to-[#F39A8A] text-[#2E1A0E] font-sans font-semibold text-[12px] uppercase tracking-[0.1em] hover:shadow-lg hover:-translate-y-0.5 transition-all duration-300">
                   Connect
                 </div>
               </MagneticButton>

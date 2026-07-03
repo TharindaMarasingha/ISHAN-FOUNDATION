@@ -92,7 +92,13 @@ function EcosystemCard({ card, delay }: { card: EcosystemCardType; delay: number
 
 export function Ecosystem() {
   return (
-    <section id="ecosystem" className="py-24 px-6 md:px-12 bg-deepAmber/[0.02] border-y border-sacredGold/10">
+    <section 
+      id="ecosystem" 
+      className="py-24 px-6 md:px-12 border-y border-sacredGold/10"
+      style={{
+        background: 'linear-gradient(135deg, rgba(255, 200, 150, 0.12) 0%, rgba(255, 255, 255, 0.6) 50%, rgba(255, 220, 180, 0.1) 100%)'
+      }}
+    >
       <div className="max-w-7xl mx-auto">
         <div className="mb-16 relative flex justify-center text-center">
           <SectionIllustration
