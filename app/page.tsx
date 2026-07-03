@@ -25,7 +25,6 @@ export default function Home() {
       <Ticker />
       
       <WhoWeAre />
-      <GoldDivider />
       
       <FourPillars />
       <GoldDivider />

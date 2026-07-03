@@ -71,7 +71,7 @@ export function WhoWeAre() {
   });
 
   return (
-    <section ref={containerRef} className="relative bg-[#FFF7F0] lg:h-[400vh] py-20 lg:py-0">
+    <section ref={containerRef} className="relative bg-[#FFF7F0] lg:h-[500vh] lg:-mb-[100vh] py-20 lg:py-0">
       <div className="lg:sticky lg:top-0 lg:h-screen w-full flex flex-col justify-center overflow-hidden">
         
         {/* Cultural Golden Mandala on the far right edge of the screen */}
@@ -119,8 +119,8 @@ export function WhoWeAre() {
           {/* Desktop Right Column: Sticky Card Stack */}
           <div className="hidden lg:block relative h-[50vh] w-full">
             {CARDS.map((card, index) => {
-              const start = index * 0.25;
-              const end = (index + 1) * 0.25;
+              const start = index * 0.2;
+              const end = (index + 1) * 0.2;
               
               // No overlap timings:
               // Fade out finishes exactly when the next fade in starts.
