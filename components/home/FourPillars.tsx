@@ -2,6 +2,7 @@ import React from "react";
 import { SectionHeading } from "../ui/SectionHeading";
 import { SectionIllustration } from "../ui/SectionIllustration";
 import { RevealOnScroll } from "../ui/RevealOnScroll";
+import { TopLeftCorner, BottomRightCorner } from "../ui/CornerOrnaments";
 
 const PILLARS = [
   { 
@@ -33,8 +34,15 @@ const PILLARS = [
 export function FourPillars() {
   return (
     <section 
-      className="py-24 px-6 md:px-12 border-y border-sacredGold/10 overflow-hidden relative z-20 bg-[#FEFCF8]"
+      className="py-24 px-6 md:px-12 border-y border-sacredGold/10 overflow-hidden relative z-20 group"
+      style={{
+        background: 'linear-gradient(160deg, #F2EDE4 0%, #EDE8DE 30%, #F5F0E8 60%, #EAE4D8 100%)'
+      }}
     >
+      {/* Decorative Ornaments */}
+      <TopLeftCorner className="top-0 left-0 w-[50%] sm:w-[35%] md:w-[30%] lg:w-[24%] xl:w-[20%] -translate-x-[20%] -translate-y-[20%] origin-top-left -rotate-6" />
+      <BottomRightCorner className="bottom-0 right-0 w-[50%] sm:w-[35%] md:w-[30%] lg:w-[24%] xl:w-[20%] translate-x-[10%] translate-y-[20%] origin-bottom-right -rotate-6" />
+
       <div className="max-w-7xl mx-auto relative z-10">
         <div className="mb-16 relative flex flex-col items-center justify-center">
           <span className="font-display italic text-[#C77738] tracking-[0.2em] text-sm uppercase mb-4 text-center">
@@ -45,7 +53,7 @@ export function FourPillars() {
           </h2>
         </div>
 
-        <div className="flex flex-col gap-24 md:gap-32 relative py-12">
+        <div className="flex flex-col gap-12 md:gap-16 relative py-12">
           {PILLARS.map((pillar, index) => {
             const isEven = index % 2 !== 0;
             return (

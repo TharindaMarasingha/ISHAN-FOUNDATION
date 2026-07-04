@@ -29,7 +29,10 @@ export function EightObjectives() {
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
           {OBJECTIVES.map((obj, index) => (
             <RevealOnScroll key={obj.number} delay={index * 0.05} className="h-full">
-              <NumberedCard {...obj} className="h-full shadow-sm hover:shadow-deepAmber/5" />
+              <NumberedCard 
+                {...obj} 
+                className="h-full bg-white/60 backdrop-blur-md border-[#C79A4B]/20 hover:border-[#C79A4B]/40 shadow-[0_4px_20px_rgba(46,26,14,0.02)] hover:shadow-[0_8px_30px_rgba(46,26,14,0.06)] transition-all duration-300" 
+              />
             </RevealOnScroll>
           ))}
         </div>
