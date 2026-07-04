@@ -9,39 +9,36 @@ const PILLARS = [
     number: "01", 
     title: "Wisdom", 
     description: "Preserving and disseminating timeless spiritual and practical knowledge. Cultivating timeless knowledge and profound understanding of the self and the universe.",
-    image: "/images/h1.jpg"
+    image: "/images/wisdom.jpg"
   },
   { 
     number: "02", 
     title: "Wellness", 
     description: "Promoting holistic health—physical, mental, and spiritual. Integrating physical health, mental clarity, and energetic balance.",
-    image: "/images/h2.jpg"
+    image: "/images/wellness.jpg"
   },
   { 
     number: "03", 
     title: "Humanity", 
     description: "Fostering compassionate communities and collective social responsibility. Fostering compassion, ethical living, and collective social responsibility.",
-    image: "/images/h3.jpg"
+    image: "/images/humanity.jpg"
   },
   { 
     number: "04", 
     title: "Nature", 
     description: "Cultivating sustainable ecosystems and deep ecological awareness. Restoring ecological harmony and living in sustainable alignment with the Earth.",
-    image: "/images/h4.jpg"
+    image: "/images/nature.jpg"
   },
 ];
 
 export function FourPillars() {
   return (
     <section 
-      className="py-24 px-6 md:px-12 border-y border-sacredGold/10 overflow-hidden relative z-20 group"
-      style={{
-        background: 'linear-gradient(160deg, #F2EDE4 0%, #EDE8DE 30%, #F5F0E8 60%, #EAE4D8 100%)'
-      }}
+      className="py-24 px-6 md:px-12 border-y border-sacredGold/10 overflow-hidden relative z-20 bg-[#FFF7F0] group"
     >
       {/* Decorative Ornaments */}
       <TopLeftCorner className="top-0 left-0 w-[50%] sm:w-[35%] md:w-[30%] lg:w-[24%] xl:w-[20%] -translate-x-[20%] -translate-y-[20%] origin-top-left -rotate-6" />
-      <BottomRightCorner className="bottom-0 right-0 w-[50%] sm:w-[35%] md:w-[30%] lg:w-[24%] xl:w-[20%] translate-x-[10%] translate-y-[20%] origin-bottom-right -rotate-6" />
+      <BottomRightCorner className="bottom-0 right-0 w-[50%] sm:w-[35%] md:w-[30%] lg:w-[24%] xl:w-[20%] translate-x-[20%] translate-y-[20%] origin-bottom-right -rotate-6" />
 
       <div className="max-w-7xl mx-auto relative z-10">
         <div className="mb-16 relative flex flex-col items-center justify-center">
