@@ -12,6 +12,8 @@ import { VisionQuote } from "@/components/home/VisionQuote";
 import { ContactCTA } from "@/components/home/ContactCTA";
 import { GoldDivider } from "@/components/ui/GoldDivider";
 
+import { OverlapParallax } from "@/components/ui/OverlapParallax";
+
 export const metadata = {
   title: "Home — ISHAN",
   description: "International Society of Humanity and Nature. Harmonising Humanity with Nature through Wisdom, Wellbeing, and Conscious Action.",
@@ -26,11 +28,15 @@ export default function Home() {
       
       <WhoWeAre />
       
-      <FourPillars />
-      <GoldDivider />
-      
-      <EightObjectives />
-      <GoldDivider />
+      <OverlapParallax
+        baseContent={<FourPillars />}
+        overlapContent={
+          <>
+            <EightObjectives />
+            <GoldDivider />
+          </>
+        }
+      />
       
       <Ecosystem />
       <GoldDivider />

@@ -34,8 +34,16 @@ const PILLARS = [
 export function FourPillars() {
   return (
     <section 
-      className="py-24 px-6 md:px-12 border-y border-sacredGold/10 overflow-hidden relative z-20 bg-[#FFF7F0] group"
+      className="py-24 px-6 md:px-12 border-t border-sacredGold/10 overflow-hidden relative z-20 bg-[#FFF7F0] group"
     >
+      {/* Left-side radial glow mimicking the hero section */}
+      <div 
+        className="absolute inset-0 pointer-events-none z-0"
+        style={{
+          background: 'radial-gradient(ellipse 60% 80% at 0% 50%, rgba(255, 160, 100, 0.25) 0%, rgba(255, 200, 150, 0.12) 40%, transparent 70%)'
+        }}
+      />
+
       {/* Decorative Ornaments */}
       <TopLeftCorner className="top-0 left-0 w-[50%] sm:w-[35%] md:w-[30%] lg:w-[24%] xl:w-[20%] -translate-x-[20%] -translate-y-[20%] origin-top-left -rotate-6" />
       <BottomRightCorner className="bottom-0 right-0 w-[50%] sm:w-[35%] md:w-[30%] lg:w-[24%] xl:w-[20%] translate-x-[20%] translate-y-[20%] origin-bottom-right -rotate-6" />
