@@ -46,7 +46,7 @@ export default function Navbar() {
           borderWidth: "1px",
           borderStyle: "solid",
         }}
-        className="fixed top-5 left-6 right-6 md:left-0 md:right-0 md:mx-auto max-w-[840px] z-50 rounded-full px-6 py-2 shadow-[0_4px_24px_rgba(0,0,0,0.18)] flex items-center"
+        className="fixed top-5 left-0 mx-4 w-[calc(100%-32px)] md:left-0 md:right-0 md:mx-auto md:w-full max-w-[840px] z-50 rounded-full px-6 py-2 shadow-[0_4px_24px_rgba(0,0,0,0.18)] flex items-center"
       >
         <div className="flex items-center justify-between w-full">
           
@@ -92,7 +92,7 @@ export default function Navbar() {
 
             {/* Mobile Menu Toggle */}
             <button
-              className="md:hidden text-sacredGold p-1"
+              className="flex md:hidden text-sacredGold p-1"
               onClick={() => setIsMobileMenuOpen(true)}
               aria-label="Open Menu"
             >

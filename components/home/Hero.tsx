@@ -35,7 +35,7 @@ export function Hero() {
   const y = useTransform(scrollYProgress, [0, 1], [0, 50]);
 
   return (
-    <section ref={sectionRef} className="relative min-h-screen flex items-center overflow-hidden">
+    <section ref={sectionRef} className="relative min-h-screen flex flex-col md:flex-row items-center overflow-hidden pt-28 md:pt-0">
       {/* Left-side radial glow */}
       <div 
         className="absolute inset-0 pointer-events-none z-0"
@@ -45,7 +45,7 @@ export function Hero() {
       />
       
       {/* Right Background Image Slideshow */}
-      <div className="absolute inset-0 w-full h-full bg-white">
+      <div className="order-last md:order-none relative md:absolute md:inset-0 w-[85vw] h-[55vw] md:w-full md:h-full bg-white mx-auto mt-8 md:mt-0 z-10 md:z-0 overflow-hidden mb-12 md:mb-0">
         <motion.div className="absolute inset-0 bg-white" style={{ y: prefersReducedMotion ? 0 : y }}>
           <AnimatePresence mode="popLayout">
             <motion.div
@@ -91,7 +91,7 @@ export function Hero() {
       </div>
 
       {/* Main Content Grid */}
-      <div className="relative z-20 w-full max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-2 pt-32 lg:pt-40 pb-20">
+      <div className="relative z-20 w-full max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-2 pt-0 md:pt-32 lg:pt-40 pb-4 md:pb-20">
         
         {/* Left Column: Text Content */}
         <div className="flex flex-col items-start justify-center text-left px-4 md:pl-0 lg:-ml-8 w-full max-w-2xl mx-auto md:mr-auto">
@@ -100,7 +100,7 @@ export function Hero() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, ease: "easeOut" }}
-            className="font-sans font-light text-[#8A8A8A] text-[9px] md:text-[10px] tracking-[0.3em] uppercase mb-8 -mt-8"
+            className="font-sans font-light text-[#8A8A8A] text-[9px] md:text-[10px] tracking-[0.3em] uppercase mb-8 -mt-8 max-w-full"
           >
             International Society of Humanity and Nature
           </motion.p>
@@ -109,17 +109,16 @@ export function Hero() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
-            className="flex flex-col items-start mb-4"
+            className="flex flex-col items-start mb-4 overflow-hidden max-w-full"
           >
             <h1 
               style={{
-                fontSize: 'clamp(6rem, 15vw, 12rem)',
                 letterSpacing: '0em',
                 color: '#2E1A0E',
                 fontWeight: 400,
                 paddingRight: '0.2em'
               }}
-              className={`${greatVibes.className} leading-none`}
+              className={`${greatVibes.className} leading-none text-6xl md:text-[clamp(6rem,15vw,12rem)]`}
             >
               Ishan
             </h1>
@@ -129,7 +128,7 @@ export function Hero() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 1, delay: 0.4 }}
-            className="font-sans italic text-[#6B6B6B] text-lg md:text-xl max-w-lg tracking-wide mb-3"
+            className="font-sans italic text-[#6B6B6B] text-lg md:text-xl max-w-full md:max-w-lg tracking-wide mb-3"
           >
             Harmonising Humanity with Nature through Wisdom, Wellness, and Collective Responsibility
           </motion.p>
@@ -138,7 +137,7 @@ export function Hero() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 1, delay: 0.5 }}
-            className="font-sans font-light text-[#8A8A8A] text-sm md:text-base max-w-lg leading-snug mb-8"
+            className="font-sans font-light text-[#8A8A8A] text-sm md:text-base max-w-full md:max-w-lg leading-snug mb-8"
           >
             ISHAN is an international organisation committed to integrating timeless wisdom, preventive wellness, environmental stewardship, and conscious community development into practical initiatives that benefit individuals, society, and the planet.
           </motion.p>
@@ -147,12 +146,12 @@ export function Hero() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.6 }}
-            className="flex flex-col sm:flex-row items-center justify-start gap-4 w-full mt-6"
+            className="flex flex-col md:flex-row items-center justify-start gap-3 md:gap-4 w-full mt-6"
           >
-            <button className="w-full sm:w-auto min-w-[180px] bg-gradient-to-r from-[#FFC120] to-[#F8A39B] text-[#2E1A0E] border-none px-8 py-3.5 rounded-full hover:shadow-xl hover:-translate-y-0.5 transition-all duration-300 font-sans font-medium tracking-wide uppercase text-[13px]">
+            <button className="w-full md:w-auto min-w-[180px] bg-gradient-to-r from-[#FFC120] to-[#F8A39B] text-[#2E1A0E] border-none px-8 py-3.5 rounded-full hover:shadow-xl hover:-translate-y-0.5 transition-all duration-300 font-sans font-medium tracking-wide uppercase text-[13px]">
               Explore Our Work
             </button>
-            <button className="w-full sm:w-auto min-w-[180px] bg-gradient-to-r from-[#FFC120] to-[#F8A39B] text-[#2E1A0E] border-none px-8 py-3.5 rounded-full hover:shadow-xl hover:-translate-y-0.5 transition-all duration-300 font-sans font-medium tracking-wide uppercase text-[13px]">
+            <button className="w-full md:w-auto min-w-[180px] bg-gradient-to-r from-[#FFC120] to-[#F8A39B] text-[#2E1A0E] border-none px-8 py-3.5 rounded-full hover:shadow-xl hover:-translate-y-0.5 transition-all duration-300 font-sans font-medium tracking-wide uppercase text-[13px]">
               About ISHAN
             </button>
           </motion.div>
