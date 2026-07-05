@@ -17,7 +17,12 @@ export function Approach() {
   const prefersReducedMotion = useReducedMotion();
 
   return (
-    <section className="py-24 px-6 md:px-12">
+    <section 
+      className="pt-[100px] pb-24 px-6 md:px-12"
+      style={{
+        background: 'linear-gradient(160deg, #FDF0E6 0%, #FFF8F2 40%, #FEF3E8 70%, #FAE8D4 100%)'
+      }}
+    >
       <div className="max-w-7xl mx-auto">
         <div className="mb-20 relative flex justify-center">
           <SectionIllustration

@@ -1,89 +1,129 @@
+"use client";
+
 import React from "react";
 import { SectionHeading } from "../ui/SectionHeading";
 import { SectionIllustration } from "../ui/SectionIllustration";
 import { RevealOnScroll } from "../ui/RevealOnScroll";
 import Link from "next/link";
+import Image from "next/image";
 import { EcosystemCard as EcosystemCardType } from "@/lib/types";
+import { motion } from "framer-motion";
 
-const ECOSYSTEM_CARDS: EcosystemCardType[] = [
+type EcosystemData = EcosystemCardType & { image: string, cardBackground: string };
+
+const ECOSYSTEM_CARDS: EcosystemData[] = [
   {
-    tag: "Preventive Wellness · Proactive Wellbeing",
+    tag: "PREVENTIVE WELLNESS · PROACTIVE WELLBEING",
     title: "Arogya Ashram International",
     subtitle: "AAI — Sri Lanka Chapter",
     description: "Holistic wellness education, preventive healthcare and integrative wellbeing — rooted in the world's oldest healing heritage.",
     href: "/arogya",
-    accentColor: "var(--color-burntOrange)",
+    accentColor: "#C9A84C",
+    image: "/images/ecosystem-arogya.jpg",
+    cardBackground: "rgba(255, 248, 235, 0.85)",
   },
   {
-    tag: "Research · Consciousness · Ethics",
+    tag: "RESEARCH · CONSCIOUSNESS · ETHICS",
     title: "Universal Spiritual Science",
     subtitle: "USS — Inner Knowledge Institute",
     description: "Research, education and consciousness studies across contemplative traditions, ethics, philosophy and inner development.",
     href: "/uss",
-    accentColor: "#1B4332",
+    accentColor: "#2C5F4A",
+    image: "/images/ecosystem-uss.jpg",
+    cardBackground: "rgba(240, 248, 244, 0.85)",
   },
   {
-    tag: "The Inner Immersion",
+    tag: "THE INNER IMMERSION",
     title: "Samanvaya",
     subtitle: "ISHAN's Flagship Immersive Experience",
     description: "A flagship immersive experience for profound inner exploration through nature, silence, wisdom and experiential learning.",
     href: "/samanvaya",
-    accentColor: "var(--color-mandarin)",
+    accentColor: "#8B4513",
+    image: "/images/ecosystem-samanvaya.jpg",
+    cardBackground: "rgba(252, 243, 235, 0.85)",
   },
   {
-    tag: "Divine Spiritual Wellness Township",
+    tag: "DIVINE SPIRITUAL WELLNESS TOWNSHIP",
     title: "Sri Vrindavan Project",
     subtitle: "Sri Lanka's First Conscious Living Township",
-    description: "A 150-acre living community where spirituality, conscious living, holistic wellness, nature and cultural life come together.",
-    href: "/brindavan",
-    accentColor: "var(--color-deepAmber)",
+    description: "A 150-acre living community where spirituality, conscious living, holistic wellness, nature, and vibrant cultural life come together in a single, purposefully designed sacred settlement.",
+    href: "/vrindavan",
+    accentColor: "#4A3728",
+    image: "/images/ecosystem-vrindavan.jpg",
+    cardBackground: "rgba(245, 240, 235, 0.85)",
   },
 ];
 
-function EcosystemCard({ card, delay }: { card: EcosystemCardType; delay: number }) {
-  return (
-    <RevealOnScroll delay={delay} className="h-full">
-      <Link href={card.href} className="block h-full outline-none group/eco motion-safe:hover:-translate-y-1.5 transition-transform duration-500">
-        <div className="h-full flex flex-col bg-darkBrown/5 border border-burntOrange/20 p-8 sm:p-10 relative overflow-hidden transition-all duration-500 ease-out shadow-[0_2px_10px_rgba(46,26,14,0.03)] motion-safe:group-hover/eco:shadow-[0_12px_35px_rgba(46,26,14,0.08)] group-hover/eco:border-burntOrange/50">
-          
-          {/* Shine sweep */}
-          <div className="absolute inset-0 -translate-x-[150%] bg-gradient-to-r from-transparent via-white/5 to-transparent motion-safe:group-hover/eco:translate-x-[150%] transition-transform duration-[1.5s] ease-in-out pointer-events-none" />
+function EcosystemCard({ card, index, delay }: { card: EcosystemData; index: number; delay: number }) {
+  const imageLeft = index % 2 === 0;
 
+  return (
+    <RevealOnScroll delay={delay} viewportAmount={0.05} className="w-full">
+      <Link href={card.href} className="group/link block outline-none hover:-translate-y-1 transition-transform duration-300">
+        <div 
+          className="flex flex-col md:flex-row w-full min-h-[380px] rounded-[20px] overflow-hidden border border-black/8 relative"
+          style={{ 
+            backgroundColor: card.cardBackground,
+            borderLeft: `3px solid ${card.accentColor}`
+          }}
+        >
           {/* Top Accent Bar */}
-          <div
-            className="absolute top-0 left-0 right-0 h-[3px] transition-all duration-300 group-hover/eco:h-[5px]"
+          <div 
+            className="absolute top-0 left-0 right-0 h-[4px] z-20"
             style={{ backgroundColor: card.accentColor }}
           />
           
-          <div className="mb-6 relative z-10">
-            <span
-              className="inline-block px-3 py-1 rounded-full border border-burntOrange/30 text-[0.65rem] uppercase tracking-widest text-burntOrange"
-              style={{ borderColor: `color-mix(in srgb, ${card.accentColor} 40%, transparent)`, color: card.accentColor }}
+          {/* IMAGE HALF */}
+          <div className={`w-full md:w-1/2 relative h-[250px] md:h-auto overflow-hidden ${imageLeft ? 'md:order-1' : 'md:order-2'}`}>
+            <motion.div 
+              className="absolute inset-0 w-full h-full"
+              initial={{ x: imageLeft ? -40 : 40, opacity: 0 }}
+              whileInView={{ x: 0, opacity: 1 }}
+              viewport={{ once: true, amount: 0.05 }}
+              transition={{ duration: 0.8, ease: "easeOut" }}
+            >
+               <Image 
+                 src={card.image} 
+                 alt={card.title} 
+                 fill 
+                 className="object-cover object-center group-hover/link:scale-105 transition-transform duration-700 ease-out" 
+               />
+            </motion.div>
+            
+          </div>
+
+          {/* CONTENT HALF */}
+          <div className={`w-full md:w-1/2 py-[48px] px-[40px] flex flex-col justify-start items-start ${imageLeft ? 'md:order-2' : 'md:order-1'}`}>
+            
+            <span 
+              className="inline-block border font-sans text-[11px] uppercase tracking-[0.2em] rounded-full px-4 py-1.5"
+              style={{ borderColor: card.accentColor, color: card.accentColor }}
             >
               {card.tag}
             </span>
+
+            <h3 className="font-forum text-[32px] text-deepAmber font-normal mt-4">
+              {card.title}
+            </h3>
+
+            <p className="font-sans italic text-[14px] text-burntOrange mt-1">
+              {card.subtitle}
+            </p>
+
+            <p className="font-sans font-light text-[15px] text-[#5a4a3a] leading-[1.7] mt-5 line-clamp-3">
+              {card.description}
+            </p>
+
+            <div 
+              className="font-sans font-medium text-[13px] mt-auto pt-6 flex items-center"
+              style={{ color: card.accentColor }}
+            >
+              Explore {card.title.split(' ')[0]} 
+              <span className="ml-1.5 inline-block transition-transform duration-300 group-hover/link:translate-x-[4px]">→</span>
+            </div>
+
           </div>
 
-          <h3 className="font-display font-light text-3xl md:text-4xl text-deepAmber mb-2 relative z-10">
-            {card.title}
-          </h3>
-          <p
-            className="font-display italic text-lg tracking-wider mb-6 relative z-10"
-            style={{ color: card.accentColor }}
-          >
-            {card.subtitle}
-          </p>
-
-          <p className="font-sans font-light text-deepAmber/80 leading-relaxed mb-10 flex-grow relative z-10">
-            {card.description}
-          </p>
-
-          <div className="mt-auto flex items-center font-display italic text-lg tracking-widest text-deepAmber group-hover/eco:text-burntOrange transition-colors duration-300 relative z-10">
-            <span>Explore {card.title.split(' ')[0]}</span>
-            <span className="ml-2 inline-block transition-transform duration-300 motion-safe:group-hover/eco:translate-x-2 motion-safe:group-hover/eco:-rotate-3">
-              →
-            </span>
-          </div>
         </div>
       </Link>
     </RevealOnScroll>
@@ -91,12 +131,14 @@ function EcosystemCard({ card, delay }: { card: EcosystemCardType; delay: number
 }
 
 export function Ecosystem() {
+  console.log("Total ecosystem cards rendering:", ECOSYSTEM_CARDS.length);
+  
   return (
     <section 
       id="ecosystem" 
-      className="py-24 px-6 md:px-12 border-y border-sacredGold/10"
+      className="pt-[100px] pb-20 px-6 md:px-12"
       style={{
-        background: 'linear-gradient(135deg, rgba(255, 200, 150, 0.12) 0%, rgba(255, 255, 255, 0.6) 50%, rgba(255, 220, 180, 0.1) 100%)'
+        backgroundColor: '#FCF6F0'
       }}
     >
       <div className="max-w-7xl mx-auto">
@@ -113,9 +155,9 @@ export function Ecosystem() {
           />
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+        <div className="flex flex-col gap-16">
           {ECOSYSTEM_CARDS.map((card, index) => (
-            <EcosystemCard key={card.title} card={card} delay={index * 0.09} />
+            <EcosystemCard key={card.title} card={card} index={index} delay={index * 0.1} />
           ))}
         </div>
       </div>

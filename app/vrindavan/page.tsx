@@ -1,8 +1,8 @@
-import { Hero } from "@/components/brindavan/Hero";
-import { Vision } from "@/components/brindavan/Vision";
-import { Zones } from "@/components/brindavan/Zones";
-import { StatsScale } from "@/components/brindavan/StatsScale";
-import { Partnership } from "@/components/brindavan/Partnership";
+import { Hero } from "@/components/vrindavan/Hero";
+import { Vision } from "@/components/vrindavan/Vision";
+import { Zones } from "@/components/vrindavan/Zones";
+import { StatsScale } from "@/components/vrindavan/StatsScale";
+import { Partnership } from "@/components/vrindavan/Partnership";
 import { GoldDivider } from "@/components/ui/GoldDivider";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { Button } from "@/components/ui/Button";

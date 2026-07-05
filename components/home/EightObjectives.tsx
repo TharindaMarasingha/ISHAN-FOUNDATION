@@ -90,7 +90,7 @@ export function EightObjectives() {
       {/* Bottom SVG Layer Break (Inverted) */}
       <div className="absolute bottom-[-1px] left-0 w-full leading-[0] z-10 pointer-events-none rotate-180">
         <svg viewBox="0 0 1440 60" preserveAspectRatio="none" className="w-full h-[60px] md:h-[80px]">
-          <path d="M0,40 C360,80 1080,0 1440,40 L1440,0 L0,0 Z" fill="#FEFCF8"/>
+          <path d="M0,40 C360,80 1080,0 1440,40 L1440,0 L0,0 Z" fill="#FCF6F0"/>
         </svg>
       </div>
 

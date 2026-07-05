@@ -10,7 +10,7 @@ const footerLinks = [
   { label: "Arogya Ashram", href: "/arogya" },
   { label: "Inner Immersion", href: "/samanvaya" },
   { label: "USS", href: "/uss" },
-  { label: "Sri Vrindavan", href: "/brindavan" },
+  { label: "Sri Vrindavan", href: "/vrindavan" },
   { label: "Connect", href: "/contact" },
 ];
 

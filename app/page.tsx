@@ -31,15 +31,11 @@ export default function Home() {
       <OverlapParallax
         baseContent={<FourPillars />}
         overlapContent={
-          <>
-            <EightObjectives />
-            <GoldDivider />
-          </>
+          <EightObjectives />
         }
       />
       
       <Ecosystem />
-      <GoldDivider />
       
       <Approach />
       <GoldDivider />
