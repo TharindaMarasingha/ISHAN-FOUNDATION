@@ -45,11 +45,15 @@ export default function Home() {
         overlapContent={<Team />}
       />
       
-      <WhoWeServe />
-      
-      <Partnerships />
-      
-      <VisionQuote />
+      <OverlapParallax
+        baseContent={
+          <OverlapParallax
+            baseContent={<WhoWeServe />}
+            overlapContent={<Partnerships />}
+          />
+        }
+        overlapContent={<VisionQuote />}
+      />
       
       <ContactCTA />
     </div>

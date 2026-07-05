@@ -24,7 +24,7 @@ export function Button({
   magnetic = true,
 }: ButtonProps) {
   const baseClasses =
-    "inline-block uppercase text-xs tracking-[0.15em] px-10 py-4 transition-colors duration-300 rounded-sm";
+    "inline-block uppercase text-xs tracking-[0.15em] px-10 py-4 transition-colors duration-300 rounded-full";
   
   const variantClasses =
     variant === "primary"
