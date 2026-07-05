@@ -81,17 +81,33 @@ export function Approach() {
 
   return (
     <section 
-      className="pt-[100px] pb-24 px-6 md:px-12 overflow-hidden"
+      className="pt-[100px] pb-24 px-6 md:px-12 overflow-hidden relative"
       style={{
         background: 'linear-gradient(160deg, #FDF0E6 0%, #FFF8F2 40%, #FEF3E8 70%, #FAE8D4 100%)'
       }}
     >
-      <div className="max-w-6xl mx-auto">
+      <motion.img 
+        src="/download.svg"
+        alt=""
+        className="absolute -left-20 top-[15%] w-[450px] md:w-[550px] opacity-[0.08] pointer-events-none z-0"
+        initial={{ opacity: 0, x: -50 }}
+        whileInView={{ opacity: 0.08, x: 0 }}
+        transition={{ duration: 1.5, ease: "easeOut" }}
+        viewport={{ once: true, amount: 0.1 }}
+      />
+
+      <motion.img 
+        src="/bc.svg"
+        alt=""
+        className="absolute -right-20 top-[50%] w-[450px] md:w-[600px] opacity-[0.08] pointer-events-none z-0"
+        initial={{ opacity: 0, x: 50 }}
+        whileInView={{ opacity: 0.08, x: 0 }}
+        transition={{ duration: 1.5, ease: "easeOut" }}
+        viewport={{ once: true, amount: 0.1 }}
+      />
+
+      <div className="max-w-6xl mx-auto relative z-10">
         <div className="mb-24 relative flex justify-center text-center">
-          <SectionIllustration
-            variant="sun-rays"
-            className="absolute -top-14 w-32 h-32 text-burntOrange opacity-10 pointer-events-none"
-          />
           <SectionHeading
             align="center"
             eyebrow="The ISHAN Way"

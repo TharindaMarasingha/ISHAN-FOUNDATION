@@ -36,16 +36,16 @@ export default function Home() {
       />
       
       <OverlapParallax
-        baseContent={<Ecosystem />}
-        overlapContent={<Approach />}
+        baseContent={
+          <OverlapParallax
+            baseContent={<Ecosystem />}
+            overlapContent={<Approach />}
+          />
+        }
+        overlapContent={<Team />}
       />
-      <GoldDivider />
-      
-      <Team />
-      <GoldDivider />
       
       <WhoWeServe />
-      <GoldDivider />
       
       <Partnerships />
       
