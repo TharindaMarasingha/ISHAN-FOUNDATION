@@ -54,15 +54,17 @@ export default function Navbar() {
           backgroundColor: isScrolled 
             ? 'rgba(30,15,5,0.96)'
             : (isMounted && isMobile)
-              ? 'rgba(30,15,5,0.50)'
+              ? 'rgba(30,15,5,0.65)'
               : 'rgba(30,15,5,0)',
-          borderColor: (isScrolled || (isMounted && isMobile))
-            ? 'rgba(201,168,76,0.28)'
-            : 'rgba(201,168,76,0)',
+          borderColor: isScrolled
+            ? 'rgba(201,168,76,0.35)'
+            : (isMounted && isMobile)
+              ? 'rgba(201,168,76,0.30)'
+              : 'rgba(201,168,76,0)',
           backdropFilter: isScrolled ? "blur(20px) saturate(160%)" : "blur(16px) saturate(160%)",
         }}
         transition={{ duration: 0.5, ease: "easeInOut" }}
-        className="fixed top-3 z-50 rounded-full w-[calc(100%-24px)] left-3 md:left-1/2 md:right-auto md:w-[860px] md:-translate-x-1/2 border border-[rgba(201,168,76,0.25)] md:border-none px-4 py-2.5 md:px-6 md:py-2 shadow-[0_4px_24px_rgba(0,0,0,0.18)] flex items-center justify-between transition-all duration-500"
+        className="fixed top-3 z-50 rounded-full w-[calc(100vw-24px)] left-[12px] md:w-[860px] md:left-1/2 md:top-4 md:transform md:-translate-x-1/2 border border-[rgba(201,168,76,0.25)] md:border-none px-4 py-2.5 md:px-6 md:py-2 shadow-[0_4px_24px_rgba(0,0,0,0.18)] flex items-center justify-between transition-all duration-500"
         style={{
           borderWidth: "1px",
           borderStyle: "solid",
