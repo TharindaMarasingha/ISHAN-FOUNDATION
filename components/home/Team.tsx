@@ -109,6 +109,7 @@ export function Team() {
                       src={activeMember.image}
                       alt={activeMember.name}
                       fill
+                      sizes="(max-width: 768px) 100vw, 50vw"
                       className="object-cover object-center z-0"
                     />
                     {/* Dark gradient overlay so white text is readable at the bottom */}

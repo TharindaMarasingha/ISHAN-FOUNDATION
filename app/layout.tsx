@@ -11,18 +11,21 @@ const raleway = Raleway({
   variable: "--font-raleway",
   subsets: ["latin"],
   weight: ["300", "400", "500", "600"],
+  preload: false,
 });
 
 const forum = Forum({
   variable: "--font-forum",
   subsets: ["latin"],
   weight: ["400"],
+  preload: false,
 });
 
 const tenor = Tenor_Sans({
   variable: "--font-tenor",
   subsets: ["latin"],
   weight: ["400"],
+  preload: false,
 });
 
 export const metadata: Metadata = {

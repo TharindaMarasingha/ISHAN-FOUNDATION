@@ -263,6 +263,7 @@ export function EightObjectives() {
                   src={activeImage.src}
                   alt={activeImage.title}
                   fill
+                  sizes="100vw"
                   className="object-contain"
                   priority
                 />

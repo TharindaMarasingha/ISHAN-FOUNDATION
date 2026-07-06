@@ -21,6 +21,19 @@ export default function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const { scrollY } = useScroll();
+  
+  const [isMounted, setIsMounted] = useState(false);
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    setIsMounted(true);
+    const checkMobile = () => {
+      setIsMobile(window.innerWidth < 768);
+    };
+    checkMobile();
+    window.addEventListener('resize', checkMobile);
+    return () => window.removeEventListener('resize', checkMobile);
+  }, []);
 
   useEffect(() => {
     const handleScroll = (latest: number) => {
@@ -35,18 +48,25 @@ export default function Navbar() {
   return (
     <>
       <motion.nav
+        id="main-nav"
         initial={false}
         animate={{
-          backgroundColor: isScrolled ? "rgba(138, 130, 125, 0.85)" : "rgba(138, 130, 125, 0.45)",
+          backgroundColor: isScrolled 
+            ? 'rgba(30,15,5,0.96)'
+            : (isMounted && isMobile)
+              ? 'rgba(30,15,5,0.50)'
+              : 'rgba(30,15,5,0)',
+          borderColor: (isScrolled || (isMounted && isMobile))
+            ? 'rgba(201,168,76,0.28)'
+            : 'rgba(201,168,76,0)',
           backdropFilter: isScrolled ? "blur(20px) saturate(160%)" : "blur(16px) saturate(160%)",
-          borderColor: isScrolled ? "rgba(247, 190, 67, 0.35)" : "rgba(247, 190, 67, 0.25)",
         }}
         transition={{ duration: 0.5, ease: "easeInOut" }}
+        className="fixed top-3 z-50 rounded-full w-[calc(100%-24px)] left-3 md:left-1/2 md:right-auto md:w-[860px] md:-translate-x-1/2 border border-[rgba(201,168,76,0.25)] md:border-none px-4 py-2.5 md:px-6 md:py-2 shadow-[0_4px_24px_rgba(0,0,0,0.18)] flex items-center justify-between transition-all duration-500"
         style={{
           borderWidth: "1px",
           borderStyle: "solid",
         }}
-        className="fixed top-5 left-0 mx-4 w-[calc(100%-32px)] md:left-0 md:right-0 md:mx-auto md:w-full max-w-[840px] z-50 rounded-full px-6 py-2 shadow-[0_4px_24px_rgba(0,0,0,0.18)] flex items-center"
       >
         <div className="flex items-center justify-between w-full">
           
@@ -57,9 +77,12 @@ export default function Navbar() {
               alt="ISHAN Logo"
               width={150}
               height={150}
-              className="h-10 w-auto object-contain brightness-0 invert opacity-90"
+              className="h-10 w-auto object-contain brightness-0 invert opacity-90 hidden md:block"
               priority
             />
+            <span className="md:hidden font-forum text-[#C9A84C] text-[14px] tracking-[0.15em]">
+              ISHAN
+            </span>
           </Link>
 
           {/* Center: Desktop Nav Links */}
@@ -92,11 +115,11 @@ export default function Navbar() {
 
             {/* Mobile Menu Toggle */}
             <button
-              className="flex md:hidden text-sacredGold p-1"
+              className="flex md:hidden text-[#C9A84C] p-1"
               onClick={() => setIsMobileMenuOpen(true)}
               aria-label="Open Menu"
             >
-              <Menu size={24} />
+              <Menu size={20} />
             </button>
           </div>
         </div>
@@ -111,27 +134,33 @@ export default function Navbar() {
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
               transition={{ duration: 0.3 }}
-              className="fixed inset-0 bg-black/60 backdrop-blur-sm z-[60] md:hidden"
+              className="fixed inset-0 z-[90] md:hidden"
+              style={{ background: "rgba(0,0,0,0.5)" }}
               onClick={() => setIsMobileMenuOpen(false)}
             />
             <motion.div
               initial={{ x: "100%" }}
               animate={{ x: 0 }}
               exit={{ x: "100%" }}
-              transition={{ type: "tween", ease: "easeInOut", duration: 0.4 }}
-              className="fixed top-0 right-0 w-4/5 max-w-sm h-full bg-darkBrown border-l border-sacredGold/20 z-[70] flex flex-col p-8 shadow-2xl md:hidden overflow-y-auto"
+              transition={{ duration: 0.3, ease: "easeOut" }}
+              className="fixed top-0 right-0 bottom-0 w-[75vw] max-w-[300px] z-[100] flex flex-col md:hidden overflow-y-auto"
+              style={{
+                background: "rgba(20,10,4,0.97)",
+                backdropFilter: "blur(20px)",
+                borderLeft: "1px solid rgba(201,168,76,0.2)"
+              }}
             >
-              <div className="flex justify-end mb-12">
+              <div className="flex justify-end p-6">
                 <button
-                  className="text-sacredGold p-2"
+                  className="text-[#C9A84C]"
                   onClick={() => setIsMobileMenuOpen(false)}
                   aria-label="Close Menu"
                 >
-                  <X size={28} />
+                  <X size={24} />
                 </button>
               </div>
 
-              <div className="flex flex-col space-y-8">
+              <div className="flex flex-col">
                 {navLinks.map((link) => {
                   const isActive = pathname === link.href;
                   return (
@@ -139,23 +168,24 @@ export default function Navbar() {
                       key={link.label}
                       href={link.href}
                       onClick={() => setIsMobileMenuOpen(false)}
-                      className={`font-display text-2xl uppercase tracking-widest transition-colors duration-300 ${
-                        isActive ? "text-sacredGold" : "text-softApricot hover:text-sacredGold"
+                      className={`font-forum text-[22px] px-6 py-[14px] border-b border-white/5 transition-colors duration-300 ${
+                        isActive ? "text-[#C9A84C]" : "text-white"
                       }`}
                     >
                       {link.label}
                     </Link>
                   );
                 })}
-                <div className="pt-8 border-t border-sacredGold/20 mt-4">
-                  <Link
-                    href="/contact"
-                    onClick={() => setIsMobileMenuOpen(false)}
-                    className="inline-block px-8 py-3 rounded-full bg-gradient-to-r from-[#FFC120] to-[#F8A39B] text-[#2E1A0E] font-medium text-sm uppercase tracking-widest hover:shadow-lg transition-all duration-300 border-none"
-                  >
-                    Connect
-                  </Link>
-                </div>
+              </div>
+
+              <div className="mt-auto p-6">
+                <Link
+                  href="/contact"
+                  onClick={() => setIsMobileMenuOpen(false)}
+                  className="block w-full text-center bg-[#9C3F00] text-white rounded-xl py-3 uppercase tracking-widest font-sans font-semibold text-sm hover:shadow-lg transition-all duration-300"
+                >
+                  Connect
+                </Link>
               </div>
             </motion.div>
           </>

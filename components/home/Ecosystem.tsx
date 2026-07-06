@@ -86,6 +86,7 @@ function EcosystemCard({ card, index, delay }: { card: EcosystemData; index: num
                  src={card.image} 
                  alt={card.title} 
                  fill 
+                 sizes="(max-width: 768px) 100vw, 50vw"
                  className="object-cover object-center group-hover/link:scale-105 transition-transform duration-700 ease-out" 
                />
             </motion.div>
