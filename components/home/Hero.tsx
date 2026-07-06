@@ -15,15 +15,26 @@ export function Hero() {
   const sectionRef = useRef<HTMLElement>(null);
   
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
+  const [isHoveredOrDragged, setIsHoveredOrDragged] = useState(false);
   const images = ["/images/h1.jpg", "/images/h2.jpg", "/images/h3.jpg", "/images/h4.jpg"];
 
   useEffect(() => {
-    if (prefersReducedMotion) return;
+    if (prefersReducedMotion || isHoveredOrDragged) return;
     const interval = setInterval(() => {
       setCurrentImageIndex((prev) => (prev + 1) % images.length);
-    }, 8000); // 8 seconds per slide
+    }, 5000); // 5 seconds per slide for mobile
     return () => clearInterval(interval);
-  }, [images.length, prefersReducedMotion]);
+  }, [images.length, prefersReducedMotion, isHoveredOrDragged]);
+
+  const handleDragEnd = (e: any, { offset, velocity }: any) => {
+    setIsHoveredOrDragged(false);
+    const swipe = offset.x;
+    if (swipe < -50) {
+      setCurrentImageIndex((prev) => (prev + 1) % images.length);
+    } else if (swipe > 50) {
+      setCurrentImageIndex((prev) => (prev - 1 + images.length) % images.length);
+    }
+  };
 
   // Optional: subtle parallax for the background image
   const { scrollYProgress } = useScroll({
@@ -43,37 +54,53 @@ export function Hero() {
         }}
       />
 
-      {/* MOBILE BACKGROUND IMAGE SHAPE */}
-      <div 
-        className="absolute top-0 -right-5 w-[75vw] h-[60vh] overflow-hidden md:hidden z-0"
-        style={{ clipPath: "polygon(20% 0%, 100% 0%, 100% 80%, 0% 100%)" }}
-      >
-        <motion.div className="absolute inset-0 bg-white" style={{ y: prefersReducedMotion ? 0 : y }}>
-          <AnimatePresence mode="popLayout">
+      {/* MOBILE FULL-SCREEN SLIDESHOW */}
+      <div className="absolute inset-0 md:hidden z-0 overflow-hidden bg-black">
+        <motion.div 
+          className="absolute inset-0 w-full h-full cursor-grab active:cursor-grabbing"
+          drag="x"
+          dragConstraints={{ left: 0, right: 0 }}
+          dragElastic={0.2}
+          onDragStart={() => setIsHoveredOrDragged(true)}
+          onDragEnd={handleDragEnd}
+        >
+          <AnimatePresence mode="wait">
             <motion.div
               key={currentImageIndex}
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
+              initial={{ opacity: 0, scale: 1 }}
+              animate={{ opacity: 1, scale: prefersReducedMotion ? 1 : 1.05 }}
               exit={{ opacity: 0 }}
-              transition={{ duration: 2.5, ease: "easeInOut" }}
-              className="absolute inset-0"
+              transition={{ duration: 1.5, ease: "easeInOut" }}
+              className="absolute inset-0 w-full h-full"
             >
               <Image
                 src={images[currentImageIndex]}
                 alt={`Hero Background ${currentImageIndex + 1}`}
                 fill
                 sizes="100vw"
-                className="object-cover object-center"
+                className="object-cover object-center pointer-events-none"
                 priority
               />
             </motion.div>
           </AnimatePresence>
         </motion.div>
-        {/* Overlay gradient */}
+        {/* Overlay gradient to ensure text readability on mobile */}
         <div 
-          className="absolute inset-0 z-10"
-          style={{ background: "linear-gradient(to bottom left, transparent 30%, rgba(255,210,170,0.75) 80%)" }}
+          className="absolute inset-0 z-10 pointer-events-none"
+          style={{ background: "linear-gradient(to bottom, rgba(0,0,0,0.1) 0%, rgba(255,245,235,0.4) 60%, rgba(255,245,235,1) 100%)" }}
         />
+        
+        {/* Mobile Pagination Dots */}
+        <div className="absolute bottom-[60px] left-0 right-0 flex justify-center items-center gap-3 z-20 pointer-events-none">
+          {images.map((_, idx) => (
+            <div 
+              key={idx}
+              className={`h-2 rounded-full transition-all duration-500 ${
+                idx === currentImageIndex ? "w-6 bg-sacredGold" : "w-2 bg-white/50"
+              }`}
+            />
+          ))}
+        </div>
       </div>
 
       {/* MOBILE FLOATING ACCENT DOTS */}
@@ -142,7 +169,12 @@ export function Hero() {
             International Society of Humanity & Nature
           </motion.p>
 
-          <div className="bg-[rgba(255,245,235,0.70)] backdrop-blur-[4px] p-4 rounded-2xl mb-5 md:bg-transparent md:backdrop-blur-none md:p-0 md:rounded-none md:mb-0">
+          <motion.div 
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 1, delay: 0.1, ease: "easeOut" }}
+            className="bg-white/85 backdrop-blur-xl shadow-2xl rounded-[32px] p-7 md:bg-transparent md:backdrop-blur-none md:shadow-none md:rounded-none md:p-0 mb-8 mt-12 md:mt-0 md:mb-0 border border-white/40 md:border-none relative z-20 w-full"
+          >
             <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
@@ -192,7 +224,7 @@ export function Hero() {
               About ISHAN
             </button>
           </motion.div>
-          </div>
+          </motion.div>
         </div>
 
         {/* Right Column: Empty */}
@@ -201,8 +233,8 @@ export function Hero() {
       </div>
 
       {/* Mobile Scroll Indicator */}
-      <div className="md:hidden absolute bottom-0 left-0 right-0 flex justify-between items-center px-6 py-3.5 rounded-t-[24px] border-t border-white/35 z-20"
-           style={{ background: "rgba(255,255,255,0.25)", backdropFilter: "blur(12px)" }}>
+      <div className="md:hidden absolute bottom-0 left-0 right-0 flex justify-between items-center px-6 py-3.5 rounded-t-[24px] border-t border-white/20 z-20"
+           style={{ background: "rgba(255,255,255,0.15)", backdropFilter: "blur(12px)" }}>
         <span className="font-sans text-[8px] uppercase tracking-[0.2em] text-[#3e2312] opacity-80 font-semibold">
           Scroll to explore
         </span>
