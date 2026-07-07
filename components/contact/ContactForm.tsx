@@ -148,13 +148,18 @@ export function ContactForm() {
             aria-invalid={!!errors.role}
             aria-describedby={errors.role ? "role-error" : undefined}
           >
-            <option value="" disabled>Select an option</option>
-            <option value="Individual">Individual</option>
-            <option value="Wellness Practitioner">Wellness Practitioner</option>
-            <option value="Institutional Partner">Institutional Partner</option>
-            <option value="Investor">Investor</option>
-            <option value="Media">Media</option>
-            <option value="Other">Other</option>
+            <option value="" disabled>Select an area of interest</option>
+            <option value="Wellness Programmes">Wellness Programmes</option>
+            <option value="Leadership Development">Leadership Development</option>
+            <option value="Educational Initiatives">Educational Initiatives</option>
+            <option value="Retreats & Immersive Experiences">Retreats & Immersive Experiences</option>
+            <option value="Community Development">Community Development</option>
+            <option value="Research & Publications">Research & Publications</option>
+            <option value="Institutional Partnerships">Institutional Partnerships</option>
+            <option value="Environmental Projects">Environmental Projects</option>
+            <option value="Volunteering">Volunteering</option>
+            <option value="Professional Collaboration">Professional Collaboration</option>
+            <option value="Philanthropic Support">Philanthropic Support</option>
           </select>
           {errors.role && <span id="role-error" className="text-xs text-red-500">{errors.role}</span>}
         </div>

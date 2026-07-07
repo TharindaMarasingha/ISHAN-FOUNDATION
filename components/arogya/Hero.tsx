@@ -41,7 +41,7 @@ export function Hero() {
           transition={{ duration: 1, ease: "easeOut", delay: 0.4 }}
           className="font-display italic text-lg md:text-xl text-sacredGold mb-8"
         >
-          Preventive Wellness · Proactive Wellbeing
+          AAI — Holistic Wellness Initiative
         </motion.p>
 
         <motion.p
@@ -50,7 +50,7 @@ export function Hero() {
           transition={{ duration: 1, ease: "easeOut", delay: 0.6 }}
           className="font-sans font-light text-deepAmber max-w-2xl leading-relaxed mb-16"
         >
-          A globally scalable ecosystem for integrated wellness, sustainability, and the holistic evolution of humanity — rooted in Sri Lanka's ancient Arogyasala heritage and carried forward by a global founding trinity of internationally certified Yoginis.
+          Dedicated to promoting holistic health through preventive wellness, lifestyle education, yoga, meditation, breathwork, mindful movement, nutrition, stress management, and integrative wellbeing practices.
         </motion.p>
 
         <div className="grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-16 w-full max-w-4xl border-t border-burntOrange/20 pt-12">

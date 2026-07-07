@@ -1,8 +1,8 @@
-import { Hero } from "@/components/vrindavan/Hero";
-import { Vision } from "@/components/vrindavan/Vision";
-import { Zones } from "@/components/vrindavan/Zones";
-import { StatsScale } from "@/components/vrindavan/StatsScale";
-import { Partnership } from "@/components/vrindavan/Partnership";
+import { Hero } from "@/components/sri-vrindavan/Hero";
+import { Vision } from "@/components/sri-vrindavan/Vision";
+import { Zones } from "@/components/sri-vrindavan/Zones";
+import { StatsScale } from "@/components/sri-vrindavan/StatsScale";
+import { Partnership } from "@/components/sri-vrindavan/Partnership";
 import { GoldDivider } from "@/components/ui/GoldDivider";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { Button } from "@/components/ui/Button";
@@ -13,7 +13,7 @@ export const metadata = {
   description: "Sri Lanka's First Conscious Living Township—a 150-acre integrated settlement for spiritual and ecological harmony.",
 };
 
-export default function BrindavanPage() {
+export default function SriVrindavanPage() {
   return (
     <div className="-mt-24">
       <Hero />
@@ -26,6 +26,18 @@ export default function BrindavanPage() {
       <GoldDivider />
       
       <Partnership />
+      
+      {/* Quote Section */}
+      <section className="py-32 px-6 md:px-12 bg-deepAmber/[0.02] border-y border-sacredGold/10 relative overflow-hidden flex items-center justify-center">
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 font-display text-[25rem] text-burntOrange opacity-[0.03] pointer-events-none select-none leading-none">
+          &ldquo;
+        </div>
+        <RevealOnScroll className="relative z-10 max-w-4xl mx-auto text-center">
+          <blockquote className="font-display italic text-3xl md:text-4xl lg:text-5xl text-deepAmber leading-snug md:leading-snug">
+            "More than a physical place, Sri Vrindavan is a vision for the future — a living ecosystem where conscious living becomes a shared way of life."
+          </blockquote>
+        </RevealOnScroll>
+      </section>
       
       {/* Closing CTA */}
       <section className="py-32 px-6 max-w-4xl mx-auto text-center flex flex-col items-center">

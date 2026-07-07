@@ -93,17 +93,22 @@ export function WhoWeAre() {
               <h2
                 className="font-display font-light text-4xl md:text-5xl lg:text-6xl mb-6 text-left text-[#3B1F12]"
               >
-                A global movement for humanity & nature.
+                Welcome to ISHAN
               </h2>
             </RevealOnScroll>
             <RevealOnScroll delay={0.1}>
               <p className="font-sans font-light text-[#6F625A] leading-relaxed text-lg">
-                ISHAN is a conscious-living organisation dedicated to harmonising the relationship between human beings and the natural world. We believe that true wellbeing extends beyond the individual, encompassing the entire planetary ecosystem.
+                ISHAN (International Society of Humanity and Nature) is a global institution committed to advancing humanity and nature through wisdom, wellness, education, ethical leadership, sustainability, and conscious community development.
+              </p>
+            </RevealOnScroll>
+            <RevealOnScroll delay={0.15}>
+              <p className="font-sans font-light text-[#6F625A] leading-relaxed">
+                We believe that the wellbeing of humanity and the wellbeing of nature are inseparable. Every individual, every community, and every ecosystem is interconnected, and lasting progress can only be achieved when this interconnectedness is understood, respected, and nurtured.
               </p>
             </RevealOnScroll>
             <RevealOnScroll delay={0.2}>
               <p className="font-sans font-light text-[#6F625A] leading-relaxed">
-                Through our global initiatives in preventive wellness, consciousness research, and sustainable community living, we provide pathways for profound inner transformation and collective healing.
+                Rooted in timeless wisdom and enriched by modern knowledge, ISHAN develops transformative programmes, research, educational initiatives, partnerships, and sustainable systems that empower individuals and institutions to create meaningful impact for present and future generations.
               </p>
             </RevealOnScroll>
             <RevealOnScroll delay={0.3}>

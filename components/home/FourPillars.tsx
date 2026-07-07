@@ -7,26 +7,26 @@ import { TopLeftCorner, BottomRightCorner } from "../ui/CornerOrnaments";
 const PILLARS = [
   { 
     number: "01", 
-    title: "Wisdom", 
-    description: "Preserving and disseminating timeless spiritual and practical knowledge. Cultivating timeless knowledge and profound understanding of the self and the universe.",
+    title: "Purpose", 
+    description: "Why We Exist. Defines mission, vision, and values. Ensures every initiative remains aligned with reason for being.",
     image: "/images/wisdom.jpg"
   },
   { 
     number: "02", 
-    title: "Wellness", 
-    description: "Promoting holistic health—physical, mental, and spiritual. Integrating physical health, mental clarity, and energetic balance.",
+    title: "Systems", 
+    description: "How We Operate. Establishes processes, standards, governance, and operational excellence for consistency and quality.",
     image: "/images/wellness.jpg"
   },
   { 
     number: "03", 
-    title: "Humanity", 
-    description: "Fostering compassionate communities and collective social responsibility. Fostering compassion, ethical living, and collective social responsibility.",
+    title: "Management", 
+    description: "How We Coordinate. Aligns people, programmes, partnerships, projects, and resources to transform vision into measurable outcomes.",
     image: "/images/humanity.jpg"
   },
   { 
     number: "04", 
-    title: "Nature", 
-    description: "Cultivating sustainable ecosystems and deep ecological awareness. Restoring ecological harmony and living in sustainable alignment with the Earth.",
+    title: "Sustainability", 
+    description: "How We Build Capacity. Through responsible investment, sound stewardship, strategic partnerships, and resource development.",
     image: "/images/nature.jpg"
   },
 ];
@@ -54,7 +54,7 @@ export function FourPillars() {
             Our Foundation
           </span>
           <h2 className="text-5xl md:text-6xl font-display font-light text-[#3C2A21] text-center mb-6">
-            Four core pillars
+            Four Institutional Pillars
           </h2>
         </div>
 

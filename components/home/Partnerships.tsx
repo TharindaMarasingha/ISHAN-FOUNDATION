@@ -25,10 +25,10 @@ export function Partnerships() {
           <div className="flex flex-col space-y-8">
             <RevealOnScroll>
               <h3 className="font-display font-light text-4xl md:text-5xl text-deepAmber mb-4">
-                Partnerships
+                Join the Movement
               </h3>
               <p className="font-sans font-light text-deepAmber/80 leading-relaxed mb-6">
-                We actively seek strategic alliances with values-aligned entities to scale our planetary impact.
+                Meaningful change begins with individuals who choose to live consciously and serve selflessly. Whether you are a student, professional, educator, healthcare practitioner, researcher, entrepreneur, policymaker, community leader, organization, or institution, there is a place for you within the ISHAN ecosystem.
               </p>
               <div className="flex flex-wrap gap-3 mb-10">
                 {PARTNER_TYPES.map((pt) => (
@@ -37,7 +37,7 @@ export function Partnerships() {
                   </span>
                 ))}
               </div>
-              <Button variant="primary" href="/contact">Become a Partner</Button>
+              <Button variant="primary" href="/contact">Connect With Us →</Button>
             </RevealOnScroll>
           </div>
 
@@ -60,6 +60,18 @@ export function Partnerships() {
           </div>
 
         </div>
+
+        {/* Quote Block */}
+        <RevealOnScroll delay={0.4}>
+          <div className="mt-20 pt-16 border-t border-sacredGold/20 text-center max-w-4xl mx-auto">
+            <h4 className="font-display italic text-2xl md:text-3xl text-deepAmber leading-relaxed tracking-wide">
+              &quot;We do not merely conduct programmes. We cultivate transformation.<br />
+              We do not simply build organizations. We nurture conscious institutions.<br />
+              We do not pursue growth alone. We pursue meaningful and sustainable impact.&quot;
+            </h4>
+          </div>
+        </RevealOnScroll>
+
       </div>
     </section>
   );

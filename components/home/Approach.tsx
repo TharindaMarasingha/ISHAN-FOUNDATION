@@ -8,7 +8,7 @@ const STEPS = [
   {
     number: "01",
     title: "Learn",
-    desc: "Gain timeless wisdom from ancient and contemporary sources.",
+    desc: "Acquire timeless knowledge and contemporary understanding.",
     icon: (
       <svg viewBox="0 0 100 100" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className="w-[160px] h-[160px] md:w-[220px] md:h-[220px]">
         <motion.path initial={{ pathLength: 0 }} whileInView={{ pathLength: 1 }} viewport={{ once: true, amount: 0.1 }} transition={{ duration: 1.5, ease: "easeOut" }} d="M 20,70 Q 50,80 50,50 Q 50,80 80,70 V 30 Q 50,40 50,10 Q 50,40 20,30 Z" />
@@ -20,7 +20,7 @@ const STEPS = [
   {
     number: "02",
     title: "Practice",
-    desc: "Internalise knowledge through daily discipline and conscious living.",
+    desc: "Develop disciplines that cultivate health, awareness, character, and resilience.",
     icon: (
       <svg viewBox="0 0 100 100" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className="w-[160px] h-[160px] md:w-[220px] md:h-[220px]">
         <motion.path initial={{ pathLength: 0 }} whileInView={{ pathLength: 1 }} viewport={{ once: true, amount: 0.1 }} transition={{ duration: 1.5, ease: "easeOut" }} d="M 50,90 Q 20,90 10,70 C 10,50 40,50 50,80 C 60,50 90,50 90,70 Q 80,90 50,90 Z" />
@@ -32,7 +32,7 @@ const STEPS = [
   {
     number: "03",
     title: "Transform",
-    desc: "Elevate consciousness through inner exploration and growth.",
+    desc: "Experience meaningful personal and professional growth through consistent practice.",
     icon: (
       <svg viewBox="0 0 100 100" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className="w-[160px] h-[160px] md:w-[220px] md:h-[220px]">
         <motion.path initial={{ pathLength: 0 }} whileInView={{ pathLength: 1 }} viewport={{ once: true, amount: 0.1 }} transition={{ duration: 1.5, ease: "easeOut" }} d="M 50,20 V 80" />
@@ -44,7 +44,7 @@ const STEPS = [
   {
     number: "04",
     title: "Serve",
-    desc: "Contribute meaningfully to society, community, and the planet.",
+    desc: "Apply wisdom to benefit families, communities, institutions, humanity, and nature.",
     icon: (
       <svg viewBox="0 0 100 100" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className="w-[160px] h-[160px] md:w-[220px] md:h-[220px]">
         <motion.path initial={{ pathLength: 0 }} whileInView={{ pathLength: 1 }} viewport={{ once: true, amount: 0.1 }} transition={{ duration: 1.5, ease: "easeOut" }} d="M 10,40 Q 30,80 50,80 Q 70,80 90,40" />
@@ -57,7 +57,7 @@ const STEPS = [
   {
     number: "05",
     title: "Inspire",
-    desc: "Lead by living example and igniting transformation in others.",
+    desc: "Become a catalyst for positive and sustainable change.",
     icon: (
       <svg viewBox="0 0 100 100" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className="w-[160px] h-[160px] md:w-[220px] md:h-[220px]">
         <motion.path initial={{ pathLength: 0 }} whileInView={{ pathLength: 1 }} viewport={{ once: true, amount: 0.1 }} transition={{ duration: 1.5, ease: "easeOut" }} d="M 50,80 Q 30,80 30,60 C 30,40 50,20 50,20 C 50,20 70,40 70,60 Q 70,80 50,80 Z" />

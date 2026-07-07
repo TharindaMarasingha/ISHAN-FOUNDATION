@@ -21,7 +21,7 @@ export function PageHero() {
           transition={{ duration: 0.8, ease: "easeOut" }}
           className="inline-block px-4 py-1.5 border border-burntOrange/30 rounded-full font-sans text-[0.65rem] uppercase tracking-[0.2em] text-burntOrange mb-8"
         >
-          About ISHAN
+          Research, Education & Publications
         </motion.span>
         
         <motion.h1
@@ -30,7 +30,7 @@ export function PageHero() {
           transition={{ duration: 1, ease: "easeOut", delay: 0.2 }}
           className="font-display font-light text-5xl md:text-7xl lg:text-8xl text-deepAmber tracking-wide mb-6"
         >
-          Who We Are
+          Advancing Knowledge. Inspiring Innovation. Creating Lasting Impact.
         </motion.h1>
 
         <motion.h2
@@ -39,7 +39,7 @@ export function PageHero() {
           transition={{ duration: 0.8, ease: "easeOut", delay: 0.4 }}
           className="font-display italic text-2xl md:text-3xl text-burntOrange max-w-3xl mb-8 leading-relaxed"
         >
-          A Global Institution for Wisdom, Wellness, Humanity, Nature, and Sustainable Development
+          Guided by curiosity, integrity, interdisciplinary collaboration, and a commitment to serving humanity and nature.
         </motion.h2>
 
         <motion.p
@@ -48,7 +48,7 @@ export function PageHero() {
           transition={{ duration: 1, ease: "easeOut", delay: 0.6 }}
           className="font-sans font-light text-deepAmber max-w-2xl leading-relaxed text-lg"
         >
-          ISHAN is an international institution dedicated to harmonising humanity and nature through wisdom, wellness, ethical leadership, education, research, sustainability, and conscious community development.
+          How can knowledge improve quality of life? This question guides every research initiative, educational programme, and publication produced by ISHAN.
         </motion.p>
       </div>
     </section>

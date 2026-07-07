@@ -23,8 +23,7 @@ export function Hero() {
           transition={{ duration: 1, ease: "easeOut", delay: 0.2 }}
           className="font-display font-light text-5xl md:text-7xl lg:text-8xl text-deepAmber tracking-wide mb-2"
         >
-          Sri Vrindavan<br />
-          <span className="text-burntOrange">Project</span>
+          Sri Vrindavan
         </motion.h1>
 
         <motion.p
@@ -33,7 +32,7 @@ export function Hero() {
           transition={{ duration: 1, ease: "easeOut", delay: 0.4 }}
           className="font-display italic text-lg md:text-xl text-sacredGold mb-8"
         >
-          Sri Lanka's First Conscious Living Township
+          A Vision for Conscious Community Living
         </motion.p>
 
         <motion.p
@@ -42,7 +41,25 @@ export function Hero() {
           transition={{ duration: 1, ease: "easeOut", delay: 0.6 }}
           className="font-sans font-light text-deepAmber max-w-2xl leading-relaxed mb-8"
         >
-          Spanning 150 acres of pristine geography, Sri Vrindavan Project is a visionary, integrated settlement where spirituality, conscious living, holistic wellness, deep ecological harmony, and vibrant cultural life converge into a single purposeful community.
+          Sri Vrindavan represents ISHAN's long-term vision for creating a living model of conscious and sustainable community life.
+        </motion.p>
+
+        <motion.p
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 1, ease: "easeOut", delay: 0.7 }}
+          className="font-sans font-light text-deepAmber max-w-2xl leading-relaxed mb-6"
+        >
+          Envisioned as an integrated spiritual wellness township where individuals, families, educators, researchers, practitioners, entrepreneurs, and communities can live, learn, work, and grow in harmony with nature.
+        </motion.p>
+
+        <motion.p
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 1, ease: "easeOut", delay: 0.8 }}
+          className="font-sans font-light text-deepAmber max-w-2xl leading-relaxed mb-8"
+        >
+          Designed around principles of wisdom, wellness, sustainability, education, ecological responsibility, and community living.
         </motion.p>
       </div>
     </section>

@@ -4,10 +4,11 @@ import React from "react";
 import { motion } from "framer-motion";
 
 const GROUPS = [
-  "Individuals", "Families", "Students", "Professionals", "Organisations", 
-  "Educational Institutions", "Healthcare Professionals", "Governments", 
-  "NGOs", "Community Leaders", "Spiritual Seekers", "Social Entrepreneurs", 
-  "Environmental Organisations"
+  "Individuals", "Families", "Students", "Professionals", "Entrepreneurs", 
+  "Educators", "Healthcare Professionals", "Researchers", "Community Leaders", 
+  "Corporate Organisations", "Educational Institutions", "Government Bodies", 
+  "Non-Governmental Organisations", "Social Enterprises", "Environmental Organisations", 
+  "Spiritual Seekers", "International Partners"
 ];
 
 export function WhoWeServe() {

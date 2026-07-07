@@ -7,10 +7,14 @@ import { motion } from "framer-motion";
 const footerLinks = [
   { label: "Home", href: "/" },
   { label: "About", href: "/about" },
-  { label: "Arogya Ashram", href: "/arogya" },
-  { label: "Inner Immersion", href: "/samanvaya" },
-  { label: "USS", href: "/uss" },
-  { label: "Sri Vrindavan", href: "/vrindavan" },
+  { label: "Framework", href: "/framework" },
+  { label: "Leadership", href: "/leadership" },
+  { label: "Ecosystem", href: "/ecosystem" },
+  { label: "Programmes", href: "/programmes" },
+  { label: "Research", href: "/research" },
+  { label: "Partnerships", href: "/partnerships" },
+  { label: "Vision", href: "/vision" },
+  { label: "Support", href: "/support" },
   { label: "Connect", href: "/contact" },
 ];
 
@@ -82,7 +86,7 @@ export default function Footer() {
               © 2026 ISHAN – International Society of Humanity and Nature. All Rights Reserved.
             </p>
             <p className="text-softApricot/40 text-[0.6rem] md:text-[0.65rem] uppercase tracking-widest">
-              A global movement for planetary consciousness.
+              A global movement dedicated to advancing wisdom, wellness, humanity, nature, and sustainable systems for present and future generations.
             </p>
           </div>
         </div>

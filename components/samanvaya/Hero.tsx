@@ -22,7 +22,7 @@ export function Hero() {
           transition={{ duration: 0.8, ease: "easeOut" }}
           className="inline-block px-4 py-1.5 border border-mandarin/30 rounded-full font-sans text-[0.65rem] uppercase tracking-[0.2em] text-mandarin mb-8"
         >
-          The Inner Immersion
+          From Pancha Tattva to Sampurna Sattva
         </motion.span>
         
         <motion.h1
@@ -40,7 +40,7 @@ export function Hero() {
           transition={{ duration: 1, ease: "easeOut", delay: 0.4 }}
           className="font-display italic text-lg md:text-xl text-mandarin mb-8"
         >
-          ISHAN's Flagship Immersive Experience
+          ISHAN's Flagship Transformational Retreat
         </motion.p>
 
         <motion.p
@@ -49,7 +49,25 @@ export function Hero() {
           transition={{ duration: 1, ease: "easeOut", delay: 0.6 }}
           className="font-sans font-light text-deepAmber max-w-2xl leading-relaxed mb-16"
         >
-          A profound journey of inner exploration, holistic wellbeing, and conscious transformation. Samanvaya strips away the noise of the modern world, offering a sacred space where silence, deep contemplative practice, and the healing rhythms of nature awaken the dormant wisdom within.
+          Inspired by the timeless wisdom of the five elements, Samanvaya guides participants on a journey towards integrated wellbeing and complete human development.
+        </motion.p>
+
+        <motion.p
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 1, ease: "easeOut", delay: 0.7 }}
+          className="font-sans font-light text-deepAmber max-w-2xl leading-relaxed mb-6"
+        >
+          Combines yoga, meditation, breathwork, mindful movement, contemplative practices, nature connection, leadership development, experiential learning, and conscious living.
+        </motion.p>
+
+        <motion.p
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 1, ease: "easeOut", delay: 0.8 }}
+          className="font-sans font-light text-deepAmber max-w-2xl leading-relaxed mb-16"
+        >
+          Each experience is thoughtfully designed to restore balance across the physical, emotional, intellectual, financial, and spiritual dimensions of life.
         </motion.p>
 
         <div className="grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-16 w-full max-w-4xl border-t border-mandarin/20 pt-12">

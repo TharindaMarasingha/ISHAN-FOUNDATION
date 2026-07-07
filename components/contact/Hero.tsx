@@ -23,7 +23,7 @@ export function Hero() {
           transition={{ duration: 1, ease: "easeOut", delay: 0.2 }}
           className="font-display font-light text-5xl md:text-7xl lg:text-8xl text-deepAmber tracking-wide mb-6"
         >
-          Connect with <span className="text-mandarin">ISHAN</span>
+          Connect With <span className="text-mandarin">ISHAN</span>
         </motion.h1>
 
         <motion.p
@@ -32,7 +32,7 @@ export function Hero() {
           transition={{ duration: 1, ease: "easeOut", delay: 0.4 }}
           className="font-display italic text-2xl md:text-3xl text-sacredGold mb-8 max-w-3xl leading-relaxed"
         >
-          Join a global network of seekers, healers, and builders shaping a conscious future.
+          Let's Build the Future Together
         </motion.p>
 
         <motion.p
@@ -41,7 +41,7 @@ export function Hero() {
           transition={{ duration: 1, ease: "easeOut", delay: 0.6 }}
           className="font-sans font-light text-deepAmber max-w-2xl leading-relaxed"
         >
-          We welcome inquiries from wellness practitioners, institutional partners, visionary investors, media representatives, and seekers around the world. Reach out to our team to explore collaborations, request information, or express interest in our upcoming programs and ecosystem developments.
+          Every meaningful journey begins with a conversation. Whether you are an individual seeking personal growth, an institution exploring collaboration, a professional looking to contribute, or an organisation committed to creating positive impact, we welcome the opportunity to connect with you.
         </motion.p>
       </div>
     </section>

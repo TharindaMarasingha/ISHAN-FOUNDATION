@@ -32,16 +32,16 @@ export function ContactInfo() {
             Arogya Ashram International
             <span className="opacity-0 -translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-300">→</span>
           </Link>
-          <Link href="/uss" className="font-sans font-light text-sm text-deepAmber hover:text-burntOrange flex items-center justify-between group">
-            Universal Spiritual Science (USS)
+          <Link href="/avalokana" className="font-sans font-light text-sm text-deepAmber hover:text-burntOrange flex items-center justify-between group">
+            Antahakarana Avalokana
             <span className="opacity-0 -translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-300">→</span>
           </Link>
           <Link href="/samanvaya" className="font-sans font-light text-sm text-deepAmber hover:text-burntOrange flex items-center justify-between group">
             Samanvaya
             <span className="opacity-0 -translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-300">→</span>
           </Link>
-          <Link href="/vrindavan" className="font-sans font-light text-sm text-deepAmber hover:text-burntOrange flex items-center justify-between group">
-            Sri Vrindavan Project
+          <Link href="/sri-vrindavan" className="font-sans font-light text-sm text-deepAmber hover:text-burntOrange flex items-center justify-between group">
+            Sri Vrindavan
             <span className="opacity-0 -translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-300">→</span>
           </Link>
         </nav>

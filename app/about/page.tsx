@@ -1,9 +1,14 @@
 import { PageHero } from "@/components/about/PageHero";
-import { OurStory } from "@/components/about/OurStory";
-import { ValuesGrid } from "@/components/about/ValuesGrid";
-import { AboutQuote } from "@/components/about/AboutQuote";
-import { AboutCTA } from "@/components/about/AboutCTA";
-import { GoldDivider } from "@/components/ui/GoldDivider";
+import { 
+  OurStorySection, 
+  VisionMissionSection, 
+  OurPurposeSection, 
+  OurPhilosophySection, 
+  CoreBeliefsSection, 
+  CoreValuesSection, 
+  IshanWaySection, 
+  OurCommitmentSection 
+} from "@/components/about/AboutSections";
 
 export const metadata = {
   title: "About — ISHAN",
@@ -14,11 +19,14 @@ export default function AboutPage() {
   return (
     <>
       <PageHero />
-      <OurStory />
-      <GoldDivider />
-      <ValuesGrid />
-      <AboutQuote />
-      <AboutCTA />
+      <OurStorySection />
+      <VisionMissionSection />
+      <OurPurposeSection />
+      <OurPhilosophySection />
+      <CoreBeliefsSection />
+      <CoreValuesSection />
+      <IshanWaySection />
+      <OurCommitmentSection />
     </>
   );
 }

@@ -22,7 +22,7 @@ export function VisionMission() {
           />
           <RevealOnScroll delay={0.1}>
             <p className="font-sans font-light text-deepAmber/90 leading-relaxed text-lg">
-              Arogya Ashram International is dedicated to creating sustainable wellness-driven ecosystems that contribute to the physical, mental, emotional, social, environmental, and spiritual wellbeing of humanity. We transcend traditional healthcare by focusing on proactive empowerment and holistic alignment.
+              Its programmes empower individuals to take responsibility for their own health, develop sustainable lifestyle habits, and cultivate lifelong wellbeing. By focusing on prevention rather than cure, AAI supports healthier individuals, stronger families, and more resilient communities.
             </p>
           </RevealOnScroll>
           <RevealOnScroll delay={0.2}>

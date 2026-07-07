@@ -28,7 +28,7 @@ export default function SamanvayaPage() {
         </div>
         <RevealOnScroll className="relative z-10 max-w-4xl mx-auto text-center">
           <blockquote className="font-display italic text-3xl md:text-4xl lg:text-5xl text-deepAmber leading-snug md:leading-snug mb-10">
-            "In the absolute stillness of nature, the mind finally ceases its restless wandering, and we remember what it means to simply be."
+            "Samanvaya is not simply a retreat. It is a journey towards harmony within oneself, with others, and with nature. A journey from Pancha Tattva to Sampurna Sattva."
           </blockquote>
           <div className="text-[0.65rem] md:text-xs uppercase tracking-widest text-mandarin">
             Samanvaya — The Core Realization

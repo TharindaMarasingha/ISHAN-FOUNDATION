@@ -21,7 +21,7 @@ export function PageHero() {
           transition={{ duration: 0.8, ease: "easeOut" }}
           className="inline-block px-4 py-1.5 border border-burntOrange/30 rounded-full font-sans text-[0.65rem] uppercase tracking-[0.2em] text-burntOrange mb-8"
         >
-          About ISHAN
+          The ISHAN Model
         </motion.span>
         
         <motion.h1
@@ -30,7 +30,7 @@ export function PageHero() {
           transition={{ duration: 1, ease: "easeOut", delay: 0.2 }}
           className="font-display font-light text-5xl md:text-7xl lg:text-8xl text-deepAmber tracking-wide mb-6"
         >
-          Who We Are
+          The ISHAN Framework
         </motion.h1>
 
         <motion.h2
@@ -39,7 +39,7 @@ export function PageHero() {
           transition={{ duration: 0.8, ease: "easeOut", delay: 0.4 }}
           className="font-display italic text-2xl md:text-3xl text-burntOrange max-w-3xl mb-8 leading-relaxed"
         >
-          A Global Institution for Wisdom, Wellness, Humanity, Nature, and Sustainable Development
+          A Unified Framework for Human, Institutional, and Societal Transformation
         </motion.h2>
 
         <motion.p
@@ -48,7 +48,7 @@ export function PageHero() {
           transition={{ duration: 1, ease: "easeOut", delay: 0.6 }}
           className="font-sans font-light text-deepAmber max-w-2xl leading-relaxed text-lg"
         >
-          ISHAN is an international institution dedicated to harmonising humanity and nature through wisdom, wellness, ethical leadership, education, research, sustainability, and conscious community development.
+          Our framework brings together timeless wisdom, contemporary knowledge, ethical leadership, sustainable systems, and practical action into one coherent philosophy.
         </motion.p>
       </div>
     </section>

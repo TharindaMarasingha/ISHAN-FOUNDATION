@@ -15,39 +15,39 @@ const ECOSYSTEM_CARDS: EcosystemData[] = [
   {
     tag: "PREVENTIVE WELLNESS · PROACTIVE WELLBEING",
     title: "Arogya Ashram International",
-    subtitle: "AAI — Sri Lanka Chapter",
-    description: "Holistic wellness education, preventive healthcare and integrative wellbeing — rooted in the world's oldest healing heritage.",
+    subtitle: "AAI — Holistic Wellness Initiative",
+    description: "Dedicated to promoting holistic health through preventive wellness, lifestyle education, yoga, meditation, breathwork, mindful movement, nutrition, stress management, and integrative wellbeing practices.",
     href: "/arogya",
     accentColor: "#C9A84C",
     image: "/images/ecosystem-arogya.jpg",
     cardBackground: "rgba(255, 248, 235, 0.85)",
   },
   {
-    tag: "RESEARCH · CONSCIOUSNESS · ETHICS",
-    title: "Universal Spiritual Science",
-    subtitle: "USS — Inner Knowledge Institute",
-    description: "Research, education and consciousness studies across contemplative traditions, ethics, philosophy and inner development.",
-    href: "/uss",
+    tag: "THE INNER IMMERSION",
+    title: "Antahakarana Avalokana",
+    subtitle: "ISHAN's Signature Immersive Experience",
+    description: "A signature immersive experience designed for profound self-discovery, inner reflection, holistic wellbeing, and conscious transformation through silence, meditation, and contemplative practice.",
+    href: "/avalokana",
     accentColor: "#2C5F4A",
     image: "/images/ecosystem-uss.jpg",
     cardBackground: "rgba(240, 248, 244, 0.85)",
   },
   {
-    tag: "THE INNER IMMERSION",
+    tag: "FROM PANCHA TATTVA TO SAMPURNA SATTVA",
     title: "Samanvaya",
-    subtitle: "ISHAN's Flagship Immersive Experience",
-    description: "A flagship immersive experience for profound inner exploration through nature, silence, wisdom and experiential learning.",
+    subtitle: "ISHAN's Flagship Transformational Retreat",
+    description: "ISHAN's flagship transformational retreat inspired by the timeless wisdom of the five elements, guiding participants toward integrated wellbeing and complete human development.",
     href: "/samanvaya",
     accentColor: "#8B4513",
     image: "/images/ecosystem-samanvaya.jpg",
     cardBackground: "rgba(252, 243, 235, 0.85)",
   },
   {
-    tag: "DIVINE SPIRITUAL WELLNESS TOWNSHIP",
-    title: "Sri Vrindavan Project",
-    subtitle: "Sri Lanka's First Conscious Living Township",
-    description: "A 150-acre living community where spirituality, conscious living, holistic wellness, nature, and vibrant cultural life come together in a single, purposefully designed sacred settlement.",
-    href: "/vrindavan",
+    tag: "A DIVINE SPIRITUAL WELLNESS TOWNSHIP",
+    title: "Sri Vrindavan",
+    subtitle: "A Vision for Conscious Community Living",
+    description: "ISHAN's long-term vision for creating a living model of conscious and sustainable community life — an integrated spiritual wellness township where individuals and families can live in harmony with nature.",
+    href: "/sri-vrindavan",
     accentColor: "#4A3728",
     image: "/images/ecosystem-vrindavan.jpg",
     cardBackground: "rgba(245, 240, 235, 0.85)",
@@ -151,8 +151,8 @@ export function Ecosystem() {
           <SectionHeading
             align="center"
             eyebrow="Our Ecosystem"
-            heading="Four pathways to conscious living"
-            description="ISHAN functions through specialised initiatives that collectively advance its vision of human and ecological wellbeing."
+            heading="One Vision. Multiple Initiatives. Shared Purpose."
+            description="ISHAN functions through a growing ecosystem of specialised initiatives, each serving a unique purpose while contributing to a shared mission."
           />
         </div>
 

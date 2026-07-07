@@ -8,8 +8,8 @@ import Image from "next/image";
 
 const TEAM = [
   {
-    archetype: "The Guru",
-    role: "Spiritual Guide & Anchor",
+    archetype: "The Grandmaster (The Guardian)",
+    role: "Stewardship of Purpose & Institutional Integrity",
     name: "Sevakanand Ji 'Buddhu'",
     initials: "SJ",
     description: "Ethics, traditional wisdom & consciousness direction for all programmes.",
@@ -18,8 +18,8 @@ const TEAM = [
     image: "/images/ima.jpg"
   },
   {
-    archetype: "Yogeshwari",
-    role: "Founder & Visionary — AAI",
+    archetype: "Master Mentor",
+    role: "Stewardship of Learning & Education",
     name: "Dr. Hon. S. Kobayashi",
     initials: "SK",
     description: "Japanese wellness traditions, mindful movement & sound healing.",
@@ -28,8 +28,8 @@ const TEAM = [
     image: "/images/imb.jpg"
   },
   {
-    archetype: "Adiyogini",
-    role: "Core Member — AAI",
+    archetype: "Master Coach",
+    role: "Stewardship of Transformation & Wellbeing",
     name: "Master Indrani Sharma",
     initials: "IS",
     description: "Himalayan yogic sciences, meditation & energy practices.",
@@ -38,8 +38,8 @@ const TEAM = [
     image: "/images/imc.jpg"
   },
   {
-    archetype: "The Strategist Sage",
-    role: "Country Director — Sri Lanka",
+    archetype: "Business Alchemist",
+    role: "Stewardship of Institutional Excellence",
     name: "Ranga Soysa",
     initials: "RS",
     description: "Strategic planning, institutional development & governance.",
@@ -48,8 +48,8 @@ const TEAM = [
     image: "/images/imd.jpg"
   },
   {
-    archetype: "The Unity Alchemist",
-    role: "Programme Coordination",
+    archetype: "Growth Catalyst",
+    role: "Stewardship of Growth & Partnerships",
     name: "Mansoor Ali",
     initials: "MA",
     description: "Strategic partnerships, community building & international collaboration.",
@@ -83,8 +83,8 @@ export function Team() {
         <div className="mb-20 max-w-4xl mx-auto text-center relative flex justify-center">
           <SectionHeading
             align="center"
-            eyebrow="Leadership"
-            heading="The founding team"
+            eyebrow="The Circle of Stewards"
+            heading="Leadership"
             description="Guided by a visionary core of internationally credentialed practitioners, architects, and humanitarian leaders — united across nations in a shared purpose."
           />
         </div>

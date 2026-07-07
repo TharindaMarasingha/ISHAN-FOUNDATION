@@ -3,6 +3,7 @@
 import React, { useRef, useState, useEffect } from "react";
 import { motion, useReducedMotion, useScroll, useTransform, AnimatePresence } from "framer-motion";
 import Image from "next/image";
+import Link from "next/link";
 import { Great_Vibes } from "next/font/google";
 
 const greatVibes = Great_Vibes({
@@ -166,7 +167,7 @@ export function Hero() {
             transition={{ duration: 0.8, ease: "easeOut" }}
             className="font-sans text-[8px] md:font-light md:text-[#8A8A8A] md:text-[10px] text-[rgba(100,40,0,0.65)] tracking-[0.18em] md:tracking-[0.3em] uppercase mb-3 md:mb-8 md:-mt-8 max-w-full"
           >
-            International Society of Humanity & Nature
+            International Society of Humanity and Nature
           </motion.p>
 
           <motion.div 
@@ -208,7 +209,7 @@ export function Hero() {
             transition={{ duration: 1, delay: 0.5 }}
             className="font-sans font-light text-[11px] text-[#5a3a20] md:text-[#8A8A8A] md:text-base max-w-[230px] md:max-w-lg leading-[1.7] md:leading-snug mb-7 md:mb-8"
           >
-            ISHAN is an international organisation committed to integrating timeless wisdom, preventive wellness, environmental stewardship, and conscious community development into practical initiatives that benefit individuals, society, and the planet.
+            ISHAN is a global institution committed to advancing humanity and nature through wisdom, wellness, education, ethical leadership, sustainability, and conscious community development.
           </motion.p>
 
           <motion.div
@@ -217,12 +218,12 @@ export function Hero() {
             transition={{ duration: 0.8, delay: 0.6 }}
             className="flex flex-col items-start md:flex-row md:items-center justify-start gap-3 md:gap-4 w-full mt-6 md:mt-6"
           >
-            <button className="w-auto min-w-[180px] bg-gradient-to-r from-[#FFC120] to-[#F8A39B] text-[#2E1A0E] border-none px-8 py-3.5 rounded-full hover:shadow-xl hover:-translate-y-0.5 transition-all duration-300 font-sans font-medium tracking-wide uppercase text-[13px]">
+            <Link href="#ecosystem" className="w-auto text-center min-w-[180px] bg-gradient-to-r from-[#FFC120] to-[#F8A39B] text-[#2E1A0E] border-none px-8 py-3.5 rounded-full hover:shadow-xl hover:-translate-y-0.5 transition-all duration-300 font-sans font-medium tracking-wide uppercase text-[13px] flex items-center justify-center">
               Explore Our Work
-            </button>
-            <button className="w-auto min-w-[180px] bg-gradient-to-r from-[#FFC120] to-[#F8A39B] text-[#2E1A0E] border-none px-8 py-3.5 rounded-full hover:shadow-xl hover:-translate-y-0.5 transition-all duration-300 font-sans font-medium tracking-wide uppercase text-[13px]">
+            </Link>
+            <Link href="/about" className="w-auto text-center min-w-[180px] bg-gradient-to-r from-[#FFC120] to-[#F8A39B] text-[#2E1A0E] border-none px-8 py-3.5 rounded-full hover:shadow-xl hover:-translate-y-0.5 transition-all duration-300 font-sans font-medium tracking-wide uppercase text-[13px] flex items-center justify-center">
               About ISHAN
-            </button>
+            </Link>
           </motion.div>
           </motion.div>
         </div>
