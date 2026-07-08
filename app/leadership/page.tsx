@@ -13,12 +13,12 @@ export const metadata = {
 
 export default function LeadershipPage() {
   return (
-    <>
+    <div className="-mt-24">
       <PageHero />
       <PhilosophySection />
       <CircleOfStewardsSection />
       <GoldenCircleLeadershipSection />
       <SharedCommitmentSection />
-    </>
+    </div>
   );
 }

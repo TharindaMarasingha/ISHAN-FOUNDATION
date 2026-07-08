@@ -15,7 +15,7 @@ export const metadata = {
 
 export default function ProgrammesPage() {
   return (
-    <>
+    <div className="-mt-24">
       <PageHero />
       <Approach />
       <CoreProgrammesSection />
@@ -23,6 +23,6 @@ export default function ProgrammesPage() {
       <TrainingSection />
       <WhoWeServe />
       <ProgrammesCTASection />
-    </>
+    </div>
   );
 }

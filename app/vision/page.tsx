@@ -12,11 +12,11 @@ export const metadata = {
 
 export default function VisionPage() {
   return (
-    <>
+    <div className="-mt-24">
       <PageHero />
       <ThreeErasSection />
       <StrategicPrioritiesSection />
       <VisionCTASection />
-    </>
+    </div>
   );
 }

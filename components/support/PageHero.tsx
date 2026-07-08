@@ -1,11 +1,24 @@
 "use client";
 
 import { motion } from "framer-motion";
+import Image from "next/image";
 import { ParallaxBackground } from "../ui/ParallaxBackground";
 
 export function PageHero() {
   return (
-    <section className="relative min-h-[60vh] flex flex-col justify-end pb-24 pt-32 px-6 overflow-hidden border-b border-burntOrange/10">
+    <section className="relative w-full overflow-hidden" style={{ minHeight: '100vh', marginTop: '0', paddingTop: '0', top: '0' }}>
+      <div className="absolute inset-0" style={{ top: 0, left: 0, right: 0, bottom: 0 }}>
+        <Image
+          src="/images/support-hero.jpg"
+          alt="ISHAN Support"
+          fill
+          priority
+          className="object-cover object-center"
+          sizes="100vw"
+        />
+      </div>
+      <div className="absolute inset-0 bg-gradient-to-b from-[rgba(10,4,2,0.3)] via-[rgba(10,4,2,0.45)] to-[rgba(10,4,2,0.75)]" />
+      <div className="absolute inset-0 bg-gradient-to-r from-[rgba(10,4,2,0.7)] via-[rgba(10,4,2,0.3)] to-transparent" />
       {/* Left-side radial glow */}
       <div 
         className="absolute inset-0 pointer-events-none z-0"
@@ -14,12 +27,12 @@ export function PageHero() {
         }}
       />
       <ParallaxBackground fadeRange={[100, 600]} driftRate={0.1} />
-      <div className="relative z-10 max-w-7xl mx-auto w-full flex flex-col items-start">
+      <div className="relative z-10 flex flex-col justify-end pb-20 pl-16 pr-8 md:pl-20 md:pb-24 max-w-3xl" style={{ minHeight: '100vh' }}>
         <motion.span
           initial={{ opacity: 0, y: 10 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, ease: "easeOut" }}
-          className="inline-block px-4 py-1.5 border border-burntOrange/30 rounded-full font-sans text-[0.65rem] uppercase tracking-[0.2em] text-burntOrange mb-8"
+          className="inline-flex w-fit border border-[rgba(201,168,76,0.5)] rounded-full px-4 py-1.5 text-[#F5D98A] text-xs uppercase tracking-[0.18em] font-sans mb-5"
         >
           Support Our Mission
         </motion.span>
@@ -28,7 +41,7 @@ export function PageHero() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1, ease: "easeOut", delay: 0.2 }}
-          className="font-display font-light text-5xl md:text-7xl lg:text-8xl text-deepAmber tracking-wide mb-6"
+          className="font-display text-white text-5xl md:text-7xl lg:text-8xl font-normal leading-none mb-6 text-left"
         >
           Become a Steward of Positive Change
         </motion.h1>
@@ -37,7 +50,7 @@ export function PageHero() {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 1, ease: "easeOut", delay: 0.4 }}
-          className="font-sans font-light text-deepAmber max-w-2xl leading-relaxed text-lg mt-4"
+          className="font-sans font-light text-white/65 text-sm md:text-base leading-relaxed max-w-xl text-left"
         >
           Every meaningful transformation begins with individuals who choose to care, contribute, and take responsibility. ISHAN is more than an institution — it is a global movement.
         </motion.p>

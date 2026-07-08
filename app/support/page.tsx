@@ -12,11 +12,11 @@ export const metadata = {
 
 export default function SupportPage() {
   return (
-    <>
+    <div className="-mt-24">
       <PageHero />
       <WaysToContributeSection />
       <JoinCommunitySection />
       <SupportCTASection />
-    </>
+    </div>
   );
 }

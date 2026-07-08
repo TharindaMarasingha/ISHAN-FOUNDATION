@@ -16,7 +16,7 @@ export const metadata = {
 
 export default function FrameworkPage() {
   return (
-    <>
+    <div className="-mt-24">
       <PageHero />
       <GoldenCircleSection />
       <IkigaiSection />
@@ -25,6 +25,6 @@ export default function FrameworkPage() {
       <FiveDimensionsSection />
       <HierarchyOfNeedsSection />
       <FrameworkCTASection />
-    </>
+    </div>
   );
 }

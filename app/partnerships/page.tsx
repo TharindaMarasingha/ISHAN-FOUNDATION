@@ -13,12 +13,12 @@ export const metadata = {
 
 export default function PartnershipsPage() {
   return (
-    <>
+    <div className="-mt-24">
       <PageHero />
       <WhoWePartnerWithSection />
       <PartnershipPrinciplesSection />
       <CollaborationAndContributionSection />
       <PartnershipsCTASection />
-    </>
+    </div>
   );
 }
