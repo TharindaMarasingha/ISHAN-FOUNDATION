@@ -34,7 +34,7 @@ export function PageHero() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1, ease: "easeOut", delay: 0.2 }}
-          className="font-display font-normal leading-tight text-white text-4xl md:text-5xl lg:text-6xl max-w-3xl mb-6 text-left"
+          className="font-display font-normal leading-tight text-white text-4xl md:text-5xl lg:text-6xl max-w-3xl mb-4"
         >
           One Vision. Multiple Initiatives.<br />
           <span className="text-mandarin">Shared Purpose.</span>
@@ -44,7 +44,7 @@ export function PageHero() {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 1, ease: "easeOut", delay: 0.4 }}
-          className="font-display italic text-white/80 text-lg md:text-xl leading-relaxed mt-4 mb-4 max-w-xl text-left"
+          className="font-display italic text-white/80 text-lg md:text-xl leading-relaxed mb-4 max-w-2xl"
         >
           A Growing Ecosystem of Specialised Initiatives
         </motion.p>
@@ -53,7 +53,7 @@ export function PageHero() {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 1, ease: "easeOut", delay: 0.6 }}
-          className="font-sans font-light text-white/65 text-sm md:text-base leading-relaxed max-w-lg text-left"
+          className="font-sans font-light text-white/65 text-sm md:text-base leading-relaxed max-w-xl"
         >
           ISHAN is more than a single institution. It is a growing ecosystem of specialised initiatives working together to advance a common vision: harmonising humanity and nature through wisdom, wellness, ethical leadership, sustainability, and conscious community development.
         </motion.p>

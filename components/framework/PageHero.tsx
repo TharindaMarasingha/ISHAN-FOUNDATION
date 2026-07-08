@@ -27,12 +27,12 @@ export function PageHero() {
         }}
       />
       <ParallaxBackground fadeRange={[100, 600]} driftRate={0.1} />
-      <div className="relative z-10 flex flex-col justify-end pb-20 pl-16 pr-8 md:pl-20 md:pb-24 max-w-3xl" style={{ minHeight: '100vh' }}>
+      <div className="relative z-10 flex flex-col justify-end pb-16 pl-12 md:pb-20 md:pl-16" style={{ minHeight: '100vh' }}>
         <motion.span
           initial={{ opacity: 0, y: 10 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, ease: "easeOut" }}
-          className="inline-flex w-fit border border-[rgba(201,168,76,0.5)] rounded-full px-4 py-1.5 text-[#F5D98A] text-xs uppercase tracking-[0.18em] font-sans mb-5"
+          className="inline-flex w-fit border border-[rgba(201,168,76,0.5)] rounded-full px-4 py-1.5 text-[#F5D98A] text-xs uppercase tracking-[0.18em] font-sans mb-4"
         >
           The ISHAN Model
         </motion.span>
@@ -41,7 +41,7 @@ export function PageHero() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1, ease: "easeOut", delay: 0.2 }}
-          className="font-display text-white text-5xl md:text-7xl lg:text-8xl font-normal leading-none mb-6 text-left"
+          className="font-display font-normal leading-tight text-white text-4xl md:text-5xl lg:text-6xl max-w-3xl mb-4"
         >
           The ISHAN Framework
         </motion.h1>
@@ -50,7 +50,7 @@ export function PageHero() {
           initial={{ opacity: 0, y: 10 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, ease: "easeOut", delay: 0.4 }}
-          className="font-display italic text-white/80 text-xl md:text-2xl leading-relaxed mb-5 max-w-2xl text-left"
+          className="font-display italic text-white/80 text-lg md:text-xl leading-relaxed mb-4 max-w-2xl"
         >
           A Unified Framework for Human, Institutional, and Societal Transformation
         </motion.h2>
@@ -59,7 +59,7 @@ export function PageHero() {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 1, ease: "easeOut", delay: 0.6 }}
-          className="font-sans font-light text-white/65 text-sm md:text-base leading-relaxed max-w-xl text-left"
+          className="font-sans font-light text-white/65 text-sm md:text-base leading-relaxed max-w-xl"
         >
           Our framework brings together timeless wisdom, contemporary knowledge, ethical leadership, sustainable systems, and practical action into one coherent philosophy.
         </motion.p>
