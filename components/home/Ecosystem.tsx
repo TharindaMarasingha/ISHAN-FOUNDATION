@@ -39,7 +39,7 @@ const ECOSYSTEM_CARDS: EcosystemData[] = [
     description: "ISHAN's flagship transformational retreat inspired by the timeless wisdom of the five elements, guiding participants toward integrated wellbeing and complete human development.",
     href: "/samanvaya",
     accentColor: "#8B4513",
-    image: "/images/ecosystem-samanvaya.jpg",
+    image: "/images/sn1.jpg",
     cardBackground: "rgba(252, 243, 235, 0.85)",
   },
   {

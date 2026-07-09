@@ -1,4 +1,4 @@
-import { Hero } from "@/components/sri-vrindavan/Hero";
+import Image from "next/image";
 import { Vision } from "@/components/sri-vrindavan/Vision";
 import { Zones } from "@/components/sri-vrindavan/Zones";
 import { StatsScale } from "@/components/sri-vrindavan/StatsScale";
@@ -16,7 +16,51 @@ export const metadata = {
 export default function SriVrindavanPage() {
   return (
     <div className="-mt-24">
-      <Hero />
+      <section className="relative w-full overflow-hidden" style={{ minHeight: '100vh' }}>
+        <div className="absolute inset-0">
+          <Image
+            src="/images/vrindavan-hero.jpg"
+            alt="Sri Vrindavan Project"
+            fill
+            priority
+            className="object-cover object-center"
+            sizes="100vw"
+          />
+        </div>
+        <div className="absolute inset-0 bg-[rgba(10,4,2,0.55)]" />
+        <div className="absolute inset-0 bg-gradient-to-r from-[rgba(10,4,2,0.80)] via-[rgba(10,4,2,0.45)] to-transparent" />
+        
+        <div className="relative z-10 flex flex-col justify-end pb-16 pl-12 md:pb-20 md:pl-16" style={{ minHeight: '100vh' }}>
+          <span className="inline-flex w-fit border border-[rgba(201,168,76,0.5)] rounded-full px-4 py-1.5 mb-4 text-[#F5D98A] text-xs uppercase tracking-wider">
+            A Divine Spiritual Wellness Township
+          </span>
+          
+          <h1>
+            <span className="text-white block font-display font-normal leading-tight text-4xl md:text-5xl lg:text-6xl max-w-3xl">
+              Sri Vrindavan
+            </span>
+            <span className="text-[#C9A84C] block font-display font-normal leading-tight text-4xl md:text-5xl lg:text-6xl">
+              Project
+            </span>
+          </h1>
+
+          <p className="font-display italic text-white/80 text-xl md:text-2xl leading-relaxed mt-4 mb-3 max-w-2xl">
+            A Vision for Conscious Community Living
+          </p>
+
+          <p className="font-sans font-light text-white/65 text-sm md:text-base leading-relaxed max-w-xl mt-2">
+            Sri Vrindavan represents ISHAN's long-term vision for creating a living model of conscious and sustainable community life.
+          </p>
+
+          <p className="font-sans font-light text-white/65 text-sm md:text-base leading-relaxed max-w-xl mt-2">
+            Envisioned as an integrated spiritual wellness township where individuals, families, educators, researchers, practitioners, entrepreneurs, and communities can live, learn, work, and grow in harmony with nature.
+          </p>
+
+          <p className="font-sans font-light text-white/65 text-sm md:text-base leading-relaxed max-w-xl mt-2">
+            Designed around principles of wisdom, wellness, sustainability, education, ecological responsibility, and community living.
+          </p>
+        </div>
+      </section>
       
       <Vision />
       
