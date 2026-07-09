@@ -43,7 +43,8 @@ export function PageHero() {
           transition={{ duration: 1, ease: "easeOut", delay: 0.2 }}
           className="font-display font-normal leading-tight text-white text-4xl md:text-5xl lg:text-6xl max-w-3xl mb-4"
         >
-          Advancing Knowledge. Inspiring Innovation. Creating Lasting Impact.
+          <span className="text-white block">Advancing Knowledge. Inspiring Innovation.</span>
+          <span className="text-[#C9A84C] block">Creating Lasting Impact.</span>
         </motion.h1>
 
         <motion.h2

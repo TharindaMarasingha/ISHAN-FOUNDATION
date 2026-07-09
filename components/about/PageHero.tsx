@@ -43,7 +43,7 @@ export function PageHero() {
           transition={{ duration: 1, ease: "easeOut", delay: 0.2 }}
           className="font-display font-normal leading-tight text-white text-4xl md:text-5xl lg:text-6xl max-w-3xl mb-4"
         >
-          Who We Are
+          <span className="text-white block">Who We Are</span>
         </motion.h1>
 
         <motion.h2

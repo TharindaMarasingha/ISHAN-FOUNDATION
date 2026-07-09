@@ -43,7 +43,8 @@ export function PageHero() {
           transition={{ duration: 1, ease: "easeOut", delay: 0.2 }}
           className="font-display font-normal leading-tight text-white text-4xl md:text-5xl lg:text-6xl max-w-3xl mb-4"
         >
-          Transforming Knowledge into Practice
+          <span className="text-white block">Transforming Knowledge</span>
+          <span className="text-[#9C3F00] block">into Practice</span>
         </motion.h1>
 
         <motion.h2
