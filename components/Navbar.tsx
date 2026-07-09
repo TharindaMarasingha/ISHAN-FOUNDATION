@@ -114,18 +114,21 @@ export default function Navbar() {
         <div className="flex items-center justify-between w-full">
           
           {/* Left: Logo */}
-          <Link href="/" className="flex-shrink-0 flex items-center">
-            <Image 
-              src="/images/lg-icon.png"
-              alt="ISHAN Logo"
-              width={150}
-              height={150}
-              className="h-10 w-auto object-contain brightness-0 invert opacity-90 hidden md:block"
-              priority
-            />
-            <span className="md:hidden font-forum text-[#C9A84C] text-[14px] tracking-[0.15em]">
-              ISHAN
-            </span>
+          <Link href="/" className="flex-shrink-0 flex items-center pl-1 md:pl-2">
+            <div className="w-8 h-8 md:w-10 md:h-10 flex-shrink-0">
+              <img 
+                src="/images/ishanlogo.png"
+                alt="ISHAN"
+                width={80}
+                height={80}
+                className="scale-[1.7] md:scale-[2.2] origin-left"
+                style={{ 
+                  objectFit: 'contain',
+                  width: '100%',
+                  height: '100%'
+                }}
+              />
+            </div>
           </Link>
 
           {/* Center: Desktop Nav Links */}
