@@ -2,8 +2,6 @@
 
 import React, { useState } from "react";
 import { Button } from "../ui/Button";
-import { CheckCircle } from "lucide-react";
-
 type FormData = {
   name: string;
   email: string;
@@ -22,8 +20,6 @@ export function ContactForm() {
   });
 
   const [errors, setErrors] = useState<Partial<FormData>>({});
-  const [isSubmitting, setIsSubmitting] = useState(false);
-  const [submitStatus, setSubmitStatus] = useState<'idle'|'success'|'error'>('idle');
 
   const validate = () => {
     const newErrors: Partial<FormData> = {};
@@ -48,59 +44,10 @@ export function ContactForm() {
     }
   };
 
-  const handleSubmit = async (e: React.FormEvent) => {
+  const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    if (!validate()) return;
-
-    setIsSubmitting(true);
-    setSubmitStatus('idle');
-
-    try {
-      const res = await fetch('/api/contact', {
-        method: 'POST',
-        headers: { 
-          'Content-Type': 'application/json' 
-        },
-        body: JSON.stringify({
-          fullName: formData.name,
-          email: formData.email,
-          organisation: formData.organisation,
-          interest: formData.role,
-          message: formData.message
-        })
-      });
-      
-      if (res.ok) {
-        setSubmitStatus('success');
-        setFormData({ name: "", email: "", organisation: "", role: "", message: "" });
-      } else {
-        setSubmitStatus('error');
-      }
-    } catch {
-      setSubmitStatus('error');
-    } finally {
-      setIsSubmitting(false);
-    }
+    console.log('Form submitted:', formData);
   };
-
-  if (submitStatus === 'success') {
-    return (
-      <div className="flex flex-col items-center justify-center p-12 bg-deepAmber/[0.02] border border-burntOrange/20 text-center h-full">
-        <div className="w-16 h-16 rounded-full bg-[rgba(201,168,76,0.15)] border border-[rgba(201,168,76,0.4)] flex items-center justify-center mx-auto mb-6">
-          <CheckCircle className="text-[#C9A84C]" size={32} />
-        </div>
-        <h3 className="font-display text-3xl text-deepAmber mb-3">
-          Thank You
-        </h3>
-        <p className="font-sans text-sm text-[#6a5a4a] leading-relaxed max-w-md mx-auto mb-8">
-          Your inquiry has been received. We will respond within 2–3 business days. A confirmation has been sent to your email.
-        </p>
-        <Button onClick={() => setSubmitStatus('idle')} variant="ghost" magnetic={false}>
-          Send Another Message
-        </Button>
-      </div>
-    );
-  }
 
   return (
     <form onSubmit={handleSubmit} className="flex flex-col space-y-6 w-full" noValidate>
@@ -207,17 +154,9 @@ export function ContactForm() {
       </div>
 
       <div className="pt-4 flex flex-col items-center sm:items-start">
-        <Button type="submit" disabled={isSubmitting} variant="primary" magnetic={false}>
-          {isSubmitting ? "Sending..." : "Submit Inquiry"}
+        <Button type="submit" variant="primary" magnetic={false}>
+          Submit Inquiry
         </Button>
-        {submitStatus === 'error' && (
-          <p className="text-red-500 text-sm mt-3">
-            Something went wrong. Please email us at 
-            <a href="mailto:info@ishanfoundation.lk" className="text-[#C9A84C] ml-1">
-              info@ishanfoundation.lk
-            </a>
-          </p>
-        )}
       </div>
     </form>
   );
