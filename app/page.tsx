@@ -4,7 +4,6 @@ import { WhoWeAre } from "@/components/home/WhoWeAre";
 import { FourPillars } from "@/components/home/FourPillars";
 import { EightObjectives } from "@/components/home/EightObjectives";
 import { Ecosystem } from "@/components/home/Ecosystem";
-import { Approach } from "@/components/home/Approach";
 import { Team } from "@/components/home/Team";
 import { WhoWeServe } from "@/components/home/WhoWeServe";
 import { Partnerships } from "@/components/home/Partnerships";
@@ -36,12 +35,7 @@ export default function Home() {
       />
       
       <OverlapParallax
-        baseContent={
-          <OverlapParallax
-            baseContent={<Ecosystem />}
-            overlapContent={<Approach />}
-          />
-        }
+        baseContent={<Ecosystem />}
         overlapContent={<Team />}
       />
       

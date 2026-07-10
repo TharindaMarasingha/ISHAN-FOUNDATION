@@ -6,9 +6,9 @@ import {
   OurPhilosophySection, 
   CoreBeliefsSection, 
   CoreValuesSection, 
-  IshanWaySection, 
   OurCommitmentSection 
 } from "@/components/about/AboutSections";
+import { Approach } from "@/components/home/Approach";
 
 export const metadata = {
   title: "About — ISHAN",
@@ -25,7 +25,7 @@ export default function AboutPage() {
       <OurPhilosophySection />
       <CoreBeliefsSection />
       <CoreValuesSection />
-      <IshanWaySection />
+      <Approach />
       <OurCommitmentSection />
     </div>
   );
