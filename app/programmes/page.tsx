@@ -8,10 +8,15 @@ import {
   ProgrammesCTASection 
 } from "@/components/programmes/ProgrammesSections";
 
-export const metadata = {
-  title: "Programmes — ISHAN",
-  description: "Transforming Knowledge into Practice.",
-};
+import { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: 'Programmes',
+  description: 'ISHAN programmes in preventive wellness, proactive wellbeing, conscious leadership, wisdom education, community development, and nature-based learning.',
+  alternates: {
+    canonical: 'https://ishanfoundation.lk/programmes',
+  },
+}
 
 export default function ProgrammesPage() {
   return (

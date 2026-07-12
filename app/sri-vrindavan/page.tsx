@@ -8,10 +8,15 @@ import { SectionHeading } from "@/components/ui/SectionHeading";
 import { Button } from "@/components/ui/Button";
 import { RevealOnScroll } from "@/components/ui/RevealOnScroll";
 
-export const metadata = {
-  title: "Sri Vrindavan Project — ISHAN",
-  description: "Sri Lanka's First Conscious Living Township—a 150-acre integrated settlement for spiritual and ecological harmony.",
-};
+import { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: 'Sri Vrindavan Project',
+  description: 'Sri Vrindavan — ISHAN\'s vision for Sri Lanka\'s first sacred conscious living township. A 150-acre integrated spiritual wellness community in harmony with nature.',
+  alternates: {
+    canonical: 'https://ishanfoundation.lk/sri-vrindavan',
+  },
+}
 
 export default function SriVrindavanPage() {
   return (

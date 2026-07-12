@@ -8,10 +8,15 @@ import {
   ResearchCTASection 
 } from "@/components/research/ResearchSections";
 
-export const metadata = {
-  title: "Research & Education — ISHAN",
-  description: "Advancing Knowledge. Inspiring Innovation. Creating Lasting Impact.",
-};
+import { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: 'Research & Publications',
+  description: 'ISHAN research in preventive wellness, yoga, meditation, leadership, education, sustainability, and environmental stewardship. Publications, journals, and digital learning.',
+  alternates: {
+    canonical: 'https://ishanfoundation.lk/research',
+  },
+}
 
 export default function ResearchPage() {
   return (

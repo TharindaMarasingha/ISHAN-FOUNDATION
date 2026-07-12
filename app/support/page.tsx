@@ -5,10 +5,15 @@ import {
   SupportCTASection 
 } from "@/components/support/SupportSections";
 
-export const metadata = {
-  title: "Support — ISHAN",
-  description: "Become a Steward of Positive Change.",
-};
+import { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: 'Support Our Mission',
+  description: 'Support ISHAN through volunteering, professional expertise, teaching, research, community projects, environmental initiatives, and philanthropic contributions.',
+  alternates: {
+    canonical: 'https://ishanfoundation.lk/support',
+  },
+}
 
 export default function SupportPage() {
   return (

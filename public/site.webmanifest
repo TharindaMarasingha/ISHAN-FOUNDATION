@@ -1,0 +1,21 @@
+{
+  "name": "ISHAN Foundation",
+  "short_name": "ISHAN",
+  "description": "International Society of Humanity and Nature",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#FFF1E6",
+  "theme_color": "#C9A84C",
+  "icons": [
+    {
+      "src": "/images/ishanlogo.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/images/ishanlogo.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}

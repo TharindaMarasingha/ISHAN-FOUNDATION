@@ -6,10 +6,15 @@ import {
   PartnershipsCTASection 
 } from "@/components/partnerships/PartnershipsSections";
 
-export const metadata = {
-  title: "Partnerships — ISHAN",
-  description: "Together, We Create Greater Impact.",
-};
+import { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: 'Partnerships',
+  description: 'Partner with ISHAN — we collaborate with governments, educational institutions, corporations, NGOs, and organisations committed to conscious and sustainable development.',
+  alternates: {
+    canonical: 'https://ishanfoundation.lk/partnerships',
+  },
+}
 
 export default function PartnershipsPage() {
   return (

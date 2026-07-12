@@ -6,10 +6,15 @@ import { SectionHeading } from "@/components/ui/SectionHeading";
 import { Button } from "@/components/ui/Button";
 import { RevealOnScroll } from "@/components/ui/RevealOnScroll";
 
-export const metadata = {
-  title: "Antahakarana Avalokana — ISHAN",
-  description: "A signature immersive experience designed for profound self-discovery, inner reflection, holistic wellbeing, and conscious transformation.",
-};
+import { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: 'Antahakarana Avalokana',
+  description: 'Antahakarana Avalokana — ISHAN\'s signature inner immersion experience for self-discovery, meditation, contemplation, and conscious transformation.',
+  alternates: {
+    canonical: 'https://ishanfoundation.lk/avalokana',
+  },
+}
 
 export default function AvalokanaPage() {
   return (

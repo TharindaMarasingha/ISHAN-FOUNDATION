@@ -3,10 +3,15 @@ import { ContactInfo } from "@/components/contact/ContactInfo";
 import { ClosingBand } from "@/components/contact/ClosingBand";
 import Image from "next/image";
 
-export const metadata = {
-  title: "Contact & Connect — ISHAN",
-  description: "Connect with ISHAN. We welcome inquiries from wellness practitioners, institutional partners, investors, media, and seekers.",
-};
+import { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: 'Connect With Us',
+  description: 'Connect with ISHAN — reach out for programmes, partnerships, research, volunteering, retreats, or to join the movement for humanity and nature.',
+  alternates: {
+    canonical: 'https://ishanfoundation.lk/contact',
+  },
+}
 
 export default function ContactPage() {
   return (

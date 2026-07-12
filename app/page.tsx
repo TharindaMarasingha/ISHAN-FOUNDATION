@@ -13,10 +13,15 @@ import { GoldDivider } from "@/components/ui/GoldDivider";
 
 import { OverlapParallax } from "@/components/ui/OverlapParallax";
 
-export const metadata = {
-  title: "Home — ISHAN",
-  description: "International Society of Humanity and Nature. Harmonising Humanity with Nature through Wisdom, Wellbeing, and Conscious Action.",
-};
+import { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: 'Home',
+  description: 'ISHAN is a global institution committed to advancing humanity and nature through wisdom, wellness, education, ethical leadership, sustainability, and conscious community development.',
+  alternates: {
+    canonical: 'https://ishanfoundation.lk',
+  },
+}
 
 export default function Home() {
   return (

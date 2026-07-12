@@ -6,10 +6,15 @@ import {
   SharedCommitmentSection 
 } from "@/components/leadership/LeadershipSections";
 
-export const metadata = {
-  title: "Leadership — ISHAN",
-  description: "Leadership at ISHAN is founded on the principle of stewardship.",
-};
+import { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: 'Leadership',
+  description: 'Meet the Circle of Stewards guiding ISHAN — a team of internationally credentialed practitioners, educators, and leaders united in shared purpose.',
+  alternates: {
+    canonical: 'https://ishanfoundation.lk/leadership',
+  },
+}
 
 export default function LeadershipPage() {
   return (

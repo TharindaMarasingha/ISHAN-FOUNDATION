@@ -10,14 +10,19 @@ import {
 } from "@/components/about/AboutSections";
 import { Approach } from "@/components/home/Approach";
 
-export const metadata = {
-  title: "About — ISHAN",
-  description: "Learn about ISHAN's vision, mission, philosophy, and our core values for conscious living.",
-};
+import { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: 'About',
+  description: 'Learn about ISHAN — our story, vision, mission, philosophy, core beliefs, and commitment to harmonising humanity and nature through wisdom and wellness.',
+  alternates: {
+    canonical: 'https://ishanfoundation.lk/about',
+  },
+}
 
 export default function AboutPage() {
   return (
-    <div className="-mt-24">
+    <div className="-mt-24 w-full min-h-screen bg-white">
       <PageHero />
       <OurStorySection />
       <VisionMissionSection />

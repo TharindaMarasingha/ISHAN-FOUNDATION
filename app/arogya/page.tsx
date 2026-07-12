@@ -8,10 +8,15 @@ import { SectionHeading } from "@/components/ui/SectionHeading";
 import { Button } from "@/components/ui/Button";
 import { RevealOnScroll } from "@/components/ui/RevealOnScroll";
 
-export const metadata = {
-  title: "Arogya Ashram International — ISHAN",
-  description: "A globally scalable wellness ecosystem rooted in Sri Lanka's ancient Arogyasala heritage.",
-};
+import { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: 'Arogya Ashram International',
+  description: 'Arogya Ashram International (AAI) — holistic wellness through yoga, meditation, breathwork, Ayurveda, nutrition, and preventive health education in Sri Lanka.',
+  alternates: {
+    canonical: 'https://ishanfoundation.lk/arogya',
+  },
+}
 
 export default function ArogyaPage() {
   return (

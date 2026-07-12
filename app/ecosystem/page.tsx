@@ -1,10 +1,15 @@
 import { PageHero } from "@/components/ecosystem/PageHero";
 import { EcosystemSections } from "@/components/ecosystem/EcosystemSections";
 
-export const metadata = {
-  title: "Ecosystem — ISHAN",
-  description: "A growing ecosystem of specialised initiatives working together to advance a common vision.",
-};
+import { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: 'Our Ecosystem',
+  description: 'Explore the ISHAN ecosystem — Arogya Ashram International, Antahakarana Avalokana, Samanvaya, and Sri Vrindavan Project. One vision, multiple initiatives, shared purpose.',
+  alternates: {
+    canonical: 'https://ishanfoundation.lk/ecosystem',
+  },
+}
 
 export default function EcosystemPage() {
   return (

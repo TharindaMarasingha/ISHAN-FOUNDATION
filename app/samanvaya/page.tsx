@@ -6,10 +6,15 @@ import { SectionHeading } from "@/components/ui/SectionHeading";
 import { Button } from "@/components/ui/Button";
 import { RevealOnScroll } from "@/components/ui/RevealOnScroll";
 
-export const metadata = {
-  title: "Samanvaya — The Inner Immersion",
-  description: "ISHAN's flagship immersive wellness experience for profound inner exploration, holistic wellbeing, and conscious transformation.",
-};
+import { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: 'Samanvaya',
+  description: 'Samanvaya — ISHAN\'s flagship transformational retreat from Pancha Tattva to Sampurna Sattva. A journey to integrated wellbeing through the wisdom of the five elements.',
+  alternates: {
+    canonical: 'https://ishanfoundation.lk/samanvaya',
+  },
+}
 
 export default function SamanvayaPage() {
   return (
