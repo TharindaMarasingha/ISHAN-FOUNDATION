@@ -36,16 +36,25 @@ function TypewriterText({ text, className }: { text: string; className?: string 
 
 export function OurStorySection() {
   return (
-    <section className="py-24 px-6 max-w-6xl mx-auto relative">
+    <section className="relative w-full overflow-hidden">
+      {/* Decorative flower SVG at absolute left of screen */}
+      <img 
+        src="/flower.svg" 
+        alt="" 
+        className="absolute top-0 left-0 w-32 md:w-48 lg:w-64 opacity-15 pointer-events-none select-none z-0"
+        aria-hidden="true"
+      />
+      
+      <div className="pt-12 pb-8 px-6 max-w-6xl mx-auto relative">
       <SectionHeading heading="Our Story" align="center" />
 
       <RevealOnScroll delay={0.2}>
-        <div className="mt-20 flex flex-col md:flex-row gap-12 items-start justify-between relative z-10" style={{ minHeight: "600px" }}>
+        <div className="mt-12 flex flex-col md:flex-row gap-12 items-start justify-between relative z-10">
           
           {/* LEFT COLUMN (55%) */}
-          <div className="w-full md:w-[55%] flex flex-col gap-12">
+          <div className="w-full md:w-[55%] flex flex-col gap-12 relative">
             {/* Pull-quote style for first paragraph */}
-            <div className="border-l-[4px] border-[#C9984A] pl-8 max-w-[480px]">
+            <div className="border-l-[4px] border-[#C9984A] pl-8 max-w-[480px] relative z-10">
               <TypewriterText 
                 text="Every generation inherits challenges. Some challenge our bodies. Some challenge our minds. Some challenge our relationships. Some challenge our economies. Some challenge our values."
                 className="font-display italic text-[26px] text-[#3C2114] leading-[1.7]"
@@ -90,13 +99,14 @@ export function OurStorySection() {
 
         </div>
       </RevealOnScroll>
+      </div>
     </section>
   );
 }
 
 export function VisionMissionSection() {
   return (
-    <section className="py-24 px-6 max-w-7xl mx-auto overflow-hidden">
+    <section className="pt-8 pb-24 px-6 max-w-7xl mx-auto overflow-hidden">
       <div className="flex flex-col gap-12 relative">
         {/* Vertical connector line */}
         <div className="hidden md:block absolute left-1/2 top-1/2 -translate-y-1/2 -translate-x-1/2 w-[2px] h-[60px] bg-gradient-to-b from-[#D89E4D] via-[#A46A2B] to-[#D89E4D] opacity-50 z-10"></div>
@@ -106,9 +116,7 @@ export function VisionMissionSection() {
           <div className="flex flex-col md:flex-row items-center min-h-[300px] gap-12">
             {/* Left side: Content (60%) */}
             <div className="w-full md:w-[60%] relative py-8">
-              <div className="absolute right-0 top-1/2 -translate-y-1/2 font-display text-[140px] text-[#D89E4D] opacity-10 leading-none select-none">
-                01
-              </div>
+
               <div className="relative z-10">
                 <div className="font-sans text-[10px] uppercase tracking-[0.2em] text-[#A46A2B] mb-3">
                   Our Vision
@@ -121,22 +129,14 @@ export function VisionMissionSection() {
               </div>
             </div>
             
-            {/* Right side: Orb (40%) */}
+            {/* Right side: Image (40%) */}
             <div className="w-full md:w-[40%] flex justify-center">
-              <div 
-                className="flex items-center justify-center rounded-full"
-                style={{
-                  width: "300px",
-                  height: "300px",
-                  background: "radial-gradient(circle, rgba(216,158,77,0.15) 0%, rgba(216,158,77,0.05) 50%, transparent 70%)",
-                  border: "1px dashed rgba(216,158,77,0.3)"
-                }}
-              >
-                <svg width="80" height="80" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1" strokeLinecap="round" strokeLinejoin="round" className="text-[#D89E4D] opacity-80">
-                  <path d="M12 2c-3.1 3-5.2 6.5-6.3 10.5-.3 1.2-.5 2.5-.5 3.5 0 3.9 3.1 7 7 7s7-3.1 7-7c0-1-.2-2.3-.5-3.5C17.2 8.5 15.1 5 12 2z"/>
-                  <path d="M12 2c-.6 4.3 1.1 8 4 11 1.7 1.8 4 3 6 3-2.6-3.8-5.3-6.5-10-14z"/>
-                  <path d="M12 2c.6 4.3-1.1 8-4 11-1.7 1.8-4 3-6 3 2.6-3.8 5.3-6.5 10-14z"/>
-                </svg>
+              <div className="relative w-[300px] h-[300px] rounded-tl-[80px] rounded-br-[80px] overflow-hidden shadow-xl">
+                <img 
+                  src="/images/vision.jpg" 
+                  alt="Vision" 
+                  className="w-full h-full object-cover transition-transform duration-700 hover:scale-105"
+                />
               </div>
             </div>
           </div>
@@ -147,9 +147,7 @@ export function VisionMissionSection() {
           <div className="flex flex-col md:flex-row-reverse items-center min-h-[300px] gap-12">
             {/* Right side: Content (60%) */}
             <div className="w-full md:w-[60%] relative py-8 flex flex-col md:items-end md:text-right">
-              <div className="absolute left-0 top-1/2 -translate-y-1/2 font-display text-[140px] text-[#A46A2B] opacity-10 leading-none select-none">
-                02
-              </div>
+
               <div className="relative z-10 flex flex-col md:items-end">
                 <div className="font-sans text-[10px] uppercase tracking-[0.2em] text-[#D89E4D] mb-3">
                   Our Mission
@@ -162,22 +160,14 @@ export function VisionMissionSection() {
               </div>
             </div>
             
-            {/* Left side: Orb (40%) */}
+            {/* Left side: Image (40%) */}
             <div className="w-full md:w-[40%] flex justify-center">
-              <div 
-                className="flex items-center justify-center rounded-full"
-                style={{
-                  width: "300px",
-                  height: "300px",
-                  background: "radial-gradient(circle, rgba(164,106,43,0.12) 0%, rgba(164,106,43,0.04) 50%, transparent 70%)",
-                  border: "1px dashed rgba(164,106,43,0.3)"
-                }}
-              >
-                <svg width="80" height="80" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1" strokeLinecap="round" strokeLinejoin="round" className="text-[#A46A2B] opacity-80">
-                  <circle cx="12" cy="12" r="10" />
-                  <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z" />
-                  <path d="M2 12h20" />
-                </svg>
+              <div className="relative w-[300px] h-[300px] rounded-tr-[80px] rounded-bl-[80px] overflow-hidden shadow-xl">
+                <img 
+                  src="/images/mission.jpg" 
+                  alt="Mission" 
+                  className="w-full h-full object-cover transition-transform duration-700 hover:scale-105"
+                />
               </div>
             </div>
           </div>
@@ -201,37 +191,22 @@ export function OurPurposeSection() {
   ];
 
   return (
-    <section className="py-24 px-6 max-w-7xl mx-auto">
-      <SectionHeading heading="Our Purpose" align="center" />
-      <div className="mt-16 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+    <section className="py-24 px-6 max-w-5xl mx-auto relative">
+      
+      <div className="relative z-10">
+        <SectionHeading heading="Our Purpose" align="center" />
+        <div className="mt-16 flex flex-col gap-6 max-w-3xl mx-auto">
         {purposes.map((p, i) => (
-          <RevealOnScroll key={i} delay={i * 0.08}>
-            <div 
-              className="group flex flex-col transition-all duration-300 ease-in-out transform hover:-translate-y-[5px] h-full"
-              style={{
-                background: "rgba(248,242,235,0.65)", // Warm Ivory #F8F2EB with opacity
-                backdropFilter: "blur(10px)",
-                border: "1px solid rgba(216,158,77,0.2)",
-                borderTop: "3px solid #D89E4D",
-                borderRadius: "16px",
-                padding: "28px 24px"
-              }}
-              onMouseEnter={(e) => {
-                e.currentTarget.style.boxShadow = "0 12px 40px rgba(58,34,21,0.08)";
-                e.currentTarget.style.borderTopColor = "#A46A2B";
-              }}
-              onMouseLeave={(e) => {
-                e.currentTarget.style.boxShadow = "none";
-                e.currentTarget.style.borderTopColor = "#D89E4D";
-              }}
-            >
-              <div className="text-[#C9984A] text-[12px] mb-4">◆</div>
-              <p className="font-sans font-normal text-[14px] text-[#66594F] leading-[1.6]">
+          <RevealOnScroll key={i} delay={i * 0.05}>
+            <div className="flex items-start gap-4">
+              <span className="text-[#C9984A] text-lg leading-none mt-1">✦</span>
+              <p className="font-sans font-light text-[17px] text-[#66594F] leading-[1.8]">
                 {p}
               </p>
             </div>
           </RevealOnScroll>
         ))}
+      </div>
       </div>
     </section>
   );
