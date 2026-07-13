@@ -1,10 +1,24 @@
 "use client";
 
 import React from "react";
+import Image from "next/image";
 import { SectionHeading } from "../ui/SectionHeading";
 import { RevealOnScroll } from "../ui/RevealOnScroll";
 import { Card } from "../ui/Card";
 import { motion, useInView } from "framer-motion";
+import { 
+  ShieldCheck, 
+  BookOpen, 
+  Heart, 
+  Fingerprint, 
+  Users, 
+  Hand, 
+  Handshake, 
+  Leaf, 
+  Lightbulb, 
+  User, 
+  Star 
+} from "lucide-react";
 
 function TypewriterText({ text, className }: { text: string; className?: string }) {
   const ref = React.useRef(null);
@@ -191,8 +205,18 @@ export function OurPurposeSection() {
   ];
 
   return (
-    <section className="py-24 px-6 max-w-5xl mx-auto relative">
+    <section className="py-24 px-6 max-w-5xl mx-auto relative overflow-hidden">
       
+      {/* Peacock SVG - right side decorative element */}
+      <div className="absolute right-[-60px] top-1/2 -translate-y-1/2 w-[500px] h-[650px] pointer-events-none select-none z-0 opacity-20">
+        <Image
+          src="/peacock.svg"
+          alt="Peacock decoration"
+          fill
+          className="object-contain object-right"
+        />
+      </div>
+
       <div className="relative z-10">
         <SectionHeading heading="Our Purpose" align="center" />
         <div className="mt-16 flex flex-col gap-6 max-w-3xl mx-auto">
@@ -223,8 +247,20 @@ export function OurPhilosophySection() {
 
   return (
     <section className="py-24 px-6 mt-12">
-      <div className="max-w-5xl mx-auto">
-        <SectionHeading heading="Our Philosophy" align="center" />
+      <div className="max-w-5xl mx-auto relative z-10">
+        {/* Heading row with wisdom SVG pinned to the left of it */}
+        <div className="relative">
+          {/* Wisdom SVG - left side, vertically centered on heading */}
+          <div className="absolute left-[-220px] top-1/2 -translate-y-1/2 w-[380px] h-[420px] pointer-events-none select-none z-0 opacity-15">
+            <Image
+              src="/wisdom.svg"
+              alt="Wisdom decoration"
+              fill
+              className="object-contain object-left"
+            />
+          </div>
+          <SectionHeading heading="Our Philosophy" align="center" />
+        </div>
         <div className="mt-20 flex flex-col">
           {paragraphs.map((text, i) => {
             const number = `0${i + 1}`;
@@ -331,96 +367,329 @@ export function CoreBeliefsSection() {
   );
 }
 
-export function CoreValuesSection() {
-  const values = [
-    "Integrity", "Wisdom", "Compassion", "Authenticity", "Respect", 
-    "Responsibility", "Service", "Collaboration", "Sustainability", 
-    "Innovation", "Humility", "Excellence"
-  ];
+// ── Sacred geometry lotus center ─────────────────────────────────────────────
+function SacredCenter({ glowing }: { glowing: boolean }) {
+  const S = 600, C = 300;
+  // A beautiful abstract lotus pattern
+  return (
+    <div style={{ position: "relative", width: S, height: S, opacity: glowing ? 0.35 : 0.25, transition: 'opacity 0.6s ease' }}>
+      <svg width="100%" height="100%" viewBox="0 0 100 100">
+        <defs>
+          <radialGradient id="lotusGrad" cx="50%" cy="50%" r="50%">
+            <stop offset="0%" stopColor="#C9984A" stopOpacity="0.4" />
+            <stop offset="50%" stopColor="#C9984A" stopOpacity="0.15" />
+            <stop offset="100%" stopColor="#C9984A" stopOpacity="0" />
+          </radialGradient>
+        </defs>
+        <circle cx="50" cy="50" r="45" fill="url(#lotusGrad)" />
+        <g stroke="rgba(201,168,76,0.3)" strokeWidth="0.2" fill="none">
+          {Array.from({ length: 12 }).map((_, i) => (
+            <path key={i}
+              d="M50 50 Q 65 30 50 10 Q 35 30 50 50"
+              transform={`rotate(${i * 30} 50 50)`}
+              fill="rgba(201,168,76,0.03)"
+            />
+          ))}
+          {Array.from({ length: 12 }).map((_, i) => (
+            <path key={i + 12}
+              d="M50 50 Q 75 40 85 50 Q 75 60 50 50"
+              transform={`rotate(${i * 30 + 15} 50 50)`}
+              fill="rgba(201,168,76,0.05)"
+            />
+          ))}
+          {Array.from({ length: 12 }).map((_, i) => (
+            <circle key={i + 24} cx="50" cy="15" r="1.5" fill="rgba(201,168,76,0.2)" transform={`rotate(${i * 30} 50 50)`} />
+          ))}
+        </g>
+      </svg>
+    </div>
+  );
+}
 
-  const containerVariants = {
-    hidden: { opacity: 0 },
-    visible: {
-      opacity: 1,
-      transition: { staggerChildren: 0.05 },
-    },
-  };
-
-  const itemVariants = {
-    hidden: { opacity: 0, scale: 0.9, y: 10 },
-    visible: { opacity: 1, scale: 1, y: 0 },
-  };
-
-  // Group into 3 rows for the asymmetric layout
-  const row1 = values.slice(0, 4);
-  const row2 = values.slice(4, 8);
-  const row3 = values.slice(8, 12);
-
-  const getPillStyle = (globalIndex: number) => {
-    // Alternate styles based on global index (1-based for the math in prompt)
-    const pos = globalIndex + 1;
-    if ([1, 4, 7, 10].includes(pos)) {
-      return { border: "rgba(201,168,76,0.4)", bg: "rgba(201,168,76,0.1)" };
-    } else if ([2, 5, 8, 11].includes(pos)) {
-      return { border: "rgba(156,63,0,0.3)", bg: "rgba(156,63,0,0.06)" };
-    } else {
-      return { border: "rgba(46,26,14,0.2)", bg: "rgba(46,26,14,0.04)" };
-    }
-  };
-
-  const renderPill = (v: string, i: number) => {
-    const style = getPillStyle(i);
-    return (
-      <motion.div 
-        variants={itemVariants}
-        key={i} 
-        className="transition-all duration-300 ease-out transform cursor-default flex items-center justify-center hover:-translate-y-[4px]"
-        style={{
-          background: style.bg,
-          backdropFilter: "blur(8px)",
-          border: `1px solid ${style.border}`,
-          borderRadius: "9999px",
-          padding: "12px 28px",
-        }}
-        onMouseEnter={(e) => {
-          e.currentTarget.style.borderColor = "#C9A84C"; // brightens
-          e.currentTarget.style.boxShadow = "0 8px 20px rgba(201,168,76,0.2)";
-        }}
-        onMouseLeave={(e) => {
-          e.currentTarget.style.borderColor = style.border;
-          e.currentTarget.style.boxShadow = "none";
-        }}
-      >
-        <span className="font-sans font-normal text-[11px] uppercase tracking-[0.15em] text-deepAmber">{v}</span>
-      </motion.div>
-    );
-  };
+// ── Floating golden dust particles ───────────────────────────────────────────
+function FloatingParticles() {
+  const particles = React.useMemo(() =>
+    Array.from({ length: 22 }, (_, i) => {
+      const a    = (i / 22) * 2 * Math.PI;
+      const dist = 70 + (i % 3) * 58;
+      const size = 1.2 + (i % 3) * 0.65;
+      return {
+        left: 320 + dist * Math.cos(a) - size / 2,
+        top:  320 + dist * Math.sin(a) - size / 2,
+        dx:   ((i % 5) - 2) * 15,
+        dur:  3.6 + (i % 4),
+        del:  -(i * 0.38),
+        size,
+      };
+    }), []);
 
   return (
-    <section className="py-24 px-6 max-w-5xl mx-auto">
-      <SectionHeading heading="Core Values" align="center" />
-      <RevealOnScroll delay={0.2}>
-        <motion.div 
-          variants={containerVariants}
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, margin: "-50px" }}
-          className="mt-16 flex flex-col gap-6"
-        >
-          {/* Row 1 - Left */}
-          <div className="flex flex-wrap justify-start gap-4">
-            {row1.map((v, idx) => renderPill(v, idx))}
+    <>
+      {particles.map((p, i) => (
+        <div key={i} className="absolute pointer-events-none rounded-full"
+          style={{
+            left: p.left, top: p.top,
+            width: p.size, height: p.size,
+            background: "rgba(201,168,76,0.55)",
+            animation: `cvFloat ${p.dur}s ease-in-out ${p.del}s infinite`,
+            ["--dx" as string]: `${p.dx}px`,
+          }}
+        />
+      ))}
+    </>
+  );
+}
+
+// ── Core Values Section ───────────────────────────────────────────────────────
+export function CoreValuesSection() {
+  const values = [
+    { label: "Integrity",       Icon: ShieldCheck, color: "rgba(180,150,100,0.5)" },
+    { label: "Wisdom",          Icon: BookOpen,    color: "rgba(180,150,100,0.5)" },
+    { label: "Compassion",      Icon: Heart,       color: "#FBBF24" }, // orange/gold
+    { label: "Authenticity",    Icon: Fingerprint, color: "rgba(180,150,100,0.5)" },
+{ label: "Respect",         Icon: Users,       color: "#F87171" }, // red
+    { label: "Responsibility",  Icon: Hand,        color: "rgba(180,150,100,0.5)" },
+    { label: "Service",         Icon: Handshake,   color: "rgba(180,150,100,0.5)" },
+    { label: "Collaboration",   Icon: Users,       color: "rgba(180,150,100,0.5)" }, // using Users again
+    { label: "Sustainability",  Icon: Leaf,        color: "#84CC16" }, // green
+    { label: "Innovation",      Icon: Lightbulb,   color: "rgba(180,150,100,0.5)" },
+    { label: "Humility",        Icon: User,        color: "#60A5FA" }, // blue
+    { label: "Excellence",      Icon: Star,        color: "#F59E0B" }, // gold
+  ];
+
+  // Colors to outline/glow matching the design
+  const defaultShadow = "0 3px 14px rgba(0,0,0,0.06)";
+
+  const SIZE = 580, CX = SIZE/2, CY = SIZE/2, R = 220, INNER = 83;
+
+  const rotRef   = React.useRef(0);
+  const pauseRef = React.useRef(false);
+  const lastRef  = React.useRef(0);
+  const rafRef   = React.useRef(0);
+  const [deg, setDeg]       = React.useState(0);
+  const [hovered, setHov]   = React.useState<number | null>(null);
+  const [mounted, setMounted] = React.useState(false);
+
+  React.useEffect(() => {
+    const SPEED = 360 / 150_000; // one full rotation per 150 s
+    const tick = (now: number) => {
+      if (lastRef.current && !pauseRef.current) {
+        rotRef.current = (rotRef.current + SPEED * (now - lastRef.current)) % 360;
+        setDeg(rotRef.current);
+      }
+      lastRef.current = now;
+      rafRef.current  = requestAnimationFrame(tick);
+    };
+    rafRef.current = requestAnimationFrame(tick);
+    return () => cancelAnimationFrame(rafRef.current);
+  }, []);
+
+  // Mount effect — runs only on client, prevents hydration mismatch
+  React.useEffect(() => { setMounted(true); }, []);
+
+  // Server / pre-hydration: render a size-matched placeholder with no dynamic values
+  if (!mounted) {
+    return (
+      <section className="py-10 px-6 relative overflow-hidden flex flex-col justify-center min-h-[100vh]">
+        <div className="max-w-5xl mx-auto">
+          <SectionHeading heading="Core Values" align="center" />
+          <div className="mt-10 flex justify-center">
+            <div style={{ width: SIZE, height: SIZE }} />
           </div>
-          {/* Row 2 - Center */}
-          <div className="flex flex-wrap justify-center gap-4">
-            {row2.map((v, idx) => renderPill(v, idx + 4))}
+        </div>
+      </section>
+    );
+  }
+
+  const cards = values.map((v, i) => {
+    const rad = ((i / 12) * 360 - 90 + deg) * (Math.PI / 180);
+    return {
+      ...v,
+      x: CX + R * Math.cos(rad),
+      y: CY + R * Math.sin(rad),
+      i,
+    };
+  });
+
+  return (
+    <section className="py-10 px-6 relative overflow-hidden flex flex-col justify-center min-h-[100vh]">
+      {/* Soft edge vignette */}
+      <div className="absolute inset-0 pointer-events-none" style={{
+        background: "radial-gradient(ellipse 82% 82% at 50% 50%, transparent 52%, rgba(160,135,90,0.07) 100%)"
+      }}/>
+
+      <div className="max-w-5xl mx-auto relative z-10">
+        <SectionHeading heading="Core Values" align="center" />
+
+        <div className="mt-10 flex justify-center">
+          <div className="relative" style={{ width: SIZE, height: SIZE, maxWidth: "100%" }}>
+
+            {/* Ambient centre radial glow */}
+            <div className="absolute inset-0 pointer-events-none flex items-center justify-center">
+              <div style={{
+                width: 440, height: 440, borderRadius: "50%",
+                background: "radial-gradient(circle, rgba(201,168,76,0.10) 0%, rgba(201,168,76,0.03) 52%, transparent 70%)",
+                animation: "cvPulse 5s ease-in-out infinite",
+              }}/>
+            </div>
+
+            {/* SVG — orbit rings + glowing spokes */}
+            <svg className="absolute inset-0 w-full h-full"
+              viewBox={`0 0 ${SIZE} ${SIZE}`} aria-hidden>
+              <defs>
+                <radialGradient id="spokeG" cx="50%" cy="50%" r="50%">
+                  <stop offset="0%"   stopColor="#C9A84C" stopOpacity="0.58"/>
+                  <stop offset="100%" stopColor="#C9A84C" stopOpacity="0.03"/>
+                </radialGradient>
+                <filter id="spkGlow" x="-50%" y="-50%" width="200%" height="200%">
+                  <feGaussianBlur stdDeviation="1.8" result="b"/>
+                  <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+                </filter>
+              </defs>
+
+              {/* Spokes */}
+              {cards.map(({ x, y, i }) => {
+                const ra = Math.atan2(y - CY, x - CX);
+                const ox = CX + (R - 55) * Math.cos(ra);
+                const oy = CY + (R - 55) * Math.sin(ra);
+                const isH = hovered === i;
+                
+                // Add dot along the spoke
+                const dotX = CX + 140 * Math.cos(ra);
+                const dotY = CY + 140 * Math.sin(ra);
+
+                return (
+                  <g key={i}>
+                    <line 
+                      x1={CX} y1={CY} x2={ox} y2={oy}
+                      stroke="rgba(201,168,76,0.12)"
+                      strokeWidth={1}
+                    />
+                    <circle cx={dotX} cy={dotY} r={1.5} fill="rgba(201,168,76,0.6)" />
+                    {isH && (
+                      <line 
+                        x1={CX} y1={CY} x2={ox} y2={oy}
+                        stroke="rgba(201,168,76,0.4)"
+                        strokeWidth={2}
+                      />
+                    )}
+                  </g>
+                );
+              })}
+            </svg>
+
+            {/* Sacred geometry centre — breathes slowly */}
+            <div className="absolute" style={{
+              left: CX, top: CY,
+              transform: "translate(-50%,-50%)",
+              zIndex: 20,
+            }}>
+              <div style={{ animation: "cvBreath 5s ease-in-out infinite" }}>
+                <SacredCenter glowing={hovered !== null}/>
+              </div>
+            </div>
+
+            {/* Floating golden dust */}
+            <FloatingParticles/>
+
+            {/* Value glass cards */}
+            {cards.map(({ label, Icon, color, x, y, i }) => (
+              <div
+                key={i}
+                className="absolute"
+                style={{
+                  left: x, top: y,
+                  transform: `translate(-50%,-50%)`, // Removing rotation keeps it perfectly upright
+                  zIndex: 10,
+                  willChange: "transform",
+                }}
+                onMouseEnter={() => { pauseRef.current = true;  setHov(i); }}
+                onMouseLeave={() => { pauseRef.current = false; setHov(null); }}
+              >
+                {/* Floating breathing animation wrapper */}
+                <div style={{
+                  animation: hovered !== i ? `cvCardFloat ${4 + (i % 3)}s ease-in-out ${-(i * 0.5)}s infinite` : "none",
+                }}>
+                {/* Inner wrapper — handles hover lift independently */}
+                <div style={{
+                  transform: hovered === i ? "translateY(-8px) scale(1.08)" : "translateY(0) scale(1)",
+                  transition: "transform 0.38s cubic-bezier(.34,1.56,.64,1)",
+                }}>
+                  <div
+                    className="flex flex-col items-center justify-center gap-1.5 cursor-default select-none bg-white"
+                    style={{
+                      width: 110,
+                      height: 55,
+                      borderRadius: 30,
+                      backdropFilter: "blur(14px)",
+                      WebkitBackdropFilter: "blur(14px)",
+                      border: `1px solid ${color}`,
+                      boxShadow: hovered === i 
+                        ? `0 10px 30px ${color.replace('0.5', '0.2').replace('rgb', 'rgba').replace(')', ', 0.3)')}, 0 0 0 1px ${color}` 
+                        : `0 4px 20px ${color.replace('0.5', '0.1').replace('rgb', 'rgba').replace(')', ', 0.1)')}, 0 2px 8px rgba(0,0,0,0.02)`,
+                      transition: "all 0.35s ease",
+                    }}
+                  >
+                    {/* Symbol / icon */}
+                    <Icon size={16} color={color.startsWith('rgba') ? '#A0720A' : color} strokeWidth={1.5} style={{
+                      transform: hovered === i ? "scale(1.15)" : "scale(1)",
+                      transition: "transform 0.3s ease",
+                    }} />
+                    {/* Label */}
+                    <span style={{
+                      fontSize: 8.5, letterSpacing: "0.1em",
+                      textTransform: "uppercase",
+                      color: "#3C2114", whiteSpace: "nowrap", fontWeight: 500,
+                    }}>
+                      {label}
+                    </span>
+                  </div>
+                </div>
+                </div>
+              </div>
+            ))}
+
+            {/* Particles shooting towards hovered card */}
+            {hovered !== null && Array.from({ length: 6 }).map((_, pi) => {
+              const c = cards[hovered];
+              const dx = c.x - CX;
+              const dy = c.y - CY;
+              return (
+                <div key={`hp-${pi}`} className="absolute rounded-full pointer-events-none"
+                  style={{
+                    left: CX, top: CY,
+                    width: 2.5, height: 2.5,
+                    background: "rgba(201,168,76,0.9)",
+                    boxShadow: "0 0 4px rgba(201,168,76,0.6)",
+                    animation: `cvHoverParticle 1.2s ease-out ${pi * 0.15}s infinite`,
+                    ["--hdx" as string]: `${dx}px`,
+                    ["--hdy" as string]: `${dy}px`,
+                    zIndex: 15,
+                  }}
+                />
+              );
+            })}
           </div>
-          {/* Row 3 - Right */}
-          <div className="flex flex-wrap justify-end gap-4">
-            {row3.map((v, idx) => renderPill(v, idx + 8))}
-          </div>
-        </motion.div>
-      </RevealOnScroll>
+        </div>
+      </div>
+
+      {/* Keyframes — scoped to section */}
+      <style>{`
+        @keyframes cvPulse  { 0%,100%{transform:scale(1);opacity:1}  50%{transform:scale(1.08);opacity:0.78} }
+        @keyframes cvBreath { 0%,100%{transform:scale(1)}            50%{transform:scale(1.03)} }
+        @keyframes cvCardFloat { 0%,100%{transform:translateY(0) scale(1)} 50%{transform:translateY(-3px) scale(1.02)} }
+        @keyframes cvHoverParticle {
+          0%   { transform:translate(0,0) scale(0.5); opacity:0 }
+          20%  { opacity:1 }
+          100% { transform:translate(var(--hdx),var(--hdy)) scale(0); opacity:0 }
+        }
+        @keyframes cvFloat  {
+          0%   { transform:translateY(0) translateX(0);              opacity:0   }
+          15%  { opacity:0.80 }
+          80%  { opacity:0.40 }
+          100% { transform:translateY(-58px) translateX(var(--dx));  opacity:0   }
+        }
+      `}</style>
     </section>
   );
 }

@@ -31,13 +31,21 @@ export default function AboutPage() {
           <OurStorySection />
         </div>
         
-        {/* Foreground section that scrolls up over the sticky one */}
-        <div className="relative z-10 bg-white shadow-[0_-20px_50px_rgba(0,0,0,0.05)] rounded-t-[40px]">
+        {/* Middle section (Vision to Core Beliefs) - scrolls normally */}
+        <div className="relative z-10 w-full bg-white shadow-[0_-20px_50px_rgba(0,0,0,0.05)] rounded-t-[40px]">
           <VisionMissionSection />
           <OurPurposeSection />
           <OurPhilosophySection />
           <CoreBeliefsSection />
+        </div>
+
+        {/* Core Values Section - Occupies full 100vh, scrolls normally, no overlap */}
+        <div className="relative z-10 w-full bg-white">
           <CoreValuesSection />
+        </div>
+
+        {/* Top foreground section (The ISHAN Way & Commitment) - begins immediately after, no overlap */}
+        <div className="relative z-10 w-full bg-[#FAF9F6]">
           <Approach />
           <OurCommitmentSection />
         </div>
