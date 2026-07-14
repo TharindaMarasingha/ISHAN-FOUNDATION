@@ -1,4 +1,7 @@
-import React from "react";
+"use client";
+
+import React, { useRef } from "react";
+import { motion, useInView } from "framer-motion";
 import { SectionHeading } from "../ui/SectionHeading";
 import { RevealOnScroll } from "../ui/RevealOnScroll";
 import { Button } from "../ui/Button";
@@ -9,6 +12,42 @@ const CONTRIBUTIONS = [
   "Mentorship", "Community Projects", "Environmental Initiatives", 
   "Strategic Partnerships", "Philanthropic Support", "Knowledge Sharing"
 ];
+
+function TypewriterQuote({ text }: { text: string }) {
+  const ref = useRef(null);
+  const isInView = useInView(ref, { once: true, margin: "-100px" });
+
+  const container = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: { staggerChildren: 0.02, delayChildren: 0.4 },
+    },
+  };
+
+  const child = {
+    visible: { opacity: 1, display: "inline-block", y: 0 },
+    hidden: { opacity: 0, display: "inline-block", y: 2 },
+  };
+
+  return (
+    <motion.h4
+      ref={ref}
+      variants={container}
+      initial="hidden"
+      animate={isInView ? "visible" : "hidden"}
+      className="font-display italic text-2xl md:text-3xl text-deepAmber leading-relaxed tracking-wide"
+    >
+      {text.split("").map((char, index) => (
+        <motion.span variants={child} key={index}>
+          {char === "\n" ? <br /> : char === " " ? "\u00A0" : char}
+        </motion.span>
+      ))}
+    </motion.h4>
+  );
+}
+
+const QUOTE_TEXT = `"We do not merely conduct programmes. We cultivate transformation.\nWe do not simply build organizations. We nurture conscious institutions.\nWe do not pursue growth alone. We pursue meaningful and sustainable impact."`;
 
 export function Partnerships() {
   return (
@@ -62,15 +101,9 @@ export function Partnerships() {
         </div>
 
         {/* Quote Block */}
-        <RevealOnScroll delay={0.4}>
-          <div className="mt-20 pt-16 border-t border-sacredGold/20 text-center max-w-4xl mx-auto">
-            <h4 className="font-display italic text-2xl md:text-3xl text-deepAmber leading-relaxed tracking-wide">
-              &quot;We do not merely conduct programmes. We cultivate transformation.<br />
-              We do not simply build organizations. We nurture conscious institutions.<br />
-              We do not pursue growth alone. We pursue meaningful and sustainable impact.&quot;
-            </h4>
-          </div>
-        </RevealOnScroll>
+        <div className="mt-20 pt-16 border-t border-sacredGold/20 text-center max-w-4xl mx-auto min-h-[160px]">
+          <TypewriterQuote text={QUOTE_TEXT} />
+        </div>
 
       </div>
     </section>

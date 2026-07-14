@@ -1,5 +1,6 @@
 "use client";
 import React from "react";
+import Image from "next/image";
 import { RevealOnScroll } from "../ui/RevealOnScroll";
 import { Button } from "../ui/Button";
 import { motion, useReducedMotion } from "framer-motion";
@@ -10,6 +11,24 @@ export function ContactCTA() {
 
   return (
     <section id="connect" className="relative py-32 px-6 md:px-12 bg-bark overflow-hidden flex flex-col items-center justify-center">
+      
+      {/* Background Image Layer */}
+      <div className="absolute inset-0 z-0">
+        <Image
+          src="/images/contact-cta-bg.jpg"
+          alt="Contact Background"
+          fill
+          className="object-cover"
+        />
+        {/* Dark Gradient Overlay */}
+        <div 
+          className="absolute inset-0" 
+          style={{
+            background: "linear-gradient(to bottom, rgba(46, 26, 14, 0.75) 0%, rgba(46, 26, 14, 0.4) 50%, rgba(46, 26, 14, 0.75) 100%)"
+          }}
+        />
+      </div>
+
       {/* Decorative Rotating SVG Background */}
       <div className="absolute inset-0 flex items-center justify-center pointer-events-none z-0 opacity-[0.04]">
         <motion.div
@@ -35,7 +54,7 @@ export function ContactCTA() {
             Whether you are a wellness practitioner, institutional partner, investor, or a seeker — we welcome you to connect with ISHAN.
           </p>
           
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-6 mb-16">
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-6 mb-8 md:mb-16">
             <Button variant="primary" href="/contact" className="bg-mandarin text-peach hover:bg-burntOrange">
               Register Interest
             </Button>
@@ -44,16 +63,6 @@ export function ContactCTA() {
             </Button>
           </div>
 
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-8 text-[0.65rem] md:text-xs uppercase tracking-widest text-softApricot">
-            <Link href="https://ishanfoundation.lk" className="relative group overflow-hidden">
-              <span className="relative z-10">ishanfoundation.lk</span>
-              <span className="absolute left-0 bottom-0 w-full h-px bg-sacredGold -translate-x-[101%] group-hover:translate-x-0 transition-transform duration-500 ease-out" />
-            </Link>
-            <Link href="mailto:info@ishanfoundation.lk" className="relative group overflow-hidden">
-              <span className="relative z-10">info@ishanfoundation.lk</span>
-              <span className="absolute left-0 bottom-0 w-full h-px bg-sacredGold -translate-x-[101%] group-hover:translate-x-0 transition-transform duration-500 ease-out" />
-            </Link>
-          </div>
         </RevealOnScroll>
       </div>
     </section>

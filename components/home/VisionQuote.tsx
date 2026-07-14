@@ -1,9 +1,27 @@
 import React from "react";
+import Image from "next/image";
 import { RevealOnScroll } from "../ui/RevealOnScroll";
 
 export function VisionQuote() {
   return (
     <section className="py-32 px-6 md:px-12 bg-deepAmber/[0.02] border-y border-sacredGold/10 relative overflow-hidden flex items-center justify-center">
+      
+      {/* Top-Left Decorative SVG */}
+      <img 
+        src="/b1.svg" 
+        alt="" 
+        className="absolute top-0 left-0 w-[180px] md:w-[280px] opacity-[0.15] mix-blend-multiply pointer-events-none select-none z-0"
+        aria-hidden="true"
+      />
+
+      {/* Bottom-Right Decorative SVG */}
+      <img 
+        src="/b2.svg" 
+        alt="" 
+        className="absolute bottom-0 right-0 w-[180px] md:w-[280px] opacity-[0.15] mix-blend-multiply pointer-events-none select-none z-0"
+        aria-hidden="true"
+      />
+
       {/* Huge Decorative Quote Mark */}
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 font-display text-[25rem] text-mandarin opacity-[0.03] pointer-events-none select-none leading-none">
         &ldquo;
