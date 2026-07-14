@@ -5,7 +5,7 @@ import Image from "next/image";
 import { SectionHeading } from "../ui/SectionHeading";
 import { RevealOnScroll } from "../ui/RevealOnScroll";
 import { Card } from "../ui/Card";
-import { motion, useInView } from "framer-motion";
+import { motion, useInView, useReducedMotion } from "framer-motion";
 import { 
   ShieldCheck, 
   BookOpen, 
@@ -490,11 +490,11 @@ export function CoreValuesSection() {
   // Server / pre-hydration: render a size-matched placeholder with no dynamic values
   if (!mounted) {
     return (
-      <section className="py-10 px-6 relative overflow-hidden flex flex-col justify-center min-h-[100vh]">
-        <div className="max-w-5xl mx-auto">
+      <section className="relative w-full flex flex-col items-center justify-center">
+        <div className="max-w-5xl mx-auto w-full">
           <SectionHeading heading="Core Values" align="center" />
-          <div className="mt-10 flex justify-center">
-            <div style={{ width: SIZE, height: SIZE }} />
+          <div className="mt-16 flex justify-center">
+            <div style={{ width: SIZE, height: SIZE, position: 'relative' }} />
           </div>
         </div>
       </section>
@@ -512,16 +512,11 @@ export function CoreValuesSection() {
   });
 
   return (
-    <section className="py-10 px-6 relative overflow-hidden flex flex-col justify-center min-h-[100vh]">
-      {/* Soft edge vignette */}
-      <div className="absolute inset-0 pointer-events-none" style={{
-        background: "radial-gradient(ellipse 82% 82% at 50% 50%, transparent 52%, rgba(160,135,90,0.07) 100%)"
-      }}/>
-
-      <div className="max-w-5xl mx-auto relative z-10">
+    <section className="relative w-full flex flex-col items-center justify-center">
+      <div className="max-w-5xl mx-auto relative z-10 w-full flex flex-col items-center">
         <SectionHeading heading="Core Values" align="center" />
 
-        <div className="mt-10 flex justify-center">
+        <div className="mt-16 flex justify-center w-full">
           <div className="relative" style={{ width: SIZE, height: SIZE, maxWidth: "100%" }}>
 
             {/* Ambient centre radial glow */}
@@ -605,6 +600,8 @@ export function CoreValuesSection() {
                 }}
                 onMouseEnter={() => { pauseRef.current = true;  setHov(i); }}
                 onMouseLeave={() => { pauseRef.current = false; setHov(null); }}
+                onFocus={() => { pauseRef.current = true;  setHov(i); }}
+                onBlur={() => { pauseRef.current = false; setHov(null); }}
               >
                 {/* Floating breathing animation wrapper */}
                 <div style={{
@@ -615,8 +612,8 @@ export function CoreValuesSection() {
                   transform: hovered === i ? "translateY(-8px) scale(1.08)" : "translateY(0) scale(1)",
                   transition: "transform 0.38s cubic-bezier(.34,1.56,.64,1)",
                 }}>
-                  <div
-                    className="flex flex-col items-center justify-center gap-1.5 cursor-default select-none bg-white"
+                  <button
+                    className="flex flex-col items-center justify-center gap-1.5 cursor-pointer select-none bg-white outline-none focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#C9A84C] focus-visible:ring-offset-2 focus-visible:ring-offset-transparent"
                     style={{
                       width: 110,
                       height: 55,
@@ -643,7 +640,7 @@ export function CoreValuesSection() {
                     }}>
                       {label}
                     </span>
-                  </div>
+                  </button>
                 </div>
                 </div>
               </div>
@@ -721,6 +718,8 @@ export function IshanWaySection() {
 }
 
 export function OurCommitmentSection() {
+  const prefersReducedMotion = useReducedMotion();
+
   const commitments = [
     "We are committed to preserving wisdom.",
     "Promoting wellbeing.",
@@ -733,55 +732,70 @@ export function OurCommitmentSection() {
   ];
 
   return (
-    <section 
-      className="py-32 px-6 bg-darkBrown text-center relative"
-      style={{
-        WebkitMaskImage: "linear-gradient(to bottom, transparent 0%, black 5%, black 95%, transparent 100%)",
-        maskImage: "linear-gradient(to bottom, transparent 0%, black 5%, black 95%, transparent 100%)"
-      }}
-    >
-      <div className="absolute inset-0 z-0 bg-cover bg-center opacity-10" style={{ backgroundImage: "url('/images/who-we-serve-bg.png')" }} />
-      <div className="max-w-4xl mx-auto relative z-10">
+    <section className="py-24 px-6 bg-white text-center relative overflow-hidden">
+      <div className="max-w-6xl mx-auto relative z-10">
         
         {/* TOP: Large centered display text */}
-        <h2 className="font-display font-light text-[56px] text-white mb-8">Our Commitment</h2>
-        <div className="w-[80px] h-[1px] bg-sacredGold mx-auto mb-16"></div>
+        <h2 className="font-display font-light text-[48px] md:text-[56px] text-darkBrown mb-8 text-center">Our Commitment</h2>
+        <div className="w-[80px] h-[1px] bg-sacredGold mx-auto mb-20"></div>
 
-        <RevealOnScroll delay={0.2}>
-          <ul className="flex flex-col text-left max-w-2xl mx-auto mb-20">
-             {commitments.map((c, i) => (
-               <li 
-                 key={i} 
-                 className="group flex items-start py-[16px] border-b border-white/10 last:border-b-0 cursor-default transition-colors duration-250 hover:bg-[rgba(201,168,76,0.04)] px-4 -mx-4 rounded-md"
-               >
-                 <span className="font-sans text-[12px] text-sacredGold mr-4 mt-1 flex-shrink-0 transition-transform duration-250 group-hover:scale-[1.4]">◆</span> 
-                 <span className="font-sans font-light text-[15px] text-white/80 leading-[1.7] transition-colors duration-250 group-hover:text-[#F5D98A]">{c}</span>
-               </li>
-             ))}
-          </ul>
-        </RevealOnScroll>
-        
-        <RevealOnScroll delay={0.4}>
-          <div className="relative pt-12 max-w-2xl mx-auto">
-            {/* Separator line */}
-            <div className="w-full h-[1px] bg-white/10 my-8"></div>
-            
-            {/* Large decorative quotation mark */}
-            <div 
-              className="absolute top-8 left-1/2 -translate-x-1/2 font-display text-[180px] text-sacredGold opacity-8 leading-none select-none z-0"
-              aria-hidden="true"
-            >
-              "
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24 items-center mb-16">
+          {/* Left Column: Commitment List */}
+          <RevealOnScroll delay={0.2} className="order-2 lg:order-1">
+            <ul className="flex flex-col text-left">
+               {commitments.map((c, i) => {
+                 const isLast = i === commitments.length - 1;
+                 return (
+                   <li 
+                     key={i} 
+                     className="flex items-start py-[18px] border-b border-burntOrange/15 last:border-b-0"
+                   >
+                     <span className="font-sans text-[14px] text-sacredGold mr-5 mt-[2px] flex-shrink-0">✦</span> 
+                     <span className={`font-sans font-light text-[16px] leading-[1.6] ${isLast ? 'italic text-burntOrange font-normal' : 'text-darkBrown'}`}>
+                       {c}
+                     </span>
+                   </li>
+                 );
+               })}
+            </ul>
+          </RevealOnScroll>
+
+          {/* Right Column: Image Panel */}
+          <RevealOnScroll delay={0.4} className="order-1 lg:order-2">
+            <div className="relative w-full aspect-[4/5] rounded-[2rem] overflow-hidden shadow-2xl group">
+              {/* Real Image */}
+              <Image 
+                src="/images/about-commitment.jpg" 
+                alt="Our Commitment" 
+                fill
+                className="object-cover object-center transition-transform duration-700 ease-in-out group-hover:scale-105"
+              />
+
+              {/* Soft Gradient Overlay */}
+              <div className="absolute inset-0 bg-gradient-to-tr from-softApricot via-sacredGold to-burntOrange opacity-20 mix-blend-overlay pointer-events-none"></div>
+
+              {/* Decorative Circle Accent */}
+              <div className="absolute -bottom-16 -right-16 w-64 h-64 rounded-full border-[1px] border-warmGilt/30 pointer-events-none z-10"></div>
+              <div className="absolute -bottom-24 -right-24 w-80 h-80 rounded-full border-[1px] border-warmGilt/20 pointer-events-none z-10"></div>
             </div>
+          </RevealOnScroll>
+        </div>
+        
+        {/* Quote Block Full Width */}
+        <RevealOnScroll delay={0.6}>
+          <div className="relative pt-8 max-w-4xl mx-auto text-center">
+            {/* Gold Divider Line */}
+            <div className="w-full h-px bg-gradient-to-r from-transparent via-sacredGold/40 to-transparent my-12" />
             
-            <p className="relative z-10 font-display italic text-[22px] text-sacredGold leading-[1.7]">
+            <p className="relative z-10 font-display italic text-[24px] md:text-[28px] text-deepAmber leading-[1.6]">
               "Because when humanity and nature flourish together, everyone benefits."
             </p>
-            <div className="relative z-10 mt-6 font-sans text-[11px] text-white/45 uppercase tracking-[0.18em]">
+            <div className="relative z-10 mt-8 font-sans text-[12px] text-darkBrown/60 uppercase tracking-[0.2em]">
               — ISHAN Foundation
             </div>
           </div>
         </RevealOnScroll>
+
       </div>
     </section>
   );

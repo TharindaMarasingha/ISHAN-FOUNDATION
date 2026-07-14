@@ -40,13 +40,15 @@ export default function AboutPage() {
         </div>
 
         {/* Core Values Section - Occupies full 100vh, scrolls normally, no overlap */}
-        <div className="relative z-10 w-full bg-white">
+        <div className="relative z-0 w-full bg-white overflow-hidden pt-[240px] pb-[120px]">
           <CoreValuesSection />
         </div>
 
-        {/* Top foreground section (The ISHAN Way & Commitment) - begins immediately after, no overlap */}
-        <div className="relative z-10 w-full bg-[#FAF9F6]">
+        {/* Premium floating animations */}
+        {/* Top foreground section (The ISHAN Way & Commitment) */}
+        <div className="relative z-10 w-full bg-white overflow-x-hidden">
           <Approach />
+
           <OurCommitmentSection />
         </div>
       </div>
