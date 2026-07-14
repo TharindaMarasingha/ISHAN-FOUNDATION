@@ -41,6 +41,34 @@ export default function AboutPage() {
 
         {/* Core Values Section - Occupies full 100vh, scrolls normally, no overlap */}
         <div className="relative z-0 w-full bg-white overflow-hidden pt-[240px] pb-[120px]">
+          {/* Top-Left Decorative SVG */}
+          <img 
+            src="/e1.svg" 
+            alt="" 
+            className="absolute top-0 left-0 w-[150px] md:w-[250px] opacity-[0.15] mix-blend-multiply pointer-events-none select-none z-0"
+            aria-hidden="true"
+          />
+          {/* Top-Right Decorative SVG */}
+          <img 
+            src="/e2.svg" 
+            alt="" 
+            className="absolute top-0 right-0 w-[150px] md:w-[250px] opacity-[0.15] mix-blend-multiply pointer-events-none select-none z-0"
+            aria-hidden="true"
+          />
+          {/* Bottom-Left Decorative SVG */}
+          <img 
+            src="/e4.svg" 
+            alt="" 
+            className="absolute bottom-0 left-0 w-[150px] md:w-[250px] opacity-[0.15] mix-blend-multiply pointer-events-none select-none z-0"
+            aria-hidden="true"
+          />
+          {/* Bottom-Right Decorative SVG */}
+          <img 
+            src="/e3.svg" 
+            alt="" 
+            className="absolute bottom-0 right-0 w-[150px] md:w-[250px] opacity-[0.15] mix-blend-multiply pointer-events-none select-none z-0"
+            aria-hidden="true"
+          />
           <CoreValuesSection />
         </div>
 
