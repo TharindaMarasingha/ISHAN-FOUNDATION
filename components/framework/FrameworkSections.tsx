@@ -68,8 +68,15 @@ export function IkigaiSection() {
   ];
 
   return (
-    <section className="py-24 px-6 bg-deepAmber/[0.02] border-y border-burntOrange/10">
-      <div className="max-w-7xl mx-auto">
+    <section className="relative py-24 px-6 bg-deepAmber/[0.02] border-y border-burntOrange/10 overflow-hidden">
+      {/* Decorative flower SVG at absolute left */}
+      <img 
+        src="/flower.svg" 
+        alt="" 
+        className="absolute top-0 left-0 w-32 md:w-48 lg:w-64 opacity-[0.07] pointer-events-none select-none z-0"
+        aria-hidden="true"
+      />
+      <div className="relative max-w-7xl mx-auto z-10">
         <SectionHeading heading="The Purpose of an Institution" align="center" />
         <div className="mt-16 grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto">
           {qa.map((item, index) => (
@@ -95,19 +102,44 @@ export function PurusharthaSection() {
   ];
 
   return (
-    <section className="py-24 px-6 max-w-7xl mx-auto">
+    <section className="py-24 md:py-32 px-6 max-w-7xl mx-auto">
       <SectionHeading heading="Four Aims of a Conscious Institution" align="center" />
-      <div className="mt-16 grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto">
-        {aims.map((aim, index) => (
-          <RevealOnScroll key={aim.title} delay={index * 0.1}>
-            <Card className="h-full flex flex-col p-8">
-              <h3 className="font-display uppercase tracking-widest text-xl text-sacredGold mb-4">{aim.title}</h3>
-              <p className="font-sans font-light text-deepAmber leading-relaxed text-base">
-                {aim.desc}
-              </p>
-            </Card>
-          </RevealOnScroll>
-        ))}
+      <div className="mt-20 md:mt-32 flex flex-col gap-24 md:gap-32">
+        {aims.map((aim, index) => {
+          const isImageLeft = index % 2 !== 0; // Alternate: Dharma (img right), Artha (img left), etc.
+          return (
+            <div key={aim.title} className={`flex flex-col md:flex-row items-center gap-12 md:gap-20 lg:gap-24 ${isImageLeft ? 'md:flex-row-reverse' : ''}`}>
+              {/* Text Column */}
+              <div className="flex-1 w-full order-2 md:order-none">
+                <RevealOnScroll delay={0.1}>
+                  <h3 className="font-display uppercase tracking-widest text-xl text-sacredGold mb-6">{aim.title}</h3>
+                  <p className="font-sans font-light text-deepAmber leading-relaxed text-[17px] md:text-lg">
+                    {aim.desc}
+                  </p>
+                </RevealOnScroll>
+              </div>
+
+              {/* Image Placeholder Column */}
+              <div className="flex-1 w-full order-1 md:order-none">
+                <RevealOnScroll delay={0.2}>
+                  <div className="w-full aspect-[4/3] relative flex items-center justify-center p-8">
+                    <svg viewBox="0 0 400 300" className="absolute inset-0 w-full h-full z-0 drop-shadow-sm" preserveAspectRatio="none">
+                      <path 
+                        d="M 60 30 Q 150 30 200 0 Q 250 30 340 30 Q 370 30 370 60 Q 370 120 400 150 Q 370 180 370 240 Q 370 270 340 270 Q 250 270 200 300 Q 150 270 60 270 Q 30 270 30 240 Q 30 180 0 150 Q 30 120 30 60 Q 30 30 60 30 Z" 
+                        className="fill-burntOrange/[0.04] stroke-burntOrange/15" 
+                        strokeWidth="1.5" 
+                        strokeLinejoin="round" 
+                      />
+                    </svg>
+                    <span className="relative z-10 font-sans uppercase tracking-[0.2em] text-[11px] text-burntOrange/40 font-medium text-center">
+                      Image Placeholder
+                    </span>
+                  </div>
+                </RevealOnScroll>
+              </div>
+            </div>
+          );
+        })}
       </div>
     </section>
   );
