@@ -259,7 +259,7 @@ export default function Navbar() {
                     <Link
                       key={link.label}
                       href={link.href}
-                      className={`font-forum text-[22px] px-6 py-[14px] border-b border-white/5 transition-colors duration-300 ${
+                      className={`font-forum text-[16px] px-6 py-3 border-b border-white/5 transition-colors duration-300 ${
                         isActive ? "text-[#C9A84C]" : "text-white"
                       }`}
                     >
@@ -269,7 +269,7 @@ export default function Navbar() {
                 })}
               </div>
 
-              <div className="mt-auto p-6">
+              <div className="mt-4 p-6">
                 <Link
                   href="/contact"
                   className="block w-full text-center bg-[#9C3F00] text-white rounded-xl py-3 uppercase tracking-widest font-sans font-semibold text-sm hover:shadow-lg transition-all duration-300"
