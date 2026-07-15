@@ -1,6 +1,7 @@
 "use client";
 
 import React from "react";
+import Image from "next/image";
 import { SectionHeading } from "../ui/SectionHeading";
 import { RevealOnScroll } from "../ui/RevealOnScroll";
 import { Card } from "../ui/Card";
@@ -210,17 +211,52 @@ export function HierarchyOfNeedsSection() {
 
 export function FrameworkCTASection() {
   return (
-    <section className="py-32 px-6 max-w-4xl mx-auto text-center flex flex-col items-center">
-      <SectionHeading
-        eyebrow="Take the Next Step"
-        heading="Experience the Framework"
-        description="See how our philosophy comes to life across our different initiatives and environments."
-        align="center"
-      />
-      <RevealOnScroll delay={0.2} className="mt-12 flex flex-col sm:flex-row gap-4 sm:gap-6 w-full sm:w-auto">
-        <Button href="/ecosystem" variant="primary">Explore Our Ecosystem</Button>
-        <Button href="/" variant="ghost">Back to Home</Button>
-      </RevealOnScroll>
+    <section className="relative w-full py-32 px-6 overflow-hidden">
+      {/* Background Image Layer */}
+      <div className="absolute inset-0 z-0">
+        <Image
+          src="/images/framework-cta-bg.jpg"
+          alt="Framework CTA Background"
+          fill
+          className="object-cover"
+          unoptimized
+        />
+        {/* Localized Subtle Glow Overlay */}
+        <div 
+          className="absolute inset-0"
+          style={{
+            background: 'radial-gradient(ellipse at center, rgba(255, 241, 230, 0.35) 0%, transparent 40%)'
+          }}
+        />
+      </div>
+
+      {/* Content Layer */}
+      <div className="relative z-10 max-w-4xl mx-auto text-center flex flex-col items-center">
+        <div 
+          className="text-center mx-auto"
+          style={{ textShadow: '0 2px 12px rgba(46,26,14,0.5), 0 1px 4px rgba(46,26,14,0.4)' }}
+        >
+          <span className="font-display italic text-[#FFF1E6] tracking-[0.2em] text-sm uppercase mb-4 block">
+            Take the Next Step
+          </span>
+          <h2 className="font-display font-light text-[#F5D98A] text-4xl md:text-5xl lg:text-6xl mb-6">
+            Experience the Framework
+          </h2>
+          <p className="font-sans font-light text-[#FFF1E6] max-w-xl mx-auto leading-relaxed">
+            See how our philosophy comes to life across our different initiatives and environments.
+          </p>
+        </div>
+        <RevealOnScroll delay={0.2} className="mt-12 flex flex-col sm:flex-row gap-4 sm:gap-6 w-full sm:w-auto">
+          <Button href="/ecosystem" variant="primary">Explore Our Ecosystem</Button>
+          <Button 
+            href="/" 
+            variant="ghost" 
+            className="!bg-[rgba(255,241,230,0.15)] !border-[rgba(245,217,138,0.7)] !border-[1.5px] !text-[#FFF1E6] hover:!bg-[#F5D98A] hover:!text-[#4A2B18] hover:!border-[#F5D98A] [text-shadow:0_1px_4px_rgba(46,26,14,0.6)] hover:[text-shadow:none]"
+          >
+            Back to Home
+          </Button>
+        </RevealOnScroll>
+      </div>
     </section>
   );
 }
