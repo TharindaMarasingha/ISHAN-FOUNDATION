@@ -493,8 +493,13 @@ export function CoreValuesSection() {
       <section className="relative w-full flex flex-col items-center justify-center">
         <div className="max-w-5xl mx-auto w-full">
           <SectionHeading heading="Core Values" align="center" />
-          <div className="mt-16 flex justify-center">
+          <div className="mt-16 hidden md:flex justify-center w-full">
             <div style={{ width: SIZE, height: SIZE, position: 'relative' }} />
+          </div>
+          <div className="mt-2 mb-12 flex flex-col gap-4 w-full px-6 md:hidden">
+            {values.map((v, i) => (
+              <div key={i} className="h-16 bg-black/5 rounded-xl animate-pulse" />
+            ))}
           </div>
         </div>
       </section>
@@ -516,7 +521,7 @@ export function CoreValuesSection() {
       <div className="max-w-5xl mx-auto relative z-10 w-full flex flex-col items-center">
         <SectionHeading heading="Core Values" align="center" />
 
-        <div className="mt-16 flex justify-center w-full">
+        <div className="mt-16 hidden md:flex justify-center w-full">
           <div className="relative" style={{ width: SIZE, height: SIZE, maxWidth: "100%" }}>
 
             {/* Ambient centre radial glow */}
@@ -667,6 +672,20 @@ export function CoreValuesSection() {
               );
             })}
           </div>
+        </div>
+
+        {/* MOBILE LIST (Hidden on Desktop/Tablet) */}
+        <div className="mt-2 mb-12 flex flex-col gap-4 w-full px-6 md:hidden">
+          {values.map(({ label, Icon, color }, i) => (
+            <div key={i} className="flex items-center gap-4 bg-white/80 backdrop-blur-sm border border-black/5 p-4 rounded-xl shadow-sm">
+              <div className="flex items-center justify-center w-10 h-10">
+                 <Icon size={20} color={color.startsWith('rgba') ? '#A0720A' : color} strokeWidth={1.5} />
+              </div>
+              <span className="font-sans font-medium text-[#3C2114] uppercase tracking-widest text-sm">
+                 {label}
+              </span>
+            </div>
+          ))}
         </div>
       </div>
 
