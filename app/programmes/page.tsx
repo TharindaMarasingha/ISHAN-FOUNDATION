@@ -1,6 +1,4 @@
 import { PageHero } from "@/components/programmes/PageHero";
-import { Approach } from "@/components/home/Approach";
-import { WhoWeServe } from "@/components/home/WhoWeServe";
 import { 
   CoreProgrammesSection, 
   ProfessionalDevelopmentSection, 
@@ -22,11 +20,9 @@ export default function ProgrammesPage() {
   return (
     <div className="-mt-24">
       <PageHero />
-      <Approach />
       <CoreProgrammesSection />
       <ProfessionalDevelopmentSection />
       <TrainingSection />
-      <WhoWeServe />
       <ProgrammesCTASection />
     </div>
   );

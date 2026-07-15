@@ -50,7 +50,7 @@ const TEAM = [
     initials: "SJ",
     description: "Vision · Purpose · Wisdom · Ethics · Institutional Integrity · Research & Development · Leadership Philosophy · Long-term Legacy · Quality & Standards",
     isAnchor: true,
-    image: "/images/team-sevakanand.jpg"
+    image: "/images/ima.jpg"
   },
   {
     archetype: "Master Mentor",
@@ -59,7 +59,7 @@ const TEAM = [
     initials: "SK",
     description: "Education · Mentorship · Leadership Development · Research · Curriculum Design · Knowledge Systems · Character Development · Institutional Learning",
     isAnchor: false,
-    image: "/images/team-kobayashi.jpg"
+    image: "/images/imb.jpg"
   },
   {
     archetype: "Master Coach",
@@ -68,7 +68,7 @@ const TEAM = [
     initials: "IS",
     description: "Coaching · Training · Programme Delivery · Retreat Design · Facilitation · Experiential Learning · Holistic Wellbeing · Personal Transformation",
     isAnchor: false,
-    image: "/images/team-indrani.jpg"
+    image: "/images/imc.jpg"
   },
   {
     archetype: "Business Alchemist",
@@ -77,7 +77,7 @@ const TEAM = [
     initials: "RS",
     description: "Strategic Planning · Institutional Development · Governance · Operations · Systems Management · Financial Planning · Sustainability · International Operations",
     isAnchor: false,
-    image: "/images/team-ranga.jpg"
+    image: "/images/imd.jpg"
   },
   {
     archetype: "Growth Catalyst",
@@ -86,7 +86,7 @@ const TEAM = [
     initials: "MA",
     description: "Business Development · Strategic Partnerships · International Collaboration · Community Development · Brand Growth · Resource Mobilisation · Outreach",
     isAnchor: false,
-    image: "/images/team-mansoor.jpg"
+    image: "/images/ime.jpg"
   }
 ];
 

@@ -9,9 +9,9 @@ import { Button } from "../ui/Button";
 
 export function GoldenCircleSection() {
   const circles = [
-    { title: "WHY", subtitle: "Our Purpose", desc: "To harmonise humanity and nature through wisdom, wellness, ethical leadership, sustainability, and conscious community development." },
-    { title: "HOW", subtitle: "Our Approach", desc: "Timeless Wisdom · Preventive Wellness · Holistic Wellbeing · Ethical Leadership · Research & Education · Sustainable Systems · Community Development · Environmental Stewardship · International Collaboration" },
-    { title: "WHAT", subtitle: "Our Work", desc: "Educational Programmes · Retreats & Immersions · Leadership Development · Research & Publications · Community Initiatives · Environmental Projects · Institutional Partnerships · Conscious Living Experiences" }
+    { title: "WHY", subtitle: "Our Purpose", desc: "To harmonise humanity and nature through wisdom, wellness, ethical leadership, sustainability, and conscious community development.", image: "/images/framework-why-bg.jpg" },
+    { title: "HOW", subtitle: "Our Approach", desc: "Timeless Wisdom · Preventive Wellness · Holistic Wellbeing · Ethical Leadership · Research & Education · Sustainable Systems · Community Development · Environmental Stewardship · International Collaboration", image: "/images/framework-how-bg.jpg" },
+    { title: "WHAT", subtitle: "Our Work", desc: "Educational Programmes · Retreats & Immersions · Leadership Development · Research & Publications · Community Initiatives · Environmental Projects · Institutional Partnerships · Conscious Living Experiences", image: "/images/framework-what-bg.jpg" }
   ];
 
   return (
@@ -28,14 +28,29 @@ export function GoldenCircleSection() {
       <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
         {circles.map((item, index) => (
           <RevealOnScroll key={item.title} delay={index * 0.15}>
-            <Card className="h-full flex flex-col p-10 text-center border-t-4 border-t-burntOrange">
-              <span className="font-display text-4xl text-burntOrange/30 mb-2">{item.title}</span>
-              <h3 className="font-display uppercase tracking-widest text-xl text-deepAmber mb-6 border-b border-burntOrange/20 pb-4 inline-block mx-auto">
-                {item.subtitle}
-              </h3>
-              <p className="font-sans font-light text-deepAmber leading-relaxed text-base flex-grow">
-                {item.desc}
-              </p>
+            <Card className="h-full !p-0 border-t-4 border-t-burntOrange text-center">
+              <div className="absolute inset-0 z-0">
+                <Image
+                  src={item.image}
+                  alt={item.title}
+                  fill
+                  className="object-cover"
+                  unoptimized
+                />
+                <div 
+                  className="absolute inset-0"
+                  style={{ background: 'radial-gradient(ellipse at center, rgba(255, 241, 230, 0.75) 0%, rgba(255, 241, 230, 0.45) 60%)' }}
+                />
+              </div>
+              <div className="relative z-10 flex flex-col h-full p-8 sm:p-10">
+                <span className="font-display text-4xl text-burntOrange/30 mb-2">{item.title}</span>
+                <h3 className="font-display uppercase tracking-widest text-xl text-deepAmber mb-6 border-b border-burntOrange/20 pb-4 inline-block mx-auto">
+                  {item.subtitle}
+                </h3>
+                <p className="font-sans font-light text-deepAmber leading-relaxed text-base flex-grow">
+                  {item.desc}
+                </p>
+              </div>
             </Card>
           </RevealOnScroll>
         ))}
