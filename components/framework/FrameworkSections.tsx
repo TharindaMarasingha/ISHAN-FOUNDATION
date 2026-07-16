@@ -95,10 +95,30 @@ export function IkigaiSection() {
 
 export function PurusharthaSection() {
   const aims = [
-    { title: "Dharma", desc: "Purpose, ethics, integrity, and responsibility. Every decision must be guided by what is right and beneficial for humanity and nature." },
-    { title: "Artha", desc: "Sustainable resources and institutional resilience. Financial strength enables long-term service and responsible growth." },
-    { title: "Kama", desc: "Meaningful aspiration, creativity, innovation, fulfilment, and human flourishing. Growth should enrich lives while remaining aligned with values." },
-    { title: "Moksha", desc: "The highest expression of institutional purpose — creating lasting impact, collective wellbeing, and a legacy that benefits future generations." }
+    { 
+      title: "Dharma", 
+      desc: "Purpose, ethics, integrity, and responsibility. Every decision must be guided by what is right and beneficial for humanity and nature.",
+      image: "/images/framework-dharma-bg.jpg",
+      alt: "Dharma — purpose and integrity"
+    },
+    { 
+      title: "Artha", 
+      desc: "Sustainable resources and institutional resilience. Financial strength enables long-term service and responsible growth.",
+      image: "/images/framework-artha-bg.jpg",
+      alt: "Artha — sustainable resources and resilience"
+    },
+    { 
+      title: "Kama", 
+      desc: "Meaningful aspiration, creativity, innovation, fulfilment, and human flourishing. Growth should enrich lives while remaining aligned with values.",
+      image: "/images/framework-kama-bg.jpg",
+      alt: "Kama — meaningful aspiration and human flourishing"
+    },
+    { 
+      title: "Moksha", 
+      desc: "The highest expression of institutional purpose — creating lasting impact, collective wellbeing, and a legacy that benefits future generations.",
+      image: "/images/framework-moksha-bg.jpg",
+      alt: "Moksha — highest expression of institutional purpose"
+    }
   ];
 
   return (
@@ -119,21 +139,35 @@ export function PurusharthaSection() {
                 </RevealOnScroll>
               </div>
 
-              {/* Image Placeholder Column */}
+              {/* Image Column */}
               <div className="flex-1 w-full order-1 md:order-none">
                 <RevealOnScroll delay={0.2}>
                   <div className="w-full aspect-[4/3] relative flex items-center justify-center p-8">
-                    <svg viewBox="0 0 400 300" className="absolute inset-0 w-full h-full z-0 drop-shadow-sm" preserveAspectRatio="none">
+                    <div 
+                      className="absolute inset-0 w-full h-full z-0 overflow-hidden group" 
+                      style={{ clipPath: `url(#shape-clip-${index})`, WebkitClipPath: `url(#shape-clip-${index})` }}
+                    >
+                      <Image
+                        src={aim.image}
+                        alt={aim.alt}
+                        fill
+                        className="object-cover transition-transform duration-700 ease-out group-hover:scale-105"
+                      />
+                    </div>
+                    {/* SVG for outline and clipPath def */}
+                    <svg viewBox="0 0 400 300" className="absolute inset-0 w-full h-full z-10 pointer-events-none drop-shadow-sm" preserveAspectRatio="none">
+                      <defs>
+                        <clipPath id={`shape-clip-${index}`} clipPathUnits="objectBoundingBox">
+                          <path d="M 0.15 0.1 Q 0.375 0.1 0.5 0 Q 0.625 0.1 0.85 0.1 Q 0.925 0.1 0.925 0.2 Q 0.925 0.4 1 0.5 Q 0.925 0.6 0.925 0.8 Q 0.925 0.9 0.85 0.9 Q 0.625 0.9 0.5 1 Q 0.375 0.9 0.15 0.9 Q 0.075 0.9 0.075 0.8 Q 0.075 0.6 0 0.5 Q 0.075 0.4 0.075 0.2 Q 0.075 0.1 0.15 0.1 Z" />
+                        </clipPath>
+                      </defs>
                       <path 
                         d="M 60 30 Q 150 30 200 0 Q 250 30 340 30 Q 370 30 370 60 Q 370 120 400 150 Q 370 180 370 240 Q 370 270 340 270 Q 250 270 200 300 Q 150 270 60 270 Q 30 270 30 240 Q 30 180 0 150 Q 30 120 30 60 Q 30 30 60 30 Z" 
-                        className="fill-burntOrange/[0.04] stroke-burntOrange/15" 
+                        className="fill-transparent stroke-burntOrange/15" 
                         strokeWidth="1.5" 
                         strokeLinejoin="round" 
                       />
                     </svg>
-                    <span className="relative z-10 font-sans uppercase tracking-[0.2em] text-[11px] text-burntOrange/40 font-medium text-center">
-                      Image Placeholder
-                    </span>
                   </div>
                 </RevealOnScroll>
               </div>
@@ -154,8 +188,16 @@ export function InstitutionalPillarsSection() {
   ];
 
   return (
-    <section className="py-24 px-6 bg-deepAmber/[0.02] border-y border-burntOrange/10">
-      <div className="max-w-7xl mx-auto">
+    <section className="relative py-24 px-6 bg-deepAmber/[0.02] border-y border-burntOrange/10 overflow-hidden">
+      {/* Decorative fe.svg at absolute top-left */}
+      <img 
+        src="/fe.svg" 
+        alt="" 
+        className="absolute top-0 left-0 w-48 md:w-64 lg:w-80 opacity-[0.15] pointer-events-none select-none z-0"
+        aria-hidden="true"
+      />
+      
+      <div className="relative max-w-7xl mx-auto z-10">
         <SectionHeading heading="Four Institutional Pillars" align="center" />
         <div className="mt-16 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
           {pillars.map((pillar, index) => (
