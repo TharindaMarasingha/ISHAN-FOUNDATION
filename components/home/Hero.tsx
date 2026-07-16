@@ -247,18 +247,6 @@ export function Hero() {
         
       </div>
 
-      {/* Mobile Scroll Indicator */}
-      <div className="md:hidden absolute bottom-0 left-0 right-0 flex justify-between items-center px-6 py-3.5 rounded-t-[24px] border-t border-white/20 z-20"
-           style={{ background: "rgba(255,255,255,0.15)", backdropFilter: "blur(12px)" }}>
-        <span className="font-sans text-[8px] uppercase tracking-[0.2em] text-[#3e2312] opacity-80 font-semibold">
-          Scroll to explore
-        </span>
-        <div className="flex items-center gap-2">
-          <div className="w-6 h-[1px] bg-[#3e2312] opacity-40" />
-          <div className="w-1.5 h-1.5 rounded-full bg-sacredGold" />
-        </div>
-      </div>
-
     </section>
   );
 }

@@ -21,9 +21,6 @@ const renderCardContent = (card: { title: string; description: string }) => (
     {/* The Beige Card */}
     <div className="relative z-10 p-10 bg-gradient-to-br from-[#FFF8F1] to-[#F8E9D8] border-[2.5px] border-[#4B2D1A] rounded-[2.5rem] shadow-sm flex flex-col justify-center min-h-[35vh]">
       
-      {/* Inner dashed decorative border to match the hand-drawn style */}
-      <div className="absolute inset-3 border border-[#D9BFA6] border-dashed rounded-[2rem] pointer-events-none" />
-
       <div className="relative z-20">
         <h3 className="font-display uppercase tracking-widest text-[#5A2E14] text-xl mb-4 font-bold">
           {card.title}
