@@ -386,7 +386,7 @@ export function FrameworkCTASection() {
           <Button 
             href="/" 
             variant="ghost" 
-            className="!bg-[rgba(255,241,230,0.15)] !border-[rgba(245,217,138,0.7)] !border-[1.5px] !text-[#FFF1E6] hover:!bg-[#F5D98A] hover:!text-[#4A2B18] hover:!border-[#F5D98A] [text-shadow:0_1px_4px_rgba(46,26,14,0.6)] hover:[text-shadow:none]"
+            className="!bg-[#4A2B18]/70 sm:!bg-[rgba(255,241,230,0.15)] !border-[#4A2B18] sm:!border-[rgba(245,217,138,0.7)] !border-[1.5px] !text-[#FFF1E6] hover:!bg-[#F5D98A] hover:!text-[#4A2B18] hover:!border-[#F5D98A] [text-shadow:0_1px_4px_rgba(0,0,0,0.5)] sm:[text-shadow:0_1px_4px_rgba(46,26,14,0.6)] hover:[text-shadow:none]"
           >
             Back to Home
           </Button>

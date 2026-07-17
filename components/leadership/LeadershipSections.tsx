@@ -1,11 +1,11 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import { SectionHeading } from "../ui/SectionHeading";
 import { RevealOnScroll } from "../ui/RevealOnScroll";
 import { Card } from "../ui/Card";
 import { Button } from "../ui/Button";
-import { motion, AnimatePresence } from "framer-motion";
+import { motion, AnimatePresence, useInView, useReducedMotion } from "framer-motion";
 import Image from "next/image";
 
 export function PhilosophySection() {
@@ -240,6 +240,47 @@ export function GoldenCircleLeadershipSection() {
   );
 }
 
+function TypewriterQuote({ text, className }: { text: string; className: string }) {
+  const ref = useRef(null);
+  const isInView = useInView(ref, { once: true, margin: "-100px" });
+  const shouldReduceMotion = useReducedMotion();
+  const [displayedText, setDisplayedText] = useState("");
+  const [isTyping, setIsTyping] = useState(false);
+
+  useEffect(() => {
+    if (shouldReduceMotion) {
+      setDisplayedText(text);
+      return;
+    }
+    if (isInView && !isTyping && displayedText.length === 0) {
+      setIsTyping(true);
+      let i = 0;
+      const intervalId = setInterval(() => {
+        setDisplayedText(text.slice(0, i + 1));
+        i++;
+        if (i === text.length) {
+          clearInterval(intervalId);
+          setIsTyping(false);
+        }
+      }, 35);
+      return () => clearInterval(intervalId);
+    }
+  }, [isInView, text, shouldReduceMotion]);
+
+  return (
+    <p ref={ref} className={className}>
+      {displayedText}
+      <motion.span 
+        animate={{ opacity: [1, 0] }} 
+        transition={{ repeat: Infinity, duration: 0.7, ease: "linear" }}
+        className={isTyping ? "inline-block" : "hidden"}
+      >
+        |
+      </motion.span>
+    </p>
+  );
+}
+
 export function SharedCommitmentSection() {
   const tags = [
     "Preserve Wisdom", "Develop People", "Build Institutions", 
@@ -248,15 +289,23 @@ export function SharedCommitmentSection() {
   ];
 
   return (
-    <section className="py-32 px-6 bg-darkBrown text-center overflow-hidden relative">
-      <div className="absolute inset-0 z-0 bg-cover bg-center opacity-10" style={{ backgroundImage: "url('/images/who-we-serve-bg.png')" }} />
+    <section className="py-32 px-6 text-center overflow-hidden relative">
+      <div className="absolute inset-0 z-0">
+        <Image
+          src="/images/leadership-commitment-bg.jpg"
+          alt="Leadership Commitment Background"
+          fill
+          className="object-cover"
+          unoptimized
+        />
+      </div>
       <div className="max-w-5xl mx-auto relative z-10">
-        <h2 className="font-display font-light text-4xl md:text-5xl text-sacredGold mb-16">Our Shared Commitment</h2>
+        <h2 className="font-display font-light text-4xl md:text-5xl text-sacredGold mb-16 [text-shadow:0_2px_14px_rgba(0,0,0,0.5),0_1px_4px_rgba(0,0,0,0.4)]">Our Shared Commitment</h2>
         
         <RevealOnScroll delay={0.2}>
           <div className="mt-12 flex flex-wrap justify-center gap-4 mb-20">
             {tags.map((t, i) => (
-               <div key={i} className="px-6 py-4 rounded-full bg-[rgba(201,168,76,0.1)] border border-[rgba(201,168,76,0.3)] text-peach font-sans text-sm uppercase tracking-widest">
+               <div key={i} className="px-6 py-4 rounded-full bg-[rgba(46,26,14,0.55)] backdrop-blur-sm border border-[rgba(201,168,76,0.3)] text-peach font-sans text-sm uppercase tracking-widest [text-shadow:0_2px_14px_rgba(0,0,0,0.5),0_1px_4px_rgba(0,0,0,0.4)]">
                  {t}
                </div>
             ))}
@@ -264,16 +313,17 @@ export function SharedCommitmentSection() {
         </RevealOnScroll>
 
         <RevealOnScroll delay={0.4}>
-          <div className="pt-16 border-t border-sacredGold/20">
-            <p className="font-display italic text-3xl md:text-4xl text-sacredGold leading-relaxed max-w-3xl mx-auto">
-              "This is the spirit of stewardship. This is the leadership philosophy of ISHAN."
-            </p>
+          <div className="pt-16 border-t border-sacredGold/20 min-h-[140px]">
+            <TypewriterQuote 
+              text='"This is the spirit of stewardship. This is the leadership philosophy of ISHAN."'
+              className="font-display italic text-3xl md:text-4xl text-sacredGold leading-relaxed max-w-3xl mx-auto [text-shadow:0_2px_14px_rgba(0,0,0,0.5),0_1px_4px_rgba(0,0,0,0.4)]"
+            />
           </div>
         </RevealOnScroll>
 
         <RevealOnScroll delay={0.6} className="mt-20 flex flex-col sm:flex-row justify-center gap-4 sm:gap-6 w-full sm:w-auto">
           <Button href="/framework" variant="primary">Explore Our Framework</Button>
-          <Button href="/contact" variant="ghost">Connect With Us</Button>
+          <Button href="/contact" variant="ghost" className="!bg-[rgba(46,26,14,0.6)] backdrop-blur-sm !border-[1.5px] !border-solid !border-[rgba(245,217,138,0.7)] !text-[#FFF1E6] hover:!bg-[#F5D98A] hover:!text-[#4A2B18] hover:!border-[#F5D98A] transition-all">Connect With Us</Button>
         </RevealOnScroll>
       </div>
     </section>
