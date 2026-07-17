@@ -217,11 +217,41 @@ export function InstitutionalPillarsSection() {
 
 export function FiveDimensionsSection() {
   const dimensions = [
-    { title: "Physical", desc: "Health, vitality, lifestyle, movement, nutrition, and preventive wellness." },
-    { title: "Emotional", desc: "Relationships, resilience, self-awareness, compassion, emotional balance, and mental wellbeing." },
-    { title: "Intellectual", desc: "Knowledge, learning, creativity, critical thinking, innovation, and lifelong education." },
-    { title: "Financial", desc: "Livelihood, responsible resource management, economic resilience, entrepreneurship, and sustainable prosperity." },
-    { title: "Spiritual", desc: "Purpose, values, ethics, meaning, inner awareness, and conscious living." }
+    { 
+      title: "Physical", 
+      desc: "Health, vitality, lifestyle, movement, nutrition, and preventive wellness.",
+      image: "/images/five-dimensions-physical.jpg",
+      alt: "Physical wellness — yoga at sunset",
+      className: "md:col-span-1 md:row-span-1"
+    },
+    { 
+      title: "Emotional", 
+      desc: "Relationships, resilience, self-awareness, compassion, emotional balance, and mental wellbeing.",
+      image: "/images/five-dimensions-emotional.jpg",
+      alt: "Emotional wellness — building relationships and emotional balance",
+      className: "md:col-span-1 md:row-span-1"
+    },
+    { 
+      title: "Intellectual", 
+      desc: "Knowledge, learning, creativity, critical thinking, innovation, and lifelong education.",
+      image: "/images/five-dimensions-intellectual.jpg",
+      alt: "Intellectual growth — reading books and lifelong learning",
+      className: "md:col-span-1 md:row-span-2"
+    },
+    { 
+      title: "Financial", 
+      desc: "Livelihood, responsible resource management, economic resilience, entrepreneurship, and sustainable prosperity.",
+      image: "/images/five-dimensions-financial.jpg",
+      alt: "Financial resilience — managing resources and sustainable prosperity",
+      className: "md:col-span-1 md:row-span-1"
+    },
+    { 
+      title: "Spiritual", 
+      desc: "Purpose, values, ethics, meaning, inner awareness, and conscious living.",
+      image: "/images/five-dimensions-spiritual.jpg",
+      alt: "Spiritual awareness — majestic mountain landscape and conscious living",
+      className: "md:col-span-1 md:row-span-1"
+    }
   ];
 
   return (
@@ -235,17 +265,33 @@ export function FiveDimensionsSection() {
         </RevealOnScroll>
       </div>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 justify-center">
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-6 auto-rows-[280px] md:auto-rows-[300px]">
         {dimensions.map((dim, index) => (
-          <RevealOnScroll key={dim.title} delay={index * 0.1}>
-            <Card className="h-full flex flex-col p-8 items-center text-center">
-              <h3 className="font-display uppercase tracking-widest text-lg text-burntOrange mb-4 border-b border-burntOrange/20 pb-2 inline-block">
+          <RevealOnScroll 
+            key={dim.title} 
+            delay={index * 0.1} 
+            className={`relative overflow-hidden group ${dim.className} rounded-lg md:rounded-xl cursor-default`}
+          >
+            {/* Background Image */}
+            <Image
+              src={dim.image}
+              alt={dim.alt}
+              fill
+              className="object-cover transition-transform duration-700 ease-in-out group-hover:scale-105"
+            />
+            
+            {/* Gradient Overlay for Text Readability */}
+            <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent pointer-events-none" />
+
+            {/* Content Overlay */}
+            <div className="absolute inset-x-0 bottom-0 p-6 flex flex-col justify-end z-10">
+              <h3 className="font-display tracking-widest text-3xl text-white/90 mb-1 drop-shadow-md">
                 {dim.title}
               </h3>
-              <p className="font-sans font-light text-deepAmber leading-relaxed text-sm">
+              <p className="font-sans font-light text-white/70 text-sm md:text-base leading-snug drop-shadow-sm opacity-90 group-hover:opacity-100 transition-opacity duration-300">
                 {dim.desc}
               </p>
-            </Card>
+            </div>
           </RevealOnScroll>
         ))}
       </div>
