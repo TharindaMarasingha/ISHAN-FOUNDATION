@@ -15,7 +15,8 @@ const TEAM = [
     description: "Ethics, traditional wisdom & consciousness direction for all programmes.",
     nationality: "India",
     isAnchor: true,
-    image: "/images/ima.webp"
+    image: "/images/team-sevakanand.jpg",
+    alt: "Sevakanand Ji 'Buddhu' — India, Lion Capital of Ashoka emblem"
   },
   {
     archetype: "Master Mentor",
@@ -107,7 +108,7 @@ export function Team() {
                   <>
                     <Image
                       src={activeMember.image}
-                      alt={activeMember.name}
+                      alt={activeMember.alt || activeMember.name}
                       fill
                       sizes="(max-width: 768px) 100vw, 50vw"
                       className="object-cover object-center z-0"
