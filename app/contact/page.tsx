@@ -25,7 +25,7 @@ export default function ContactPage() {
         <section className="relative w-full overflow-hidden" style={{ minHeight: '100vh' }}>
           <div className="absolute inset-0">
             <Image
-              src="/images/contact-hero.jpg"
+              src="/images/contact-hero.webp"
               alt="Connect with ISHAN"
               fill
               priority

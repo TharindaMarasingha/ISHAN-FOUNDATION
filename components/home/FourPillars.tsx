@@ -9,25 +9,25 @@ const PILLARS = [
     number: "01", 
     title: "Purpose", 
     description: "Why We Exist. Defines mission, vision, and values. Ensures every initiative remains aligned with reason for being.",
-    image: "/images/wisdom.jpg"
+    image: "/images/wisdom.webp"
   },
   { 
     number: "02", 
     title: "Systems", 
     description: "How We Operate. Establishes processes, standards, governance, and operational excellence for consistency and quality.",
-    image: "/images/wellness.jpg"
+    image: "/images/wellness.webp"
   },
   { 
     number: "03", 
     title: "Management", 
     description: "How We Coordinate. Aligns people, programmes, partnerships, projects, and resources to transform vision into measurable outcomes.",
-    image: "/images/humanity.jpg"
+    image: "/images/humanity.webp"
   },
   { 
     number: "04", 
     title: "Sustainability", 
     description: "How We Build Capacity. Through responsible investment, sound stewardship, strategic partnerships, and resource development.",
-    image: "/images/nature.jpg"
+    image: "/images/nature.webp"
   },
 ];
 

@@ -93,7 +93,7 @@ export function ProfessionalDevelopmentSection() {
 export function TrainingSection() {
   return (
     <section className="py-24 px-6 bg-darkBrown text-center overflow-hidden relative">
-      <div className="absolute inset-0 z-0 bg-cover bg-center opacity-10" style={{ backgroundImage: "url('/images/who-we-serve-bg.png')" }} />
+      <div className="absolute inset-0 z-0 bg-cover bg-center opacity-10" style={{ backgroundImage: "url('/images/who-we-serve-bg.webp')" }} />
       <div className="max-w-4xl mx-auto relative z-10">
         <h2 className="font-display font-light text-4xl md:text-5xl text-sacredGold mb-12">Training & Certification</h2>
         

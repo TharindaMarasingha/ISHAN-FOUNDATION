@@ -91,9 +91,9 @@ export const metadata: Metadata = {
     images: ['/images/og-image.jpg'],
   },
   icons: {
-    icon: '/images/ishanlogo.png',
-    shortcut: '/images/ishanlogo.png',
-    apple: '/images/ishanlogo.png',
+    icon: '/images/ishanlogo.webp',
+    shortcut: '/images/ishanlogo.webp',
+    apple: '/images/ishanlogo.webp',
   },
   manifest: '/site.webmanifest',
 }
@@ -118,7 +118,7 @@ export default function RootLayout({
               "name": "ISHAN Foundation",
               "alternateName": "International Society of Humanity and Nature",
               "url": "https://ishanfoundation.lk",
-              "logo": "https://ishanfoundation.lk/images/ishanlogo.png",
+              "logo": "https://ishanfoundation.lk/images/ishanlogo.webp",
               "description": "A global institution dedicated to harmonising humanity and nature through wisdom, wellness, ethical leadership, education, research, sustainability, and conscious community development.",
               "foundingDate": "2026",
               "address": {

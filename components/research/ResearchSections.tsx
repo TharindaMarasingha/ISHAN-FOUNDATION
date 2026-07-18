@@ -117,7 +117,7 @@ export function KnowledgeResourcesSection() {
 export function ResearchCTASection() {
   return (
     <section className="py-32 px-6 bg-darkBrown text-center overflow-hidden relative">
-      <div className="absolute inset-0 z-0 bg-cover bg-center opacity-10" style={{ backgroundImage: "url('/images/who-we-serve-bg.png')" }} />
+      <div className="absolute inset-0 z-0 bg-cover bg-center opacity-10" style={{ backgroundImage: "url('/images/who-we-serve-bg.webp')" }} />
       <div className="max-w-4xl mx-auto relative z-10 flex flex-col items-center">
         <SectionHeading
           eyebrow="Join Our Mission"

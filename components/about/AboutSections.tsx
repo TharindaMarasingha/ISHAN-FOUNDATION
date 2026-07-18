@@ -95,7 +95,7 @@ export function OurStorySection() {
               {/* Image container */}
               <div className="relative w-[320px] h-[240px] overflow-hidden md:w-[560px] md:h-[420px] shrink-0 shadow-none group-hover:shadow-[0_24px_64px_rgba(60,33,20,0.15)] transition-all duration-700">
                 <img
-                  src="/images/about-story.jpg"
+                  src="/images/about-story.webp"
                   alt="Our Story"
                   className="h-full w-full object-cover transition-transform duration-1000 group-hover:scale-105"
                 />
@@ -147,7 +147,7 @@ export function VisionMissionSection() {
             <div className="w-full md:w-[40%] flex justify-center">
               <div className="relative w-[300px] h-[300px] rounded-tl-[80px] rounded-br-[80px] overflow-hidden shadow-xl">
                 <img 
-                  src="/images/vision.jpg" 
+                  src="/images/vision.webp" 
                   alt="Vision" 
                   className="w-full h-full object-cover transition-transform duration-700 hover:scale-105"
                 />
@@ -178,7 +178,7 @@ export function VisionMissionSection() {
             <div className="w-full md:w-[40%] flex justify-center">
               <div className="relative w-[300px] h-[300px] rounded-tr-[80px] rounded-bl-[80px] overflow-hidden shadow-xl">
                 <img 
-                  src="/images/mission.jpg" 
+                  src="/images/mission.webp" 
                   alt="Mission" 
                   className="w-full h-full object-cover transition-transform duration-700 hover:scale-105"
                 />
@@ -785,7 +785,7 @@ export function OurCommitmentSection() {
             <div className="relative w-full aspect-[4/5] rounded-[2rem] overflow-hidden shadow-2xl group">
               {/* Real Image */}
               <Image 
-                src="/images/about-commitment.jpg" 
+                src="/images/about-commitment.webp" 
                 alt="Our Commitment" 
                 fill
                 className="object-cover object-center transition-transform duration-700 ease-in-out group-hover:scale-105"

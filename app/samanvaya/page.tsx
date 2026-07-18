@@ -22,7 +22,7 @@ export default function SamanvayaPage() {
       <section className="relative w-full overflow-hidden" style={{ minHeight: '100vh' }}>
         <div className="absolute inset-0">
           <Image
-            src="/images/samanvaya-hero.jpg"
+            src="/images/samanvaya-hero.webp"
             alt="Samanvaya Transformational Retreat"
             fill
             priority

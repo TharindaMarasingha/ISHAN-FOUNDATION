@@ -125,7 +125,7 @@ export function CollaborationAndContributionSection() {
 export function PartnershipsCTASection() {
   return (
     <section className="py-32 px-6 bg-darkBrown text-center overflow-hidden relative">
-      <div className="absolute inset-0 z-0 bg-cover bg-center opacity-10" style={{ backgroundImage: "url('/images/who-we-serve-bg.png')" }} />
+      <div className="absolute inset-0 z-0 bg-cover bg-center opacity-10" style={{ backgroundImage: "url('/images/who-we-serve-bg.webp')" }} />
       <div className="max-w-4xl mx-auto relative z-10 flex flex-col items-center">
         <RevealOnScroll>
           <p className="font-display italic text-3xl md:text-4xl text-sacredGold leading-relaxed mb-16 px-4 md:px-0">

@@ -24,7 +24,7 @@ export default function ArogyaPage() {
       <section className="relative w-full overflow-hidden" style={{ minHeight: '100vh' }}>
         <div className="absolute inset-0">
           <Image
-            src="/images/arogya-hero.jpg"
+            src="/images/arogya-hero.webp"
             alt="Arogya Ashram"
             fill
             priority

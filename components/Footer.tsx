@@ -80,7 +80,7 @@ export default function Footer() {
           {/* Logo Lockup */}
           <div className="flex flex-col items-center lg:items-start flex-shrink-0 min-w-[280px]">
             <Image 
-              src="/images/ishanlogo.png" 
+              src="/images/ishanlogo.webp" 
               alt="ISHAN Logo" 
               width={110} 
               height={110} 

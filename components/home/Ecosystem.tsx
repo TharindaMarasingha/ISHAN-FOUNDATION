@@ -19,7 +19,7 @@ const ECOSYSTEM_CARDS: EcosystemData[] = [
     description: "Dedicated to promoting holistic health through preventive wellness, lifestyle education, yoga, meditation, breathwork, mindful movement, nutrition, stress management, and integrative wellbeing practices.",
     href: "/arogya",
     accentColor: "#C9A84C",
-    image: "/images/ecosystem-arogya.jpg",
+    image: "/images/ecosystem-arogya.webp",
     cardBackground: "rgba(255, 248, 235, 0.85)",
   },
   {
@@ -29,7 +29,7 @@ const ECOSYSTEM_CARDS: EcosystemData[] = [
     description: "A signature immersive experience designed for profound self-discovery, inner reflection, holistic wellbeing, and conscious transformation through silence, meditation, and contemplative practice.",
     href: "/avalokana",
     accentColor: "#2C5F4A",
-    image: "/images/ecosystem-uss.jpg",
+    image: "/images/ecosystem-uss.webp",
     cardBackground: "rgba(240, 248, 244, 0.85)",
   },
   {
@@ -39,7 +39,7 @@ const ECOSYSTEM_CARDS: EcosystemData[] = [
     description: "ISHAN's flagship transformational retreat inspired by the timeless wisdom of the five elements, guiding participants toward integrated wellbeing and complete human development.",
     href: "/samanvaya",
     accentColor: "#8B4513",
-    image: "/images/sn1.jpg",
+    image: "/images/sn1.webp",
     cardBackground: "rgba(252, 243, 235, 0.85)",
   },
   {
@@ -49,7 +49,7 @@ const ECOSYSTEM_CARDS: EcosystemData[] = [
     description: "ISHAN's long-term vision for creating a living model of conscious and sustainable community life — an integrated spiritual wellness township where individuals and families can live in harmony with nature.",
     href: "/sri-vrindavan",
     accentColor: "#4A3728",
-    image: "/images/ecosystem-vrindavan.jpg",
+    image: "/images/ecosystem-vrindavan.webp",
     cardBackground: "rgba(245, 240, 235, 0.85)",
   },
 ];

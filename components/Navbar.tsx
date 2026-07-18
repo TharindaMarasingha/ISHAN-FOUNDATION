@@ -119,7 +119,7 @@ export default function Navbar() {
           <Link href="/" className="flex-shrink-0 flex items-center pl-1 md:pl-2">
             <div className="w-8 h-8 md:w-10 md:h-10 flex-shrink-0">
               <img 
-                src="/images/ishanlogo.png"
+                src="/images/ishanlogo.webp"
                 alt="ISHAN"
                 width={80}
                 height={80}

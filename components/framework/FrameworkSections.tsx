@@ -9,9 +9,9 @@ import { Button } from "../ui/Button";
 
 export function GoldenCircleSection() {
   const circles = [
-    { title: "WHY", subtitle: "Our Purpose", desc: "To harmonise humanity and nature through wisdom, wellness, ethical leadership, sustainability, and conscious community development.", image: "/images/framework-why-bg.jpg" },
-    { title: "HOW", subtitle: "Our Approach", desc: "Timeless Wisdom · Preventive Wellness · Holistic Wellbeing · Ethical Leadership · Research & Education · Sustainable Systems · Community Development · Environmental Stewardship · International Collaboration", image: "/images/framework-how-bg.jpg" },
-    { title: "WHAT", subtitle: "Our Work", desc: "Educational Programmes · Retreats & Immersions · Leadership Development · Research & Publications · Community Initiatives · Environmental Projects · Institutional Partnerships · Conscious Living Experiences", image: "/images/framework-what-bg.jpg" }
+    { title: "WHY", subtitle: "Our Purpose", desc: "To harmonise humanity and nature through wisdom, wellness, ethical leadership, sustainability, and conscious community development.", image: "/images/framework-why-bg.webp" },
+    { title: "HOW", subtitle: "Our Approach", desc: "Timeless Wisdom · Preventive Wellness · Holistic Wellbeing · Ethical Leadership · Research & Education · Sustainable Systems · Community Development · Environmental Stewardship · International Collaboration", image: "/images/framework-how-bg.webp" },
+    { title: "WHAT", subtitle: "Our Work", desc: "Educational Programmes · Retreats & Immersions · Leadership Development · Research & Publications · Community Initiatives · Environmental Projects · Institutional Partnerships · Conscious Living Experiences", image: "/images/framework-what-bg.webp" }
   ];
 
   return (
@@ -98,25 +98,25 @@ export function PurusharthaSection() {
     { 
       title: "Dharma", 
       desc: "Purpose, ethics, integrity, and responsibility. Every decision must be guided by what is right and beneficial for humanity and nature.",
-      image: "/images/framework-dharma-bg.jpg",
+      image: "/images/framework-dharma-bg.webp",
       alt: "Dharma — purpose and integrity"
     },
     { 
       title: "Artha", 
       desc: "Sustainable resources and institutional resilience. Financial strength enables long-term service and responsible growth.",
-      image: "/images/framework-artha-bg.jpg",
+      image: "/images/framework-artha-bg.webp",
       alt: "Artha — sustainable resources and resilience"
     },
     { 
       title: "Kama", 
       desc: "Meaningful aspiration, creativity, innovation, fulfilment, and human flourishing. Growth should enrich lives while remaining aligned with values.",
-      image: "/images/framework-kama-bg.jpg",
+      image: "/images/framework-kama-bg.webp",
       alt: "Kama — meaningful aspiration and human flourishing"
     },
     { 
       title: "Moksha", 
       desc: "The highest expression of institutional purpose — creating lasting impact, collective wellbeing, and a legacy that benefits future generations.",
-      image: "/images/framework-moksha-bg.jpg",
+      image: "/images/framework-moksha-bg.webp",
       alt: "Moksha — highest expression of institutional purpose"
     }
   ];
@@ -220,35 +220,35 @@ export function FiveDimensionsSection() {
     { 
       title: "Physical", 
       desc: "Health, vitality, lifestyle, movement, nutrition, and preventive wellness.",
-      image: "/images/five-dimensions-physical.jpg",
+      image: "/images/five-dimensions-physical.webp",
       alt: "Physical wellness — yoga at sunset",
       className: "md:col-span-1 md:row-span-1"
     },
     { 
       title: "Emotional", 
       desc: "Relationships, resilience, self-awareness, compassion, emotional balance, and mental wellbeing.",
-      image: "/images/five-dimensions-emotional.jpg",
+      image: "/images/five-dimensions-emotional.webp",
       alt: "Emotional wellness — building relationships and emotional balance",
       className: "md:col-span-1 md:row-span-1"
     },
     { 
       title: "Intellectual", 
       desc: "Knowledge, learning, creativity, critical thinking, innovation, and lifelong education.",
-      image: "/images/five-dimensions-intellectual.jpg",
+      image: "/images/five-dimensions-intellectual.webp",
       alt: "Intellectual growth — reading books and lifelong learning",
       className: "md:col-span-1 md:row-span-2"
     },
     { 
       title: "Financial", 
       desc: "Livelihood, responsible resource management, economic resilience, entrepreneurship, and sustainable prosperity.",
-      image: "/images/five-dimensions-financial.jpg",
+      image: "/images/five-dimensions-financial.webp",
       alt: "Financial resilience — managing resources and sustainable prosperity",
       className: "md:col-span-1 md:row-span-1"
     },
     { 
       title: "Spiritual", 
       desc: "Purpose, values, ethics, meaning, inner awareness, and conscious living.",
-      image: "/images/five-dimensions-spiritual.jpg",
+      image: "/images/five-dimensions-spiritual.webp",
       alt: "Spiritual awareness — majestic mountain landscape and conscious living",
       className: "md:col-span-1 md:row-span-1"
     }
@@ -350,7 +350,7 @@ export function FrameworkCTASection() {
       {/* Background Image Layer */}
       <div className="absolute inset-0 z-0">
         <Image
-          src="/images/framework-cta-bg.jpg"
+          src="/images/framework-cta-bg.webp"
           alt="Framework CTA Background"
           fill
           className="object-cover"

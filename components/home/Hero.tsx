@@ -18,7 +18,7 @@ export function Hero() {
   
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
   const [isHoveredOrDragged, setIsHoveredOrDragged] = useState(false);
-  const images = ["/images/h1.jpg", "/images/h2.jpg", "/images/h3.jpg", "/images/h4.jpg"];
+  const images = ["/images/h1.webp", "/images/h2.webp", "/images/h3.webp", "/images/h4.webp"];
 
   useEffect(() => {
     if (prefersReducedMotion || isHoveredOrDragged) return;

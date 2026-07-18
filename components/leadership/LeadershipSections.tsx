@@ -50,7 +50,7 @@ const TEAM = [
     initials: "SJ",
     description: "Vision · Purpose · Wisdom · Ethics · Institutional Integrity · Research & Development · Leadership Philosophy · Long-term Legacy · Quality & Standards",
     isAnchor: true,
-    image: "/images/ima.jpg"
+    image: "/images/ima.webp"
   },
   {
     archetype: "Master Mentor",
@@ -59,7 +59,7 @@ const TEAM = [
     initials: "SK",
     description: "Education · Mentorship · Leadership Development · Research · Curriculum Design · Knowledge Systems · Character Development · Institutional Learning",
     isAnchor: false,
-    image: "/images/imb.jpg"
+    image: "/images/imb.webp"
   },
   {
     archetype: "Master Coach",
@@ -68,7 +68,7 @@ const TEAM = [
     initials: "IS",
     description: "Coaching · Training · Programme Delivery · Retreat Design · Facilitation · Experiential Learning · Holistic Wellbeing · Personal Transformation",
     isAnchor: false,
-    image: "/images/imc.jpg"
+    image: "/images/imc.webp"
   },
   {
     archetype: "Business Alchemist",
@@ -77,7 +77,7 @@ const TEAM = [
     initials: "RS",
     description: "Strategic Planning · Institutional Development · Governance · Operations · Systems Management · Financial Planning · Sustainability · International Operations",
     isAnchor: false,
-    image: "/images/imd.jpg"
+    image: "/images/imd.webp"
   },
   {
     archetype: "Growth Catalyst",
@@ -86,7 +86,7 @@ const TEAM = [
     initials: "MA",
     description: "Business Development · Strategic Partnerships · International Collaboration · Community Development · Brand Growth · Resource Mobilisation · Outreach",
     isAnchor: false,
-    image: "/images/ime.jpg"
+    image: "/images/ime.webp"
   }
 ];
 
@@ -293,7 +293,7 @@ export function SharedCommitmentSection() {
     <section className="py-32 px-6 text-center overflow-hidden relative">
       <div className="absolute inset-0 z-0">
         <Image
-          src="/images/leadership-commitment-bg.jpg"
+          src="/images/leadership-commitment-bg.webp"
           alt="Leadership Commitment Background"
           fill
           className="object-cover"

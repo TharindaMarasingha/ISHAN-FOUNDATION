@@ -15,7 +15,7 @@ export function ContactCTA() {
       {/* Background Image Layer */}
       <div className="absolute inset-0 z-0">
         <Image
-          src="/images/contact-cta-bg.jpg"
+          src="/images/contact-cta-bg.webp"
           alt="Contact Background"
           fill
           className="object-cover"

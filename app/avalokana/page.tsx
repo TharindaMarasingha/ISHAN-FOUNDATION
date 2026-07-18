@@ -22,7 +22,7 @@ export default function AvalokanaPage() {
       <section className="relative w-full overflow-hidden" style={{ minHeight: '100vh' }}>
         <div className="absolute inset-0">
           <Image
-            src="/images/Avalokana.jpg"
+            src="/images/Avalokana.webp"
             alt="Antahakarana Avalokana"
             fill
             priority

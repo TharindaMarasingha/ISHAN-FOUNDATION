@@ -24,7 +24,7 @@ export default function SriVrindavanPage() {
       <section className="relative w-full overflow-hidden" style={{ minHeight: '100vh' }}>
         <div className="absolute inset-0">
           <Image
-            src="/images/vrindavan-hero.jpg"
+            src="/images/vrindavan-hero.webp"
             alt="Sri Vrindavan Project"
             fill
             priority

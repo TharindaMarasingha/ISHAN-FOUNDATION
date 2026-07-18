@@ -22,7 +22,7 @@ export function WhoWeServe() {
     >
       <div 
         className="absolute inset-0 z-0 bg-cover bg-center"
-        style={{ backgroundImage: "url('/images/who-we-serve-bg.png')" }}
+        style={{ backgroundImage: "url('/images/who-we-serve-bg.webp')" }}
       />
       {/* Readability Overlay */}
       <div 

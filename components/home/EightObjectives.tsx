@@ -14,7 +14,7 @@ const objectiveImages = [
   'https://images.unsplash.com/photo-1469571486292-0ba58a3f068b?q=70&w=800&auto=format',
   'https://images.unsplash.com/photo-1511895426328-dc8714191300?q=70&w=800&auto=format',
   'https://images.unsplash.com/photo-1582213782179-e0d53f98f2ca?q=70&w=800&auto=format',
-  '/images/objective-07-communities.jpg', // Local image exists
+  '/images/objective-07-communities.webp', // Local image exists
   'https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?q=70&w=800&auto=format',
 ];
 

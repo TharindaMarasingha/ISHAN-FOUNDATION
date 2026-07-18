@@ -9,7 +9,7 @@ export function PageHero() {
     <section className="relative w-full overflow-hidden" style={{ minHeight: '100vh', marginTop: '0', paddingTop: '0', top: '0' }}>
       <div className="absolute inset-0" style={{ top: 0, left: 0, right: 0, bottom: 0 }}>
         <Image
-          src="/images/programmes-hero.jpg"
+          src="/images/programmes-hero.webp"
           alt="ISHAN Programmes"
           fill
           priority

@@ -15,7 +15,7 @@ const TEAM = [
     description: "Ethics, traditional wisdom & consciousness direction for all programmes.",
     nationality: "India",
     isAnchor: true,
-    image: "/images/ima.jpg"
+    image: "/images/ima.webp"
   },
   {
     archetype: "Master Mentor",
@@ -25,7 +25,7 @@ const TEAM = [
     description: "Japanese wellness traditions, mindful movement & sound healing.",
     nationality: "Japan",
     isAnchor: false,
-    image: "/images/imb.jpg"
+    image: "/images/imb.webp"
   },
   {
     archetype: "Master Coach",
@@ -35,7 +35,7 @@ const TEAM = [
     description: "Himalayan yogic sciences, meditation & energy practices.",
     nationality: "Nepal",
     isAnchor: false,
-    image: "/images/imc.jpg"
+    image: "/images/imc.webp"
   },
   {
     archetype: "Business Alchemist",
@@ -45,7 +45,7 @@ const TEAM = [
     description: "Strategic planning, institutional development & governance.",
     nationality: "Sri Lanka",
     isAnchor: false,
-    image: "/images/imd.jpg"
+    image: "/images/imd.webp"
   },
   {
     archetype: "Growth Catalyst",
@@ -55,7 +55,7 @@ const TEAM = [
     description: "Strategic partnerships, community building & international collaboration.",
     nationality: "India",
     isAnchor: false,
-    image: "/images/ime.jpg"
+    image: "/images/ime.webp"
   }
 ];
 
