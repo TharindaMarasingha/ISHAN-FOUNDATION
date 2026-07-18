@@ -37,6 +37,7 @@ export default function Navbar() {
   const moreDropdownRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
+    // eslint-disable-next-line react-hooks/set-state-in-effect
     setIsMounted(true);
     const checkMobile = () => {
       setIsMobile(window.innerWidth < 768);
@@ -77,6 +78,7 @@ export default function Navbar() {
 
   // Close dropdown on route change
   useEffect(() => {
+    // eslint-disable-next-line react-hooks/set-state-in-effect
     setIsMoreOpen(false);
     setIsMobileMenuOpen(false);
   }, [pathname]);

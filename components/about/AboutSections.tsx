@@ -485,6 +485,7 @@ export function CoreValuesSection() {
   }, []);
 
   // Mount effect — runs only on client, prevents hydration mismatch
+  // eslint-disable-next-line react-hooks/set-state-in-effect
   React.useEffect(() => { setMounted(true); }, []);
 
   // Server / pre-hydration: render a size-matched placeholder with no dynamic values

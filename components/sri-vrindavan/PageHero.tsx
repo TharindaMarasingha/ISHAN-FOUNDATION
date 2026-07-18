@@ -37,7 +37,7 @@ export function PageHero() {
           transition={{ duration: 1, ease: "easeOut", delay: 0.4 }}
           className="font-display italic text-lg md:text-2xl text-sacredGold mb-8"
         >
-          Sri Lanka's First Conscious Living Township
+          Sri Lanka&apos;s First Conscious Living Township
         </motion.p>
 
         <motion.h2

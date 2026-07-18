@@ -47,10 +47,10 @@ export function JoinCommunitySection() {
         <RevealOnScroll delay={0.2}>
           <div className="mt-16 flex flex-col gap-12 text-center px-4 md:px-8">
             <p className="font-display italic text-2xl md:text-3xl text-burntOrange leading-relaxed">
-              "The future is not created by a few extraordinary individuals. It is created by ordinary people choosing to take extraordinary responsibility."
+              &quot;The future is not created by a few extraordinary individuals. It is created by ordinary people choosing to take extraordinary responsibility.&quot;
             </p>
             <p className="font-display italic text-2xl md:text-3xl text-burntOrange leading-relaxed">
-              "At ISHAN, we believe that every individual has the capacity to become a steward of positive change."
+              &quot;At ISHAN, we believe that every individual has the capacity to become a steward of positive change.&quot;
             </p>
           </div>
         </RevealOnScroll>

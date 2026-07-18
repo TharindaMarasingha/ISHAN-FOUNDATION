@@ -20,6 +20,7 @@ export function CursorGlow() {
     const isReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
     if (!isFinePointer || isReducedMotion) {
+      // eslint-disable-next-line react-hooks/set-state-in-effect
       setShouldRender(false);
       return;
     }

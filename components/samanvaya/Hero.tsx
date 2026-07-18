@@ -40,7 +40,7 @@ export function Hero() {
           transition={{ duration: 1, ease: "easeOut", delay: 0.4 }}
           className="font-display italic text-lg md:text-xl text-mandarin mb-8"
         >
-          ISHAN's Flagship Transformational Retreat
+          ISHAN&apos;s Flagship Transformational Retreat
         </motion.p>
 
         <motion.p

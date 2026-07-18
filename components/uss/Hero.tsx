@@ -50,7 +50,7 @@ export function Hero() {
           transition={{ duration: 1, ease: "easeOut", delay: 0.6 }}
           className="font-sans font-light text-deepAmber max-w-2xl leading-relaxed mb-16"
         >
-          An international institute dedicated to the rigorous, empirical exploration of inner development. We bridge humanity's deepest contemplative traditions with modern scientific inquiry, illuminating the mechanics of consciousness, ethics, and profound spiritual healing.
+          An international institute dedicated to the rigorous, empirical exploration of inner development. We bridge humanity&apos;s deepest contemplative traditions with modern scientific inquiry, illuminating the mechanics of consciousness, ethics, and profound spiritual healing.
         </motion.p>
 
         <div className="grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-16 w-full max-w-4xl border-t border-[#1B4332]/20 pt-12">

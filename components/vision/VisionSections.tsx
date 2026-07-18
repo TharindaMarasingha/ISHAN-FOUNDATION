@@ -116,7 +116,7 @@ export function VisionCTASection() {
       <div className="max-w-4xl mx-auto relative z-10 flex flex-col items-center">
         <RevealOnScroll>
           <p className="font-display italic text-3xl md:text-5xl text-sacredGold leading-relaxed mb-16">
-            "One Humanity · One Nature · One Conscious Future"
+            &quot;One Humanity · One Nature · One Conscious Future&quot;
           </p>
         </RevealOnScroll>
         <RevealOnScroll delay={0.2} className="flex flex-col sm:flex-row gap-4 sm:gap-6 w-full sm:w-auto">

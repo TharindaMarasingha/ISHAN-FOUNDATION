@@ -129,7 +129,7 @@ export function PartnershipsCTASection() {
       <div className="max-w-4xl mx-auto relative z-10 flex flex-col items-center">
         <RevealOnScroll>
           <p className="font-display italic text-3xl md:text-4xl text-sacredGold leading-relaxed mb-16 px-4 md:px-0">
-            "Together, we can create healthier individuals, stronger communities, resilient institutions, and a sustainable future."
+            &quot;Together, we can create healthier individuals, stronger communities, resilient institutions, and a sustainable future.&quot;
           </p>
         </RevealOnScroll>
         <RevealOnScroll delay={0.2} className="flex flex-col sm:flex-row gap-4 sm:gap-6 w-full sm:w-auto">

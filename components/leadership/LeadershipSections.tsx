@@ -24,7 +24,7 @@ export function PhilosophySection() {
       <RevealOnScroll delay={0.2}>
         <div className="mt-16 mb-16 pt-12 border-t border-burntOrange/20">
           <p className="font-display italic text-3xl md:text-4xl text-burntOrange leading-relaxed max-w-3xl mx-auto">
-            "A steward does not ask, What can I gain? A steward asks, What can I preserve, protect, develop, and pass on?"
+            &quot;A steward does not ask, What can I gain? A steward asks, What can I preserve, protect, develop, and pass on?&quot;
           </p>
         </div>
       </RevealOnScroll>
@@ -249,6 +249,7 @@ function TypewriterQuote({ text, className }: { text: string; className: string 
 
   useEffect(() => {
     if (shouldReduceMotion) {
+      // eslint-disable-next-line react-hooks/set-state-in-effect
       setDisplayedText(text);
       return;
     }

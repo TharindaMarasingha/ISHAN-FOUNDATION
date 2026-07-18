@@ -107,7 +107,7 @@ export function TrainingSection() {
         <RevealOnScroll delay={0.4}>
           <div className="pt-16 border-t border-sacredGold/20">
             <p className="font-display italic text-3xl md:text-4xl text-sacredGold leading-relaxed max-w-3xl mx-auto">
-              "Our goal is not simply to certify individuals but to develop responsible practitioners who embody the values and philosophy of ISHAN."
+              &quot;Our goal is not simply to certify individuals but to develop responsible practitioners who embody the values and philosophy of ISHAN.&quot;
             </p>
           </div>
         </RevealOnScroll>

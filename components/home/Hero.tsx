@@ -28,7 +28,8 @@ export function Hero() {
     return () => clearInterval(interval);
   }, [images.length, prefersReducedMotion, isHoveredOrDragged]);
 
-  const handleDragEnd = (e: any, { offset, velocity }: any) => {
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  const handleDragEnd = (e: any, { offset }: any) => {
     setIsHoveredOrDragged(false);
     const swipe = offset.x;
     if (swipe < -50) {

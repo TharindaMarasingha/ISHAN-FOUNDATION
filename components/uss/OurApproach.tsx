@@ -13,7 +13,7 @@ export function OurApproach() {
           />
           <RevealOnScroll delay={0.1}>
             <p className="font-sans font-light text-deepAmber/90 leading-relaxed text-lg italic text-[#1B4332]">
-              "Where empirical rigor meets the infinite depths of subjective realization."
+              &quot;Where empirical rigor meets the infinite depths of subjective realization.&quot;
             </p>
           </RevealOnScroll>
         </div>

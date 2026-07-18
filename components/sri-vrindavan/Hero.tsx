@@ -41,7 +41,7 @@ export function Hero() {
           transition={{ duration: 1, ease: "easeOut", delay: 0.6 }}
           className="font-sans font-light text-deepAmber max-w-2xl leading-relaxed mb-8"
         >
-          Sri Vrindavan represents ISHAN's long-term vision for creating a living model of conscious and sustainable community life.
+          Sri Vrindavan represents ISHAN&apos;s long-term vision for creating a living model of conscious and sustainable community life.
         </motion.p>
 
         <motion.p

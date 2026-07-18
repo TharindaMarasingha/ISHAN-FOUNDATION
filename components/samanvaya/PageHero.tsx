@@ -37,7 +37,7 @@ export function PageHero() {
           transition={{ duration: 1, ease: "easeOut", delay: 0.4 }}
           className="font-display italic text-lg md:text-2xl text-sacredGold mb-8"
         >
-          ISHAN's Flagship Immersive Experience
+          ISHAN&apos;s Flagship Immersive Experience
         </motion.p>
 
         <motion.h2
