@@ -81,12 +81,12 @@ export function Partnerships() {
           </div>
 
           {/* Right Column */}
-          <div className="flex flex-col space-y-8">
+          <div className="flex flex-col">
             <RevealOnScroll delay={0.2}>
               <h3 className="font-display font-light text-2xl md:text-3xl text-deepAmber mb-8">
                 You Can Contribute Through
               </h3>
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-y-4 gap-x-8 mb-10">
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-y-6 gap-x-8">
                 {CONTRIBUTIONS.map((item) => (
                   <div key={item} className="flex items-center text-sm font-sans font-light text-deepAmber/80">
                     <span className="text-sacredGold mr-3">✦</span>
@@ -94,7 +94,6 @@ export function Partnerships() {
                   </div>
                 ))}
               </div>
-              <Button variant="ghost" href="/contact">Connect With Us</Button>
             </RevealOnScroll>
           </div>
 
