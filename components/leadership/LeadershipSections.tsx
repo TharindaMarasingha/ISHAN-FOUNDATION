@@ -46,7 +46,7 @@ const TEAM = [
   {
     archetype: "The Grandmaster (The Guardian)",
     role: "Purpose & Institutional Integrity",
-    name: "Sevakanand Ji 'Buddhu'",
+    name: "Shreeji Sevakanand 'Buddhu'",
     initials: "SJ",
     description: "Vision · Purpose · Wisdom · Ethics · Institutional Integrity · Research & Development · Leadership Philosophy · Long-term Legacy · Quality & Standards",
     isAnchor: true,
