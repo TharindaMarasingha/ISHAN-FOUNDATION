@@ -10,13 +10,13 @@ const TEAM = [
   {
     archetype: "The Grandmaster (The Guardian)",
     role: "Stewardship of Purpose & Institutional Integrity",
-    name: "Sevakanand Ji 'Buddhu'",
+    name: "Shreeji Sevakanand 'Buddhu'",
     initials: "SJ",
     description: "Ethics, traditional wisdom & consciousness direction for all programmes.",
     nationality: "India",
     isAnchor: true,
     image: "/images/team-sevakanand.jpg",
-    alt: "Sevakanand Ji 'Buddhu' — India, Lion Capital of Ashoka emblem"
+    alt: "Shreeji Sevakanand 'Buddhu' — India, Lion Capital of Ashoka emblem"
   },
   {
     archetype: "Master Mentor",

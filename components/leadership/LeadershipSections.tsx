@@ -51,7 +51,7 @@ const TEAM = [
     description: "Vision · Purpose · Wisdom · Ethics · Institutional Integrity · Research & Development · Leadership Philosophy · Long-term Legacy · Quality & Standards",
     isAnchor: true,
     image: "/images/team-sevakanand.jpg",
-    alt: "Sevakanand Ji 'Buddhu' — India, Lion Capital of Ashoka emblem"
+    alt: "Shreeji Sevakanand 'Buddhu' — India, Lion Capital of Ashoka emblem"
   },
   {
     archetype: "Master Mentor",
