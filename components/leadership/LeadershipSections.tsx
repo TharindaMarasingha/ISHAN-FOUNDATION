@@ -1,43 +1,177 @@
 "use client";
 
 import React, { useState, useEffect, useRef } from "react";
+import { Scroll01 } from "@/components/ui/scroll-01";
 import { SectionHeading } from "../ui/SectionHeading";
 import { RevealOnScroll } from "../ui/RevealOnScroll";
 import { Card } from "../ui/Card";
 import { Button } from "../ui/Button";
 import { motion, AnimatePresence, useInView, useReducedMotion } from "framer-motion";
 import Image from "next/image";
+import { Leaf, HeartHandshake, Users, Handshake, TreeDeciduous } from "lucide-react";
 
 export function PhilosophySection() {
   const points = [
-    "Humility over ego.",
-    "Service over status.",
-    "Responsibility over recognition.",
-    "Collaboration over competition.",
-    "Legacy over short-term success."
+    { title: "Humility over ego.", icon: Leaf },
+    { title: "Service over status.", icon: HeartHandshake },
+    { title: "Responsibility over recognition.", icon: Users },
+    { title: "Collaboration over competition.", icon: Handshake },
+    { title: "Legacy over short-term success.", icon: TreeDeciduous }
   ];
 
-  return (
-    <section className="py-24 px-6 max-w-4xl mx-auto text-center">
-      <SectionHeading heading="A Philosophy of Stewardship" align="center" />
-      
-      <RevealOnScroll delay={0.2}>
-        <div className="mt-16 mb-16 pt-12 border-t border-burntOrange/20">
-          <p className="font-display italic text-3xl md:text-4xl text-burntOrange leading-relaxed max-w-3xl mx-auto">
-            &quot;A steward does not ask, What can I gain? A steward asks, What can I preserve, protect, develop, and pass on?&quot;
-          </p>
-        </div>
-      </RevealOnScroll>
+  // --- Sequential Cinematic Reveal Variants ---
+  const eyebrowVariants = {
+    hidden: { opacity: 0, y: 15 },
+    visible: { opacity: 1, y: 0, transition: { duration: 0.8, ease: "easeOut", delay: 0.1 } },
+  };
 
-      <RevealOnScroll delay={0.4}>
-        <ul className="space-y-4 max-w-xl mx-auto text-left md:text-center flex flex-col items-center">
-          {points.map((p, i) => (
-             <li key={i} className="flex items-center text-xl font-sans font-light text-deepAmber">
-               <span className="text-sacredGold mr-4">✦</span> <span>{p}</span>
-             </li>
-          ))}
-        </ul>
-      </RevealOnScroll>
+  const headingVariants = {
+    hidden: { opacity: 0, y: 15 },
+    visible: { opacity: 1, y: 0, transition: { duration: 1, ease: [0.21, 0.47, 0.32, 0.98], delay: 0.3 } },
+  };
+
+  const quoteVariants = {
+    hidden: { opacity: 0, y: 20 },
+    visible: { opacity: 1, y: 0, transition: { duration: 1, ease: "easeOut", delay: 0.9 } },
+  };
+
+  const getIconVariants = (i: number) => ({
+    hidden: { opacity: 0, scale: 0.8 },
+    visible: { opacity: 1, scale: 1, transition: { duration: 0.6, ease: "easeOut", delay: 1.1 + (i * 0.15) } }
+  });
+  
+  const getTextVariants = (i: number) => ({
+    hidden: { opacity: 0, y: 10 },
+    visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: "easeOut", delay: 1.1 + (i * 0.15) + 0.15 } }
+  });
+
+  const getLineVariants = (i: number) => ({
+    hidden: { opacity: 0, width: "0%" },
+    visible: { opacity: 0.7, width: "100%", transition: { duration: 0.8, ease: "easeInOut", delay: 1.1 + (i * 0.15) + 0.3 } }
+  });
+
+  return (
+    <section className="relative w-full py-20 md:py-24 lg:py-32 overflow-hidden flex items-center justify-center min-h-[85vh] bg-white">
+      {/* Decorative Flower */}
+      <motion.img 
+        src="/flower.svg"
+        alt=""
+        initial={{ opacity: 0, x: -30, y: -30 }}
+        whileInView={{ opacity: 0.12, x: 0, y: 0 }}
+        viewport={{ once: true, margin: "-50px" }}
+        transition={{ duration: 1.5, ease: "easeOut" }}
+        className="absolute left-[-20px] top-[-20px] w-[200px] md:w-[300px] h-auto pointer-events-none z-0 mix-blend-multiply origin-top-left"
+      />
+
+      {/* Background Texture & Shadows */}
+      <div className="absolute inset-0 z-0 pointer-events-none opacity-[0.03] mix-blend-multiply" 
+           style={{ backgroundImage: "url('data:image/svg+xml,%3Csvg viewBox=%220 0 200 200%22 xmlns=%22http://www.w3.org/2000/svg%22%3E%3Cfilter id=%22noiseFilter%22%3E%3CfeTurbulence type=%22fractalNoise%22 baseFrequency=%220.8%22 numOctaves=%223%22 stitchTiles=%22stitch%22/%3E%3C/filter%3E%3Crect width=%22100%25%22 height=%22100%25%22 filter=%22url(%23noiseFilter)%22/%3E%3C/svg%3E')" }} 
+      />
+      <div className="absolute -top-40 -left-40 w-[600px] h-[600px] bg-[#E8DBCE] rounded-full blur-[120px] opacity-50 pointer-events-none z-0" />
+      <div className="absolute -bottom-40 -right-40 w-[600px] h-[600px] bg-[#E8DBCE] rounded-full blur-[120px] opacity-50 pointer-events-none z-0" />
+
+      <div className="max-w-[1200px] mx-auto px-6 md:px-10 w-full relative z-10">
+        <div className="flex flex-col md:flex-row gap-12 md:gap-16 lg:gap-20 items-stretch">
+          
+          {/* Left Column - Philosophy */}
+          <div className="w-full md:w-[45%] flex flex-col justify-center">
+            
+            <motion.div 
+              initial="hidden" whileInView="visible" viewport={{ once: true, margin: "-50px" }} variants={eyebrowVariants} 
+              className="mb-4"
+            >
+              <span className="text-[11px] font-sans uppercase tracking-[0.25em] text-[#806C5A] font-semibold">Our Philosophy</span>
+            </motion.div>
+            
+            <motion.h2 
+              initial="hidden" whileInView="visible" viewport={{ once: true, margin: "-50px" }} variants={headingVariants} 
+              className="font-display text-[40px] md:text-[48px] lg:text-[56px] text-[#4A2F1C] leading-[1.1] mb-6 tracking-tight"
+            >
+              A Philosophy of <br className="hidden md:block"/> Stewardship
+            </motion.h2>
+
+            <div className="flex items-center w-full max-w-[200px] mb-8">
+              <motion.div 
+                initial={{ scaleX: 0 }} whileInView={{ scaleX: 1 }} viewport={{ once: true, margin: "-50px" }} transition={{ duration: 0.8, ease: "easeInOut", delay: 0.7 }}
+                className="flex-1 h-[1px] bg-[#DCCDBA] origin-right"
+              ></motion.div>
+              <motion.div 
+                initial={{ opacity: 0, scale: 0 }} whileInView={{ opacity: 1, scale: 1 }} viewport={{ once: true, margin: "-50px" }} transition={{ duration: 0.4, delay: 1.3 }}
+                className="mx-4 w-1.5 h-1.5 rotate-45 bg-[#C7A45A] shrink-0"
+              ></motion.div>
+              <motion.div 
+                initial={{ scaleX: 0 }} whileInView={{ scaleX: 1 }} viewport={{ once: true, margin: "-50px" }} transition={{ duration: 0.8, ease: "easeInOut", delay: 0.7 }}
+                className="flex-1 h-[1px] bg-[#DCCDBA] origin-left"
+              ></motion.div>
+            </div>
+
+            <motion.div 
+              initial="hidden" whileInView="visible" viewport={{ once: true, margin: "-50px" }} variants={quoteVariants} 
+              className="relative"
+            >
+              <span className="absolute -top-10 -left-8 font-display text-[80px] md:text-[100px] text-[#C7A45A] opacity-25 leading-none select-none">“</span>
+              <div className="font-display italic text-[22px] md:text-[24px] lg:text-[26px] text-[#4A2F1C] leading-[1.6] relative z-10 tracking-wide">
+                <p className="mb-6">
+                  A steward does not ask,<br/>
+                  <span className="text-[#806C5A]">What can I gain?</span>
+                </p>
+                <p>
+                  A steward asks,<br/>
+                  What can I <span className="text-[#C7A45A]">preserve</span>, <span className="text-[#C7A45A]">protect</span>,<br/>
+                  <span className="text-[#C7A45A]">develop</span>, and <span className="text-[#C7A45A]">pass on</span>?
+                </p>
+              </div>
+            </motion.div>
+          </div>
+
+          {/* Vertical Divider for Desktop */}
+          <div className="hidden md:flex w-[1px] bg-gradient-to-b from-transparent via-[#DCCDBA] to-transparent opacity-60 flex-col items-center justify-center">
+            <div className="w-1.5 h-1.5 rotate-45 bg-[#C7A45A] opacity-70"></div>
+          </div>
+
+          {/* Right Column - Principles */}
+          <div className="w-full md:w-[50%] flex flex-col justify-center">
+            <div className="flex flex-col gap-6 lg:gap-8">
+              {points.map((point, index) => {
+                const Icon = point.icon;
+                return (
+                  <div key={index} className="flex items-start gap-5 lg:gap-6 group">
+                    {/* Icon */}
+                    <motion.div 
+                      initial="hidden" whileInView="visible" viewport={{ once: true, margin: "-50px" }} variants={getIconVariants(index)}
+                      className="w-[44px] h-[44px] shrink-0 rounded-full border border-[#DCCDBA] flex items-center justify-center text-[#C7A45A] mt-1 transition-colors duration-500 group-hover:bg-[#C7A45A]/5 group-hover:border-[#C7A45A]/50"
+                    >
+                      <Icon strokeWidth={1.5} size={20} />
+                    </motion.div>
+
+                    {/* Text block */}
+                    <motion.div 
+                      initial="hidden" whileInView="visible" viewport={{ once: true, margin: "-50px" }} variants={getTextVariants(index)}
+                      className="flex flex-col flex-1"
+                    >
+                      <span className="font-sans text-[11px] font-semibold tracking-[0.2em] text-[#C7A45A] opacity-80 mb-1">
+                        0{index + 1}
+                      </span>
+                      <span className="font-sans text-[18px] lg:text-[20px] text-[#4A2F1C] font-light tracking-wide mb-3">
+                        {point.title}
+                      </span>
+                      
+                      {/* Thin Divider under text */}
+                      <motion.div 
+                        initial="hidden" whileInView="visible" viewport={{ once: true, margin: "-50px" }} variants={getLineVariants(index)}
+                        className="h-[1px] bg-[#DCCDBA] relative flex items-center transition-opacity duration-500 group-hover:opacity-100"
+                      >
+                        <div className="absolute right-0 w-1.5 h-1.5 rotate-45 bg-[#C7A45A] opacity-60 transition-opacity duration-500 group-hover:opacity-100"></div>
+                      </motion.div>
+                    </motion.div>
+                  </div>
+                );
+              })}
+            </div>
+          </div>
+
+        </div>
+      </div>
     </section>
   );
 }
@@ -102,15 +236,6 @@ export function CircleOfStewardsSection() {
         background: 'linear-gradient(160deg, #FFF8F2 0%, #FDF0E6 40%, #FFF8F2 70%, #FAE8D4 100%)'
       }}
     >
-      <motion.img 
-        src="/ff.svg"
-        alt=""
-        initial={{ opacity: 0, x: -50 }}
-        whileInView={{ opacity: 0.08, x: 0 }}
-        viewport={{ once: true, margin: "-100px" }}
-        transition={{ duration: 1, ease: "easeOut" }}
-        className="absolute left-[-50px] top-[2%] w-[280px] h-auto pointer-events-none z-0"
-      />
       <div className="max-w-screen-xl mx-auto relative z-10">
         <div className="mb-20 max-w-4xl mx-auto text-center relative flex justify-center">
           <SectionHeading
@@ -216,26 +341,31 @@ export function CircleOfStewardsSection() {
 }
 
 export function GoldenCircleLeadershipSection() {
-  const circles = [
-    { title: "WHY", desc: "The Grandmaster — Protects the purpose. Preserves the wisdom. Guards the integrity." },
-    { title: "HOW", desc: "The Masters — Develop people. Deliver transformation. Create future leaders." },
-    { title: "WHAT", desc: "The Leaders — Build institutions. Expand partnerships. Create sustainable impact." }
-  ];
+  const values = {
+    items: [
+      {
+        title: "WHY",
+        description: "The Grandmaster — Protects the purpose. Preserves the wisdom. Guards the integrity.",
+        media: "https://images.unsplash.com/photo-1605810230434-7631ac76ec81?q=80&w=2070&auto=format&fit=crop",
+      },
+      {
+        title: "HOW",
+        description: "The Masters — Develop people. Deliver transformation. Create future leaders.",
+        media: "https://images.unsplash.com/photo-1522071820081-009f0129c71c?q=80&w=2070&auto=format&fit=crop",
+      },
+      {
+        title: "WHAT",
+        description: "The Leaders — Build institutions. Expand partnerships. Create sustainable impact.",
+        media: "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=2070&auto=format&fit=crop",
+      },
+    ],
+  };
 
   return (
     <section className="py-24 px-6 max-w-7xl mx-auto">
       <SectionHeading heading="The Golden Circle of Leadership" align="center" />
-      <div className="mt-16 grid grid-cols-1 md:grid-cols-3 gap-8">
-        {circles.map((item, index) => (
-          <RevealOnScroll key={item.title} delay={index * 0.15}>
-            <Card className="h-full flex flex-col p-10 text-center border-t-4 border-t-burntOrange">
-              <span className="font-display text-4xl text-burntOrange/30 mb-6">{item.title}</span>
-              <p className="font-sans font-light text-deepAmber leading-relaxed text-lg flex-grow">
-                {item.desc}
-              </p>
-            </Card>
-          </RevealOnScroll>
-        ))}
+      <div className="mt-16">
+        <Scroll01 items={values.items} />
       </div>
     </section>
   );

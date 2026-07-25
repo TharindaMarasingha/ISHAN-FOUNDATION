@@ -18,12 +18,23 @@ export const metadata: Metadata = {
 
 export default function LeadershipPage() {
   return (
-    <div className="-mt-24">
+    <div className="-mt-24 bg-white">
       <PageHero />
-      <PhilosophySection />
-      <CircleOfStewardsSection />
-      <GoldenCircleLeadershipSection />
-      <SharedCommitmentSection />
+      
+      {/* Wrapper to isolate the sticky parallax effect between Philosophy and Circle of Stewards */}
+      <div className="relative w-full">
+        <div className="sticky top-0 z-0">
+          <PhilosophySection />
+        </div>
+        <div className="relative z-10 shadow-[0_-15px_40px_rgba(0,0,0,0.1)] rounded-t-3xl">
+          <CircleOfStewardsSection />
+        </div>
+      </div>
+
+      <div className="relative z-20 bg-white">
+        <GoldenCircleLeadershipSection />
+        <SharedCommitmentSection />
+      </div>
     </div>
   );
 }
