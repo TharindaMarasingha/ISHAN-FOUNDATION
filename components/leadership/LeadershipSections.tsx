@@ -346,17 +346,17 @@ export function GoldenCircleLeadershipSection() {
       {
         title: "WHY",
         description: "The Grandmaster — Protects the purpose. Preserves the wisdom. Guards the integrity.",
-        media: "https://images.unsplash.com/photo-1605810230434-7631ac76ec81?q=80&w=2070&auto=format&fit=crop",
+        media: "/images/golden-circle-why.jpg",
       },
       {
         title: "HOW",
         description: "The Masters — Develop people. Deliver transformation. Create future leaders.",
-        media: "https://images.unsplash.com/photo-1522071820081-009f0129c71c?q=80&w=2070&auto=format&fit=crop",
+        media: "/images/golden-circle-how.jpg",
       },
       {
         title: "WHAT",
         description: "The Leaders — Build institutions. Expand partnerships. Create sustainable impact.",
-        media: "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=2070&auto=format&fit=crop",
+        media: "/images/golden-circle-what.jpg",
       },
     ],
   };
