@@ -231,21 +231,54 @@ export function EcosystemSections() {
       </section>
 
       {/* SECTION 4: CLOSING CTA */}
-      <section className="py-32 px-6 max-w-4xl mx-auto text-center flex flex-col items-center border-t border-burntOrange/10">
-        <SectionHeading
-          eyebrow="Take the Next Step"
-          heading="Join the Ecosystem"
-          description="Whether as a participant, practitioner, partner, volunteer, or supporter — there is a place for you within the ISHAN ecosystem."
-          align="center"
-        />
-        <RevealOnScroll delay={0.2} className="mt-12 flex flex-col sm:flex-row gap-4 sm:gap-6 w-full sm:w-auto">
-          <Button href="/contact" variant="primary">
-            Connect With Us
-          </Button>
-          <Button href="/support" variant="ghost">
-            Support Our Mission
-          </Button>
-        </RevealOnScroll>
+      <section className="relative py-32 px-6 overflow-hidden flex flex-col items-center border-t border-burntOrange/10 bg-bark">
+        {/* Background Image Layer */}
+        <div className="absolute inset-0 z-0">
+          <Image
+            src="/images/contact-cta-bg.webp"
+            alt="Contact Background"
+            fill
+            className="object-cover"
+          />
+          {/* Dark Gradient Overlay */}
+          <div 
+            className="absolute inset-0" 
+            style={{
+              background: "linear-gradient(to bottom, rgba(46, 26, 14, 0.75) 0%, rgba(46, 26, 14, 0.4) 50%, rgba(46, 26, 14, 0.75) 100%)"
+            }}
+          />
+        </div>
+
+        {/* Decorative Rotating SVG Background */}
+        <div className="absolute inset-0 flex items-center justify-center pointer-events-none z-0 opacity-[0.04]">
+          <motion.div
+            animate={{ rotate: 360 }}
+            transition={{ duration: 160, repeat: Infinity, ease: "linear" }}
+            className="absolute w-[800px] h-[800px] rounded-full border-[1px] border-sacredGold flex items-center justify-center"
+          >
+            <svg width="600" height="600" viewBox="0 0 100 100" className="opacity-50">
+              <polygon points="50,5 95,27.5 95,72.5 50,95 5,72.5 5,27.5" fill="none" stroke="currentColor" strokeWidth="0.2" />
+            </svg>
+          </motion.div>
+        </div>
+
+        <div className="relative z-10 max-w-4xl mx-auto text-center flex flex-col items-center">
+          <SectionHeading
+            theme="dark"
+            eyebrow="Take the Next Step"
+            heading={<span className="text-sacredGold">Join the Ecosystem</span>}
+            description="Whether as a participant, practitioner, partner, volunteer, or supporter — there is a place for you within the ISHAN ecosystem."
+            align="center"
+          />
+          <RevealOnScroll delay={0.2} className="mt-12 flex flex-col sm:flex-row gap-4 sm:gap-6 w-full sm:w-auto">
+            <Button href="/contact" variant="primary" className="bg-mandarin text-peach hover:bg-burntOrange">
+              Connect With Us
+            </Button>
+            <Button href="/support" variant="ghost" className="border-sacredGold text-sacredGold hover:border-softApricot hover:text-softApricot">
+              Support Our Mission
+            </Button>
+          </RevealOnScroll>
+        </div>
       </section>
     </div>
   );

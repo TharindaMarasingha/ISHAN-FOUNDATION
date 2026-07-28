@@ -8,7 +8,6 @@ import { Team } from "@/components/home/Team";
 import { WhoWeServe } from "@/components/home/WhoWeServe";
 import { Partnerships } from "@/components/home/Partnerships";
 import { VisionQuote } from "@/components/home/VisionQuote";
-import { ContactCTA } from "@/components/home/ContactCTA";
 import { GoldDivider } from "@/components/ui/GoldDivider";
 
 import { OverlapParallax } from "@/components/ui/OverlapParallax";
@@ -53,8 +52,6 @@ export default function Home() {
         }
         overlapContent={<VisionQuote />}
       />
-      
-      <ContactCTA />
     </div>
   );
 }
