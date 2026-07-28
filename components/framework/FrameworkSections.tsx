@@ -9,9 +9,9 @@ import { Button } from "../ui/Button";
 
 export function GoldenCircleSection() {
   const circles = [
-    { title: "WHY", subtitle: "Our Purpose", desc: "To harmonise humanity and nature through wisdom, wellness, ethical leadership, sustainability, and conscious community development.", image: "/images/golden-circle-why.jpg", alt: "Ancient stone temple gateway — guardianship and purpose" },
-    { title: "HOW", subtitle: "Our Approach", desc: "Timeless Wisdom · Preventive Wellness · Holistic Wellbeing · Ethical Leadership · Research & Education · Sustainable Systems · Community Development · Environmental Stewardship · International Collaboration", image: "/images/golden-circle-how.jpg", alt: "Hands in meditation — transformation and development" },
-    { title: "WHAT", subtitle: "Our Work", desc: "Educational Programmes · Retreats & Immersions · Leadership Development · Research & Publications · Community Initiatives · Environmental Projects · Institutional Partnerships · Conscious Living Experiences", image: "/images/golden-circle-what.jpg", alt: "Pillars of an ancient building — building institutions and sustainable impact" }
+    { title: "WHY", subtitle: "Our Purpose", desc: "To harmonise humanity and nature through wisdom, wellness, ethical leadership, sustainability, and conscious community development.", image: "/images/framework-why-bg.webp" },
+    { title: "HOW", subtitle: "Our Approach", desc: "Timeless Wisdom · Preventive Wellness · Holistic Wellbeing · Ethical Leadership · Research & Education · Sustainable Systems · Community Development · Environmental Stewardship · International Collaboration", image: "/images/framework-how-bg.webp" },
+    { title: "WHAT", subtitle: "Our Work", desc: "Educational Programmes · Retreats & Immersions · Leadership Development · Research & Publications · Community Initiatives · Environmental Projects · Institutional Partnerships · Conscious Living Experiences", image: "/images/framework-what-bg.webp" }
   ];
 
   return (
@@ -32,12 +32,14 @@ export function GoldenCircleSection() {
               <div className="absolute inset-0 z-0">
                 <Image
                   src={item.image}
-                  alt={item.alt}
+                  alt={item.title}
                   fill
                   className="object-cover"
+                  unoptimized
                 />
                 <div 
-                  className="absolute inset-0 bg-[#FFF1E6]/60"
+                  className="absolute inset-0"
+                  style={{ background: 'radial-gradient(ellipse at center, rgba(255, 241, 230, 0.75) 0%, rgba(255, 241, 230, 0.45) 60%)' }}
                 />
               </div>
               <div className="relative z-10 flex flex-col h-full p-8 sm:p-10">
