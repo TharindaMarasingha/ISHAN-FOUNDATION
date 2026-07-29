@@ -96,6 +96,9 @@ export const metadata: Metadata = {
     apple: '/images/ishanlogo.webp',
   },
   manifest: '/site.webmanifest',
+  other: {
+    'p:domain_verify': 'bb470c980253505f362f0651e33e1832',
+  },
 }
 
 export default function RootLayout({
