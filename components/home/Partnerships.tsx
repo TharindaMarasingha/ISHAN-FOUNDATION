@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useRef } from "react";
-import { motion, useInView } from "framer-motion";
+import { motion, useInView, Variants } from "framer-motion";
 import { SectionHeading } from "../ui/SectionHeading";
 import { RevealOnScroll } from "../ui/RevealOnScroll";
 import { Button } from "../ui/Button";
@@ -17,7 +17,7 @@ function TypewriterQuote({ text }: { text: string }) {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: "-100px" });
 
-  const container = {
+  const container: Variants = {
     hidden: { opacity: 0 },
     visible: {
       opacity: 1,
@@ -25,7 +25,7 @@ function TypewriterQuote({ text }: { text: string }) {
     },
   };
 
-  const child = {
+  const child: Variants = {
     visible: { opacity: 1, display: "inline-block", y: 0 },
     hidden: { opacity: 0, display: "inline-block", y: 2 },
   };

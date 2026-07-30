@@ -6,7 +6,7 @@ import { SectionHeading } from "../ui/SectionHeading";
 import { RevealOnScroll } from "../ui/RevealOnScroll";
 import { Card } from "../ui/Card";
 import { Button } from "../ui/Button";
-import { motion, AnimatePresence, useInView, useReducedMotion } from "framer-motion";
+import { motion, AnimatePresence, useInView, useReducedMotion, Variants } from "framer-motion";
 import Image from "next/image";
 import { Leaf, HeartHandshake, Users, Handshake, TreeDeciduous } from "lucide-react";
 
@@ -20,32 +20,32 @@ export function PhilosophySection() {
   ];
 
   // --- Sequential Cinematic Reveal Variants ---
-  const eyebrowVariants = {
+  const eyebrowVariants: Variants = {
     hidden: { opacity: 0, y: 15 },
     visible: { opacity: 1, y: 0, transition: { duration: 0.8, ease: "easeOut", delay: 0.1 } },
   };
 
-  const headingVariants = {
+  const headingVariants: Variants = {
     hidden: { opacity: 0, y: 15 },
     visible: { opacity: 1, y: 0, transition: { duration: 1, ease: [0.21, 0.47, 0.32, 0.98], delay: 0.3 } },
   };
 
-  const quoteVariants = {
+  const quoteVariants: Variants = {
     hidden: { opacity: 0, y: 20 },
     visible: { opacity: 1, y: 0, transition: { duration: 1, ease: "easeOut", delay: 0.9 } },
   };
 
-  const getIconVariants = (i: number) => ({
+  const getIconVariants = (i: number): Variants => ({
     hidden: { opacity: 0, scale: 0.8 },
     visible: { opacity: 1, scale: 1, transition: { duration: 0.6, ease: "easeOut", delay: 1.1 + (i * 0.15) } }
   });
   
-  const getTextVariants = (i: number) => ({
+  const getTextVariants = (i: number): Variants => ({
     hidden: { opacity: 0, y: 10 },
     visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: "easeOut", delay: 1.1 + (i * 0.15) + 0.15 } }
   });
 
-  const getLineVariants = (i: number) => ({
+  const getLineVariants = (i: number): Variants => ({
     hidden: { opacity: 0, width: "0%" },
     visible: { opacity: 0.7, width: "100%", transition: { duration: 0.8, ease: "easeInOut", delay: 1.1 + (i * 0.15) + 0.3 } }
   });
