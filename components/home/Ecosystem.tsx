@@ -7,7 +7,7 @@ import { RevealOnScroll } from "../ui/RevealOnScroll";
 import Link from "next/link";
 import Image from "next/image";
 import { EcosystemCard as EcosystemCardType } from "@/lib/types";
-import { motion } from "framer-motion";
+import { motion, useReducedMotion } from "framer-motion";
 
 type EcosystemData = EcosystemCardType & { image: string, cardBackground: string };
 
@@ -56,6 +56,7 @@ const ECOSYSTEM_CARDS: EcosystemData[] = [
 
 function EcosystemCard({ card, index, delay }: { card: EcosystemData; index: number; delay: number }) {
   const imageLeft = index % 2 === 0;
+  const shouldReduceMotion = useReducedMotion();
 
   return (
     <RevealOnScroll delay={delay} viewportAmount={0.05} className="w-full">
@@ -63,15 +64,9 @@ function EcosystemCard({ card, index, delay }: { card: EcosystemData; index: num
         <div 
           className="flex flex-col md:flex-row w-full min-h-[380px] rounded-[20px] overflow-hidden border border-black/8 relative"
           style={{ 
-            backgroundColor: card.cardBackground,
-            borderLeft: `3px solid ${card.accentColor}`
+            backgroundColor: card.cardBackground
           }}
         >
-          {/* Top Accent Bar */}
-          <div 
-            className="absolute top-0 left-0 right-0 h-[4px] z-20"
-            style={{ backgroundColor: card.accentColor }}
-          />
           
           {/* IMAGE HALF */}
           <div className={`w-full md:w-1/2 relative h-[250px] md:h-auto overflow-hidden ${imageLeft ? 'md:order-1' : 'md:order-2'}`}>
@@ -94,8 +89,42 @@ function EcosystemCard({ card, index, delay }: { card: EcosystemData; index: num
           </div>
 
           {/* CONTENT HALF */}
-          <div className={`w-full md:w-1/2 py-[48px] px-[40px] flex flex-col justify-start items-start ${imageLeft ? 'md:order-2' : 'md:order-1'}`}>
+          <div className={`w-full md:w-1/2 py-[48px] px-[40px] flex flex-col justify-start items-start relative ${imageLeft ? 'md:order-2' : 'md:order-1'}`}>
             
+            {card.title === "Samanvaya" && (
+              <div 
+                className="absolute top-[48px] right-[40px] flex items-center gap-[6px] rounded-full border border-[#9C3F00]/20 z-10"
+                style={{ 
+                  backgroundColor: 'rgba(255,241,230,0.85)',
+                  padding: '5px 12px' 
+                }}
+              >
+                <div className="relative flex items-center justify-center w-[9px] h-[9px]">
+                  {!shouldReduceMotion && (
+                    <span 
+                      className="absolute inset-0 rounded-full bg-[#D96C00] opacity-40 animate-ping"
+                      style={{ animationDuration: '2s' }}
+                    />
+                  )}
+                  <motion.div 
+                    className="relative w-[9px] h-[9px] rounded-full bg-[#D96C00]"
+                    animate={shouldReduceMotion ? {} : { 
+                      scale: [1, 1.3, 1],
+                      opacity: [1, 0.4, 1] 
+                    }}
+                    transition={shouldReduceMotion ? {} : { 
+                      duration: 1.8, 
+                      repeat: Infinity, 
+                      ease: "easeInOut" 
+                    }}
+                  />
+                </div>
+                <span className="text-[#9C3F00] text-[10.5px] uppercase font-sans tracking-[0.05em] font-medium leading-none mt-[1px]">
+                  IN PROGRESS
+                </span>
+              </div>
+            )}
+
             <span 
               className="inline-block border font-sans text-[11px] uppercase tracking-[0.2em] rounded-full px-4 py-1.5"
               style={{ borderColor: card.accentColor, color: card.accentColor }}

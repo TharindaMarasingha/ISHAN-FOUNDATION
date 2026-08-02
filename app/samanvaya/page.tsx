@@ -33,16 +33,16 @@ export default function SamanvayaPage() {
         <div className="absolute inset-0 bg-[rgba(10,4,2,0.55)]" />
         <div className="absolute inset-0 bg-gradient-to-r from-[rgba(10,4,2,0.80)] via-[rgba(10,4,2,0.45)] to-transparent" />
         
-        <div className="relative z-10 flex flex-col justify-end pb-16 pl-12 md:pb-20 md:pl-16" style={{ minHeight: '100vh' }}>
-          <span className="inline-flex w-fit border border-[rgba(201,168,76,0.5)] rounded-full px-4 py-1.5 mb-4 text-[#F5D98A] text-xs uppercase tracking-wider">
+        <div className="relative z-10 flex flex-col justify-end pt-32 pb-16 pl-12 md:pb-20 md:pl-16" style={{ minHeight: '100vh' }}>
+          <span className="inline-flex w-fit border border-[rgba(201,168,76,0.5)] rounded-full px-4 py-1.5 mb-3 text-[#F5D98A] text-xs uppercase tracking-wider">
             From Pancha Tattva to Sampurna Sattva
           </span>
           
           <h1>
-            <span className="text-white block font-display font-normal leading-tight text-4xl md:text-5xl lg:text-6xl max-w-3xl">
+            <span className="text-white block font-display font-normal leading-tight text-3xl md:text-4xl lg:text-5xl max-w-3xl">
               Samanvaya
             </span>
-            <span className="text-[#C9A84C] block font-display font-normal leading-tight text-4xl md:text-5xl lg:text-6xl">
+            <span className="text-[#C9A84C] block font-display font-normal leading-tight text-3xl md:text-4xl lg:text-5xl">
               Transformational Retreat
             </span>
           </h1>
