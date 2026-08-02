@@ -84,6 +84,8 @@ export default function Navbar() {
   }, [pathname]);
 
   const isMoreActive = moreLinks.some(link => pathname === link.href);
+  const isHomePage = pathname === "/";
+  const useDarkText = isHomePage && !isScrolled;
 
   return (
     <>
@@ -142,7 +144,7 @@ export default function Navbar() {
                   key={link.label}
                   href={link.href}
                   className={`font-sans font-normal text-[10px] uppercase tracking-[0.06em] transition-colors duration-300 ${
-                    isActive ? "text-[#F7BE43]" : "text-white/75 hover:text-[#F5A85C]"
+                    isActive ? "text-[#F7BE43]" : (useDarkText ? "text-black/80 hover:text-black" : "text-white/75 hover:text-[#F5A85C]")
                   }`}
                 >
                   {link.label}
@@ -155,7 +157,7 @@ export default function Navbar() {
               <button
                 onClick={() => setIsMoreOpen(!isMoreOpen)}
                 className={`flex items-center gap-1 font-sans font-normal text-[10px] uppercase tracking-[0.06em] transition-colors duration-300 outline-none ${
-                  isMoreActive || isMoreOpen ? "text-[#F7BE43]" : "text-white/75 hover:text-[#F5A85C]"
+                  isMoreActive || isMoreOpen ? "text-[#F7BE43]" : (useDarkText ? "text-black/80 hover:text-black" : "text-white/75 hover:text-[#F5A85C]")
                 }`}
               >
                 MORE <ChevronDown size={12} className={`transition-transform duration-300 ${isMoreOpen ? 'rotate-180' : ''}`} />

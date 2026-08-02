@@ -13,6 +13,16 @@ type EcosystemData = EcosystemCardType & { image: string, cardBackground: string
 
 const ECOSYSTEM_CARDS: EcosystemData[] = [
   {
+    tag: "FROM PANCHA TATTVA TO SAMPURNA SATTVA",
+    title: "Samanvaya",
+    subtitle: "ISHAN's Flagship Transformational Retreat",
+    description: "ISHAN's flagship transformational retreat inspired by the timeless wisdom of the five elements, guiding participants toward integrated wellbeing and complete human development.",
+    href: "/samanvaya",
+    accentColor: "#8B4513",
+    image: "/images/sn1.webp",
+    cardBackground: "rgba(252, 243, 235, 0.85)",
+  },
+  {
     tag: "PREVENTIVE WELLNESS · PROACTIVE WELLBEING",
     title: "Arogya Ashram International",
     subtitle: "AAI — Holistic Wellness Initiative",
@@ -31,16 +41,6 @@ const ECOSYSTEM_CARDS: EcosystemData[] = [
     accentColor: "#2C5F4A",
     image: "/images/ecosystem-uss.webp",
     cardBackground: "rgba(240, 248, 244, 0.85)",
-  },
-  {
-    tag: "FROM PANCHA TATTVA TO SAMPURNA SATTVA",
-    title: "Samanvaya",
-    subtitle: "ISHAN's Flagship Transformational Retreat",
-    description: "ISHAN's flagship transformational retreat inspired by the timeless wisdom of the five elements, guiding participants toward integrated wellbeing and complete human development.",
-    href: "/samanvaya",
-    accentColor: "#8B4513",
-    image: "/images/sn1.webp",
-    cardBackground: "rgba(252, 243, 235, 0.85)",
   },
   {
     tag: "A DIVINE SPIRITUAL WELLNESS TOWNSHIP",

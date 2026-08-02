@@ -92,7 +92,7 @@ export default function Footer() {
             
             {/* Social Links */}
             <div className="flex items-center justify-center lg:justify-start gap-3 mt-4">
-              <a href="#" target="_blank" rel="noopener noreferrer" className="w-9 h-9 rounded-full border border-[rgba(245,217,138,0.25)] flex items-center justify-center text-softApricot hover:border-sacredGold hover:text-sacredGold hover:scale-105 transition-all duration-300">
+              <a href="https://www.instagram.com/ishan_retreats/" target="_blank" rel="noopener noreferrer" className="w-9 h-9 rounded-full border border-[rgba(245,217,138,0.25)] flex items-center justify-center text-softApricot hover:border-sacredGold hover:text-sacredGold hover:scale-105 transition-all duration-300">
                 <Instagram size={18} />
               </a>
               <a href="#" target="_blank" rel="noopener noreferrer" className="w-9 h-9 rounded-full border border-[rgba(245,217,138,0.25)] flex items-center justify-center text-softApricot hover:border-sacredGold hover:text-sacredGold hover:scale-105 transition-all duration-300">

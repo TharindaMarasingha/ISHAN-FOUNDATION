@@ -62,6 +62,12 @@ export default function SamanvayaPage() {
           <p className="font-sans font-light text-white/65 text-sm md:text-base leading-relaxed max-w-xl mt-2">
             Each experience is thoughtfully designed to restore balance across the physical, emotional, intellectual, financial, and spiritual dimensions of life.
           </p>
+
+          <div className="mt-8">
+            <Button href="/samanvaya/packages" variant="primary" className="bg-mandarin text-peach hover:bg-burntOrange">
+              See the Packages
+            </Button>
+          </div>
         </div>
       </section>
       
