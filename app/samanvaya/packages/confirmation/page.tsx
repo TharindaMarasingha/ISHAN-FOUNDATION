@@ -1,8 +1,9 @@
 import Link from "next/link";
 import { Button } from "@/components/ui/Button";
 
-// @ts-ignore
-export default function ConfirmationPage({ searchParams }: { searchParams: { orderId?: string } }) {
+export default async function ConfirmationPage(props: { searchParams: Promise<{ orderId?: string }> }) {
+  const searchParams = await props.searchParams;
+  
   return (
     <div className="min-h-screen pt-[120px] pb-24 bg-[#FCF6F0] flex items-center justify-center px-6">
       <div className="max-w-2xl w-full text-center bg-white p-12 rounded-3xl shadow-sm border border-black/5">
