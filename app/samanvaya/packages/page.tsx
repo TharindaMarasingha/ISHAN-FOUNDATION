@@ -588,8 +588,8 @@ export default function PackagesPage() {
 
       {/* Booking Modal */}
       {isFormOpen && selectedPkgData && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/60 backdrop-blur-sm overflow-y-auto">
-          <div className="bg-white rounded-3xl w-full max-w-xl my-8 relative flex flex-col max-h-[90vh]">
+        <div className="fixed inset-0 z-[100] flex items-center justify-center p-6 md:p-8 bg-black/60 backdrop-blur-sm">
+          <div className="bg-white rounded-3xl w-full max-w-xl relative flex flex-col max-h-[85vh]">
             <button 
               onClick={() => setIsFormOpen(false)}
               className="absolute top-6 right-6 text-black/50 hover:text-black transition-colors"
