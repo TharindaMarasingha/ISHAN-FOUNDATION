@@ -197,7 +197,7 @@ export default function Footer() {
               One Humanity · One Nature · One Conscious Future
             </p>
             <p className="text-softApricot/50 text-[9px] uppercase tracking-[0.2em]">
-              © 2026 ISHAN – International Society of Humanity and Nature. All Rights Reserved.
+              © 2026 ISHAN – International Society of Holistic Awareness & Naturology. All Rights Reserved.
             </p>
           </div>
           

@@ -141,7 +141,7 @@ export function WhoWeAre() {
             </RevealOnScroll>
             <RevealOnScroll delay={0.1}>
               <p className="font-sans font-light text-[#6F625A] leading-relaxed text-lg">
-                ISHAN (International Society of Humanity and Nature) is a global institution committed to advancing humanity and nature through wisdom, wellness, education, ethical leadership, sustainability, and conscious community development.
+                ISHAN (International Society of Holistic Awareness & Naturology) is a global institution committed to advancing humanity and nature through wisdom, wellness, education, ethical leadership, sustainability, and conscious community development.
               </p>
             </RevealOnScroll>
             <RevealOnScroll delay={0.15}>

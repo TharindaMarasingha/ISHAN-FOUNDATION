@@ -119,13 +119,13 @@ export default function Navbar() {
           
           {/* Left: Logo */}
           <Link href="/" className="flex-shrink-0 flex items-center pl-1 md:pl-2">
-            <div className="w-8 h-8 md:w-10 md:h-10 flex-shrink-0">
+            <div className="w-10 h-10 md:w-14 md:h-14 flex-shrink-0">
               <img 
-                src="/images/ishanlogo.webp"
+                src="/images/ishan-logo.png"
                 alt="ISHAN"
-                width={80}
-                height={80}
-                className="scale-[1.7] md:scale-[2.2] origin-left"
+                width={120}
+                height={120}
+                className="scale-[2.8] md:scale-[3.8] origin-left"
                 style={{ 
                   objectFit: 'contain',
                   width: '100%',

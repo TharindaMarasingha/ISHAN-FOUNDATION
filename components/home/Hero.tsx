@@ -169,7 +169,7 @@ export function Hero() {
             transition={{ duration: 0.8, ease: "easeOut" }}
             className="font-sans text-[8px] md:font-light text-white/70 md:text-[#8A8A8A] md:text-[10px] tracking-[0.18em] md:tracking-[0.3em] uppercase mb-3 md:mb-8 md:-mt-8 max-w-full"
           >
-            International Society of Humanity and Nature
+            International Society of Holistic Awareness & Naturology
           </motion.p>
 
           <motion.div 

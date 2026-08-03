@@ -6,6 +6,7 @@ import Image from "next/image";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { RevealOnScroll } from "@/components/ui/RevealOnScroll";
 import Script from "next/script";
+import { PackagesHero } from "@/components/samanvaya/PackagesHero";
 
 const packages = [
   {
@@ -206,7 +207,7 @@ export default function PackagesPage() {
   }, [isFormOpen, paypalLoaded, selectedPkgData, formData.participants, formData.name, formData.email, formData.phone, selectedPackage, router]);
 
   return (
-    <div className="min-h-screen pt-[90px] pb-24 bg-[#FCF6F0]">
+    <div className="-mt-24">
       {/* Load PayPal Script */}
       <Script 
         src={`https://www.paypal.com/sdk/js?client-id=${process.env.NEXT_PUBLIC_PAYPAL_CLIENT_ID || 'test'}&currency=USD`}
@@ -214,7 +215,10 @@ export default function PackagesPage() {
         strategy="lazyOnload"
       />
 
-      <div className="max-w-7xl mx-auto px-6 md:px-12">
+      <PackagesHero />
+
+      <div id="packages-content" className="pt-20 md:pt-32 pb-24 bg-[#FCF6F0]">
+        <div className="max-w-7xl mx-auto px-6 md:px-12">
         <div className="text-center mb-12">
           <SectionHeading
             align="center"
@@ -675,6 +679,7 @@ export default function PackagesPage() {
           </div>
         </div>
       )}
+    </div>
     </div>
   );
 }
