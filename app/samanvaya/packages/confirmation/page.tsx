@@ -1,9 +1,12 @@
 import Link from "next/link";
 import { Button } from "@/components/ui/Button";
 
-export default async function ConfirmationPage(props: { searchParams: Promise<{ orderId?: string }> }) {
-  const searchParams = await props.searchParams;
-  
+type Props = {
+  searchParams: Promise<{ orderId?: string }>
+}
+
+export default async function ConfirmationPage({ searchParams }: Props) {
+  const { orderId } = await searchParams;
   return (
     <div className="min-h-screen pt-[120px] pb-24 bg-[#FCF6F0] flex items-center justify-center px-6">
       <div className="max-w-2xl w-full text-center bg-white p-12 rounded-3xl shadow-sm border border-black/5">
@@ -21,10 +24,10 @@ export default async function ConfirmationPage(props: { searchParams: Promise<{ 
           Thank you for reserving your spot for the Samanvaya retreat. We have received your payment securely.
         </p>
         
-        {searchParams?.orderId && (
+        {orderId && (
           <div className="bg-[#FCF6F0] p-4 rounded-xl inline-block mb-10 text-sm font-sans">
             <span className="text-burntOrange font-medium">Booking Reference:</span>{" "}
-            <span className="font-mono text-deepAmber">{searchParams.orderId}</span>
+            <span className="font-mono text-deepAmber">{orderId}</span>
           </div>
         )}
         

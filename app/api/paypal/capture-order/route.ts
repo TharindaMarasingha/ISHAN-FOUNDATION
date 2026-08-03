@@ -4,13 +4,13 @@ import { Resend } from "resend";
 
 const PAYPAL_CLIENT_ID = process.env.NEXT_PUBLIC_PAYPAL_CLIENT_ID;
 const PAYPAL_SECRET = process.env.PAYPAL_SECRET;
-const SUPABASE_URL = process.env.SUPABASE_URL || "";
-const SUPABASE_SERVICE_ROLE_KEY = process.env.SUPABASE_SERVICE_ROLE_KEY || "";
+const SUPABASE_URL = process.env.SUPABASE_URL || "https://dummy.supabase.co";
+const SUPABASE_SERVICE_ROLE_KEY = process.env.SUPABASE_SERVICE_ROLE_KEY || "dummy";
 const RESEND_API_KEY = process.env.RESEND_API_KEY || "";
 const base = "https://api-m.sandbox.paypal.com"; // Use "https://api-m.paypal.com" for production
 
 const supabase = createClient(SUPABASE_URL, SUPABASE_SERVICE_ROLE_KEY);
-const resend = new Resend(RESEND_API_KEY);
+const resend = new Resend(RESEND_API_KEY || "re_dummy");
 
 async function generateAccessToken() {
   const auth = Buffer.from(PAYPAL_CLIENT_ID + ":" + PAYPAL_SECRET).toString("base64");
@@ -75,7 +75,18 @@ export async function POST(req: Request) {
   }
 }
 
-async function handlePostPaymentTasks(details: any) {
+type PostPaymentDetails = {
+  orderID: string;
+  packageName: string;
+  customerName: string;
+  customerEmail: string;
+  customerPhone: string;
+  participants: number;
+  amountPaid: number;
+  paymentStatus: string;
+};
+
+async function handlePostPaymentTasks(details: PostPaymentDetails) {
   try {
     // 1. Insert into Supabase
     const { error: dbError } = await supabase
