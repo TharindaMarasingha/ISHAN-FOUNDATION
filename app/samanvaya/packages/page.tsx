@@ -131,9 +131,9 @@ export default function PackagesPage() {
       const container = document.getElementById("paypal-button-container");
       if (container) {
         container.innerHTML = ""; // Clear existing buttons
-        // @ts-ignore
+        // @ts-expect-error - paypal is loaded via script
         if (window.paypal) {
-          // @ts-ignore
+          // @ts-expect-error - paypal is loaded via script
           window.paypal.Buttons({
             createOrder: async () => {
               try {
@@ -162,7 +162,7 @@ export default function PackagesPage() {
                 alert(`Could not initiate PayPal Checkout...${error}`);
               }
             },
-            onApprove: async (data: any, actions: any) => {
+            onApprove: async (data: { orderID: string }, actions: { restart: () => void }) => {
               try {
                 setPaymentPending(true);
                 const response = await fetch("/api/paypal/capture-order", {
