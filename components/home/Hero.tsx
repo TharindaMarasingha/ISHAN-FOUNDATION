@@ -57,61 +57,76 @@ export function Hero() {
         }}
       />
 
-      {/* MOBILE FULL-SCREEN SLIDESHOW */}
-      <div className="absolute inset-0 md:hidden z-0 overflow-hidden bg-black">
-        <motion.div 
-          className="absolute inset-0 w-full h-full cursor-grab active:cursor-grabbing"
-          drag="x"
-          dragConstraints={{ left: 0, right: 0 }}
-          dragElastic={0.2}
-          onDragStart={() => setIsHoveredOrDragged(true)}
-          onDragEnd={handleDragEnd}
-        >
+      {/* MOBILE HERO (Strictly Mobile) */}
+      <div className="md:hidden absolute inset-0 z-20 flex flex-col w-full h-full bg-[#F5F1E9] overflow-hidden">
+        
+        {/* Top Text Content Area */}
+        <div className="flex flex-col items-center text-center px-6 pt-[120px] pb-4 z-20 flex-shrink-0">
+          <h1 
+            style={{
+              letterSpacing: '0em',
+              fontWeight: 400,
+            }}
+            className={`${greatVibes.className} leading-none text-[84px] text-[#294A32] mb-3`}
+          >
+            Ishan
+          </h1>
+          <p className="font-sans text-[#8A8A8A] text-[9px] tracking-[0.15em] uppercase mb-5 max-w-[280px]">
+            INTERNATIONAL SOCIETY FOR SELF AWARENESS & WELL BEING
+          </p>
+          <p className="font-sans font-light text-[13px] text-[#8A8A8A] leading-[1.6] mb-8 max-w-[300px]">
+            ISHAN is a global meditation community dedicated to awakening humanity and nature through wisdom, education, ethical leadership, sustainability, and conscious community development.
+          </p>
+          
+          <div className="flex flex-col w-full gap-5 max-w-[280px]">
+            <Link 
+              href="#ecosystem" 
+              className="w-full text-center text-white px-8 py-3.5 rounded-full font-sans font-bold tracking-[0.1em] uppercase text-[12px] shadow-md hover:brightness-105 transition-all"
+              style={{ background: 'linear-gradient(135deg, #D94F9D 0%, #E8A56F 50%, #F4C6A1 100%)' }}
+            >
+              EXPLORE OUR WORK
+            </Link>
+            <Link 
+              href="/about" 
+              className="w-full text-center text-white px-8 py-3.5 rounded-full font-sans font-bold tracking-[0.1em] uppercase text-[12px] shadow-md hover:brightness-105 transition-all"
+              style={{ background: 'linear-gradient(135deg, #D94F9D 0%, #E8A56F 50%, #F4C6A1 100%)' }}
+            >
+              ABOUT ISHAN
+            </Link>
+          </div>
+        </div>
+        
+        {/* Curved Shape */}
+        <div className="relative z-10 w-full flex-shrink-0 -mb-[1px]">
+          <svg viewBox="0 0 100 20" preserveAspectRatio="none" className="w-full h-20 md:h-24 block">
+            <path d="M0,0 L100,0 Q50,20 0,0 Z" fill="#F5F1E9" />
+          </svg>
+        </div>
+
+        {/* Background Image Slideshow at the bottom */}
+        <div className="relative w-full flex-grow z-0">
           <AnimatePresence mode="wait">
             <motion.div
               key={currentImageIndex}
-              initial={{ opacity: 0, scale: 1 }}
-              animate={{ opacity: 1, scale: prefersReducedMotion ? 1 : 1.05 }}
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
-              transition={{ duration: 2, ease: "easeInOut" }}
-              className="absolute inset-0 w-full h-full"
+              transition={{ duration: 2 }}
+              className="absolute inset-0"
             >
               <Image
                 src={images[currentImageIndex]}
                 alt={`Hero Background ${currentImageIndex + 1}`}
                 fill
                 sizes="100vw"
-                className="object-cover object-center pointer-events-none"
+                className="object-cover object-[75%_center]"
                 priority
                 unoptimized
               />
             </motion.div>
           </AnimatePresence>
-        </motion.div>
-        {/* Overlay gradient to ensure text readability on mobile */}
-        <div 
-          className="absolute inset-0 z-10 pointer-events-none"
-          style={{ background: "linear-gradient(to bottom, rgba(0,0,0,0.2) 0%, rgba(0,0,0,0.6) 50%, rgba(0,0,0,0.85) 100%)" }}
-        />
-        
-        {/* Mobile Pagination Dots */}
-        <div className="absolute bottom-[60px] left-0 right-0 flex justify-center items-center gap-3 z-20 pointer-events-none">
-          {images.map((_, idx) => (
-            <div 
-              key={idx}
-              className={`h-2 rounded-full transition-all duration-500 ${
-                idx === currentImageIndex ? "w-6 bg-primary" : "w-2 bg-white/50"
-              }`}
-            />
-          ))}
+          <div className="absolute inset-0 bg-gradient-to-b from-[#F5F1E9]/20 to-transparent pointer-events-none" />
         </div>
-      </div>
-
-      {/* MOBILE FLOATING ACCENT DOTS */}
-      <div className="md:hidden absolute inset-0 pointer-events-none z-10">
-        <div className="absolute top-[120px] left-[22px] w-2 h-2 bg-primary rounded-full opacity-50" />
-        <div className="absolute top-[180px] right-[30px] w-1.5 h-1.5 bg-[image:var(--gradient-cta)] rounded-full opacity-40" />
-        <div className="absolute top-[55%] right-[20px] w-2.5 h-2.5 bg-primary rounded-full opacity-30" />
       </div>
 
       {/* Desktop Right Background Image Slideshow */}
@@ -159,8 +174,8 @@ export function Hero() {
         </svg>
       </div>
 
-      {/* Main Content Grid */}
-      <div className="relative z-20 w-full max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-2 pt-28 md:pt-32 lg:pt-40 pb-8 md:pb-20">
+      {/* Main Content Grid (Desktop only) */}
+      <div className="relative z-20 w-full max-w-7xl mx-auto px-6 hidden md:grid grid-cols-2 pt-32 lg:pt-40 pb-20">
         
         {/* Left Column: Text Content */}
         <div 
@@ -220,15 +235,7 @@ export function Hero() {
             transition={{ duration: 0.8, delay: 0.6 }}
             className="w-full mt-8 md:mt-6"
           >
-            {/* MOBILE BUTTONS */}
-            <div className="flex flex-col items-stretch gap-4 w-full md:hidden">
-              <Link href="#ecosystem" className="w-full text-center bg-[image:var(--hero-gradient)] text-white px-10 py-4 rounded-full font-sans font-bold tracking-[0.15em] uppercase text-xs shadow-md hover:brightness-105 hover:[box-shadow:0_0_20px_rgba(217,79,157,0.4)] transition-all [text-shadow:0_1px_3px_rgba(0,0,0,0.3)]">
-                EXPLORE OUR WORK &rarr;
-              </Link>
-              <Link href="/about" className="w-full text-center bg-[image:var(--hero-gradient)] text-white px-10 py-4 rounded-full font-sans font-bold tracking-[0.15em] uppercase text-xs shadow-md hover:brightness-105 hover:[box-shadow:0_0_20px_rgba(217,79,157,0.4)] transition-all [text-shadow:0_1px_3px_rgba(0,0,0,0.3)]">
-                ABOUT ISHAN &rarr;
-              </Link>
-            </div>
+
 
             {/* DESKTOP BUTTONS */}
             <div className="hidden md:flex flex-row items-center justify-start gap-4">

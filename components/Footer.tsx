@@ -1,9 +1,10 @@
 "use client";
 
-import React from "react";
+import React, { useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
-import { motion } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
+import { ChevronDown, Compass, BookOpen, Users, Phone, Mail } from "lucide-react";
 
 const Instagram = ({ size = 24 }: { size?: number }) => (
   <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
@@ -47,6 +48,11 @@ const VALUES = [
 
 export default function Footer() {
   const tickerItems = [...VALUES, ...VALUES];
+  const [openSection, setOpenSection] = useState<string | null>(null);
+
+  const toggleSection = (section: string) => {
+    setOpenSection(openSection === section ? null : section);
+  };
 
   return (
     <footer className="relative bg-[#33472C] border-t border-[#9FBB90]/20 pt-6 md:pt-10 pb-6 overflow-hidden z-0 font-sans">
@@ -81,8 +87,8 @@ export default function Footer() {
           </motion.div>
         </div>
 
-        {/* Main Footer Content */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-8 lg:gap-6 text-left">
+        {/* Main Footer Content (Desktop) */}
+        <div className="hidden md:grid grid-cols-2 lg:grid-cols-12 gap-8 lg:gap-6 text-left">
           
           {/* Brand Column */}
           <div className="lg:col-span-4 flex flex-col items-start pr-0 lg:pr-6">
@@ -182,6 +188,193 @@ export default function Footer() {
                 <span className="relative z-10">Subscribe</span>
               </button>
             </div>
+          </div>
+        </div>
+
+        {/* Mobile Footer Content (Accordion Layout) */}
+        <div className="flex flex-col md:hidden w-full text-left gap-8">
+          
+          {/* Logo & Tagline */}
+          <div className="flex flex-col items-start w-full">
+            <Image 
+              src="/images/ishanlogo.png" 
+              alt="ISHAN Logo" 
+              width={600} 
+              height={240} 
+              className="object-contain h-40 w-auto -mt-6 -mb-6 -ml-4"
+              priority
+            />
+            <p className="text-[#F5F1E9]/80 text-[13px] leading-[1.8] max-w-[320px] font-light mb-6">
+              Harmonising Humanity with Nature through Wisdom, Wellness, and Collective Responsibility.
+            </p>
+            
+            {/* Social Links */}
+            <div className="flex items-center gap-4">
+              <a href="https://www.instagram.com/ishan_retreats/" target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full border border-[#9FBB90]/40 flex items-center justify-center text-[#F5F1E9]/90 hover:border-[#F5F1E9] hover:bg-[#F5F1E9] hover:text-[#33472C] transition-all duration-300">
+                <Instagram size={18} />
+              </a>
+              <a href="#" target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full border border-[#9FBB90]/40 flex items-center justify-center text-[#F5F1E9]/90 hover:border-[#F5F1E9] hover:bg-[#F5F1E9] hover:text-[#33472C] transition-all duration-300">
+                <Facebook size={18} />
+              </a>
+              <a href="#" target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full border border-[#9FBB90]/40 flex items-center justify-center text-[#F5F1E9]/90 hover:border-[#F5F1E9] hover:bg-[#F5F1E9] hover:text-[#33472C] transition-all duration-300">
+                <Youtube size={18} />
+              </a>
+              <a href="#" target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full border border-[#9FBB90]/40 flex items-center justify-center text-[#F5F1E9]/90 hover:border-[#F5F1E9] hover:bg-[#F5F1E9] hover:text-[#33472C] transition-all duration-300">
+                <Linkedin size={18} />
+              </a>
+            </div>
+          </div>
+
+          {/* Accordion Sections */}
+          <div className="flex flex-col gap-3 w-full mt-2">
+            
+            {/* EXPLORE */}
+            <div className="flex flex-col w-full bg-[#405638]/80 rounded-2xl overflow-hidden">
+              <button 
+                onClick={() => toggleSection('explore')}
+                className="w-full flex items-center justify-between px-5 py-4 text-left"
+              >
+                <div className="flex items-center gap-4">
+                  <Compass size={18} className="text-[#E8A56F]" strokeWidth={1.5} />
+                  <span className="text-[#F5F1E9] text-[11px] font-bold tracking-[0.15em] uppercase">Explore</span>
+                </div>
+                <ChevronDown size={18} className={`text-[#F5F1E9]/60 transition-transform duration-300 ${openSection === 'explore' ? 'rotate-180' : ''}`} />
+              </button>
+              <AnimatePresence>
+                {openSection === 'explore' && (
+                  <motion.div initial={{ height: 0, opacity: 0 }} animate={{ height: 'auto', opacity: 1 }} exit={{ height: 0, opacity: 0 }} className="overflow-hidden">
+                    <div className="px-5 pb-5 pt-1 pl-[46px]">
+                      <ul className="flex flex-col gap-3.5">
+                        {[
+                          { label: 'About Ishan', href: '/about' },
+                          { label: 'Framework', href: '/framework' },
+                          { label: 'Leadership', href: '/leadership' },
+                          { label: 'Ecosystem', href: '/ecosystem' },
+                          { label: 'Programmes', href: '/programmes' }
+                        ].map((item) => (
+                          <li key={item.label}>
+                            <Link href={item.href} className="text-[#F5F1E9]/75 text-[13px] hover:text-[#F5F1E9]">
+                              {item.label}
+                            </Link>
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+                  </motion.div>
+                )}
+              </AnimatePresence>
+            </div>
+
+            {/* RESOURCES */}
+            <div className="flex flex-col w-full bg-[#405638]/80 rounded-2xl overflow-hidden">
+              <button 
+                onClick={() => toggleSection('resources')}
+                className="w-full flex items-center justify-between px-5 py-4 text-left"
+              >
+                <div className="flex items-center gap-4">
+                  <BookOpen size={18} className="text-[#E8A56F]" strokeWidth={1.5} />
+                  <span className="text-[#F5F1E9] text-[11px] font-bold tracking-[0.15em] uppercase">Resources</span>
+                </div>
+                <ChevronDown size={18} className={`text-[#F5F1E9]/60 transition-transform duration-300 ${openSection === 'resources' ? 'rotate-180' : ''}`} />
+              </button>
+              <AnimatePresence>
+                {openSection === 'resources' && (
+                  <motion.div initial={{ height: 0, opacity: 0 }} animate={{ height: 'auto', opacity: 1 }} exit={{ height: 0, opacity: 0 }} className="overflow-hidden">
+                    <div className="px-5 pb-5 pt-1 pl-[46px]">
+                      <ul className="flex flex-col gap-3.5">
+                        {[
+                          { label: 'Research', href: '/research' },
+                          { label: 'Partnerships', href: '/partnerships' },
+                          { label: 'Vision', href: '/vision' },
+                          { label: 'Support', href: '/support' }
+                        ].map((item) => (
+                          <li key={item.label}>
+                            <Link href={item.href} className="text-[#F5F1E9]/75 text-[13px] hover:text-[#F5F1E9]">
+                              {item.label}
+                            </Link>
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+                  </motion.div>
+                )}
+              </AnimatePresence>
+            </div>
+
+            {/* STAY CONNECTED */}
+            <div className="flex flex-col w-full bg-[#405638]/80 rounded-2xl overflow-hidden">
+              <button 
+                onClick={() => toggleSection('stay-connected')}
+                className="w-full flex items-center justify-between px-5 py-4 text-left"
+              >
+                <div className="flex items-center gap-4">
+                  <Users size={18} className="text-[#E8A56F]" strokeWidth={1.5} />
+                  <span className="text-[#F5F1E9] text-[11px] font-bold tracking-[0.15em] uppercase">Stay Connected</span>
+                </div>
+                <ChevronDown size={18} className={`text-[#F5F1E9]/60 transition-transform duration-300 ${openSection === 'stay-connected' ? 'rotate-180' : ''}`} />
+              </button>
+              <AnimatePresence>
+                {openSection === 'stay-connected' && (
+                  <motion.div initial={{ height: 0, opacity: 0 }} animate={{ height: 'auto', opacity: 1 }} exit={{ height: 0, opacity: 0 }} className="overflow-hidden">
+                    <div className="px-5 pb-5 pt-2">
+                      <div className="bg-[#4a6341]/40 rounded-xl p-4 flex flex-col gap-4">
+                        <div className="flex gap-3 items-start">
+                          <div className="w-8 h-8 rounded-full bg-white/10 flex items-center justify-center flex-shrink-0">
+                            <Mail size={16} className="text-[#F5F1E9]" strokeWidth={1.5} />
+                          </div>
+                          <p className="text-[#F5F1E9]/80 text-[13px] leading-relaxed font-light">
+                            Receive updates, insights and upcoming programme news.
+                          </p>
+                        </div>
+                        <div className="flex w-full h-[40px] group">
+                          <input 
+                            type="email" 
+                            placeholder="Email Address" 
+                            className="flex-1 bg-black/10 border border-white/10 border-r-0 rounded-l-full px-4 text-[12px] text-[#F5F1E9] placeholder:text-[#F5F1E9]/40 focus:outline-none focus:border-[#9FBB90]/60 transition-all duration-300 w-full min-w-0"
+                          />
+                          <button 
+                            className="px-4 rounded-r-full text-[10px] font-bold tracking-[0.1em] uppercase text-[#33472C] bg-[#9FBB90] transition-all duration-300 relative hover:brightness-105 flex items-center justify-center flex-shrink-0"
+                          >
+                            Subscribe
+                          </button>
+                        </div>
+                      </div>
+                    </div>
+                  </motion.div>
+                )}
+              </AnimatePresence>
+            </div>
+
+            {/* CONTACT */}
+            <div className="flex flex-col w-full bg-[#405638]/80 rounded-2xl overflow-hidden">
+              <button 
+                onClick={() => toggleSection('contact')}
+                className="w-full flex items-center justify-between px-5 py-4 text-left"
+              >
+                <div className="flex items-center gap-4">
+                  <Phone size={18} className="text-[#E8A56F]" strokeWidth={1.5} />
+                  <span className="text-[#F5F1E9] text-[11px] font-bold tracking-[0.15em] uppercase">Contact</span>
+                </div>
+                <ChevronDown size={18} className={`text-[#F5F1E9]/60 transition-transform duration-300 ${openSection === 'contact' ? 'rotate-180' : ''}`} />
+              </button>
+              <AnimatePresence>
+                {openSection === 'contact' && (
+                  <motion.div initial={{ height: 0, opacity: 0 }} animate={{ height: 'auto', opacity: 1 }} exit={{ height: 0, opacity: 0 }} className="overflow-hidden">
+                    <div className="px-5 pb-5 pt-1 pl-[46px]">
+                      <div className="flex flex-col gap-3">
+                        <a href="https://ishanfoundation.lk" target="_blank" rel="noopener noreferrer" className="text-[#F5F1E9]/75 text-[12px] tracking-[0.05em] uppercase hover:text-[#F5F1E9] transition-colors duration-300 hover:underline decoration-[#9FBB90]/50 underline-offset-4 block truncate">
+                          ishanfoundation.lk
+                        </a>
+                        <a href="mailto:info@ishanfoundation.lk" className="text-[#F5F1E9]/75 text-[12px] tracking-[0.05em] uppercase hover:text-[#F5F1E9] transition-colors duration-300 hover:underline decoration-[#9FBB90]/50 underline-offset-4 block truncate">
+                          info@ishanfoundation.lk
+                        </a>
+                      </div>
+                    </div>
+                  </motion.div>
+                )}
+              </AnimatePresence>
+            </div>
+
           </div>
         </div>
 

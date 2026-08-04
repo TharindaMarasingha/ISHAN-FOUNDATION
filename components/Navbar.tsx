@@ -261,10 +261,11 @@ export default function Navbar() {
                 })}
               </div>
 
-              <div className="mt-4 p-6">
+              <div className="mt-6 px-6 pb-8">
                 <Link
                   href="/contact"
-                  className="block w-full text-center bg-[image:var(--gradient-cta)] text-white rounded-xl py-3 uppercase tracking-widest font-sans font-semibold text-sm hover:shadow-lg hover:brightness-105 transition-all duration-300 [text-shadow:0_1px_2px_rgba(0,0,0,0.3)]"
+                  className="flex items-center justify-center w-full text-white rounded-full py-3.5 uppercase tracking-[0.15em] font-sans font-bold text-[11px] shadow-md hover:shadow-lg hover:brightness-105 transition-all duration-300"
+                  style={{ backgroundImage: 'linear-gradient(135deg, #D94F9D 0%, #E8A56F 50%, #F4C6A1 100%)' }}
                 >
                   Connect
                 </Link>
