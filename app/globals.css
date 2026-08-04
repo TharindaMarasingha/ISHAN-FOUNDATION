@@ -1,27 +1,25 @@
 @import "tailwindcss";
 
 @theme {
-  --color-peach: #FFF1E6;
-  --color-deepAmber: #6A2E00;
-  --color-mandarin: #D96C00;
-  --color-sacredGold: #C9A84C;
-  --color-warmGilt: #F5D98A;
-  --color-softApricot: #F2B277;
-  --color-darkBrown: #2E1A0E;
-  --color-burntOrange: #9C3F00;
-  --color-bark: #3D2010;
+  --color-background: #FFFFFF;
+  --color-surface: #F5F1E9;
+  --color-divider: #DCE9D7;
+  --color-secondary: #9FBB90;
+  --color-primary: #5C8151;
+  --color-heading: #33472C;
+  --color-soft-accent: #F3D8DB;
+  --color-cta: #DE5680;
 }
 
 :root {
-  --color-peach: #FFF1E6;
-  --color-deepAmber: #6A2E00;
-  --color-mandarin: #D96C00;
-  --color-sacredGold: #C9A84C;
-  --color-warmGilt: #F5D98A;
-  --color-softApricot: #F2B277;
-  --color-darkBrown: #2E1A0E;
-  --color-burntOrange: #9C3F00;
-  --color-bark: #3D2010;
+  --color-background: #FFFFFF;
+  --color-surface: #F5F1E9;
+  --color-divider: #DCE9D7;
+  --color-secondary: #9FBB90;
+  --color-primary: #5C8151;
+  --color-heading: #33472C;
+  --color-soft-accent: #F3D8DB;
+  --color-cta: #DE5680;
 }
 
 html {
@@ -29,24 +27,17 @@ html {
 }
 
 body {
-  background: linear-gradient(
-    135deg,
-    #FFF1E6 0%,
-    #FFF8F2 30%,
-    #FFFFFF 60%,
-    #FFF3E8 85%,
-    #FFE8D6 100%
-  );
+  background: var(--color-background);
   background-attachment: fixed;
-  color: var(--color-deepAmber);
+  color: var(--color-heading);
   font-weight: 300;
   line-height: 1.7;
   min-height: 100vh;
 }
 
 ::selection {
-  background-color: var(--color-sacredGold);
-  color: var(--color-darkBrown);
+  background-color: var(--color-primary);
+  color: #FFFFFF;
 }
 
 .font-display {

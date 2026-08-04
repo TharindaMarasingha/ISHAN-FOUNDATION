@@ -25,10 +25,10 @@ export function WaysToContributeSection() {
         {contributions.map((item, index) => (
           <RevealOnScroll key={item.title} delay={index * 0.1}>
             <Card className="h-full flex flex-col p-8">
-              <h3 className="font-display uppercase tracking-widest text-lg text-burntOrange mb-4 border-b border-burntOrange/20 pb-2 inline-block">
+              <h3 className="font-display uppercase tracking-widest text-lg text-primary mb-4 border-b border-divider pb-2 inline-block">
                 {item.title}
               </h3>
-              <p className="font-sans font-light text-deepAmber leading-relaxed text-sm flex-grow">
+              <p className="font-sans font-light text-heading leading-relaxed text-sm flex-grow">
                 {item.desc}
               </p>
             </Card>
@@ -41,15 +41,15 @@ export function WaysToContributeSection() {
 
 export function JoinCommunitySection() {
   return (
-    <section className="py-24 px-6 bg-deepAmber/[0.02] border-y border-burntOrange/10">
+    <section className="py-24 px-6 bg-surface border-y border-divider">
       <div className="max-w-4xl mx-auto text-center">
         <SectionHeading heading="A Shared Responsibility" align="center" />
         <RevealOnScroll delay={0.2}>
           <div className="mt-16 flex flex-col gap-12 text-center px-4 md:px-8">
-            <p className="font-display italic text-2xl md:text-3xl text-burntOrange leading-relaxed">
+            <p className="font-display italic text-2xl md:text-3xl text-primary leading-relaxed">
               &quot;The future is not created by a few extraordinary individuals. It is created by ordinary people choosing to take extraordinary responsibility.&quot;
             </p>
-            <p className="font-display italic text-2xl md:text-3xl text-burntOrange leading-relaxed">
+            <p className="font-display italic text-2xl md:text-3xl text-primary leading-relaxed">
               &quot;At ISHAN, we believe that every individual has the capacity to become a steward of positive change.&quot;
             </p>
           </div>

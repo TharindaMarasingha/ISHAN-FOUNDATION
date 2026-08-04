@@ -39,7 +39,7 @@ export function WhoWeServe() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, amount: 0.1 }}
             transition={{ duration: 0.6 }}
-            className="font-display italic text-[#9C3F00] tracking-[0.2em] text-sm uppercase mb-4 text-center mx-auto"
+            className="font-display italic text-primary tracking-[0.2em] text-sm uppercase mb-4 text-center mx-auto"
           >
             Our Reach
           </motion.span>
@@ -48,7 +48,7 @@ export function WhoWeServe() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, amount: 0.1 }}
             transition={{ duration: 0.6, delay: 0.1 }}
-            className="font-display font-light text-[#2E1A0E] text-4xl md:text-5xl lg:text-6xl mb-6 text-center mx-auto"
+            className="font-display font-light text-heading text-4xl md:text-5xl lg:text-6xl mb-6 text-center mx-auto"
           >
             Who We Serve
           </motion.h2>
@@ -56,7 +56,7 @@ export function WhoWeServe() {
 
         <div className="flex flex-wrap justify-center gap-3">
           {GROUPS.map((group, index) => {
-            const uniformClass = "bg-[rgba(255,255,255,0.65)] backdrop-blur-[8px] border-[rgba(156,63,0,0.25)] text-[#2E1A0E] hover:bg-[rgba(201,168,76,0.2)] hover:border-[rgba(201,168,76,0.5)] hover:text-[#6A2E00]";
+            const uniformClass = "bg-surface/65 backdrop-blur-[8px] border-primary/25 text-heading hover:bg-softAccent hover:border-primary hover:text-heading";
 
             return (
               <motion.div

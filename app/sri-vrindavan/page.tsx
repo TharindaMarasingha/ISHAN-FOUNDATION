@@ -36,7 +36,7 @@ export default function SriVrindavanPage() {
         <div className="absolute inset-0 bg-gradient-to-r from-[rgba(10,4,2,0.80)] via-[rgba(10,4,2,0.45)] to-transparent" />
         
         <div className="relative z-10 flex flex-col justify-end pb-16 pl-12 md:pb-20 md:pl-16" style={{ minHeight: '100vh' }}>
-          <span className="inline-flex w-fit border border-[rgba(201,168,76,0.5)] rounded-full px-4 py-1.5 mb-4 text-[#F5D98A] text-xs uppercase tracking-wider">
+          <span className="inline-flex w-fit border border-primary rounded-full px-4 py-1.5 mb-4 text-primary text-xs uppercase tracking-wider">
             A Divine Spiritual Wellness Township
           </span>
           
@@ -44,7 +44,7 @@ export default function SriVrindavanPage() {
             <span className="text-white block font-display font-normal leading-tight text-4xl md:text-5xl lg:text-6xl max-w-3xl">
               Sri Vrindavan
             </span>
-            <span className="text-[#C9A84C] block font-display font-normal leading-tight text-4xl md:text-5xl lg:text-6xl">
+            <span className="text-primary block font-display font-normal leading-tight text-4xl md:text-5xl lg:text-6xl">
               Project
             </span>
           </h1>
@@ -77,12 +77,12 @@ export default function SriVrindavanPage() {
       <Partnership />
       
       {/* Quote Section */}
-      <section className="py-32 px-6 md:px-12 bg-deepAmber/[0.02] border-y border-sacredGold/10 relative overflow-hidden flex items-center justify-center">
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 font-display text-[25rem] text-burntOrange opacity-[0.03] pointer-events-none select-none leading-none">
+      <section className="py-32 px-6 md:px-12 bg-surface border-y border-divider relative overflow-hidden flex items-center justify-center">
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 font-display text-[25rem] text-primary opacity-[0.03] pointer-events-none select-none leading-none">
           &ldquo;
         </div>
         <RevealOnScroll className="relative z-10 max-w-4xl mx-auto text-center">
-          <blockquote className="font-display italic text-3xl md:text-4xl lg:text-5xl text-deepAmber leading-snug md:leading-snug">
+          <blockquote className="font-display italic text-3xl md:text-4xl lg:text-5xl text-heading leading-snug md:leading-snug">
             "More than a physical place, Sri Vrindavan is a vision for the future — a living ecosystem where conscious living becomes a shared way of life."
           </blockquote>
         </RevealOnScroll>

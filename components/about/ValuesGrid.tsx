@@ -15,7 +15,7 @@ const VALUES = [
 
 export function ValuesGrid() {
   return (
-    <section className="bg-deepAmber/[0.02] py-24 px-6 border-y border-burntOrange/10">
+    <section className="bg-surface py-24 px-6 border-y border-divider">
       <div className="max-w-7xl mx-auto">
         <SectionHeading
           eyebrow="Our Principles"

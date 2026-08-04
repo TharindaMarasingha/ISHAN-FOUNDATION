@@ -109,7 +109,7 @@ export function Hero() {
       {/* MOBILE FLOATING ACCENT DOTS */}
       <div className="md:hidden absolute inset-0 pointer-events-none z-10">
         <div className="absolute top-[120px] left-[22px] w-2 h-2 bg-sacredGold rounded-full opacity-50" />
-        <div className="absolute top-[180px] right-[30px] w-1.5 h-1.5 bg-burntOrange rounded-full opacity-40" />
+        <div className="absolute top-[180px] right-[30px] w-1.5 h-1.5 bg-cta rounded-full opacity-40" />
         <div className="absolute top-[55%] right-[20px] w-2.5 h-2.5 bg-sacredGold rounded-full opacity-30" />
       </div>
 
@@ -190,7 +190,7 @@ export function Hero() {
                 fontWeight: 400,
                 paddingRight: '0.2em'
               }}
-              className={`${greatVibes.className} leading-none text-[56px] text-white md:text-[#2E1A0E] md:text-[clamp(6rem,15vw,12rem)] drop-shadow-md md:drop-shadow-none`}
+              className={`${greatVibes.className} leading-none text-[56px] text-white md:text-heading md:text-[clamp(6rem,15vw,12rem)] drop-shadow-md md:drop-shadow-none`}
             >
               Ishan
             </h1>
@@ -200,7 +200,7 @@ export function Hero() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 1, delay: 0.4 }}
-            className="font-sans italic text-[17px] text-[#FFF1E6] md:text-[#6B6B6B] md:text-xl max-w-[280px] md:max-w-lg leading-[1.5] md:leading-normal mb-[14px] md:mb-3 tracking-wide drop-shadow-sm md:drop-shadow-none"
+            className="font-sans italic text-[17px] text-white md:text-[#6B6B6B] md:text-xl max-w-[280px] md:max-w-lg leading-[1.5] md:leading-normal mb-[14px] md:mb-3 tracking-wide drop-shadow-sm md:drop-shadow-none"
           >
             Harmonising Humanity with Nature through Wisdom, Wellness, and Collective Responsibility
           </motion.p>
@@ -209,7 +209,7 @@ export function Hero() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 1, delay: 0.5 }}
-            className="font-sans font-light text-[13px] text-[#FFF1E6]/90 md:text-[#8A8A8A] md:text-base max-w-[280px] md:max-w-lg leading-[1.7] md:leading-snug mb-7 md:mb-8 drop-shadow-sm md:drop-shadow-none"
+            className="font-sans font-light text-[13px] text-white/90 md:text-[#8A8A8A] md:text-base max-w-[280px] md:max-w-lg leading-[1.7] md:leading-snug mb-7 md:mb-8 drop-shadow-sm md:drop-shadow-none"
           >
             ISHAN is a global institution committed to advancing humanity and nature through wisdom, wellness, education, ethical leadership, sustainability, and conscious community development.
           </motion.p>
@@ -222,20 +222,20 @@ export function Hero() {
           >
             {/* MOBILE BUTTONS */}
             <div className="flex flex-col items-stretch gap-4 w-full md:hidden">
-              <Link href="#ecosystem" className="w-full text-center bg-gradient-to-r from-[#D96C00] to-[#F5D98A] text-[#2E1A0E] px-10 py-4 rounded-full font-sans font-semibold tracking-[0.15em] uppercase text-xs shadow-md">
+              <Link href="#ecosystem" className="w-full text-center bg-cta text-white px-10 py-4 rounded-full font-sans font-semibold tracking-[0.15em] uppercase text-xs shadow-md">
                 EXPLORE OUR WORK &rarr;
               </Link>
-              <Link href="/about" className="w-full text-center bg-gradient-to-r from-[#D96C00] to-[#F5D98A] text-[#2E1A0E] px-10 py-4 rounded-full font-sans font-semibold tracking-[0.15em] uppercase text-xs shadow-md">
+              <Link href="/about" className="w-full text-center bg-cta text-white px-10 py-4 rounded-full font-sans font-semibold tracking-[0.15em] uppercase text-xs shadow-md">
                 ABOUT ISHAN &rarr;
               </Link>
             </div>
 
             {/* DESKTOP BUTTONS */}
             <div className="hidden md:flex flex-row items-center justify-start gap-4">
-              <Link href="#ecosystem" className="w-auto text-center min-w-[180px] bg-gradient-to-r from-[#FFC120] to-[#F8A39B] text-[#2E1A0E] border-none px-8 py-3.5 rounded-full hover:shadow-xl hover:-translate-y-0.5 transition-all duration-300 font-sans font-medium tracking-wide uppercase text-[13px] flex items-center justify-center">
+              <Link href="#ecosystem" className="w-auto text-center min-w-[180px] bg-cta text-white border-none px-8 py-3.5 rounded-full hover:shadow-xl hover:-translate-y-0.5 transition-all duration-300 font-sans font-medium tracking-wide uppercase text-[13px] flex items-center justify-center">
                 Explore Our Work
               </Link>
-              <Link href="/about" className="w-auto text-center min-w-[180px] bg-gradient-to-r from-[#FFC120] to-[#F8A39B] text-[#2E1A0E] border-none px-8 py-3.5 rounded-full hover:shadow-xl hover:-translate-y-0.5 transition-all duration-300 font-sans font-medium tracking-wide uppercase text-[13px] flex items-center justify-center">
+              <Link href="/about" className="w-auto text-center min-w-[180px] bg-cta text-white border-none px-8 py-3.5 rounded-full hover:shadow-xl hover:-translate-y-0.5 transition-all duration-300 font-sans font-medium tracking-wide uppercase text-[13px] flex items-center justify-center">
                 About ISHAN
               </Link>
             </div>

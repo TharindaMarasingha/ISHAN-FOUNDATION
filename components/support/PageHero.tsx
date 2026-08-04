@@ -32,7 +32,7 @@ export function PageHero() {
           initial={{ opacity: 0, y: 10 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, ease: "easeOut" }}
-          className="inline-flex w-fit border border-[rgba(201,168,76,0.5)] rounded-full px-4 py-1.5 text-[#F5D98A] text-xs uppercase tracking-[0.18em] font-sans mb-4"
+          className="inline-flex w-fit border border-primary rounded-full px-4 py-1.5 text-primary text-xs uppercase tracking-[0.18em] font-sans mb-4"
         >
           Support Our Mission
         </motion.span>
@@ -44,7 +44,7 @@ export function PageHero() {
           className="font-display font-normal leading-tight text-white text-4xl md:text-5xl lg:text-6xl max-w-3xl mb-4"
         >
           <span className="text-white block">Become a Steward of</span>
-          <span className="text-[#9C3F00] block">Positive Change</span>
+          <span className="text-primary block">Positive Change</span>
         </motion.h1>
 
         <motion.p

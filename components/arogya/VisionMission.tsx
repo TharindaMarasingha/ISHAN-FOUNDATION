@@ -21,12 +21,12 @@ export function VisionMission() {
             heading="A Multidimensional Platform for Human Evolution"
           />
           <RevealOnScroll delay={0.1}>
-            <p className="font-sans font-light text-deepAmber/90 leading-relaxed text-lg">
+            <p className="font-sans font-light text-heading/80 leading-relaxed text-lg">
               Its programmes empower individuals to take responsibility for their own health, develop sustainable lifestyle habits, and cultivate lifelong wellbeing. By focusing on prevention rather than cure, AAI supports healthier individuals, stronger families, and more resilient communities.
             </p>
           </RevealOnScroll>
           <RevealOnScroll delay={0.2}>
-            <p className="font-sans font-light text-deepAmber/80 leading-relaxed text-lg">
+            <p className="font-sans font-light text-heading/80 leading-relaxed text-lg">
               Rooted in the ancient Arogyasala tradition of Sri Lanka — representing the world's earliest documented dedicated healing institutions — our model bridges this ancient indigenous wisdom with modern wellness science to provide scalable models of conscious living for the modern world.
             </p>
           </RevealOnScroll>
@@ -34,14 +34,14 @@ export function VisionMission() {
 
         {/* Right Column */}
         <RevealOnScroll delay={0.3} className="h-full">
-          <Card className="h-full flex flex-col p-8 sm:p-10 border-burntOrange/20">
-            <h3 className="font-display uppercase tracking-widest text-deepAmber text-xl mb-8 border-b border-burntOrange/20 pb-4">
+          <Card className="h-full flex flex-col p-8 sm:p-10 border-divider">
+            <h3 className="font-display uppercase tracking-widest text-heading text-xl mb-8 border-b border-divider pb-4">
               Core Values
             </h3>
             <ul className="flex flex-col space-y-6 flex-grow justify-center">
               {CORE_VALUES.map((val) => (
-                <li key={val} className="flex items-start text-sans font-light text-deepAmber/80 leading-relaxed text-base">
-                  <span className="text-mandarin mr-4 text-xs mt-1.5">●</span>
+                <li key={val} className="flex items-start text-sans font-light text-heading/80 leading-relaxed text-base">
+                  <span className="text-primary mr-4 text-xs mt-1.5">●</span>
                   <span>{val}</span>
                 </li>
               ))}

@@ -34,7 +34,7 @@ export default function AvalokanaPage() {
         <div className="absolute inset-0 bg-gradient-to-r from-[rgba(10,4,2,0.80)] via-[rgba(10,4,2,0.45)] to-transparent" />
         
         <div className="relative z-10 flex flex-col justify-end pb-16 pl-12 md:pb-20 md:pl-16" style={{ minHeight: '100vh' }}>
-          <span className="inline-flex w-fit border border-[rgba(201,168,76,0.5)] rounded-full px-4 py-1.5 mb-4 text-[#F5D98A] text-xs uppercase tracking-wider">
+          <span className="inline-flex w-fit border border-primary rounded-full px-4 py-1.5 mb-4 text-primary text-xs uppercase tracking-wider">
             THE INNER IMMERSION
           </span>
           
@@ -42,7 +42,7 @@ export default function AvalokanaPage() {
             <span className="text-white block font-display font-normal leading-tight text-4xl md:text-5xl lg:text-6xl max-w-3xl">
               Antahakarana
             </span>
-            <span className="text-[#C9A84C] block font-display font-normal leading-tight text-4xl md:text-5xl lg:text-6xl">
+            <span className="text-primary block font-display font-normal leading-tight text-4xl md:text-5xl lg:text-6xl">
               Avalokana
             </span>
           </h1>
@@ -63,9 +63,9 @@ export default function AvalokanaPage() {
       {/* Note Box Section */}
       <section className="pb-24 px-6 max-w-4xl mx-auto text-center">
         <RevealOnScroll>
-          <div className="p-8 bg-mandarin/5 border border-mandarin/20 rounded-2xl inline-block max-w-3xl shadow-sm">
-            <p className="font-sans font-light text-deepAmber leading-relaxed md:text-lg">
-              <span className="font-medium text-mandarin">Note:</span> Antahakarana Avalokana is ISHAN's inner reflection experience. It is distinct from Samanvaya, which is ISHAN's five-elements transformational retreat.
+          <div className="p-8 bg-softAccent border border-divider rounded-2xl inline-block max-w-3xl shadow-sm">
+            <p className="font-sans font-light text-heading leading-relaxed md:text-lg">
+              <span className="font-medium text-primary">Note:</span> Antahakarana Avalokana is ISHAN's inner reflection experience. It is distinct from Samanvaya, which is ISHAN's five-elements transformational retreat.
             </p>
           </div>
         </RevealOnScroll>
@@ -80,10 +80,10 @@ export default function AvalokanaPage() {
           align="center"
         />
         <RevealOnScroll delay={0.2} className="mt-12 flex flex-col sm:flex-row gap-4 sm:gap-6 w-full sm:w-auto">
-          <Button href="/samanvaya" variant="primary" className="bg-mandarin text-peach hover:bg-burntOrange">
+          <Button href="/samanvaya" variant="primary" className="bg-cta text-white hover:bg-cta/90">
             Explore Samanvaya
           </Button>
-          <Button href="/contact" variant="ghost" className="border-mandarin text-mandarin hover:border-burntOrange hover:text-burntOrange">
+          <Button href="/contact" variant="ghost" className="border-primary text-primary hover:bg-primary hover:text-white">
             Register Interest
           </Button>
         </RevealOnScroll>

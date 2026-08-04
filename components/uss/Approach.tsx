@@ -6,7 +6,7 @@ import { motion } from "framer-motion";
 
 export function Approach() {
   return (
-    <section className="bg-deepAmber/[0.02] py-24 px-6 border-y border-burntOrange/10">
+    <section className="bg-surface py-24 px-6 border-y border-divider">
       <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
         <div className="flex flex-col">
           <SectionHeading
@@ -14,13 +14,13 @@ export function Approach() {
             heading="The Bridge Between Data and the Divine"
           />
           <RevealOnScroll delay={0.2} className="mt-8">
-            <p className="font-sans font-light text-deepAmber leading-relaxed mb-6">
+            <p className="font-sans font-light text-heading leading-relaxed mb-6">
               For centuries, science and spirituality have often been viewed as opposing forces. At the Universal Spiritual Science Institute, we recognize them as two distinct methodologies seeking the same truth.
             </p>
-            <p className="font-sans font-light text-deepAmber leading-relaxed mb-6">
+            <p className="font-sans font-light text-heading leading-relaxed mb-6">
               Our approach applies the empirical rigor of the scientific method—observation, hypothesis, and peer review—to the subjective, internal experiences traditionally relegated to mysticism. We aim to quantify the qualitative shifts that occur through inner development.
             </p>
-            <p className="font-sans font-light text-deepAmber leading-relaxed">
+            <p className="font-sans font-light text-heading leading-relaxed">
               By translating profound spiritual insights into a grounded, secular language, we make inner transformation accessible, testable, and deeply relevant to resolving the crises of the modern era.
             </p>
           </RevealOnScroll>
@@ -31,7 +31,7 @@ export function Approach() {
           <div className="relative w-full max-w-md h-full flex items-center justify-center opacity-80">
             <motion.svg
               viewBox="0 0 200 200"
-              className="w-full h-full text-burntOrange"
+              className="w-full h-full text-primary"
               animate={{ rotate: -360 }}
               transition={{ duration: 80, repeat: Infinity, ease: "linear" }}
             >
@@ -42,8 +42,8 @@ export function Approach() {
               <polygon points="100,150 57,75 143,75" fill="none" stroke="currentColor" strokeWidth="0.5" className="opacity-40" />
             </motion.svg>
             <div className="absolute inset-0 flex items-center justify-center flex-col">
-              <span className="font-display italic text-2xl text-sacredGold mb-1">Empirical</span>
-              <span className="font-display italic text-2xl text-sacredGold">Wisdom</span>
+              <span className="font-display italic text-2xl text-secondary mb-1">Empirical</span>
+              <span className="font-display italic text-2xl text-secondary">Wisdom</span>
             </div>
           </div>
         </RevealOnScroll>

@@ -17,12 +17,12 @@ export function Vision() {
             heading="A Blueprint for the Future of Human Settlement"
           />
           <RevealOnScroll delay={0.1}>
-            <p className="font-sans font-light text-deepAmber/90 leading-relaxed text-lg">
+            <p className="font-sans font-light text-heading/80 leading-relaxed text-lg">
               Sri Vrindavan Project is not merely a real estate development; it is an architectural and sociological manifestation of ISHAN&apos;s core philosophies. Designed as a self-sustaining ecosystem, the township integrates advanced ecological infrastructure with ancient spatial design principles (Vastu and Sacred Geometry).
             </p>
           </RevealOnScroll>
           <RevealOnScroll delay={0.2}>
-            <p className="font-sans font-light text-deepAmber/80 leading-relaxed text-lg">
+            <p className="font-sans font-light text-heading/80 leading-relaxed text-lg">
               Here, the built environment serves as a conduit for human elevation. From carbon-neutral residential clusters and organic agrarian zones to state-of-the-art integrative medical facilities and silent meditative sanctuaries—every acre is purposefully planned to foster a community living in conscious harmony with nature and one another.
             </p>
           </RevealOnScroll>
@@ -30,11 +30,11 @@ export function Vision() {
 
         {/* Right Column: Abstract SVG Site-Plan Graphic */}
         <RevealOnScroll delay={0.3} className="relative w-full aspect-square max-w-md mx-auto flex items-center justify-center p-8">
-          <div className="absolute inset-0 bg-deepAmber/[0.02] border border-sacredGold/20 rounded-full" />
+          <div className="absolute inset-0 bg-surface border border-divider rounded-full" />
           
           <motion.svg
             viewBox="0 0 100 100"
-            className="w-full h-full text-sacredGold/40"
+            className="w-full h-full text-secondary"
             animate={{ rotate: prefersReducedMotion ? 0 : 360 }}
             transition={{ duration: 180, repeat: Infinity, ease: "linear" }}
           >

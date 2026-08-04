@@ -62,16 +62,16 @@ export default function Footer() {
   const tickerItems = [...VALUES, ...VALUES];
 
   return (
-    <footer className="relative bg-gradient-to-b from-darkBrown to-bark border-t border-sacredGold/20 pt-8 md:pt-12 pb-6 md:pb-8 overflow-hidden z-0">
+    <footer className="relative bg-surface border-t border-divider pt-8 md:pt-12 pb-6 md:pb-8 overflow-hidden z-0">
       
       {/* Ambient background glow and texture */}
-      <div className="absolute inset-0 pointer-events-none flex items-center justify-center opacity-[0.06] z-0">
-        <div className="w-[800px] h-[800px] rounded-full bg-[radial-gradient(circle,#C9A84C_0%,transparent_70%)] blur-3xl"></div>
-        <div className="absolute inset-0 opacity-20" style={{ backgroundImage: "radial-gradient(circle at center, rgba(201,168,76,0.1) 1px, transparent 1px)", backgroundSize: "40px 40px" }}></div>
+      <div className="absolute inset-0 pointer-events-none flex items-center justify-center opacity-[0.03] z-0">
+        <div className="w-[800px] h-[800px] rounded-full bg-[radial-gradient(circle,var(--color-primary)_0%,transparent_70%)] blur-3xl"></div>
+        <div className="absolute inset-0 opacity-20" style={{ backgroundImage: "radial-gradient(circle at center, var(--color-primary) 1px, transparent 1px)", backgroundSize: "40px 40px" }}></div>
       </div>
 
       {/* Coral-Orange Ambient Glow (Top Right) */}
-      <div className="absolute top-0 right-0 w-[400px] h-[400px] bg-gradient-to-r from-[#ED765E] to-[#FEA858] blur-[120px] opacity-25 mix-blend-screen pointer-events-none translate-x-1/3 -translate-y-1/3 rounded-full z-0"></div>
+      <div className="absolute top-0 right-0 w-[400px] h-[400px] bg-gradient-to-r from-softAccent to-background blur-[120px] opacity-25 mix-blend-screen pointer-events-none translate-x-1/3 -translate-y-1/3 rounded-full z-0"></div>
 
       <div className="relative z-10 max-w-7xl mx-auto px-6 md:px-12">
         
@@ -80,35 +80,33 @@ export default function Footer() {
           {/* Logo Lockup */}
           <div className="flex flex-col items-center lg:items-start flex-shrink-0 min-w-[280px]">
             <Image 
-              src="/images/ishanlogo.webp" 
+              src="/images/ishan-logo.png" 
               alt="ISHAN Logo" 
-              width={110} 
-              height={110} 
-              className="object-contain mb-4"
+              width={600} 
+              height={240} 
+              className="object-contain mb-4 h-32 md:h-48 w-auto max-w-full"
+              priority
             />
-            <p className="text-softApricot/80 italic font-display text-[13px] md:text-[14px] text-center lg:text-left">
-              Humanity · Nature · Consciousness
-            </p>
             
             {/* Social Links */}
             <div className="flex items-center justify-center lg:justify-start gap-3 mt-4">
-              <a href="https://www.instagram.com/ishan_retreats/" target="_blank" rel="noopener noreferrer" className="w-9 h-9 rounded-full border border-[rgba(245,217,138,0.25)] flex items-center justify-center text-softApricot hover:border-sacredGold hover:text-sacredGold hover:scale-105 transition-all duration-300">
+              <a href="https://www.instagram.com/ishan_retreats/" target="_blank" rel="noopener noreferrer" className="w-9 h-9 rounded-full border border-divider flex items-center justify-center text-heading hover:border-primary hover:text-primary hover:scale-105 transition-all duration-300">
                 <Instagram size={18} />
               </a>
-              <a href="#" target="_blank" rel="noopener noreferrer" className="w-9 h-9 rounded-full border border-[rgba(245,217,138,0.25)] flex items-center justify-center text-softApricot hover:border-sacredGold hover:text-sacredGold hover:scale-105 transition-all duration-300">
+              <a href="#" target="_blank" rel="noopener noreferrer" className="w-9 h-9 rounded-full border border-divider flex items-center justify-center text-heading hover:border-primary hover:text-primary hover:scale-105 transition-all duration-300">
                 <Facebook size={18} />
               </a>
-              <a href="#" target="_blank" rel="noopener noreferrer" className="w-9 h-9 rounded-full border border-[rgba(245,217,138,0.25)] flex items-center justify-center text-softApricot hover:border-sacredGold hover:text-sacredGold hover:scale-105 transition-all duration-300">
+              <a href="#" target="_blank" rel="noopener noreferrer" className="w-9 h-9 rounded-full border border-divider flex items-center justify-center text-heading hover:border-primary hover:text-primary hover:scale-105 transition-all duration-300">
                 <Youtube size={18} />
               </a>
-              <a href="#" target="_blank" rel="noopener noreferrer" className="w-9 h-9 rounded-full border border-[rgba(245,217,138,0.25)] flex items-center justify-center text-softApricot hover:border-sacredGold hover:text-sacredGold hover:scale-105 transition-all duration-300">
+              <a href="#" target="_blank" rel="noopener noreferrer" className="w-9 h-9 rounded-full border border-divider flex items-center justify-center text-heading hover:border-primary hover:text-primary hover:scale-105 transition-all duration-300">
                 <Linkedin size={18} />
               </a>
             </div>
           </div>
 
           {/* Mobile-only Divider (Logo -> Nav) */}
-          <div className="w-full h-px bg-sacredGold/10 block lg:hidden my-4" />
+          <div className="w-full h-px bg-divider block lg:hidden my-4" />
 
           {/* Right Column: Nav & Contact */}
           <div className="flex flex-col items-center lg:items-end gap-0 lg:gap-8 mt-0 w-full lg:w-auto">
@@ -120,7 +118,7 @@ export default function Footer() {
                     <Link
                       key={link.label}
                       href={link.href}
-                      className="text-[10px] tracking-[0.15em] uppercase text-softApricot/70 hover:text-sacredGold transition-colors duration-300 border border-sacredGold/50 lg:border-none rounded-full px-4 py-1.5 lg:px-0 lg:py-0 flex items-center justify-center lg:block w-fit mx-auto lg:mx-0 col-span-2 lg:col-span-1 mt-1 lg:mt-0"
+                      className="text-[10px] tracking-[0.15em] uppercase text-heading/70 hover:text-primary transition-colors duration-300 border border-primary/50 lg:border-none rounded-full px-4 py-1.5 lg:px-0 lg:py-0 flex items-center justify-center lg:block w-fit mx-auto lg:mx-0 col-span-2 lg:col-span-1 mt-1 lg:mt-0"
                     >
                       {link.label}
                     </Link>
@@ -130,7 +128,7 @@ export default function Footer() {
                   <Link
                     key={link.label}
                     href={link.href}
-                    className="text-[10px] tracking-[0.15em] uppercase text-softApricot/70 hover:text-sacredGold transition-colors duration-300 py-1 lg:py-0"
+                    className="text-[10px] tracking-[0.15em] uppercase text-heading/70 hover:text-primary transition-colors duration-300 py-1 lg:py-0"
                   >
                     {link.label}
                   </Link>
@@ -139,7 +137,7 @@ export default function Footer() {
             </div>
             
             {/* Mobile-only Divider (Nav -> Contact) */}
-            <div className="w-full h-px bg-sacredGold/10 block lg:hidden my-4" />
+            <div className="w-full h-px bg-divider block lg:hidden my-4" />
 
             {/* Contact Info Block */}
             <div className="flex flex-row justify-between lg:flex-col items-center lg:items-end w-full lg:w-auto lg:gap-1.5">
@@ -147,13 +145,13 @@ export default function Footer() {
                 href="https://ishanfoundation.lk"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-[10px] lg:text-[11px] tracking-[0.04em] uppercase text-softApricot/80 hover:text-sacredGold transition-colors duration-300 hover:underline decoration-sacredGold underline-offset-4"
+                className="text-[10px] lg:text-[11px] tracking-[0.04em] uppercase text-heading/80 hover:text-primary transition-colors duration-300 hover:underline decoration-primary underline-offset-4"
               >
                 ishanfoundation.lk
               </a>
               <a 
                 href="mailto:info@ishanfoundation.lk"
-                className="text-[10px] lg:text-[11px] tracking-[0.04em] uppercase text-softApricot/80 hover:text-sacredGold transition-colors duration-300 hover:underline decoration-sacredGold underline-offset-4"
+                className="text-[10px] lg:text-[11px] tracking-[0.04em] uppercase text-heading/80 hover:text-primary transition-colors duration-300 hover:underline decoration-primary underline-offset-4"
               >
                 info@ishanfoundation.lk
               </a>
@@ -162,7 +160,7 @@ export default function Footer() {
         </div>
 
         {/* Top Divider */}
-        <div className="w-full h-px bg-gradient-to-r from-transparent via-sacredGold/15 to-transparent my-4 md:my-6 block lg:block hidden" />
+        <div className="w-full h-px bg-gradient-to-r from-transparent via-divider to-transparent my-4 md:my-6 block lg:block hidden" />
 
         {/* Ticker Line */}
         <div className="relative w-full overflow-hidden select-none group mt-4 lg:mt-0">
@@ -177,38 +175,38 @@ export default function Footer() {
           >
             {tickerItems.map((val, idx) => (
               <React.Fragment key={idx}>
-                <span className="text-[10px] uppercase tracking-[0.2em] text-softApricot/50 px-4 md:px-5">
+                <span className="text-[10px] uppercase tracking-[0.2em] text-heading/50 px-4 md:px-5">
                   {val}
                 </span>
-                <span className="text-softApricot/30 text-[8px]">·</span>
+                <span className="text-heading/30 text-[8px]">·</span>
               </React.Fragment>
             ))}
           </motion.div>
         </div>
 
         {/* Bottom Divider */}
-        <div className="w-full h-px bg-gradient-to-r from-transparent via-sacredGold/15 to-transparent my-4 md:my-6" />
+        <div className="w-full h-px bg-gradient-to-r from-transparent via-divider to-transparent my-4 md:my-6" />
 
         {/* Bottom Row */}
         <div className="flex flex-col md:flex-row justify-between items-center md:items-end gap-1.5 md:gap-6 text-center md:text-left">
           {/* Left Side: Tagline and Copyright */}
           <div className="flex flex-col items-center md:items-start gap-1 md:gap-2">
-            <p className="text-sacredGold/90 italic text-[15px] md:text-[16px] font-display tracking-wide">
+            <p className="text-primary/90 italic text-[15px] md:text-[16px] font-display tracking-wide">
               One Humanity · One Nature · One Conscious Future
             </p>
-            <p className="text-softApricot/50 text-[9px] uppercase tracking-[0.2em]">
+            <p className="text-heading/50 text-[9px] uppercase tracking-[0.2em]">
               © 2026 ISHAN – International Society of Holistic Awareness & Naturology. All Rights Reserved.
             </p>
           </div>
           
           {/* Right Side: Kaldor Credit */}
-          <div className="text-softApricot/60 text-[10px] md:text-[11px] uppercase tracking-[0.2em] mt-1 md:mt-0">
+          <div className="text-heading/60 text-[10px] md:text-[11px] uppercase tracking-[0.2em] mt-1 md:mt-0">
             Developed by{" "}
             <a 
               href="https://www.kaldor.dev/" 
               target="_blank" 
               rel="noopener noreferrer" 
-              className="hover:text-sacredGold hover:underline decoration-sacredGold underline-offset-4 transition-colors duration-300"
+              className="hover:text-primary hover:underline decoration-primary underline-offset-4 transition-colors duration-300"
             >
               Kaldor
             </a>

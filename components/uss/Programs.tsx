@@ -24,7 +24,7 @@ export function Programs() {
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 lg:gap-8">
           {PROGRAMS.map((prog, index) => (
             <RevealOnScroll key={prog.number} delay={index * 0.1} className="h-full">
-              <NumberedCard {...prog} className="h-full shadow-sm hover:shadow-[#1B4332]/5 border-[#1B4332]/10" />
+              <NumberedCard {...prog} className="h-full shadow-sm hover:shadow-primary/10 border-divider" />
             </RevealOnScroll>
           ))}
         </div>

@@ -19,7 +19,7 @@ export function WhoWePartnerWithSection() {
       <RevealOnScroll delay={0.2}>
         <div className="mt-12 flex flex-wrap justify-center gap-3">
           {partners.map((p, i) => (
-             <div key={i} className="px-5 py-3 rounded-full bg-[rgba(201,168,76,0.1)] border border-[rgba(201,168,76,0.3)] text-deepAmber font-sans text-xs uppercase tracking-widest cursor-default hover:bg-[rgba(201,168,76,0.2)] transition-colors">
+             <div key={i} className="px-5 py-3 rounded-full bg-softAccent border border-primary text-heading font-sans text-xs uppercase tracking-widest cursor-default hover:bg-softAccent transition-colors">
                {p}
              </div>
           ))}
@@ -39,16 +39,16 @@ export function PartnershipPrinciplesSection() {
   ];
 
   return (
-    <section className="py-24 px-6 bg-deepAmber/[0.02] border-y border-burntOrange/10">
+    <section className="py-24 px-6 bg-surface border-y border-divider">
       <div className="max-w-7xl mx-auto">
         <SectionHeading heading="Partnership Principles" align="center" />
         <div className="mt-16 grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-6">
           {principles.map((principle, index) => (
             <RevealOnScroll key={principle.number} delay={index * 0.1} className="h-full">
-              <div className="flex flex-col p-8 bg-white border border-burntOrange/10 rounded-2xl h-full shadow-sm hover:shadow-md transition-shadow">
-                <span className="font-display text-4xl text-burntOrange/30 mb-4">{principle.number}</span>
-                <h4 className="font-sans font-semibold text-lg text-deepAmber mb-2 uppercase tracking-wide">{principle.title}</h4>
-                <p className="font-sans font-light text-sm text-deepAmber leading-relaxed">{principle.desc}</p>
+              <div className="flex flex-col p-8 bg-white border border-divider rounded-2xl h-full shadow-sm hover:shadow-md transition-shadow">
+                <span className="font-display text-4xl text-primary mb-4">{principle.number}</span>
+                <h4 className="font-sans font-semibold text-lg text-heading mb-2 uppercase tracking-wide">{principle.title}</h4>
+                <p className="font-sans font-light text-sm text-heading leading-relaxed">{principle.desc}</p>
               </div>
             </RevealOnScroll>
           ))}
@@ -86,12 +86,12 @@ export function CollaborationAndContributionSection() {
           {/* Left Column: Areas of Collaboration */}
           <div className="flex flex-col space-y-8">
             <RevealOnScroll>
-              <h3 className="font-display font-light text-4xl md:text-5xl text-deepAmber mb-8">
+              <h3 className="font-display font-light text-4xl md:text-5xl text-heading mb-8">
                 Areas of Collaboration
               </h3>
               <div className="flex flex-wrap gap-3 mb-10">
                 {areas.map((area) => (
-                  <span key={area} className="px-4 py-2 rounded-full bg-darkBrown/5 border border-darkBrown/10 text-xs text-deepAmber tracking-widest uppercase hover:bg-darkBrown/10 transition-colors">
+                  <span key={area} className="px-4 py-2 rounded-full bg-darkBrown/5 border border-darkBrown/10 text-xs text-heading tracking-widest uppercase hover:bg-darkBrown/10 transition-colors">
                     {area}
                   </span>
                 ))}
@@ -102,13 +102,13 @@ export function CollaborationAndContributionSection() {
           {/* Right Column: Ways to Contribute */}
           <div className="flex flex-col space-y-8">
             <RevealOnScroll delay={0.2}>
-              <h3 className="font-display font-light text-3xl md:text-4xl text-deepAmber mb-8">
+              <h3 className="font-display font-light text-3xl md:text-4xl text-heading mb-8">
                 You Can Contribute Through
               </h3>
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-y-6 gap-x-8 mb-10">
                 {contributions.map((item) => (
-                  <div key={item} className="flex items-center text-base font-sans font-light text-deepAmber/90">
-                    <span className="text-sacredGold mr-4 text-lg">✦</span>
+                  <div key={item} className="flex items-center text-base font-sans font-light text-heading/80">
+                    <span className="text-secondary mr-4 text-lg">✦</span>
                     {item}
                   </div>
                 ))}
@@ -128,7 +128,7 @@ export function PartnershipsCTASection() {
       <div className="absolute inset-0 z-0 bg-cover bg-center opacity-10" style={{ backgroundImage: "url('/images/who-we-serve-bg.webp')" }} />
       <div className="max-w-4xl mx-auto relative z-10 flex flex-col items-center">
         <RevealOnScroll>
-          <p className="font-display italic text-3xl md:text-4xl text-sacredGold leading-relaxed mb-16 px-4 md:px-0">
+          <p className="font-display italic text-3xl md:text-4xl text-secondary leading-relaxed mb-16 px-4 md:px-0">
             &quot;Together, we can create healthier individuals, stronger communities, resilient institutions, and a sustainable future.&quot;
           </p>
         </RevealOnScroll>

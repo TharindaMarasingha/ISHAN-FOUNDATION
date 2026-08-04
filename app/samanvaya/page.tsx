@@ -34,7 +34,7 @@ export default function SamanvayaPage() {
         <div className="absolute inset-0 bg-gradient-to-r from-[rgba(10,4,2,0.80)] via-[rgba(10,4,2,0.45)] to-transparent" />
         
         <div className="relative z-10 flex flex-col justify-end pt-32 pb-16 pl-12 md:pb-20 md:pl-16" style={{ minHeight: '100vh' }}>
-          <span className="inline-flex w-fit border border-[rgba(201,168,76,0.5)] rounded-full px-4 py-1.5 mb-3 text-[#F5D98A] text-xs uppercase tracking-wider">
+          <span className="inline-flex w-fit border border-primary rounded-full px-4 py-1.5 mb-3 text-primary text-xs uppercase tracking-wider">
             From Pancha Tattva to Sampurna Sattva
           </span>
           
@@ -42,7 +42,7 @@ export default function SamanvayaPage() {
             <span className="text-white block font-display font-normal leading-tight text-3xl md:text-4xl lg:text-5xl max-w-3xl">
               Samanvaya
             </span>
-            <span className="text-[#C9A84C] block font-display font-normal leading-tight text-3xl md:text-4xl lg:text-5xl">
+            <span className="text-primary block font-display font-normal leading-tight text-3xl md:text-4xl lg:text-5xl">
               Transformational Retreat
             </span>
           </h1>
@@ -64,7 +64,7 @@ export default function SamanvayaPage() {
           </p>
 
           <div className="mt-8">
-            <Button href="/samanvaya/packages" variant="primary" className="bg-mandarin text-peach hover:bg-burntOrange">
+            <Button href="/samanvaya/packages" variant="primary" className="bg-cta text-white hover:bg-cta/90">
               See the Packages
             </Button>
           </div>
@@ -77,15 +77,15 @@ export default function SamanvayaPage() {
       <IncludedPillars />
       
       {/* Vision Quote Section */}
-      <section className="py-32 px-6 md:px-12 bg-deepAmber/[0.02] border-y border-mandarin/10 relative overflow-hidden flex items-center justify-center">
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 font-display text-[25rem] text-mandarin opacity-[0.03] pointer-events-none select-none leading-none">
+      <section className="py-32 px-6 md:px-12 bg-surface border-y border-divider relative overflow-hidden flex items-center justify-center">
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 font-display text-[25rem] text-primary opacity-[0.03] pointer-events-none select-none leading-none">
           &ldquo;
         </div>
         <RevealOnScroll className="relative z-10 max-w-4xl mx-auto text-center">
-          <blockquote className="font-display italic text-3xl md:text-4xl lg:text-5xl text-deepAmber leading-snug md:leading-snug mb-10">
+          <blockquote className="font-display italic text-3xl md:text-4xl lg:text-5xl text-heading leading-snug md:leading-snug mb-10">
             "Samanvaya is not simply a retreat. It is a journey towards harmony within oneself, with others, and with nature. A journey from Pancha Tattva to Sampurna Sattva."
           </blockquote>
-          <div className="text-[0.65rem] md:text-xs uppercase tracking-widest text-mandarin">
+          <div className="text-[0.65rem] md:text-xs uppercase tracking-widest text-primary">
             Samanvaya — The Core Realization
           </div>
         </RevealOnScroll>
@@ -100,10 +100,10 @@ export default function SamanvayaPage() {
           align="center"
         />
         <RevealOnScroll delay={0.2} className="mt-12 flex flex-col sm:flex-row gap-4 sm:gap-6 w-full sm:w-auto">
-          <Button href="/contact" variant="primary" className="bg-mandarin text-peach hover:bg-burntOrange">
+          <Button href="/contact" variant="primary" className="bg-cta text-white hover:bg-cta/90">
             Register Interest
           </Button>
-          <Button href="/" variant="ghost" className="border-mandarin text-mandarin hover:border-burntOrange hover:text-burntOrange">
+          <Button href="/" variant="ghost" className="border-primary text-primary hover:bg-primary hover:text-white">
             Back to Home
           </Button>
         </RevealOnScroll>

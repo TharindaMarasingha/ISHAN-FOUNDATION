@@ -135,7 +135,7 @@ export function Approach() {
                 <div key={step.number} className="relative min-h-[200px] flex flex-col md:flex-row items-center justify-between w-full">
                   
                   {/* Timeline Dot (Desktop Only) */}
-                  <div className="hidden md:block absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-[8px] h-[8px] rounded-full bg-[#C9A84C] z-10" />
+                  <div className="hidden md:block absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-[8px] h-[8px] rounded-full bg-secondary z-10" />
 
                   {/* CONTENT HALF */}
                   <motion.div 
@@ -145,19 +145,19 @@ export function Approach() {
                     viewport={{ once: true, amount: 0.1 }}
                     transition={{ duration: 0.9, ease: "easeOut", delay: isMobile ? 0 : index * 0.1 }}
                   >
-                    <div className="w-full md:max-w-[380px] bg-[rgba(255,255,255,0.82)] border border-[rgba(201,168,76,0.25)] rounded-[16px] pt-[28px] px-[28px] pb-[24px] shadow-[0_2px_12px_rgba(42,20,8,0.07),0_6px_24px_rgba(42,20,8,0.05)] overflow-hidden relative group hover:-translate-y-1 hover:shadow-[0_4px_20px_rgba(42,20,8,0.1),0_10px_32px_rgba(42,20,8,0.08)] transition-all duration-300 ease-out">
+                    <div className="w-full md:max-w-[380px] bg-[rgba(255,255,255,0.82)] border border-primary rounded-[16px] pt-[28px] px-[28px] pb-[24px] shadow-[0_2px_12px_rgba(42,20,8,0.07),0_6px_24px_rgba(42,20,8,0.05)] overflow-hidden relative group hover:-translate-y-1 hover:shadow-[0_4px_20px_rgba(42,20,8,0.1),0_10px_32px_rgba(42,20,8,0.08)] transition-all duration-300 ease-out">
                       
-                      <h4 className="font-sans font-[600] text-[10px] uppercase tracking-[0.18em] text-[#9C3F00] mb-[10px]">
+                      <h4 className="font-sans font-[600] text-[10px] uppercase tracking-[0.18em] text-primary mb-[10px]">
                         STEP {step.number}
                       </h4>
                       
-                      <div className="w-[32px] h-[1.5px] bg-[#C9A84C] mb-[10px]" />
+                      <div className="w-[32px] h-[1.5px] bg-secondary mb-[10px]" />
                       
-                      <h3 className="font-forum text-[28px] font-[400] text-[#2E1A0E] leading-[1.1] mb-[12px]">
+                      <h3 className="font-forum text-[28px] font-[400] text-heading leading-[1.1] mb-[12px]">
                         {step.title}
                       </h3>
                       
-                      <p className="font-sans font-[300] text-[13px] text-[#5a4a3a] leading-[1.7]">
+                      <p className="font-sans font-[300] text-[13px] text-heading/80 leading-[1.7]">
                         {step.desc}
                       </p>
                     </div>

@@ -19,7 +19,7 @@ export function AreasOfResearchSection() {
       <RevealOnScroll delay={0.2}>
         <div className="mt-12 flex flex-wrap justify-center gap-3 md:gap-4">
           {areas.map((area, i) => (
-             <div key={i} className="px-5 py-3 rounded-full bg-[rgba(201,168,76,0.1)] border border-[rgba(201,168,76,0.3)] text-deepAmber font-sans text-sm uppercase tracking-widest hover:bg-[rgba(201,168,76,0.2)] transition-colors cursor-default">
+             <div key={i} className="px-5 py-3 rounded-full bg-softAccent border border-primary text-heading font-sans text-sm uppercase tracking-widest hover:bg-softAccent transition-colors cursor-default">
                {area}
              </div>
           ))}
@@ -31,11 +31,11 @@ export function AreasOfResearchSection() {
 
 export function EducationApproachSection() {
   return (
-    <section className="py-24 px-6 bg-deepAmber/[0.02] border-y border-burntOrange/10">
+    <section className="py-24 px-6 bg-surface border-y border-divider">
       <div className="max-w-4xl mx-auto text-center">
         <SectionHeading heading="Our Education Approach" align="center" />
         <RevealOnScroll delay={0.2}>
-          <p className="mt-12 font-sans font-light text-xl text-deepAmber leading-relaxed px-4 md:px-8">
+          <p className="mt-12 font-sans font-light text-xl text-heading leading-relaxed px-4 md:px-8">
             Practical, holistic, and purpose-driven. Our educational initiatives span workshops, seminars, training programmes, leadership development, wellness education, and experiential learning — designed to inspire lasting transformation.
           </p>
         </RevealOnScroll>
@@ -57,9 +57,9 @@ export function PublicationsSection() {
       <RevealOnScroll delay={0.2}>
         <div className="mt-16 grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl mx-auto text-left">
           {publications.map((pub, i) => (
-            <div key={i} className="flex items-center p-6 bg-white border border-burntOrange/10 rounded-2xl shadow-sm hover:shadow-md transition-shadow">
-              <span className="text-sacredGold mr-4 text-xl">✦</span>
-              <span className="font-sans font-medium text-lg text-deepAmber tracking-wide">{pub}</span>
+            <div key={i} className="flex items-center p-6 bg-white border border-divider rounded-2xl shadow-sm hover:shadow-md transition-shadow">
+              <span className="text-secondary mr-4 text-xl">✦</span>
+              <span className="font-sans font-medium text-lg text-heading tracking-wide">{pub}</span>
             </div>
           ))}
         </div>
@@ -75,13 +75,13 @@ export function DigitalLearningSection() {
   ];
 
   return (
-    <section className="py-24 px-6 bg-deepAmber/[0.02] border-y border-burntOrange/10 text-center">
+    <section className="py-24 px-6 bg-surface border-y border-divider text-center">
       <div className="max-w-5xl mx-auto">
         <SectionHeading heading="Digital Learning" align="center" />
         <RevealOnScroll delay={0.2}>
           <div className="mt-12 flex flex-wrap justify-center gap-3">
             {items.map((item, i) => (
-               <div key={i} className="px-5 py-2.5 rounded-full bg-white border border-burntOrange/20 text-deepAmber font-sans text-xs uppercase tracking-widest hover:border-burntOrange/40 transition-colors cursor-default shadow-sm">
+               <div key={i} className="px-5 py-2.5 rounded-full bg-white border border-divider text-heading font-sans text-xs uppercase tracking-widest hover:border-primary/40 transition-colors cursor-default shadow-sm">
                  {item}
                </div>
             ))}
@@ -104,7 +104,7 @@ export function KnowledgeResourcesSection() {
       <RevealOnScroll delay={0.2}>
         <div className="mt-12 flex flex-wrap justify-center gap-3">
           {resources.map((res, i) => (
-             <div key={i} className="px-5 py-2.5 rounded-full bg-[rgba(201,168,76,0.1)] border border-[rgba(201,168,76,0.3)] text-deepAmber font-sans text-xs uppercase tracking-widest hover:bg-[rgba(201,168,76,0.2)] transition-colors cursor-default">
+             <div key={i} className="px-5 py-2.5 rounded-full bg-softAccent border border-primary text-heading font-sans text-xs uppercase tracking-widest hover:bg-softAccent transition-colors cursor-default">
                {res}
              </div>
           ))}

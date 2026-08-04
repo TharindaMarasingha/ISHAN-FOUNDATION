@@ -84,6 +84,15 @@ export function PackagesHero() {
       {/* Hero Content */}
       <div className="relative z-20 text-center px-6 md:px-12 max-w-4xl mx-auto flex flex-col items-center justify-center h-full pt-16">
         
+        {/* Eyebrow */}
+        <div className="flex items-center justify-center gap-4 mb-6 w-full">
+          <div className="w-8 md:w-12 h-px bg-secondary opacity-60"></div>
+          <span className="font-sans text-xs md:text-sm text-secondary tracking-[0.2em] uppercase">
+            SRI LANKA 2026 — 14 DAY MOVING RETREAT
+          </span>
+          <div className="w-8 md:w-12 h-px bg-secondary opacity-60"></div>
+        </div>
+
         {/* Main Heading */}
         <h1 className="font-display font-light text-white text-5xl md:text-6xl lg:text-7xl mb-6 tracking-wide drop-shadow-sm flex flex-col items-center leading-tight">
           <span>SAMANVAYA:</span>
@@ -98,7 +107,7 @@ export function PackagesHero() {
               <span className="animate-[pulse_0.7s_infinite]">|</span>
             )}
           </p>
-          <p className={`font-sans text-sm md:text-base text-[#C6A87C] tracking-widest uppercase drop-shadow-md transition-opacity duration-1000 ${phase >= 2 || prefersReducedMotion ? 'opacity-100' : 'opacity-0'}`}>
+          <p className={`font-sans text-sm md:text-base text-softAccent tracking-widest uppercase drop-shadow-md transition-opacity duration-1000 ${phase >= 2 || prefersReducedMotion ? 'opacity-100' : 'opacity-0'}`}>
             — Shreeji Sevakanand 'Buddhu'
           </p>
         </div>

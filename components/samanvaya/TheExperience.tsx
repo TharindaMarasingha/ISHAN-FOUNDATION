@@ -17,7 +17,7 @@ export function TheExperience() {
 
   return (
     <section 
-      className="py-24 px-6 md:px-12 border-y border-mandarin/10"
+      className="py-24 px-6 md:px-12 border-y border-divider"
       style={{
         background: 'linear-gradient(135deg, rgba(255, 200, 150, 0.12) 0%, rgba(255, 255, 255, 0.6) 50%, rgba(255, 220, 180, 0.1) 100%)'
       }}
@@ -37,13 +37,13 @@ export function TheExperience() {
             <React.Fragment key={step.number}>
               <RevealOnScroll delay={index * 0.15} className="flex-1 w-full max-w-[200px] text-center">
                 <div className="flex flex-col items-center group">
-                  <div className="w-16 h-16 rounded-full border border-mandarin/20 flex items-center justify-center mb-6 group-hover:border-mandarin transition-colors duration-500 bg-peach relative">
-                    <span className="font-display italic text-2xl text-deepAmber">{step.number}</span>
+                  <div className="w-16 h-16 rounded-full border border-divider flex items-center justify-center mb-6 group-hover:border-primary transition-colors duration-500 bg-peach relative">
+                    <span className="font-display italic text-2xl text-heading">{step.number}</span>
                   </div>
-                  <h4 className="font-display uppercase tracking-widest text-deepAmber text-lg mb-2">
+                  <h4 className="font-display uppercase tracking-widest text-heading text-lg mb-2">
                     {step.title}
                   </h4>
-                  <p className="font-sans font-light text-sm text-deepAmber/70">
+                  <p className="font-sans font-light text-sm text-heading/80">
                     {step.desc}
                   </p>
                 </div>
@@ -52,11 +52,11 @@ export function TheExperience() {
               {/* Connector */}
               {index < STEPS.length - 1 && (
                 <div className="hidden md:block flex-1 max-w-[50px] relative h-px">
-                  <div className="absolute inset-0 bg-mandarin/10" />
+                  <div className="absolute inset-0 bg-softAccent" />
                   <motion.div
                     animate={{ scaleX: prefersReducedMotion ? 1 : [0, 1], opacity: prefersReducedMotion ? 1 : [0, 1, 0] }}
                     transition={{ duration: 2, repeat: Infinity, ease: "easeInOut", delay: index * 0.4 }}
-                    className="absolute inset-0 bg-mandarin origin-left"
+                    className="absolute inset-0 bg-primary origin-left"
                   />
                 </div>
               )}

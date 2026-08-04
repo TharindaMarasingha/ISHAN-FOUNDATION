@@ -68,15 +68,15 @@ export function OurStorySection() {
           {/* LEFT COLUMN (55%) */}
           <div className="w-full md:w-[55%] flex flex-col gap-12 relative">
             {/* Pull-quote style for first paragraph */}
-            <div className="border-l-[4px] border-[#C9984A] pl-8 max-w-[480px] relative z-10">
+            <div className="border-l-[4px] border-primary pl-8 max-w-[480px] relative z-10">
               <TypewriterText 
                 text="Every generation inherits challenges. Some challenge our bodies. Some challenge our minds. Some challenge our relationships. Some challenge our economies. Some challenge our values."
-                className="font-display italic text-[26px] text-[#3C2114] leading-[1.7]"
+                className="font-display italic text-[26px] text-heading leading-[1.7]"
               />
             </div>
 
             {/* Second + third paragraphs */}
-            <div className="flex flex-col gap-6 font-sans font-light text-[15px] text-[#66594F] leading-[1.8] max-w-xl">
+            <div className="flex flex-col gap-6 font-sans font-light text-[15px] text-heading/80 leading-[1.8] max-w-xl">
               <p>
                 And today, perhaps more than ever, humanity faces the challenge of living in harmony with itself and with nature.
               </p>
@@ -90,7 +90,7 @@ export function OurStorySection() {
           <div className="w-full md:w-[45%] flex justify-center md:justify-start order-first md:order-last mb-12 md:mb-0">
             <div className="relative group cursor-pointer hover:-translate-y-1 hover:translate-x-1 transition-all duration-700">
               {/* Frame outline */}
-              <div className="absolute -inset-3 border border-transparent transition-all duration-700 md:-inset-4 group-hover:border-[#C9984A]/30 group-hover:scale-[1.01]" />
+              <div className="absolute -inset-3 border border-transparent transition-all duration-700 md:-inset-4 group-hover:border-divider group-hover:scale-[1.01]" />
 
               {/* Image container */}
               <div className="relative w-[320px] h-[240px] overflow-hidden md:w-[560px] md:h-[420px] shrink-0 shadow-none group-hover:shadow-[0_24px_64px_rgba(60,33,20,0.15)] transition-all duration-700">
@@ -136,8 +136,8 @@ export function VisionMissionSection() {
                   Our Vision
                 </div>
                 <div className="w-[40px] h-[2px] bg-[#D89E4D] mb-8"></div>
-                <h3 className="font-display text-[42px] text-[#3C2114] mb-6">Vision</h3>
-                <p className="font-display italic text-[17px] text-[#66594F] leading-[1.8] max-w-lg">
+                <h3 className="font-display text-[42px] text-heading mb-6">Vision</h3>
+                <p className="font-display italic text-[17px] text-heading/80 leading-[1.8] max-w-lg">
                   To cultivate a world where humanity and nature exist in conscious harmony through wisdom, wellness, compassion, responsibility, and sustainable living.
                 </p>
               </div>
@@ -167,8 +167,8 @@ export function VisionMissionSection() {
                   Our Mission
                 </div>
                 <div className="w-[40px] h-[2px] bg-[#A46A2B] mb-8"></div>
-                <h3 className="font-display text-[42px] text-[#3C2114] mb-6">Mission</h3>
-                <p className="font-display italic text-[17px] text-[#66594F] leading-[1.8] max-w-lg">
+                <h3 className="font-display text-[42px] text-heading mb-6">Mission</h3>
+                <p className="font-display italic text-[17px] text-heading/80 leading-[1.8] max-w-lg">
                   To inspire, educate, and empower individuals, institutions, organizations, and communities through integrated initiatives that promote holistic wellbeing, ethical leadership, environmental stewardship, conscious living, and sustainable development.
                 </p>
               </div>
@@ -224,7 +224,7 @@ export function OurPurposeSection() {
           <RevealOnScroll key={i} delay={i * 0.05}>
             <div className="flex items-start gap-4">
               <span className="text-[#C9984A] text-lg leading-none mt-1">✦</span>
-              <p className="font-sans font-light text-[17px] text-[#66594F] leading-[1.8]">
+              <p className="font-sans font-light text-[17px] text-heading/80 leading-[1.8]">
                 {p}
               </p>
             </div>
@@ -286,7 +286,7 @@ export function OurPhilosophySection() {
                   <div className="w-full md:w-[85%] transition-transform duration-300 ease-in-out group-hover:translate-x-[8px]">
                     {isFirst ? (
                       <div className="font-display italic">
-                        <p className="font-sans font-normal text-[18px] text-[#3C2114] leading-[1.85] font-display italic">
+                        <p className="font-sans font-normal text-[18px] text-heading leading-[1.85] font-display italic">
                           "{text}"
                         </p>
                       </div>
@@ -295,7 +295,7 @@ export function OurPhilosophySection() {
                         {text}
                       </p>
                     ) : (
-                      <p className="font-sans font-light text-[16px] text-[#66594F] leading-[1.85]">
+                      <p className="font-sans font-light text-[16px] text-heading/80 leading-[1.85]">
                         {text}
                       </p>
                     )}
@@ -353,10 +353,10 @@ export function CoreBeliefsSection() {
                 }}
               >
                 <div className="flex flex-row items-start gap-4">
-                  <div className="flex-shrink-0 flex items-center justify-center w-[36px] h-[36px] rounded-full border border-sacredGold/30 bg-sacredGold/10">
-                    <span className="font-display text-[14px] text-sacredGold pt-0.5">{b.number}</span>
+                  <div className="flex-shrink-0 flex items-center justify-center w-[36px] h-[36px] rounded-full border border-secondary/30 bg-softAccent">
+                    <span className="font-display text-[14px] text-secondary pt-0.5">{b.number}</span>
                   </div>
-                  <span className="font-sans font-normal text-[14px] text-deepAmber leading-[1.6] pt-1.5">{b.title}</span>
+                  <span className="font-sans font-normal text-[14px] text-heading leading-[1.6] pt-1.5">{b.title}</span>
                 </div>
               </div>
             </RevealOnScroll>
@@ -678,11 +678,11 @@ export function CoreValuesSection() {
         {/* MOBILE LIST (Hidden on Desktop/Tablet) */}
         <div className="mt-2 mb-12 flex flex-col gap-4 w-full px-6 md:hidden">
           {values.map(({ label, Icon, color }, i) => (
-            <div key={i} className="flex items-center gap-4 bg-white/80 backdrop-blur-sm border border-black/5 p-4 rounded-xl shadow-sm">
+            <div key={i} className="flex items-center gap-4 bg-white/80 backdrop-blur-sm border border-divider p-4 rounded-xl shadow-sm">
               <div className="flex items-center justify-center w-10 h-10">
                  <Icon size={20} color={color.startsWith('rgba') ? '#A0720A' : color} strokeWidth={1.5} />
               </div>
-              <span className="font-sans font-medium text-[#3C2114] uppercase tracking-widest text-sm">
+              <span className="font-sans font-medium text-heading uppercase tracking-widest text-sm">
                  {label}
               </span>
             </div>
@@ -721,14 +721,14 @@ export function IshanWaySection() {
   ];
 
   return (
-    <section className="py-24 px-6 max-w-7xl mx-auto bg-deepAmber/[0.02] border-y border-burntOrange/10 mb-24">
+    <section className="py-24 px-6 max-w-7xl mx-auto bg-surface border-y border-divider mb-24">
       <SectionHeading heading="The ISHAN Way" align="center" />
       <div className="mt-16 flex flex-col gap-6 max-w-4xl mx-auto">
         {steps.map((s, i) => (
            <RevealOnScroll key={i} delay={i * 0.1}>
-             <div className="flex flex-col md:flex-row gap-6 items-start md:items-center p-8 bg-white border border-burntOrange/20 rounded-2xl shadow-sm">
-               <div className="font-display text-2xl text-burntOrange min-w-[140px] uppercase tracking-widest">{s.title}</div>
-               <div className="text-deepAmber font-sans font-light text-lg">{s.desc}</div>
+             <div className="flex flex-col md:flex-row gap-6 items-start md:items-center p-8 bg-white border border-divider rounded-2xl shadow-sm">
+               <div className="font-display text-2xl text-primary min-w-[140px] uppercase tracking-widest">{s.title}</div>
+               <div className="text-heading font-sans font-light text-lg">{s.desc}</div>
              </div>
            </RevealOnScroll>
         ))}
@@ -768,10 +768,10 @@ export function OurCommitmentSection() {
                  return (
                    <li 
                      key={i} 
-                     className="flex items-start py-[18px] border-b border-burntOrange/15 last:border-b-0"
+                     className="flex items-start py-[18px] border-b border-primary/15 last:border-b-0"
                    >
-                     <span className="font-sans text-[14px] text-sacredGold mr-5 mt-[2px] flex-shrink-0">✦</span> 
-                     <span className={`font-sans font-light text-[16px] leading-[1.6] ${isLast ? 'italic text-burntOrange font-normal' : 'text-darkBrown'}`}>
+                     <span className="font-sans text-[14px] text-secondary mr-5 mt-[2px] flex-shrink-0">✦</span> 
+                     <span className={`font-sans font-light text-[16px] leading-[1.6] ${isLast ? 'italic text-primary font-normal' : 'text-darkBrown'}`}>
                        {c}
                      </span>
                    </li>
@@ -807,7 +807,7 @@ export function OurCommitmentSection() {
             {/* Gold Divider Line */}
             <div className="w-full h-px bg-gradient-to-r from-transparent via-sacredGold/40 to-transparent my-12" />
             
-            <p className="relative z-10 font-display italic text-[24px] md:text-[28px] text-deepAmber leading-[1.6]">
+            <p className="relative z-10 font-display italic text-[24px] md:text-[28px] text-heading leading-[1.6]">
               "Because when humanity and nature flourish together, everyone benefits."
             </p>
             <div className="relative z-10 mt-8 font-sans text-[12px] text-darkBrown/60 uppercase tracking-[0.2em]">

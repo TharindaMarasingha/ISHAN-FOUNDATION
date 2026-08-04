@@ -39,7 +39,7 @@ export function HeroTitle({ text = "ISHAN", className = "" }: HeroTitleProps) {
       variants={container}
       initial="hidden"
       animate="visible"
-      className={`font-display text-8xl md:text-9xl text-deepAmber tracking-widest uppercase flex overflow-hidden ${className}`}
+      className={`font-display text-8xl md:text-9xl text-heading tracking-widest uppercase flex overflow-hidden ${className}`}
     >
       {letters.map((letter, i) => (
         <motion.span key={i} variants={child} className="inline-block">

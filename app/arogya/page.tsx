@@ -42,7 +42,7 @@ export default function ArogyaPage() {
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_bottom_left,rgba(20,12,6,0.85)_0%,rgba(20,12,6,0.45)_45%,transparent_80%)]" />
         
         <div className="relative z-10 flex flex-col justify-end pb-16 pl-12 md:pb-20 md:pl-16" style={{ minHeight: '100vh' }}>
-          <span className="inline-flex w-fit border border-[rgba(201,168,76,0.5)] rounded-full px-4 py-1.5 mb-4 text-[#F5D98A] text-xs uppercase tracking-wider">
+          <span className="inline-flex w-fit border border-primary rounded-full px-4 py-1.5 mb-4 text-primary text-xs uppercase tracking-wider">
             PREVENTIVE WELLNESS · PROACTIVE WELLBEING
           </span>
           
@@ -50,7 +50,7 @@ export default function ArogyaPage() {
             <span className="text-white block font-display font-normal leading-tight text-4xl md:text-5xl lg:text-6xl max-w-3xl">
               Arogya Ashram
             </span>
-            <span className="text-[#C9A84C] block font-display font-normal leading-tight text-4xl md:text-5xl lg:text-6xl">
+            <span className="text-primary block font-display font-normal leading-tight text-4xl md:text-5xl lg:text-6xl">
               International
             </span>
           </h1>
@@ -74,15 +74,15 @@ export default function ArogyaPage() {
       <EightPillars />
       
       {/* Vision Quote Section (reusing the pattern directly here for simplicity and isolation) */}
-      <section className="py-32 px-6 md:px-12 bg-deepAmber/[0.02] border-y border-sacredGold/10 relative overflow-hidden flex items-center justify-center">
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 font-display text-[25rem] text-mandarin opacity-[0.03] pointer-events-none select-none leading-none">
+      <section className="py-32 px-6 md:px-12 bg-surface border-y border-divider relative overflow-hidden flex items-center justify-center">
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 font-display text-[25rem] text-primary opacity-[0.03] pointer-events-none select-none leading-none">
           &ldquo;
         </div>
         <RevealOnScroll className="relative z-10 max-w-4xl mx-auto text-center">
-          <blockquote className="font-display italic text-3xl md:text-4xl lg:text-5xl text-deepAmber leading-snug md:leading-snug mb-10">
+          <blockquote className="font-display italic text-3xl md:text-4xl lg:text-5xl text-heading leading-snug md:leading-snug mb-10">
             "To establish a global humanitarian ecosystem for holistic healing, preventive healthcare, wellness education, sustainable living, integrated healthcare, and conscious human development."
           </blockquote>
-          <div className="text-[0.65rem] md:text-xs uppercase tracking-widest text-burntOrange">
+          <div className="text-[0.65rem] md:text-xs uppercase tracking-widest text-primary">
             Arogya Ashram International — Vision
           </div>
         </RevealOnScroll>

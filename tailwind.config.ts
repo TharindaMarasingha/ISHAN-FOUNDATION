@@ -9,15 +9,14 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        peach: "var(--color-peach)",
-        deepAmber: "var(--color-deepAmber)",
-        mandarin: "var(--color-mandarin)",
-        sacredGold: "var(--color-sacredGold)",
-        warmGilt: "var(--color-warmGilt)",
-        softApricot: "var(--color-softApricot)",
-        darkBrown: "var(--color-darkBrown)",
-        burntOrange: "var(--color-burntOrange)",
-        bark: "var(--color-bark)",
+        background: "var(--color-background)",
+        surface: "var(--color-surface)",
+        divider: "var(--color-divider)",
+        secondary: "var(--color-secondary)",
+        primary: "var(--color-primary)",
+        heading: "var(--color-heading)",
+        softAccent: "var(--color-soft-accent)",
+        cta: "var(--color-cta)",
       },
       fontFamily: {
         display: ["var(--font-forum)", "serif"],

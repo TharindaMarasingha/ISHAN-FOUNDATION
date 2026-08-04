@@ -64,12 +64,12 @@ export function ThreeErasSection() {
         {eras.map((era, index) => (
           <RevealOnScroll key={era.title} delay={index * 0.15}>
             <Card className="h-full flex flex-col p-8 border-t-4 border-t-burntOrange">
-              <h3 className="font-display text-xl text-deepAmber mb-2">{era.title}</h3>
-              <h4 className="font-sans font-medium text-sm text-burntOrange uppercase tracking-widest mb-6 pb-4 border-b border-burntOrange/20">{era.subtitle}</h4>
+              <h3 className="font-display text-xl text-heading mb-2">{era.title}</h3>
+              <h4 className="font-sans font-medium text-sm text-primary uppercase tracking-widest mb-6 pb-4 border-b border-divider">{era.subtitle}</h4>
               <ul className="space-y-3 flex-grow">
                 {era.points.map((point, i) => (
-                  <li key={i} className="flex items-start text-sm font-sans font-light text-deepAmber">
-                    <span className="text-sacredGold mr-3 mt-0.5">✦</span> <span>{point}</span>
+                  <li key={i} className="flex items-start text-sm font-sans font-light text-heading">
+                    <span className="text-secondary mr-3 mt-0.5">✦</span> <span>{point}</span>
                   </li>
                 ))}
               </ul>
@@ -94,7 +94,7 @@ export function StrategicPrioritiesSection() {
   ];
 
   return (
-    <section className="py-24 px-6 bg-deepAmber/[0.02] border-y border-burntOrange/10">
+    <section className="py-24 px-6 bg-surface border-y border-divider">
       <div className="max-w-7xl mx-auto">
         <SectionHeading heading="Strategic Priorities" align="center" />
         <div className="mt-16 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
@@ -115,7 +115,7 @@ export function VisionCTASection() {
       <div className="absolute inset-0 z-0 bg-cover bg-center opacity-10" style={{ backgroundImage: "url('/images/who-we-serve-bg.webp')" }} />
       <div className="max-w-4xl mx-auto relative z-10 flex flex-col items-center">
         <RevealOnScroll>
-          <p className="font-display italic text-3xl md:text-5xl text-sacredGold leading-relaxed mb-16">
+          <p className="font-display italic text-3xl md:text-5xl text-secondary leading-relaxed mb-16">
             &quot;One Humanity · One Nature · One Conscious Future&quot;
           </p>
         </RevealOnScroll>

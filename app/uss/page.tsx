@@ -26,15 +26,15 @@ export default function USSPage() {
       <Programs />
       
       {/* Vision Quote Section */}
-      <section className="py-32 px-6 md:px-12 bg-[#1B4332]/[0.02] border-y border-[#1B4332]/10 relative overflow-hidden flex items-center justify-center">
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 font-display text-[25rem] text-[#1B4332] opacity-[0.03] pointer-events-none select-none leading-none">
+      <section className="py-32 px-6 md:px-12 bg-surface border-y border-divider relative overflow-hidden flex items-center justify-center">
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 font-display text-[25rem] text-primary opacity-[0.03] pointer-events-none select-none leading-none">
           &ldquo;
         </div>
         <RevealOnScroll className="relative z-10 max-w-4xl mx-auto text-center">
-          <blockquote className="font-display italic text-3xl md:text-4xl lg:text-5xl text-deepAmber leading-snug md:leading-snug mb-10">
+          <blockquote className="font-display italic text-3xl md:text-4xl lg:text-5xl text-heading leading-snug md:leading-snug mb-10">
             "We do not seek to invent new spiritual truths, but to build the scientific and ethical architecture necessary for humanity to consciously embody them."
           </blockquote>
-          <div className="text-[0.65rem] md:text-xs uppercase tracking-widest text-[#1B4332]">
+          <div className="text-[0.65rem] md:text-xs uppercase tracking-widest text-primary">
             Universal Spiritual Science — Core Precept
           </div>
         </RevealOnScroll>
@@ -49,10 +49,10 @@ export default function USSPage() {
           align="center"
         />
         <RevealOnScroll delay={0.2} className="mt-12 flex flex-col sm:flex-row gap-4 sm:gap-6 w-full sm:w-auto">
-          <Button href="/contact" variant="primary" className="bg-[#1B4332] text-peach hover:bg-[#133224]">
+          <Button href="/contact" variant="primary" className="bg-cta text-white hover:bg-cta/90">
             Research With Us
           </Button>
-          <Button href="/" variant="ghost" className="border-[#1B4332] text-[#1B4332] hover:border-[#133224] hover:text-[#133224]">
+          <Button href="/" variant="ghost" className="border-primary text-primary hover:border-primary hover:text-heading">
             Back to Home
           </Button>
         </RevealOnScroll>

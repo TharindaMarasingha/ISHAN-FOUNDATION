@@ -35,10 +35,10 @@ export function OurStory() {
         {STORY_ITEMS.map((item, index) => (
           <RevealOnScroll key={item.title} delay={index * 0.15}>
             <Card className="h-full flex flex-col p-10">
-              <h3 className="font-display uppercase tracking-widest text-xl text-burntOrange mb-6 border-b border-burntOrange/20 pb-4 inline-block w-full">
+              <h3 className="font-display uppercase tracking-widest text-xl text-primary mb-6 border-b border-divider pb-4 inline-block w-full">
                 {item.title}
               </h3>
-              <p className="font-sans font-light text-deepAmber leading-relaxed text-base flex-grow">
+              <p className="font-sans font-light text-heading leading-relaxed text-base flex-grow">
                 {item.description}
               </p>
             </Card>

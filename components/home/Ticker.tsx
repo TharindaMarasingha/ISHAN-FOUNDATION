@@ -21,7 +21,7 @@ export function Ticker() {
   const tickerItems = [...VALUES, ...VALUES];
 
   return (
-    <div className="w-full bg-[#FFF7F0] border-y border-[#D9BFA6] py-4 overflow-hidden flex items-center group relative z-10">
+    <div className="w-full bg-surface border-y border-divider py-4 overflow-hidden flex items-center group relative z-10">
       <motion.div
         className="flex whitespace-nowrap items-center"
         animate={{ x: prefersReducedMotion ? 0 : ["0%", "-50%"] }}
@@ -34,10 +34,10 @@ export function Ticker() {
         <div className="flex items-center group-hover:[animation-play-state:paused]">
           {tickerItems.map((val, idx) => (
             <React.Fragment key={idx}>
-              <span className="font-display uppercase tracking-widest text-[#C77738] text-sm md:text-base px-6">
+              <span className="font-display uppercase tracking-widest text-primary text-sm md:text-base px-6">
                 {val}
               </span>
-              <span className="text-[#C77738] opacity-60 text-xs">✦</span>
+              <span className="text-primary opacity-60 text-xs">✦</span>
             </React.Fragment>
           ))}
         </div>

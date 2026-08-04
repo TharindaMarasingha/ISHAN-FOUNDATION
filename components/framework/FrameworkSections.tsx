@@ -19,7 +19,7 @@ export function GoldenCircleSection() {
       <div className="max-w-4xl mx-auto text-center mb-16">
         <SectionHeading heading="Purpose Before Process. Meaning Before Method." align="center" />
         <RevealOnScroll delay={0.2}>
-          <p className="mt-8 text-deepAmber font-sans font-light text-lg leading-relaxed">
+          <p className="mt-8 text-heading font-sans font-light text-lg leading-relaxed">
             Every enduring institution begins with purpose. The ISHAN Golden Circle aligns every initiative with a clear sense of purpose before defining methods or programmes.
           </p>
         </RevealOnScroll>
@@ -43,11 +43,11 @@ export function GoldenCircleSection() {
                 />
               </div>
               <div className="relative z-10 flex flex-col h-full p-8 sm:p-10">
-                <span className="font-display text-4xl text-burntOrange/30 mb-2">{item.title}</span>
-                <h3 className="font-display uppercase tracking-widest text-xl text-deepAmber mb-6 border-b border-burntOrange/20 pb-4 inline-block mx-auto">
+                <span className="font-display text-4xl text-primary mb-2">{item.title}</span>
+                <h3 className="font-display uppercase tracking-widest text-xl text-heading mb-6 border-b border-divider pb-4 inline-block mx-auto">
                   {item.subtitle}
                 </h3>
-                <p className="font-sans font-light text-deepAmber leading-relaxed text-base flex-grow">
+                <p className="font-sans font-light text-heading leading-relaxed text-base flex-grow">
                   {item.desc}
                 </p>
               </div>
@@ -68,7 +68,7 @@ export function IkigaiSection() {
   ];
 
   return (
-    <section className="relative py-24 px-6 bg-deepAmber/[0.02] border-y border-burntOrange/10 overflow-hidden">
+    <section className="relative py-24 px-6 bg-surface border-y border-divider overflow-hidden">
       {/* Decorative flower SVG at absolute left */}
       <img 
         src="/flower.svg" 
@@ -81,9 +81,9 @@ export function IkigaiSection() {
         <div className="mt-16 grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto">
           {qa.map((item, index) => (
             <RevealOnScroll key={index} delay={index * 0.1}>
-              <div className="flex flex-col p-8 bg-white rounded-2xl border border-burntOrange/10 shadow-sm h-full">
-                <h4 className="font-display text-2xl text-burntOrange mb-4">{item.q}</h4>
-                <p className="font-sans font-light text-lg text-deepAmber leading-relaxed">{item.a}</p>
+              <div className="flex flex-col p-8 bg-white rounded-2xl border border-divider shadow-sm h-full">
+                <h4 className="font-display text-2xl text-primary mb-4">{item.q}</h4>
+                <p className="font-sans font-light text-lg text-heading leading-relaxed">{item.a}</p>
               </div>
             </RevealOnScroll>
           ))}
@@ -132,8 +132,8 @@ export function PurusharthaSection() {
               {/* Text Column */}
               <div className="flex-1 w-full order-2 md:order-none">
                 <RevealOnScroll delay={0.1}>
-                  <h3 className="font-display uppercase tracking-widest text-xl text-sacredGold mb-6">{aim.title}</h3>
-                  <p className="font-sans font-light text-deepAmber leading-relaxed text-[17px] md:text-lg">
+                  <h3 className="font-display uppercase tracking-widest text-xl text-secondary mb-6">{aim.title}</h3>
+                  <p className="font-sans font-light text-heading leading-relaxed text-[17px] md:text-lg">
                     {aim.desc}
                   </p>
                 </RevealOnScroll>
@@ -188,7 +188,7 @@ export function InstitutionalPillarsSection() {
   ];
 
   return (
-    <section className="relative py-24 px-6 bg-deepAmber/[0.02] border-y border-burntOrange/10 overflow-hidden">
+    <section className="relative py-24 px-6 bg-surface border-y border-divider overflow-hidden">
       {/* Decorative fe.svg at absolute top-left */}
       <img 
         src="/fe.svg" 
@@ -202,10 +202,10 @@ export function InstitutionalPillarsSection() {
         <div className="mt-16 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
           {pillars.map((pillar, index) => (
             <RevealOnScroll key={pillar.number} delay={index * 0.1} className="h-full">
-              <div className="flex items-start flex-col p-8 bg-white border border-burntOrange/10 rounded-2xl h-full shadow-sm hover:shadow-md transition-shadow">
-                <span className="font-display text-4xl text-burntOrange/30 mb-4">{pillar.number}</span>
-                <h4 className="font-sans font-semibold text-lg text-deepAmber mb-2 uppercase tracking-wide">{pillar.title}</h4>
-                <p className="font-sans font-light text-sm text-deepAmber leading-relaxed">{pillar.description}</p>
+              <div className="flex items-start flex-col p-8 bg-white border border-divider rounded-2xl h-full shadow-sm hover:shadow-md transition-shadow">
+                <span className="font-display text-4xl text-primary mb-4">{pillar.number}</span>
+                <h4 className="font-sans font-semibold text-lg text-heading mb-2 uppercase tracking-wide">{pillar.title}</h4>
+                <p className="font-sans font-light text-sm text-heading leading-relaxed">{pillar.description}</p>
               </div>
             </RevealOnScroll>
           ))}
@@ -259,7 +259,7 @@ export function FiveDimensionsSection() {
       <div className="max-w-4xl mx-auto text-center mb-16">
         <SectionHeading heading="Understanding the Whole Human Being" align="center" />
         <RevealOnScroll delay={0.2}>
-          <p className="mt-8 text-deepAmber font-sans font-light text-lg leading-relaxed">
+          <p className="mt-8 text-heading font-sans font-light text-lg leading-relaxed">
             Every challenge faced by an individual, community, or institution can be understood through five interconnected dimensions.
           </p>
         </RevealOnScroll>
@@ -298,7 +298,7 @@ export function FiveDimensionsSection() {
       
       <RevealOnScroll delay={0.6}>
         <div className="mt-12 text-center">
-          <p className="font-display italic text-xl text-sacredGold">
+          <p className="font-display italic text-xl text-secondary">
             No dimension exists in isolation. True wellbeing emerges when all five dimensions are nurtured together.
           </p>
         </div>
@@ -319,20 +319,20 @@ export function HierarchyOfNeedsSection() {
   ];
 
   return (
-    <section className="py-24 px-6 bg-deepAmber/[0.02] border-y border-burntOrange/10">
+    <section className="py-24 px-6 bg-surface border-y border-divider">
       <div className="max-w-4xl mx-auto">
         <SectionHeading heading="From Survival to Conscious Contribution" align="center" />
         <div className="mt-16 flex flex-col gap-4">
           {levels.map((item, index) => (
             <RevealOnScroll key={item.level} delay={index * 0.1}>
-              <div className="flex flex-col md:flex-row items-start md:items-center p-6 bg-white border border-burntOrange/10 rounded-2xl shadow-sm hover:shadow-md transition-shadow gap-4 md:gap-8">
-                <div className="flex-shrink-0 text-burntOrange/40 font-display text-2xl w-24">
+              <div className="flex flex-col md:flex-row items-start md:items-center p-6 bg-white border border-divider rounded-2xl shadow-sm hover:shadow-md transition-shadow gap-4 md:gap-8">
+                <div className="flex-shrink-0 text-primary font-display text-2xl w-24">
                   {item.level}
                 </div>
-                <div className="flex-shrink-0 w-64 font-sans font-semibold text-deepAmber uppercase tracking-wide">
+                <div className="flex-shrink-0 w-64 font-sans font-semibold text-heading uppercase tracking-wide">
                   {item.title}
                 </div>
-                <div className="font-sans font-light text-deepAmber leading-relaxed">
+                <div className="font-sans font-light text-heading leading-relaxed">
                   {item.desc}
                 </div>
               </div>
@@ -371,13 +371,13 @@ export function FrameworkCTASection() {
           className="text-center mx-auto"
           style={{ textShadow: '0 2px 12px rgba(46,26,14,0.5), 0 1px 4px rgba(46,26,14,0.4)' }}
         >
-          <span className="font-display italic text-[#FFF1E6] tracking-[0.2em] text-sm uppercase mb-4 block">
+          <span className="font-display italic text-white tracking-[0.2em] text-sm uppercase mb-4 block">
             Take the Next Step
           </span>
-          <h2 className="font-display font-light text-[#F5D98A] text-4xl md:text-5xl lg:text-6xl mb-6">
+          <h2 className="font-display font-light text-primary text-4xl md:text-5xl lg:text-6xl mb-6">
             Experience the Framework
           </h2>
-          <p className="font-sans font-light text-[#FFF1E6] max-w-xl mx-auto leading-relaxed">
+          <p className="font-sans font-light text-white max-w-xl mx-auto leading-relaxed">
             See how our philosophy comes to life across our different initiatives and environments.
           </p>
         </div>
@@ -386,7 +386,7 @@ export function FrameworkCTASection() {
           <Button 
             href="/" 
             variant="ghost" 
-            className="!bg-[#4A2B18]/70 sm:!bg-[rgba(255,241,230,0.15)] !border-[#4A2B18] sm:!border-[rgba(245,217,138,0.7)] !border-[1.5px] !text-[#FFF1E6] hover:!bg-[#F5D98A] hover:!text-[#4A2B18] hover:!border-[#F5D98A] [text-shadow:0_1px_4px_rgba(0,0,0,0.5)] sm:[text-shadow:0_1px_4px_rgba(46,26,14,0.6)] hover:[text-shadow:none]"
+            className="!bg-heading/70 sm:!bg-softAccent/15 !border-heading sm:!border-primary/70 !border-[1.5px] !text-white hover:!bg-cta hover:!text-heading hover:!border-[#F5D98A] [text-shadow:0_1px_4px_rgba(0,0,0,0.5)] sm:[text-shadow:0_1px_4px_rgba(46,26,14,0.6)] hover:[text-shadow:none]"
           >
             Back to Home
           </Button>

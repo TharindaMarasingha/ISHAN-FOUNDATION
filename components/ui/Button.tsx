@@ -28,8 +28,8 @@ export function Button({
   
   const variantClasses =
     variant === "primary"
-      ? "bg-burntOrange text-peach hover:bg-mandarin disabled:opacity-50 disabled:hover:bg-burntOrange"
-      : "bg-transparent border border-burntOrange text-burntOrange hover:border-mandarin hover:text-mandarin disabled:opacity-50 disabled:hover:border-burntOrange disabled:hover:text-burntOrange";
+      ? "bg-cta text-white hover:bg-cta/90 disabled:opacity-50 disabled:hover:bg-cta"
+      : "bg-transparent border border-primary text-primary hover:bg-primary hover:text-white disabled:opacity-50 disabled:hover:border-primary disabled:hover:text-primary disabled:hover:bg-transparent";
 
   const combinedClasses = `${baseClasses} ${variantClasses} ${className} ${disabled ? 'cursor-not-allowed' : ''}`;
 

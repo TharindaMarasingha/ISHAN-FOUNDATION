@@ -36,7 +36,7 @@ function TypewriterQuote({ text }: { text: string }) {
       variants={container}
       initial="hidden"
       animate={isInView ? "visible" : "hidden"}
-      className="font-display italic text-2xl md:text-3xl text-deepAmber leading-relaxed tracking-wide"
+      className="font-display italic text-2xl md:text-3xl text-heading leading-relaxed tracking-wide"
     >
       {text.split("").map((char, index) => (
         <motion.span variants={child} key={index}>
@@ -63,15 +63,15 @@ export function Partnerships() {
           {/* Left Column */}
           <div className="flex flex-col space-y-8">
             <RevealOnScroll>
-              <h3 className="font-display font-light text-4xl md:text-5xl text-deepAmber mb-4">
+              <h3 className="font-display font-light text-4xl md:text-5xl text-heading mb-4">
                 Join the Movement
               </h3>
-              <p className="font-sans font-light text-deepAmber/80 leading-relaxed mb-6">
+              <p className="font-sans font-light text-heading/80 leading-relaxed mb-6">
                 Meaningful change begins with individuals who choose to live consciously and serve selflessly. Whether you are a student, professional, educator, healthcare practitioner, researcher, entrepreneur, policymaker, community leader, organization, or institution, there is a place for you within the ISHAN ecosystem.
               </p>
               <div className="flex flex-wrap gap-3 mb-10">
                 {PARTNER_TYPES.map((pt) => (
-                  <span key={pt} className="px-4 py-1.5 rounded-full bg-darkBrown/5 text-xs text-deepAmber tracking-widest uppercase">
+                  <span key={pt} className="px-4 py-1.5 rounded-full bg-darkBrown/5 text-xs text-heading tracking-widest uppercase">
                     {pt}
                   </span>
                 ))}
@@ -83,13 +83,13 @@ export function Partnerships() {
           {/* Right Column */}
           <div className="flex flex-col">
             <RevealOnScroll delay={0.2}>
-              <h3 className="font-display font-light text-2xl md:text-3xl text-deepAmber mb-8">
+              <h3 className="font-display font-light text-2xl md:text-3xl text-heading mb-8">
                 You Can Contribute Through
               </h3>
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-y-6 gap-x-8">
                 {CONTRIBUTIONS.map((item) => (
-                  <div key={item} className="flex items-center text-sm font-sans font-light text-deepAmber/80">
-                    <span className="text-sacredGold mr-3">✦</span>
+                  <div key={item} className="flex items-center text-sm font-sans font-light text-heading/80">
+                    <span className="text-secondary mr-3">✦</span>
                     {item}
                   </div>
                 ))}
@@ -100,7 +100,7 @@ export function Partnerships() {
         </div>
 
         {/* Quote Block */}
-        <div className="mt-20 pt-16 border-t border-sacredGold/20 text-center max-w-4xl mx-auto min-h-[160px]">
+        <div className="mt-20 pt-16 border-t border-divider text-center max-w-4xl mx-auto min-h-[160px]">
           <TypewriterQuote text={QUOTE_TEXT} />
         </div>
 

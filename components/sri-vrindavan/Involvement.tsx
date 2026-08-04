@@ -20,7 +20,7 @@ export function Involvement() {
       <div className="mt-16 flex flex-wrap justify-center gap-4">
         {PARTNERS.map((tag, index) => (
           <RevealOnScroll key={tag} delay={index * 0.05}>
-            <span className="inline-block px-6 py-3 border border-burntOrange/20 rounded-full font-sans font-light text-sm text-deepAmber hover:bg-burntOrange/5 hover:border-burntOrange/40 transition-colors duration-300 cursor-default">
+            <span className="inline-block px-6 py-3 border border-divider rounded-full font-sans font-light text-sm text-heading hover:bg-softAccent hover:border-primary/40 transition-colors duration-300 cursor-default">
               {tag}
             </span>
           </RevealOnScroll>

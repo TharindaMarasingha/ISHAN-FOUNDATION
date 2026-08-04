@@ -21,8 +21,8 @@ export function CountUp({
   duration = 1.6,
   delay = 0,
   className = "flex flex-col items-start",
-  valueClassName = "font-display text-3xl md:text-4xl text-deepAmber mb-2 block leading-none",
-  labelClassName = "font-sans text-[0.6rem] md:text-xs uppercase tracking-widest text-mandarin",
+  valueClassName = "font-display text-3xl md:text-4xl text-heading mb-2 block leading-none",
+  labelClassName = "font-sans text-[0.6rem] md:text-xs uppercase tracking-widest text-primary",
 }: CountUpProps) {
   const ref = useRef<HTMLDivElement>(null);
   const isInView = useInView(ref, { once: true, amount: 0.5 });

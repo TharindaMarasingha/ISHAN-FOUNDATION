@@ -19,13 +19,13 @@ const CARDS = [
 const renderCardContent = (card: { title: string; description: string }) => (
   <div className="relative mx-auto w-full max-w-lg">
     {/* The Beige Card */}
-    <div className="relative z-10 p-10 bg-gradient-to-br from-[#FFF8F1] to-[#F8E9D8] border-[2.5px] border-[#4B2D1A] rounded-[2.5rem] shadow-sm flex flex-col justify-center min-h-[35vh]">
+    <div className="relative z-10 p-10 bg-surface border-[2.5px] border-primary rounded-[2.5rem] shadow-sm flex flex-col justify-center min-h-[35vh]">
       
       <div className="relative z-20">
-        <h3 className="font-display uppercase tracking-widest text-[#5A2E14] text-xl mb-4 font-bold">
+        <h3 className="font-display uppercase tracking-widest text-heading text-xl mb-4 font-bold">
           {card.title}
         </h3>
-        <p className="font-sans font-light text-base text-[#8A7A70] leading-relaxed">
+        <p className="font-sans font-light text-base text-heading/80 leading-relaxed">
           {card.description}
         </p>
       </div>
@@ -114,12 +114,12 @@ export function WhoWeAre() {
   });
 
   return (
-    <section ref={containerRef} className="relative bg-[#FFF7F0] lg:h-[500vh] lg:-mb-[100vh] py-20 lg:py-0">
+    <section ref={containerRef} className="relative bg-surface lg:h-[500vh] lg:-mb-[100vh] py-20 lg:py-0">
       <div className="lg:sticky lg:top-0 lg:h-screen w-full flex flex-col justify-center overflow-hidden">
         
         {/* Cultural Golden Mandala on the far right edge of the screen */}
         <div className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-[20%] md:translate-x-[10%] pointer-events-none z-0">
-          <HalfMandala className="h-[90vh] md:h-[110vh] w-auto text-sacredGold opacity-40 drop-shadow-sm" />
+          <HalfMandala className="h-[90vh] md:h-[110vh] w-auto text-secondary opacity-40 drop-shadow-sm" />
         </div>
 
         {/* Content Container */}
@@ -129,35 +129,35 @@ export function WhoWeAre() {
           <div className="flex flex-col space-y-8">
             <RevealOnScroll className="flex flex-col items-start">
               <span
-                className="font-display italic tracking-[0.2em] text-sm uppercase mb-4 text-left text-[#C77738]"
+                className="font-display italic tracking-[0.2em] text-sm uppercase mb-4 text-left text-primary"
               >
                 Who We Are
               </span>
               <h2
-                className="font-display font-light text-4xl md:text-5xl lg:text-6xl mb-6 text-left text-[#3B1F12]"
+                className="font-display font-light text-4xl md:text-5xl lg:text-6xl mb-6 text-left text-heading"
               >
                 Welcome to ISHAN
               </h2>
             </RevealOnScroll>
             <RevealOnScroll delay={0.1}>
-              <p className="font-sans font-light text-[#6F625A] leading-relaxed text-lg">
+              <p className="font-sans font-light text-heading/80 leading-relaxed text-lg">
                 ISHAN (International Society of Holistic Awareness & Naturology) is a global institution committed to advancing humanity and nature through wisdom, wellness, education, ethical leadership, sustainability, and conscious community development.
               </p>
             </RevealOnScroll>
             <RevealOnScroll delay={0.15}>
-              <p className="font-sans font-light text-[#6F625A] leading-relaxed">
+              <p className="font-sans font-light text-heading/80 leading-relaxed">
                 We believe that the wellbeing of humanity and the wellbeing of nature are inseparable. Every individual, every community, and every ecosystem is interconnected, and lasting progress can only be achieved when this interconnectedness is understood, respected, and nurtured.
               </p>
             </RevealOnScroll>
             <RevealOnScroll delay={0.2}>
-              <p className="font-sans font-light text-[#6F625A] leading-relaxed">
+              <p className="font-sans font-light text-heading/80 leading-relaxed">
                 Rooted in timeless wisdom and enriched by modern knowledge, ISHAN develops transformative programmes, research, educational initiatives, partnerships, and sustainable systems that empower individuals and institutions to create meaningful impact for present and future generations.
               </p>
             </RevealOnScroll>
             <RevealOnScroll delay={0.3}>
               <Link
                 href="/about"
-                className="inline-block mt-4 text-sm font-display italic text-[#C77738] tracking-widest hover:text-[#A85B2A] transition-colors duration-300"
+                className="inline-block mt-4 text-sm font-display italic text-primary tracking-widest hover:text-primary/90 transition-colors duration-300"
               >
                 Read More →
               </Link>

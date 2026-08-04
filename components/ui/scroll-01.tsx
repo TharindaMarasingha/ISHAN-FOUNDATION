@@ -57,9 +57,9 @@ function ScrollItem({
       style={{ opacity, y }}
       className="flex flex-col items-center"
     >
-      <div className="text-center p-8 md:p-12 bg-[rgba(255,255,255,0.85)] border border-[#C9A84C]/20 backdrop-blur-md rounded-2xl shadow-xl">
-        <h3 className="mb-6 font-display text-4xl text-[#C9A84C] opacity-80">{item.title}</h3>
-        <p className="font-sans font-light text-[#4A2F1C] text-xl leading-relaxed">{item.description}</p>
+      <div className="text-center p-8 md:p-12 bg-[rgba(255,255,255,0.85)] border border-divider backdrop-blur-md rounded-2xl shadow-xl">
+        <h3 className="mb-6 font-display text-4xl text-primary opacity-80">{item.title}</h3>
+        <p className="font-sans font-light text-heading text-xl leading-relaxed">{item.description}</p>
       </div>
     </motion.article>
   );
@@ -75,11 +75,11 @@ export function Scroll01({ items }: Readonly<Scroll01Props>) {
         {items.map((item, index) => (
           <article
             key={`${item.title}-${index}`}
-            className="flex flex-col items-center space-y-6 text-center bg-[rgba(255,255,255,0.85)] border border-[#C9A84C]/20 rounded-2xl p-6 shadow-lg"
+            className="flex flex-col items-center space-y-6 text-center bg-[rgba(255,255,255,0.85)] border border-divider rounded-2xl p-6 shadow-lg"
           >
             <div className="space-y-4">
-              <h3 className="font-display text-3xl text-[#C9A84C] opacity-80">{item.title}</h3>
-              <p className="font-sans font-light text-[#4A2F1C] text-lg leading-relaxed">{item.description}</p>
+              <h3 className="font-display text-3xl text-primary opacity-80">{item.title}</h3>
+              <p className="font-sans font-light text-heading text-lg leading-relaxed">{item.description}</p>
             </div>
             <img
               src={item.media}

@@ -154,7 +154,7 @@ export default function RootLayout({
           }}
         />
       </head>
-      <body className={`${raleway.className} min-h-full flex flex-col text-deepAmber`}>
+      <body className={`${raleway.className} min-h-full flex flex-col text-heading`}>
         <ScrollProgress />
         <CursorGlow />
         

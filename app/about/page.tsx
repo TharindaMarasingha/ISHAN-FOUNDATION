@@ -27,7 +27,7 @@ export default function AboutPage() {
       
       <div className="relative w-full">
         {/* Sticky background section that acts like a separate page */}
-        <div className="sticky top-0 z-0 w-full min-h-screen flex flex-col justify-center bg-[#FAF9F6]">
+        <div className="sticky top-0 z-0 w-full min-h-screen flex flex-col justify-center bg-surface">
           <OurStorySection />
         </div>
         

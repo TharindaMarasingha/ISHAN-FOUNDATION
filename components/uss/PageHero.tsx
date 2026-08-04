@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 
 export function PageHero() {
   return (
-    <section className="relative min-h-[60vh] flex flex-col justify-end pb-24 pt-32 px-6 overflow-hidden border-b border-burntOrange/10">
+    <section className="relative min-h-[60vh] flex flex-col justify-end pb-24 pt-32 px-6 overflow-hidden border-b border-divider">
       {/* Left-side radial glow */}
       <div 
         className="absolute inset-0 pointer-events-none z-0"
@@ -17,7 +17,7 @@ export function PageHero() {
           initial={{ opacity: 0, y: 10 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, ease: "easeOut" }}
-          className="inline-block px-4 py-1.5 border border-burntOrange/30 rounded-full font-sans text-[0.65rem] uppercase tracking-[0.2em] text-burntOrange mb-8"
+          className="inline-block px-4 py-1.5 border border-primary/30 rounded-full font-sans text-[0.65rem] uppercase tracking-[0.2em] text-primary mb-8"
         >
           Research · Consciousness · Ethics
         </motion.span>
@@ -26,7 +26,7 @@ export function PageHero() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1, ease: "easeOut", delay: 0.2 }}
-          className="font-display font-light text-5xl md:text-6xl lg:text-7xl text-deepAmber tracking-wide mb-4"
+          className="font-display font-light text-5xl md:text-6xl lg:text-7xl text-heading tracking-wide mb-4"
         >
           Universal Spiritual Science
         </motion.h1>
@@ -35,7 +35,7 @@ export function PageHero() {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 1, ease: "easeOut", delay: 0.4 }}
-          className="font-display italic text-lg md:text-2xl text-sacredGold mb-8"
+          className="font-display italic text-lg md:text-2xl text-secondary mb-8"
         >
           USS — Inner Knowledge Institute
         </motion.p>
@@ -44,7 +44,7 @@ export function PageHero() {
           initial={{ opacity: 0, y: 10 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, ease: "easeOut", delay: 0.6 }}
-          className="font-display italic text-xl md:text-2xl text-burntOrange max-w-3xl mb-8 leading-relaxed"
+          className="font-display italic text-xl md:text-2xl text-primary max-w-3xl mb-8 leading-relaxed"
         >
           Dedicated to the systematic exploration of consciousness, contemplative traditions, and the science of inner development.
         </motion.h2>
@@ -53,7 +53,7 @@ export function PageHero() {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 1, ease: "easeOut", delay: 0.8 }}
-          className="font-sans font-light text-deepAmber max-w-2xl leading-relaxed"
+          className="font-sans font-light text-heading max-w-2xl leading-relaxed"
         >
           Universal Spiritual Science acts as the educational and research hub of ISHAN. We treat the human spirit not as an abstract mystery, but as a domain of rigorous inquiry. By uniting empirical scientific methodology with millennia of experiential wisdom, we seek to uncover the universal ethics and philosophical foundations that lead to a conscious, enlightened society.
         </motion.p>

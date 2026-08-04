@@ -28,7 +28,7 @@ export function SriLankaHeritage() {
           <div className="relative">
             <SectionIllustration
               variant="tree"
-              className="absolute -top-12 -left-8 w-32 h-32 text-burntOrange opacity-10 pointer-events-none"
+              className="absolute -top-12 -left-8 w-32 h-32 text-primary opacity-10 pointer-events-none"
             />
             <SectionHeading
               eyebrow="Sri Lanka Chapter"
@@ -36,12 +36,12 @@ export function SriLankaHeritage() {
             />
           </div>
           <RevealOnScroll delay={0.1}>
-            <p className="font-sans font-light text-deepAmber/90 leading-relaxed text-lg">
+            <p className="font-sans font-light text-heading/80 leading-relaxed text-lg">
               Sri Lanka draws inspiration from the Arogyasalas of Anuradhapura—the world's earliest known dedicated healing institutions dating back to the 3rd century BC. Our ecosystem is deeply rooted in this legacy, combining the ancient Hela Wedakama indigenous medicine system and the profound Buddhist mindfulness tradition.
             </p>
           </RevealOnScroll>
           <RevealOnScroll delay={0.2}>
-            <p className="font-sans font-light text-deepAmber/80 leading-relaxed text-lg mb-8">
+            <p className="font-sans font-light text-heading/80 leading-relaxed text-lg mb-8">
               The AAI Sri Lanka Chapter, led by Country Director Ranga Soysa, is activating this heritage as an internationally marketable wellness ecosystem. By connecting sacred geography, indigenous healing wisdom, and modern wellness science, we offer a sanctuary for planetary healing.
             </p>
           </RevealOnScroll>
@@ -54,11 +54,11 @@ export function SriLankaHeritage() {
         <div className="flex flex-col space-y-6">
           {HERITAGE_CARDS.map((card, index) => (
             <RevealOnScroll key={card.title} delay={index * 0.1}>
-              <Card className="p-8 border-burntOrange/20 hover:-translate-y-1 hover:border-burntOrange/40 transition-all duration-300">
-                <h3 className="font-display font-light text-2xl text-deepAmber mb-3">
+              <Card className="p-8 border-divider hover:-translate-y-1 hover:border-primary/40 transition-all duration-300">
+                <h3 className="font-display font-light text-2xl text-heading mb-3">
                   {card.title}
                 </h3>
-                <p className="font-sans font-light text-sm text-deepAmber/80 leading-relaxed">
+                <p className="font-sans font-light text-sm text-heading/80 leading-relaxed">
                   {card.description}
                 </p>
               </Card>

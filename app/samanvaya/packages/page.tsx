@@ -82,14 +82,14 @@ const FaqAccordion = () => {
   return (
     <div className="space-y-4">
       {faqs.map((faq, i) => (
-        <div key={i} className="bg-white rounded-2xl border border-black/5 shadow-sm overflow-hidden">
+        <div key={i} className="bg-white rounded-2xl border border-divider shadow-sm overflow-hidden">
           <button 
             onClick={() => setOpenIndex(openIndex === i ? null : i)}
             className="w-full px-6 py-5 flex items-center justify-between text-left focus:outline-none"
           >
-            <span className="font-display text-lg text-deepAmber">{faq.q}</span>
+            <span className="font-display text-lg text-heading">{faq.q}</span>
             <svg 
-              className={`w-5 h-5 text-burntOrange transform transition-transform duration-300 ${openIndex === i ? 'rotate-180' : ''}`} 
+              className={`w-5 h-5 text-primary transform transition-transform duration-300 ${openIndex === i ? 'rotate-180' : ''}`} 
               fill="none" stroke="currentColor" viewBox="0 0 24 24"
             >
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
@@ -98,7 +98,7 @@ const FaqAccordion = () => {
           <div 
             className={`px-6 transition-all duration-300 ease-in-out overflow-hidden ${openIndex === i ? 'max-h-40 pb-5 opacity-100' : 'max-h-0 opacity-0'}`}
           >
-            <p className="font-sans text-sm text-[#5a4a3a]">{faq.a}</p>
+            <p className="font-sans text-sm text-heading/80">{faq.a}</p>
           </div>
         </div>
       ))}
@@ -217,8 +217,17 @@ export default function PackagesPage() {
 
       <PackagesHero />
 
-      <div id="packages-content" className="pt-20 md:pt-32 pb-24 bg-[#FCF6F0]">
-        <div className="max-w-7xl mx-auto px-6 md:px-12">
+      <div id="packages-content" className="pt-20 md:pt-32 pb-24 bg-surface relative overflow-hidden">
+        {/* Decorative Lotus SVG */}
+        <div className="absolute left-0 top-[8%] md:top-[4%] -translate-x-[30%] md:-translate-x-[20%] pointer-events-none z-0 opacity-30">
+          <img 
+            src="/lotus.svg" 
+            alt="Lotus decoration" 
+            className="w-[300px] md:w-[450px] lg:w-[550px] h-auto transform rotate-6" 
+          />
+        </div>
+        
+        <div className="max-w-7xl mx-auto px-6 md:px-12 relative z-10">
         <div className="text-center mb-12">
           <SectionHeading
             align="center"
@@ -231,30 +240,30 @@ export default function PackagesPage() {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-20">
           {packages.map((pkg, index) => (
             <RevealOnScroll key={pkg.id} delay={index * 0.1}>
-              <div className={`relative flex flex-col h-full bg-white rounded-3xl overflow-hidden border ${pkg.popular ? 'border-mandarin shadow-lg shadow-mandarin/10 scale-105 z-10' : 'border-black/5'}`}>
+              <div className={`relative flex flex-col h-full bg-white rounded-3xl overflow-hidden border ${pkg.popular ? 'border-primary shadow-lg shadow-primary/20 scale-105 z-10' : 'border-divider'}`}>
                 
                 {pkg.popular && (
-                  <div className="absolute top-0 inset-x-0 bg-mandarin text-peach text-xs font-sans font-bold uppercase tracking-widest py-1.5 text-center">
+                  <div className="absolute top-0 inset-x-0 bg-primary text-white text-xs font-sans font-bold uppercase tracking-widest py-1.5 text-center">
                     Most Popular
                   </div>
                 )}
                 
                 <div className={`p-8 ${pkg.popular ? 'pt-10' : ''} flex-grow flex flex-col`}>
-                  <div className="text-mandarin mb-4">{pkg.icon}</div>
+                  <div className="text-primary mb-4">{pkg.icon}</div>
                   
-                  <div className="text-xs font-sans text-burntOrange font-semibold tracking-widest uppercase mb-2">
+                  <div className="text-xs font-sans text-primary font-semibold tracking-widest uppercase mb-2">
                     {pkg.days} • {pkg.location}
                   </div>
                   
-                  <h3 className="font-display text-2xl text-deepAmber mb-6">
+                  <h3 className="font-display text-2xl text-heading mb-6">
                     {pkg.name}
                   </h3>
                   
                   <div className="mb-6 flex-grow">
                     <ul className="space-y-4">
                       {pkg.benefits.map((benefit, i) => (
-                        <li key={i} className="flex items-start text-sm font-sans font-light text-[#5a4a3a]">
-                          <svg className="w-5 h-5 text-sacredGold mr-2 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <li key={i} className="flex items-start text-sm font-sans font-light text-heading/80">
+                          <svg className="w-5 h-5 text-primary mr-2 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                           </svg>
                           <span>{benefit}</span>
@@ -262,7 +271,7 @@ export default function PackagesPage() {
                       ))}
                     </ul>
                     
-                    <div className="mt-6 flex flex-wrap items-center gap-y-2 text-[10px] font-sans text-burntOrange/80 font-medium">
+                    <div className="mt-6 flex flex-wrap items-center gap-y-2 text-[10px] font-sans text-primary/80 font-medium">
                       {pkg.route.map((stop, i) => (
                         <React.Fragment key={i}>
                           <span className="flex items-center whitespace-nowrap">
@@ -273,18 +282,18 @@ export default function PackagesPage() {
                             {stop}
                           </span>
                           {i < pkg.route.length - 1 && (
-                            <span className="mx-1.5 opacity-50">&rarr;</span>
+                            <span className="mx-1.5 text-secondary opacity-50">&rarr;</span>
                           )}
                         </React.Fragment>
                       ))}
                     </div>
                   </div>
                   
-                  <div className="mt-auto pt-6 border-t border-black/5">
+                  <div className="mt-auto pt-6 border-t border-divider">
                     <div className="flex items-end justify-between mb-6">
                       <div>
-                        <span className="text-sm font-sans text-[#5a4a3a]">from</span>
-                        <div className="font-display text-3xl text-deepAmber">${pkg.price}</div>
+                        <span className="text-sm font-sans text-heading/80">from</span>
+                        <div className="font-display text-3xl text-heading">${pkg.price}</div>
                       </div>
                     </div>
                     
@@ -292,8 +301,8 @@ export default function PackagesPage() {
                       onClick={() => handleReserveClick(pkg.id)}
                       className={`w-full py-4 rounded-full font-sans text-xs uppercase tracking-widest transition-colors duration-300 ${
                         pkg.popular 
-                          ? 'bg-burntOrange text-peach hover:bg-mandarin' 
-                          : 'bg-transparent border border-burntOrange text-burntOrange hover:bg-burntOrange hover:text-peach'
+                          ? 'bg-cta text-white hover:bg-cta/90' 
+                          : 'bg-transparent border border-primary text-primary hover:bg-cta hover:text-white'
                       }`}
                     >
                       Reserve my spot
@@ -308,7 +317,7 @@ export default function PackagesPage() {
         {/* What's included */}
         <RevealOnScroll delay={0.2} className="mb-20">
           <div className="max-w-4xl mx-auto">
-            <h3 className="text-center font-display text-3xl text-deepAmber mb-10">What's included</h3>
+            <h3 className="text-center font-display text-3xl text-heading mb-10">What's included</h3>
             <div className="grid grid-cols-2 md:grid-cols-3 gap-6">
               {[
                 { label: "Accommodation", icon: "M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" },
@@ -318,13 +327,13 @@ export default function PackagesPage() {
                 { label: "Expert guides", icon: "M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" },
                 { label: "Home practice toolkit", icon: "M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10" }
               ].map((item, idx) => (
-                <div key={idx} className="flex flex-col items-center p-6 bg-white rounded-2xl border border-black/5 text-center transition-transform hover:-translate-y-1 hover:shadow-md">
-                  <div className="w-12 h-12 bg-[#FCF6F0] text-mandarin rounded-full flex items-center justify-center mb-3">
+                <div key={idx} className="flex flex-col items-center p-6 bg-surface rounded-2xl border border-divider text-center transition-transform hover:-translate-y-1 hover:shadow-md">
+                  <div className="w-12 h-12 bg-white text-primary rounded-full flex items-center justify-center mb-3">
                     <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d={item.icon} />
                     </svg>
                   </div>
-                  <span className="font-sans text-sm text-deepAmber font-medium">{item.label}</span>
+                  <span className="font-sans text-sm text-heading font-medium">{item.label}</span>
                 </div>
               ))}
             </div>
@@ -334,19 +343,19 @@ export default function PackagesPage() {
         {/* Meet your guides */}
         <RevealOnScroll delay={0.2} className="mb-20">
           <div className="max-w-4xl mx-auto">
-            <h3 className="text-center font-display text-3xl text-deepAmber mb-10">Meet your guides</h3>
+            <h3 className="text-center font-display text-3xl text-heading mb-10">Meet your guides</h3>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
               {[
                 { name: "Shreeji Sevakanand", role: "Grandmaster Guardian", initials: "SS" },
                 { name: "Dr. S. Kobayashi", role: "Japanese Yogini", initials: "SK" },
                 { name: "Indrani Sharma", role: "Himalayan Yogini", initials: "IS" }
               ].map((guide, idx) => (
-                <div key={idx} className="flex flex-col items-center p-6 bg-white rounded-2xl border border-black/5 text-center">
-                  <div className="w-16 h-16 bg-sacredGold/20 text-sacredGold font-display text-xl rounded-full flex items-center justify-center mb-4">
+                <div key={idx} className="flex flex-col items-center p-6 bg-white rounded-2xl border border-divider text-center">
+                  <div className="w-16 h-16 bg-softAccent text-primary font-display text-xl rounded-full flex items-center justify-center mb-4">
                     {guide.initials}
                   </div>
-                  <h4 className="font-display text-lg text-deepAmber">{guide.name}</h4>
-                  <p className="font-sans text-xs uppercase tracking-widest text-burntOrange mt-1">{guide.role}</p>
+                  <h4 className="font-display text-lg text-heading">{guide.name}</h4>
+                  <p className="font-sans text-xs uppercase tracking-widest text-secondary mt-1">{guide.role}</p>
                 </div>
               ))}
             </div>
@@ -356,10 +365,10 @@ export default function PackagesPage() {
         {/* Testimonial Quote */}
         <RevealOnScroll delay={0.3} className="mb-24">
           <div className="max-w-3xl mx-auto text-center px-6">
-            <svg className="w-8 h-8 mx-auto text-mandarin/20 mb-6" fill="currentColor" viewBox="0 0 24 24">
+            <svg className="w-8 h-8 mx-auto text-primary/20 mb-6" fill="currentColor" viewBox="0 0 24 24">
               <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z" />
             </svg>
-            <p className="font-display italic text-2xl md:text-3xl text-deepAmber leading-relaxed">
+            <p className="font-display italic text-2xl md:text-3xl text-heading leading-relaxed">
               "Water does not defeat every obstacle; it simply continues flowing until the obstacle becomes part of the journey."
             </p>
           </div>
@@ -369,69 +378,69 @@ export default function PackagesPage() {
         <RevealOnScroll delay={0.2} className="mb-24">
           <div className="max-w-5xl mx-auto px-6">
             <div className="text-center mb-10">
-              <h3 className="font-display text-3xl md:text-4xl text-deepAmber mb-3">Compare packages</h3>
-              <p className="font-sans text-[#5a4a3a]">Not sure which journey fits? Here's a quick side-by-side.</p>
+              <h3 className="font-display text-3xl md:text-4xl text-heading mb-3">Compare packages</h3>
+              <p className="font-sans text-heading/80">Not sure which journey fits? Here's a quick side-by-side.</p>
             </div>
             
             {/* Desktop Table */}
-            <div className="hidden sm:block bg-white rounded-3xl border border-black/5 shadow-sm overflow-hidden">
+            <div className="hidden sm:block bg-white rounded-3xl border border-divider shadow-sm overflow-hidden">
               <table className="w-full text-left font-sans text-sm">
                 <thead>
-                  <tr className="border-b border-black/5 bg-[#FCF6F0]/50">
-                    <th className="p-6 font-medium text-[#5a4a3a] w-1/4">Features</th>
-                    <th className="p-6 font-medium text-deepAmber w-1/4">South Island</th>
-                    <th className="p-6 font-medium text-deepAmber w-1/4">Central Heritage</th>
-                    <th className="p-6 font-medium text-deepAmber bg-mandarin/5 w-1/4">Whole Island</th>
+                  <tr className="border-b border-divider bg-surface/50">
+                    <th className="p-6 font-medium text-heading/80 w-1/4">Features</th>
+                    <th className="p-6 font-medium text-heading w-1/4">South Island</th>
+                    <th className="p-6 font-medium text-heading w-1/4">Central Heritage</th>
+                    <th className="p-6 font-medium text-heading bg-softAccent/40 w-1/4">Whole Island</th>
                   </tr>
                 </thead>
-                <tbody className="divide-y divide-black/5 text-[#5a4a3a]">
+                <tbody className="divide-y divide-black/5 text-heading/80">
                   <tr>
                     <td className="p-6 font-medium">Duration</td>
                     <td className="p-6">8 Days</td>
                     <td className="p-6">8 Days</td>
-                    <td className="p-6 bg-mandarin/5 font-medium">14 Days</td>
+                    <td className="p-6 bg-softAccent/40 font-medium">14 Days</td>
                   </tr>
                   <tr>
                     <td className="p-6 font-medium">Destinations visited</td>
                     <td className="p-6">4</td>
                     <td className="p-6">4</td>
-                    <td className="p-6 bg-mandarin/5 font-medium">7</td>
+                    <td className="p-6 bg-softAccent/40 font-medium">7</td>
                   </tr>
                   <tr>
                     <td className="p-6 font-medium">Accommodation</td>
-                    <td className="p-6 text-green-600">✓</td>
-                    <td className="p-6 text-green-600">✓</td>
-                    <td className="p-6 bg-mandarin/5 text-green-600">✓</td>
+                    <td className="p-6 text-primary">✓</td>
+                    <td className="p-6 text-primary">✓</td>
+                    <td className="p-6 bg-softAccent/40 text-primary">✓</td>
                   </tr>
                   <tr>
                     <td className="p-6 font-medium">All meals</td>
-                    <td className="p-6 text-green-600">✓</td>
-                    <td className="p-6 text-green-600">✓</td>
-                    <td className="p-6 bg-mandarin/5 text-green-600">✓</td>
+                    <td className="p-6 text-primary">✓</td>
+                    <td className="p-6 text-primary">✓</td>
+                    <td className="p-6 bg-softAccent/40 text-primary">✓</td>
                   </tr>
                   <tr>
                     <td className="p-6 font-medium">Private transportation</td>
-                    <td className="p-6 text-green-600">✓</td>
-                    <td className="p-6 text-green-600">✓</td>
-                    <td className="p-6 bg-mandarin/5 text-green-600">✓</td>
+                    <td className="p-6 text-primary">✓</td>
+                    <td className="p-6 text-primary">✓</td>
+                    <td className="p-6 bg-softAccent/40 text-primary">✓</td>
                   </tr>
                   <tr>
                     <td className="p-6 font-medium">Expert guides</td>
-                    <td className="p-6 text-green-600">✓</td>
-                    <td className="p-6 text-green-600">✓</td>
-                    <td className="p-6 bg-mandarin/5 text-green-600">✓</td>
+                    <td className="p-6 text-primary">✓</td>
+                    <td className="p-6 text-primary">✓</td>
+                    <td className="p-6 bg-softAccent/40 text-primary">✓</td>
                   </tr>
                   <tr>
                     <td className="p-6 font-medium">Post-retreat add-ons included</td>
                     <td className="p-6 text-black/20">—</td>
                     <td className="p-6 text-black/20">—</td>
-                    <td className="p-6 bg-mandarin/5 text-green-600">✓</td>
+                    <td className="p-6 bg-softAccent/40 text-primary">✓</td>
                   </tr>
-                  <tr className="bg-[#FCF6F0]/20">
+                  <tr className="bg-surface/20">
                     <td className="p-6 font-medium">Price</td>
-                    <td className="p-6 font-display text-xl text-deepAmber">USD 1,250</td>
-                    <td className="p-6 font-display text-xl text-deepAmber">USD 1,250</td>
-                    <td className="p-6 bg-mandarin/5 font-display text-xl text-deepAmber">USD 2,100</td>
+                    <td className="p-6 font-display text-xl text-heading">USD 1,250</td>
+                    <td className="p-6 font-display text-xl text-heading">USD 1,250</td>
+                    <td className="p-6 bg-softAccent/40 font-display text-xl text-heading">USD 2,100</td>
                   </tr>
                 </tbody>
               </table>
@@ -444,24 +453,24 @@ export default function PackagesPage() {
                 { title: 'Central Heritage', days: '8 Days', dests: '4', price: 'USD 1,250', addons: false },
                 { title: 'Whole Island', days: '14 Days', dests: '7', price: 'USD 2,100', addons: true, popular: true },
               ].map((pkg, i) => (
-                <div key={i} className={`bg-white rounded-3xl border ${pkg.popular ? 'border-mandarin shadow-md shadow-mandarin/10 bg-mandarin/5' : 'border-black/5 shadow-sm'} p-6`}>
-                  <h4 className="font-display text-2xl text-deepAmber mb-4">{pkg.title}</h4>
-                  <ul className="space-y-3 font-sans text-sm text-[#5a4a3a]">
-                    <li className="flex justify-between border-b border-black/5 pb-2"><span className="font-medium">Duration</span> <span>{pkg.days}</span></li>
-                    <li className="flex justify-between border-b border-black/5 pb-2"><span className="font-medium">Destinations</span> <span>{pkg.dests}</span></li>
-                    <li className="flex justify-between border-b border-black/5 pb-2"><span className="font-medium">Accommodation</span> <span className="text-green-600">✓</span></li>
-                    <li className="flex justify-between border-b border-black/5 pb-2"><span className="font-medium">All meals</span> <span className="text-green-600">✓</span></li>
-                    <li className="flex justify-between border-b border-black/5 pb-2"><span className="font-medium">Private transport</span> <span className="text-green-600">✓</span></li>
-                    <li className="flex justify-between border-b border-black/5 pb-2"><span className="font-medium">Expert guides</span> <span className="text-green-600">✓</span></li>
-                    <li className="flex justify-between border-b border-black/5 pb-2"><span className="font-medium">Add-ons included</span> <span className={pkg.addons ? "text-green-600" : "text-black/20"}>{pkg.addons ? '✓' : '—'}</span></li>
-                    <li className="flex justify-between pt-2"><span className="font-medium">Price</span> <span className="font-display text-lg text-deepAmber">{pkg.price}</span></li>
+                <div key={i} className={`bg-white rounded-3xl border ${pkg.popular ? 'border-mandarin shadow-md shadow-mandarin/10 bg-softAccent/40' : 'border-divider shadow-sm'} p-6`}>
+                  <h4 className="font-display text-2xl text-heading mb-4">{pkg.title}</h4>
+                  <ul className="space-y-3 font-sans text-sm text-heading/80">
+                    <li className="flex justify-between border-b border-divider pb-2"><span className="font-medium">Duration</span> <span>{pkg.days}</span></li>
+                    <li className="flex justify-between border-b border-divider pb-2"><span className="font-medium">Destinations</span> <span>{pkg.dests}</span></li>
+                    <li className="flex justify-between border-b border-divider pb-2"><span className="font-medium">Accommodation</span> <span className="text-primary">✓</span></li>
+                    <li className="flex justify-between border-b border-divider pb-2"><span className="font-medium">All meals</span> <span className="text-primary">✓</span></li>
+                    <li className="flex justify-between border-b border-divider pb-2"><span className="font-medium">Private transport</span> <span className="text-primary">✓</span></li>
+                    <li className="flex justify-between border-b border-divider pb-2"><span className="font-medium">Expert guides</span> <span className="text-primary">✓</span></li>
+                    <li className="flex justify-between border-b border-divider pb-2"><span className="font-medium">Add-ons included</span> <span className={pkg.addons ? "text-primary" : "text-black/20"}>{pkg.addons ? '✓' : '—'}</span></li>
+                    <li className="flex justify-between pt-2"><span className="font-medium">Price</span> <span className="font-display text-lg text-heading">{pkg.price}</span></li>
                   </ul>
                 </div>
               ))}
             </div>
             
             <div className="mt-8 text-center">
-              <button onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })} className="font-sans text-xs uppercase tracking-widest text-burntOrange hover:text-mandarin transition-colors">
+              <button onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })} className="font-sans text-xs uppercase tracking-widest text-primary hover:text-primary transition-colors">
                 Back to packages &uarr;
               </button>
             </div>
@@ -471,10 +480,10 @@ export default function PackagesPage() {
         {/* How it works */}
         <RevealOnScroll delay={0.2} className="mb-24">
           <div className="max-w-5xl mx-auto px-6">
-            <h3 className="text-center font-display text-3xl md:text-4xl text-deepAmber mb-12">How it works</h3>
+            <h3 className="text-center font-display text-3xl md:text-4xl text-heading mb-12">How it works</h3>
             
             <div className="flex flex-col md:flex-row justify-between relative">
-              <div className="hidden md:block absolute top-8 left-[10%] right-[10%] h-[1px] bg-burntOrange/20 z-0"></div>
+              <div className="hidden md:block absolute top-8 left-[10%] right-[10%] h-[1px] bg-cta/20 z-0"></div>
               
               {[
                 { num: '01', title: 'Choose your journey', desc: 'Pick the package that fits your time and goals.' },
@@ -483,11 +492,11 @@ export default function PackagesPage() {
                 { num: '04', title: 'Begin your experience', desc: 'Arrive in Sri Lanka and start your journey.' }
               ].map((step, i) => (
                 <div key={i} className="flex-1 relative z-10 flex flex-col items-center text-center px-4 mb-10 md:mb-0">
-                  <div className="w-16 h-16 bg-[#FCF6F0] border border-burntOrange/30 text-burntOrange font-display text-2xl rounded-full flex items-center justify-center mb-6 shadow-sm">
+                  <div className="w-16 h-16 bg-surface border border-primary/30 text-primary font-display text-2xl rounded-full flex items-center justify-center mb-6 shadow-sm">
                     {step.num}
                   </div>
-                  <h4 className="font-sans font-semibold text-deepAmber text-sm uppercase tracking-widest mb-3">{step.title}</h4>
-                  <p className="font-sans text-[#5a4a3a] text-sm">{step.desc}</p>
+                  <h4 className="font-sans font-semibold text-heading text-sm uppercase tracking-widest mb-3">{step.title}</h4>
+                  <p className="font-sans text-heading/80 text-sm">{step.desc}</p>
                 </div>
               ))}
             </div>
@@ -497,11 +506,11 @@ export default function PackagesPage() {
         {/* Before you go */}
         <RevealOnScroll delay={0.2} className="mb-24">
           <div className="max-w-4xl mx-auto px-6">
-            <h3 className="text-center font-display text-3xl md:text-4xl text-deepAmber mb-12">Before you go</h3>
+            <h3 className="text-center font-display text-3xl md:text-4xl text-heading mb-12">Before you go</h3>
             
-            <div className="flex flex-col md:flex-row gap-8 md:gap-16 bg-white rounded-3xl border border-black/5 p-8 md:p-12 shadow-sm">
+            <div className="flex flex-col md:flex-row gap-8 md:gap-16 bg-white rounded-3xl border border-divider p-8 md:p-12 shadow-sm">
               <div className="flex-1">
-                <h4 className="font-sans font-semibold text-burntOrange text-sm uppercase tracking-widest mb-6">What to bring</h4>
+                <h4 className="font-sans font-semibold text-primary text-sm uppercase tracking-widest mb-6">What to bring</h4>
                 <ul className="space-y-4">
                   {[
                     'Comfortable, breathable clothing',
@@ -510,8 +519,8 @@ export default function PackagesPage() {
                     'Personal toiletries and medication',
                     'A light jacket for cooler evenings'
                   ].map((item, i) => (
-                    <li key={i} className="flex items-start text-sm font-sans font-light text-[#5a4a3a]">
-                      <svg className="w-5 h-5 text-sacredGold mr-3 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <li key={i} className="flex items-start text-sm font-sans font-light text-heading/80">
+                      <svg className="w-5 h-5 text-primary mr-3 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                       </svg>
                       <span>{item}</span>
@@ -523,7 +532,7 @@ export default function PackagesPage() {
               <div className="hidden md:block w-[1px] bg-black/5"></div>
               
               <div className="flex-1">
-                <h4 className="font-sans font-semibold text-burntOrange text-sm uppercase tracking-widest mb-6">Good to know</h4>
+                <h4 className="font-sans font-semibold text-primary text-sm uppercase tracking-widest mb-6">Good to know</h4>
                 <ul className="space-y-4">
                   {[
                     'Small groups, maximum 12 people per journey',
@@ -532,8 +541,8 @@ export default function PackagesPage() {
                     'Moderate fitness level recommended, no prior experience needed',
                     'All activities are optional — go at your own pace'
                   ].map((item, i) => (
-                    <li key={i} className="flex items-start text-sm font-sans font-light text-[#5a4a3a]">
-                      <svg className="w-5 h-5 text-sacredGold mr-3 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <li key={i} className="flex items-start text-sm font-sans font-light text-heading/80">
+                      <svg className="w-5 h-5 text-primary mr-3 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                       </svg>
                       <span>{item}</span>
@@ -548,38 +557,38 @@ export default function PackagesPage() {
         {/* FAQ */}
         <RevealOnScroll delay={0.2} className="mb-24">
           <div className="max-w-3xl mx-auto px-6">
-            <h3 className="text-center font-display text-3xl md:text-4xl text-deepAmber mb-12">Frequently asked questions</h3>
+            <h3 className="text-center font-display text-3xl md:text-4xl text-heading mb-12">Frequently asked questions</h3>
             <FaqAccordion />
           </div>
         </RevealOnScroll>
 
         {/* Final CTA */}
         <RevealOnScroll delay={0.4}>
-          <div className="py-16 px-6 bg-[#f8efe0] border-y border-black/5 mt-12 text-center">
-            <h2 className="font-display text-3xl md:text-4xl text-deepAmber mb-4">Ready to begin your journey?</h2>
-            <p className="font-sans text-sm text-[#5a4a3a] mb-10">Spaces are limited each season. Reserve yours today.</p>
+          <div className="py-16 px-6 bg-surface border-y border-divider mt-12 text-center">
+            <h2 className="font-display text-3xl md:text-4xl text-heading mb-4">Ready to begin your journey?</h2>
+            <p className="font-sans text-sm text-heading/80 mb-10">Spaces are limited each season. Reserve yours today.</p>
             
             <button 
               onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
-              className="inline-block px-10 py-4 rounded-full font-sans text-xs uppercase tracking-widest bg-burntOrange text-peach hover:bg-mandarin transition-colors shadow-md"
+              className="inline-block px-10 py-4 rounded-full font-sans text-xs uppercase tracking-widest bg-cta text-white hover:bg-cta/90 transition-colors shadow-md"
             >
               Reserve your spot
             </button>
 
             <div className="mt-12 flex flex-col md:flex-row items-center justify-center gap-6 md:gap-12">
-              <a href="https://wa.me/94000000000" target="_blank" rel="noopener noreferrer" className="flex items-center text-sm font-sans text-burntOrange hover:text-mandarin transition-colors">
+              <a href="https://wa.me/94000000000" target="_blank" rel="noopener noreferrer" className="flex items-center text-sm font-sans text-primary hover:text-primary transition-colors">
                 <svg className="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 24 24">
                   <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51a12.8 12.8 0 00-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" />
                 </svg>
                 Chat with us
               </a>
-              <a href="tel:+94000000000" className="flex items-center text-sm font-sans text-burntOrange hover:text-mandarin transition-colors">
+              <a href="tel:+94000000000" className="flex items-center text-sm font-sans text-primary hover:text-primary transition-colors">
                 <svg className="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
                 </svg>
                 Call
               </a>
-              <a href="mailto:info@ishanfoundation.lk" className="flex items-center text-sm font-sans text-burntOrange hover:text-mandarin transition-colors">
+              <a href="mailto:info@ishanfoundation.lk" className="flex items-center text-sm font-sans text-primary hover:text-primary transition-colors">
                 <svg className="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
                 </svg>
@@ -604,48 +613,48 @@ export default function PackagesPage() {
             </button>
             
             <div className="p-6 md:p-8 overflow-y-auto">
-              <h2 className="font-display text-2xl md:text-3xl text-deepAmber mb-2">Reserve Your Spot</h2>
-              <p className="font-sans text-xs md:text-sm text-[#5a4a3a] mb-6">
+              <h2 className="font-display text-2xl md:text-3xl text-heading mb-2">Reserve Your Spot</h2>
+              <p className="font-sans text-xs md:text-sm text-heading/80 mb-6">
                 {selectedPkgData.name} • ${selectedPkgData.price} per person
               </p>
               
               <div className="space-y-4 mb-6">
                 <div>
-                  <label className="block font-sans text-xs uppercase tracking-widest text-deepAmber mb-2">Full Name</label>
+                  <label className="block font-sans text-xs uppercase tracking-widest text-heading mb-2">Full Name</label>
                   <input 
                     type="text" 
                     value={formData.name}
                     onChange={(e) => setFormData({...formData, name: e.target.value})}
-                    className="w-full bg-[#FCF6F0] border-none rounded-xl px-4 py-2.5 font-sans text-sm focus:ring-2 focus:ring-mandarin outline-none"
+                    className="w-full bg-surface border-none rounded-xl px-4 py-2.5 font-sans text-sm focus:ring-2 focus:ring-primary outline-none"
                     placeholder="Enter your name"
                   />
                 </div>
                 <div>
-                  <label className="block font-sans text-xs uppercase tracking-widest text-deepAmber mb-2">Email Address</label>
+                  <label className="block font-sans text-xs uppercase tracking-widest text-heading mb-2">Email Address</label>
                   <input 
                     type="email" 
                     value={formData.email}
                     onChange={(e) => setFormData({...formData, email: e.target.value})}
-                    className="w-full bg-[#FCF6F0] border-none rounded-xl px-4 py-2.5 font-sans text-sm focus:ring-2 focus:ring-mandarin outline-none"
+                    className="w-full bg-surface border-none rounded-xl px-4 py-2.5 font-sans text-sm focus:ring-2 focus:ring-primary outline-none"
                     placeholder="Enter your email"
                   />
                 </div>
                 <div>
-                  <label className="block font-sans text-xs uppercase tracking-widest text-deepAmber mb-2">Phone Number (with country code)</label>
+                  <label className="block font-sans text-xs uppercase tracking-widest text-heading mb-2">Phone Number (with country code)</label>
                   <input 
                     type="tel" 
                     value={formData.phone}
                     onChange={(e) => setFormData({...formData, phone: e.target.value})}
-                    className="w-full bg-[#FCF6F0] border-none rounded-xl px-4 py-2.5 font-sans text-sm focus:ring-2 focus:ring-mandarin outline-none"
+                    className="w-full bg-surface border-none rounded-xl px-4 py-2.5 font-sans text-sm focus:ring-2 focus:ring-primary outline-none"
                     placeholder="+1 234 567 8900"
                   />
                 </div>
                 <div>
-                  <label className="block font-sans text-xs uppercase tracking-widest text-deepAmber mb-2">Number of Participants</label>
+                  <label className="block font-sans text-xs uppercase tracking-widest text-heading mb-2">Number of Participants</label>
                   <select 
                     value={formData.participants}
                     onChange={(e) => setFormData({...formData, participants: parseInt(e.target.value)})}
-                    className="w-full bg-[#FCF6F0] border-none rounded-xl px-4 py-2.5 font-sans text-sm focus:ring-2 focus:ring-mandarin outline-none"
+                    className="w-full bg-surface border-none rounded-xl px-4 py-2.5 font-sans text-sm focus:ring-2 focus:ring-primary outline-none"
                   >
                     {[1, 2, 3, 4, 5].map(num => (
                       <option key={num} value={num}>{num}</option>
@@ -654,23 +663,23 @@ export default function PackagesPage() {
                 </div>
               </div>
               
-              <div className="pt-6 border-t border-black/5">
+              <div className="pt-6 border-t border-divider">
                 <div className="flex justify-between items-center mb-6">
-                  <span className="font-sans text-sm font-medium text-deepAmber">Total Due Today</span>
-                  <span className="font-display text-2xl text-deepAmber">${selectedPkgData.price * formData.participants}</span>
+                  <span className="font-sans text-sm font-medium text-heading">Total Due Today</span>
+                  <span className="font-display text-2xl text-heading">${selectedPkgData.price * formData.participants}</span>
                 </div>
                 
                 {formData.name && formData.email && formData.phone ? (
                   <div className="relative z-0 min-h-[150px]">
                     {paymentPending && (
                       <div className="absolute inset-0 bg-white/80 backdrop-blur-sm z-10 flex items-center justify-center">
-                        <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-mandarin"></div>
+                        <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-primary"></div>
                       </div>
                     )}
                     <div id="paypal-button-container" className="w-full"></div>
                   </div>
                 ) : (
-                  <div className="bg-orange-50 text-orange-800 p-4 rounded-xl text-sm font-sans text-center">
+                  <div className="bg-softAccent/30 text-heading p-4 rounded-xl text-sm font-sans text-center">
                     Please fill out all fields above to proceed with secure payment.
                   </div>
                 )}

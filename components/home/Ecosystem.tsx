@@ -119,7 +119,7 @@ function EcosystemCard({ card, index, delay }: { card: EcosystemData; index: num
                     }}
                   />
                 </div>
-                <span className="text-[#9C3F00] text-[10.5px] uppercase font-sans tracking-[0.05em] font-medium leading-none mt-[1px]">
+                <span className="text-primary text-[10.5px] uppercase font-sans tracking-[0.05em] font-medium leading-none mt-[1px]">
                   IN PROGRESS
                 </span>
               </div>
@@ -132,15 +132,15 @@ function EcosystemCard({ card, index, delay }: { card: EcosystemData; index: num
               {card.tag}
             </span>
 
-            <h3 className="font-forum text-[32px] text-deepAmber font-normal mt-4">
+            <h3 className="font-forum text-[32px] text-heading font-normal mt-4">
               {card.title}
             </h3>
 
-            <p className="font-sans italic text-[14px] text-burntOrange mt-1">
+            <p className="font-sans italic text-[14px] text-primary mt-1">
               {card.subtitle}
             </p>
 
-            <p className="font-sans font-light text-[15px] text-[#5a4a3a] leading-[1.7] mt-5 line-clamp-3">
+            <p className="font-sans font-light text-[15px] text-heading/80 leading-[1.7] mt-5 line-clamp-3">
               {card.description}
             </p>
 
@@ -175,7 +175,7 @@ export function Ecosystem() {
         <div className="mb-16 relative flex justify-center text-center">
           <SectionIllustration
             variant="wave"
-            className="absolute -top-12 -left-4 w-32 h-32 text-burntOrange opacity-10 pointer-events-none"
+            className="absolute -top-12 -left-4 w-32 h-32 text-primary opacity-10 pointer-events-none"
           />
           <SectionHeading
             align="center"

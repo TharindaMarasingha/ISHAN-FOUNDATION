@@ -80,7 +80,7 @@ export function EcosystemSections() {
   return (
     <div className="flex flex-col">
       {/* SECTION 1: ISHAN PARENT INSTITUTION */}
-      <section className="py-24 px-6 md:px-12 bg-deepAmber/[0.02]">
+      <section className="py-24 px-6 md:px-12 bg-surface">
         <div className="max-w-5xl mx-auto">
           <div className="mb-12">
             <SectionHeading
@@ -89,16 +89,16 @@ export function EcosystemSections() {
             />
           </div>
           <RevealOnScroll>
-            <Card className="p-8 md:p-12 border-t-4 border-t-sacredGold border-mandarin/20 hover:-translate-y-1 transition-all duration-300">
-              <h3 className="font-display font-light text-3xl md:text-4xl text-deepAmber mb-6">
+            <Card className="p-8 md:p-12 border-t-4 border-t-sacredGold border-divider hover:-translate-y-1 transition-all duration-300">
+              <h3 className="font-display font-light text-3xl md:text-4xl text-heading mb-6">
                 ISHAN — The Parent Institution
               </h3>
-              <p className="font-sans font-light text-deepAmber/80 leading-relaxed text-lg mb-6">
+              <p className="font-sans font-light text-heading/80 leading-relaxed text-lg mb-6">
                 The foundation of the entire ecosystem. Provides vision, governance, philosophy, leadership, institutional systems, strategic direction, partnerships, and long-term stewardship.
               </p>
-              <div className="p-6 bg-mandarin/5 border-l-4 border-mandarin rounded-r-xl">
-                <h4 className="font-sans text-xs uppercase tracking-widest text-mandarin mb-2">Mission</h4>
-                <p className="font-sans font-light text-deepAmber leading-relaxed italic">
+              <div className="p-6 bg-softAccent border-l-4 border-primary rounded-r-xl">
+                <h4 className="font-sans text-xs uppercase tracking-widest text-primary mb-2">Mission</h4>
+                <p className="font-sans font-light text-heading leading-relaxed italic">
                   "To advance wisdom, wellness, humanity, nature, ethical leadership, education, sustainability, and conscious community development through integrated programmes, research, collaboration, and service."
                 </p>
               </div>
@@ -166,26 +166,26 @@ export function EcosystemSections() {
                           {card.tag}
                         </span>
 
-                        <h3 className="font-forum text-[28px] md:text-[32px] text-deepAmber font-normal mt-4">
+                        <h3 className="font-forum text-[28px] md:text-[32px] text-heading font-normal mt-4">
                           {card.title}
                         </h3>
 
-                        <p className="font-sans italic text-[14px] text-burntOrange mt-1 mb-5">
+                        <p className="font-sans italic text-[14px] text-primary mt-1 mb-5">
                           {card.subtitle}
                         </p>
 
-                        <p className="font-sans font-light text-[14px] md:text-[15px] text-[#5a4a3a] leading-[1.7] mb-4">
+                        <p className="font-sans font-light text-[14px] md:text-[15px] text-heading/80 leading-[1.7] mb-4">
                           {card.body}
                         </p>
                         
                         {card.p2 && (
-                          <p className="font-sans font-light text-[14px] md:text-[15px] text-[#5a4a3a] leading-[1.7] mb-4">
+                          <p className="font-sans font-light text-[14px] md:text-[15px] text-heading/80 leading-[1.7] mb-4">
                             {card.p2}
                           </p>
                         )}
 
                         {card.quote && (
-                          <blockquote className="border-l-2 border-burntOrange/30 pl-4 py-1 my-2 font-display italic text-[#5a4a3a] text-lg leading-relaxed">
+                          <blockquote className="border-l-2 border-primary/30 pl-4 py-1 my-2 font-display italic text-heading/80 text-lg leading-relaxed">
                             "{card.quote}"
                           </blockquote>
                         )}
@@ -207,7 +207,7 @@ export function EcosystemSections() {
       </section>
 
       {/* SECTION 3: WHY AN ECOSYSTEM */}
-      <section className="py-24 px-6 md:px-12 bg-deepAmber/[0.02] border-t border-burntOrange/10">
+      <section className="py-24 px-6 md:px-12 bg-surface border-t border-divider">
         <div className="max-w-7xl mx-auto">
           <div className="mb-16">
             <SectionHeading
@@ -218,9 +218,9 @@ export function EcosystemSections() {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {WHY_ECOSYSTEM.map((item, i) => (
               <RevealOnScroll key={item.title} delay={i * 0.1} className="h-full">
-                <Card className="h-full p-8 border-mandarin/20 hover:-translate-y-1 transition-all duration-300">
-                  <h4 className="font-display font-light text-2xl text-deepAmber mb-4">{item.title}</h4>
-                  <p className="font-sans font-light text-sm text-deepAmber/80 leading-relaxed">
+                <Card className="h-full p-8 border-divider hover:-translate-y-1 transition-all duration-300">
+                  <h4 className="font-display font-light text-2xl text-heading mb-4">{item.title}</h4>
+                  <p className="font-sans font-light text-sm text-heading/80 leading-relaxed">
                     {item.body}
                   </p>
                 </Card>
@@ -231,7 +231,7 @@ export function EcosystemSections() {
       </section>
 
       {/* SECTION 4: CLOSING CTA */}
-      <section className="relative py-32 px-6 overflow-hidden flex flex-col items-center border-t border-burntOrange/10 bg-bark">
+      <section className="relative py-32 px-6 overflow-hidden flex flex-col items-center border-t border-divider bg-bark">
         {/* Background Image Layer */}
         <div className="absolute inset-0 z-0">
           <Image
@@ -254,7 +254,7 @@ export function EcosystemSections() {
           <motion.div
             animate={{ rotate: 360 }}
             transition={{ duration: 160, repeat: Infinity, ease: "linear" }}
-            className="absolute w-[800px] h-[800px] rounded-full border-[1px] border-sacredGold flex items-center justify-center"
+            className="absolute w-[800px] h-[800px] rounded-full border-[1px] border-secondary flex items-center justify-center"
           >
             <svg width="600" height="600" viewBox="0 0 100 100" className="opacity-50">
               <polygon points="50,5 95,27.5 95,72.5 50,95 5,72.5 5,27.5" fill="none" stroke="currentColor" strokeWidth="0.2" />
@@ -266,15 +266,15 @@ export function EcosystemSections() {
           <SectionHeading
             theme="dark"
             eyebrow="Take the Next Step"
-            heading={<span className="text-sacredGold">Join the Ecosystem</span>}
+            heading={<span className="text-secondary">Join the Ecosystem</span>}
             description="Whether as a participant, practitioner, partner, volunteer, or supporter — there is a place for you within the ISHAN ecosystem."
             align="center"
           />
           <RevealOnScroll delay={0.2} className="mt-12 flex flex-col sm:flex-row gap-4 sm:gap-6 w-full sm:w-auto">
-            <Button href="/contact" variant="primary" className="bg-mandarin text-peach hover:bg-burntOrange">
+            <Button href="/contact" variant="primary" className="bg-cta text-white hover:bg-cta/90">
               Connect With Us
             </Button>
-            <Button href="/support" variant="ghost" className="border-sacredGold text-sacredGold hover:border-softApricot hover:text-softApricot">
+            <Button href="/support" variant="ghost" className="border-secondary text-secondary hover:border-softApricot hover:text-white">
               Support Our Mission
             </Button>
           </RevealOnScroll>

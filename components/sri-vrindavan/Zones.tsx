@@ -13,7 +13,7 @@ const ZONES = [
 
 export function Zones() {
   return (
-    <section className="py-24 px-6 md:px-12 bg-deepAmber/[0.02] border-y border-sacredGold/10">
+    <section className="py-24 px-6 md:px-12 bg-surface border-y border-divider">
       <div className="max-w-7xl mx-auto">
         <div className="mb-16">
           <SectionHeading

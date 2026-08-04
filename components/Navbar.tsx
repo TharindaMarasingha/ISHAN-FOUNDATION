@@ -2,7 +2,6 @@
 
 import React, { useState, useEffect, useRef } from "react";
 import Link from "next/link";
-import Image from "next/image";
 import { usePathname } from "next/navigation";
 import { motion, AnimatePresence, useScroll } from "framer-motion";
 import { Menu, X, ChevronDown } from "lucide-react";
@@ -84,8 +83,6 @@ export default function Navbar() {
   }, [pathname]);
 
   const isMoreActive = moreLinks.some(link => pathname === link.href);
-  const isHomePage = pathname === "/";
-  const useDarkText = isHomePage && !isScrolled;
 
   return (
     <>
@@ -97,19 +94,19 @@ export default function Navbar() {
           initial={false}
           animate={{
             backgroundColor: isScrolled 
-              ? 'rgba(30,15,5,0.96)'
+              ? 'rgba(255,255,255,0.96)'
               : (isMounted && isMobile)
-                ? 'rgba(30,15,5,0.65)'
-                : 'rgba(30,15,5,0)',
+                ? 'rgba(255,255,255,0.85)'
+                : 'rgba(255,255,255,0)',
             borderColor: isScrolled
-              ? 'rgba(201,168,76,0.35)'
+              ? 'var(--color-divider)'
               : (isMounted && isMobile)
-                ? 'rgba(201,168,76,0.30)'
-                : 'rgba(201,168,76,0)',
+                ? 'rgba(220,233,215,0.5)'
+                : 'rgba(220,233,215,0)',
             backdropFilter: isScrolled ? "blur(20px) saturate(160%)" : "blur(16px) saturate(160%)",
           }}
           transition={{ duration: 0.5, ease: "easeInOut" }}
-          className="rounded-full w-full pointer-events-auto border border-[rgba(201,168,76,0.25)] md:border-none px-4 py-2.5 md:py-2 shadow-[0_4px_24px_rgba(0,0,0,0.18)] flex items-center justify-between transition-all duration-500"
+          className="rounded-full w-full pointer-events-auto border md:border-none px-4 py-2.5 md:py-2 shadow-[0_4px_24px_rgba(0,0,0,0.06)] flex items-center justify-between transition-all duration-500"
         style={{
           borderWidth: "1px",
           borderStyle: "solid",
@@ -118,25 +115,16 @@ export default function Navbar() {
         <div className="flex items-center justify-between w-full">
           
           {/* Left: Logo */}
-          <Link href="/" className="flex-shrink-0 flex items-center pl-1 md:pl-2">
-            <div className="w-10 h-10 md:w-14 md:h-14 flex-shrink-0">
-              <img 
-                src="/images/ishan-logo.png"
-                alt="ISHAN"
-                width={120}
-                height={120}
-                className="scale-[2.8] md:scale-[3.8] origin-left"
-                style={{ 
-                  objectFit: 'contain',
-                  width: '100%',
-                  height: '100%'
-                }}
-              />
-            </div>
+          <Link href="/" className="flex-shrink-0 flex items-center pl-0 md:pl-2">
+            <img 
+              src="/images/iln.PNG"
+              alt="ISHAN"
+              className="h-10 md:h-12 w-auto object-contain"
+            />
           </Link>
 
-          {/* Center: Desktop Nav Links */}
-          <div className="hidden md:flex items-center justify-center flex-grow gap-4 mx-4">
+          {/* Center/Left: Desktop Nav Links */}
+          <div className="hidden md:flex items-center justify-start flex-grow gap-4 md:gap-6 ml-6 md:ml-10 mr-4">
             {primaryLinks.map((link) => {
               const isActive = pathname === link.href;
               return (
@@ -144,7 +132,7 @@ export default function Navbar() {
                   key={link.label}
                   href={link.href}
                   className={`font-sans font-normal text-[10px] uppercase tracking-[0.06em] transition-colors duration-300 ${
-                    isActive ? "text-[#F7BE43]" : (useDarkText ? "text-black/80 hover:text-black" : "text-white/75 hover:text-[#F5A85C]")
+                    isActive ? "text-primary" : "text-heading hover:text-primary"
                   }`}
                 >
                   {link.label}
@@ -157,7 +145,7 @@ export default function Navbar() {
               <button
                 onClick={() => setIsMoreOpen(!isMoreOpen)}
                 className={`flex items-center gap-1 font-sans font-normal text-[10px] uppercase tracking-[0.06em] transition-colors duration-300 outline-none ${
-                  isMoreActive || isMoreOpen ? "text-[#F7BE43]" : (useDarkText ? "text-black/80 hover:text-black" : "text-white/75 hover:text-[#F5A85C]")
+                  isMoreActive || isMoreOpen ? "text-primary" : "text-heading hover:text-primary"
                 }`}
               >
                 MORE <ChevronDown size={12} className={`transition-transform duration-300 ${isMoreOpen ? 'rotate-180' : ''}`} />
@@ -172,10 +160,10 @@ export default function Navbar() {
                     transition={{ duration: 0.2 }}
                     className="absolute top-[calc(100%+8px)] left-1/2 -translate-x-1/2 min-w-[180px] p-2 rounded-[16px] z-[100]"
                     style={{
-                      background: "rgba(30,15,5,0.95)",
+                      background: "rgba(255,255,255,0.95)",
                       backdropFilter: "blur(16px)",
-                      border: "1px solid rgba(201,168,76,0.25)",
-                      boxShadow: "0 8px 32px rgba(0,0,0,0.3)"
+                      border: "1px solid var(--color-divider)",
+                      boxShadow: "0 8px 32px rgba(0,0,0,0.08)"
                     }}
                   >
                     {moreLinks.map((link) => {
@@ -185,7 +173,7 @@ export default function Navbar() {
                           key={link.label}
                           href={link.href}
                           className={`block px-4 py-2.5 font-sans uppercase tracking-[0.1em] text-[11px] rounded-[8px] transition-all duration-200 ${
-                            isActive ? "text-[#C9A84C] bg-[rgba(201,168,76,0.08)]" : "text-white/75 hover:text-[#C9A84C] hover:bg-[rgba(201,168,76,0.08)]"
+                            isActive ? "text-primary bg-secondary/10" : "text-heading hover:text-primary hover:bg-secondary/10"
                           }`}
                         >
                           {link.label}
@@ -202,7 +190,7 @@ export default function Navbar() {
           <div className="flex items-center gap-4">
             <Link href="/contact" className="hidden md:block">
               <MagneticButton>
-                <div className="px-4 py-[7px] rounded-full bg-gradient-to-r from-[#F7BE43] via-[#F5A85C] to-[#F39A8A] text-[#2E1A0E] font-sans font-semibold text-[11px] uppercase tracking-[0.1em] hover:shadow-lg hover:-translate-y-0.5 transition-all duration-300">
+                <div className="px-4 py-[7px] rounded-full bg-cta text-white font-sans font-semibold text-[11px] uppercase tracking-[0.1em] hover:shadow-lg hover:-translate-y-0.5 transition-all duration-300">
                   Connect
                 </div>
               </MagneticButton>
@@ -210,7 +198,7 @@ export default function Navbar() {
 
             {/* Mobile Menu Toggle */}
             <button
-              className="flex md:hidden text-[#C9A84C] p-1"
+              className="flex md:hidden text-heading hover:text-primary p-1"
               onClick={() => setIsMobileMenuOpen(true)}
               aria-label="Open Menu"
             >
@@ -231,7 +219,7 @@ export default function Navbar() {
               exit={{ opacity: 0 }}
               transition={{ duration: 0.3 }}
               className="fixed inset-0 z-[90] md:hidden"
-              style={{ background: "rgba(0,0,0,0.5)" }}
+              style={{ background: "rgba(0,0,0,0.2)" }}
               onClick={() => setIsMobileMenuOpen(false)}
             />
             <motion.div
@@ -241,14 +229,14 @@ export default function Navbar() {
               transition={{ duration: 0.3, ease: "easeOut" }}
               className="fixed top-0 right-0 bottom-0 w-[75vw] max-w-[300px] z-[100] flex flex-col md:hidden overflow-y-auto"
               style={{
-                background: "rgba(20,10,4,0.97)",
+                background: "rgba(255,255,255,0.97)",
                 backdropFilter: "blur(20px)",
-                borderLeft: "1px solid rgba(201,168,76,0.2)"
+                borderLeft: "1px solid var(--color-divider)"
               }}
             >
               <div className="flex justify-end p-6">
                 <button
-                  className="text-[#C9A84C]"
+                  className="text-heading hover:text-primary"
                   onClick={() => setIsMobileMenuOpen(false)}
                   aria-label="Close Menu"
                 >
@@ -263,8 +251,8 @@ export default function Navbar() {
                     <Link
                       key={link.label}
                       href={link.href}
-                      className={`font-forum text-[16px] px-6 py-3 border-b border-white/5 transition-colors duration-300 ${
-                        isActive ? "text-[#C9A84C]" : "text-white"
+                      className={`font-forum text-[16px] px-6 py-3 border-b border-divider transition-colors duration-300 ${
+                        isActive ? "text-primary" : "text-heading hover:text-primary"
                       }`}
                     >
                       {link.label}
@@ -276,7 +264,7 @@ export default function Navbar() {
               <div className="mt-4 p-6">
                 <Link
                   href="/contact"
-                  className="block w-full text-center bg-[#9C3F00] text-white rounded-xl py-3 uppercase tracking-widest font-sans font-semibold text-sm hover:shadow-lg transition-all duration-300"
+                  className="block w-full text-center bg-cta text-white rounded-xl py-3 uppercase tracking-widest font-sans font-semibold text-sm hover:shadow-lg transition-all duration-300"
                 >
                   Connect
                 </Link>

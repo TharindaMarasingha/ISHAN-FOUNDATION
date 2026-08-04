@@ -19,9 +19,9 @@ export function SectionHeading({
   const alignClass = align === "center" ? "text-center mx-auto" : "text-left";
   const flexClass = align === "center" ? "items-center" : "items-start";
 
-  const eyebrowColor = theme === "dark" ? "text-mandarin" : "text-burntOrange";
-  const headingColor = theme === "dark" ? "text-softApricot" : "text-deepAmber";
-  const descColor = theme === "dark" ? "text-softApricot/80" : "text-deepAmber";
+  const eyebrowColor = theme === "dark" ? "text-secondary" : "text-primary";
+  const headingColor = theme === "dark" ? "text-surface" : "text-heading";
+  const descColor = theme === "dark" ? "text-surface/80" : "text-heading/80";
 
   return (
     <RevealOnScroll className={`flex flex-col ${flexClass}`}>

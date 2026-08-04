@@ -20,7 +20,7 @@ export function Partnership() {
         <RevealOnScroll delay={0.2} className="mb-16">
           <div className="flex flex-wrap justify-center gap-3">
             {PARTNER_TYPES.map((pt) => (
-              <span key={pt} className="px-4 py-2 rounded-full border border-burntOrange/20 text-xs md:text-sm text-deepAmber tracking-widest uppercase transition-colors duration-300 hover:bg-burntOrange/5 hover:border-burntOrange/40 cursor-default">
+              <span key={pt} className="px-4 py-2 rounded-full border border-divider text-xs md:text-sm text-heading tracking-widest uppercase transition-colors duration-300 hover:bg-softAccent hover:border-primary/40 cursor-default">
                 {pt}
               </span>
             ))}

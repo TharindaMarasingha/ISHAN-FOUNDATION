@@ -23,10 +23,10 @@ export function ScaleStats() {
           {STATS.map((stat, index) => (
             <RevealOnScroll key={stat.label} delay={index * 0.1}>
               <div className="flex flex-col items-center">
-                <span className="font-display font-light text-6xl md:text-7xl text-sacredGold mb-4">
+                <span className="font-display font-light text-6xl md:text-7xl text-secondary mb-4">
                   {stat.value}
                 </span>
-                <span className="font-sans font-light text-sm uppercase tracking-widest text-peach/80">
+                <span className="font-sans font-light text-sm uppercase tracking-widest text-white/80">
                   {stat.label}
                 </span>
               </div>

@@ -38,7 +38,7 @@ const PILLARS = [
 
 export function Pillars() {
   return (
-    <section className="bg-deepAmber/[0.02] py-24 px-6 border-y border-burntOrange/10">
+    <section className="bg-surface py-24 px-6 border-y border-divider">
       <div className="max-w-7xl mx-auto">
         <SectionHeading
           eyebrow="What's Included"
@@ -53,13 +53,13 @@ export function Pillars() {
             return (
               <RevealOnScroll key={item.title} delay={index * 0.1}>
                 <Card className="h-full flex flex-col p-8 group">
-                  <div className="w-14 h-14 border border-burntOrange/20 rounded-full flex items-center justify-center mb-6 text-burntOrange group-hover:bg-burntOrange group-hover:text-peach transition-colors duration-300">
+                  <div className="w-14 h-14 border border-divider rounded-full flex items-center justify-center mb-6 text-primary group-hover:bg-cta/90 group-hover:text-white transition-colors duration-300">
                     <Icon className="w-6 h-6" strokeWidth={1.5} />
                   </div>
-                  <h3 className="font-display uppercase tracking-widest text-lg text-deepAmber mb-4">
+                  <h3 className="font-display uppercase tracking-widest text-lg text-heading mb-4">
                     {item.title}
                   </h3>
-                  <p className="font-sans font-light text-deepAmber text-sm leading-relaxed flex-grow">
+                  <p className="font-sans font-light text-heading text-sm leading-relaxed flex-grow">
                     {item.description}
                   </p>
                 </Card>

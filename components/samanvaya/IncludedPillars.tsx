@@ -44,11 +44,11 @@ export function IncludedPillars() {
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
         {PILLARS.map((pillar, index) => (
           <RevealOnScroll key={pillar.title} delay={index * 0.1} className="h-full">
-            <Card className="h-full p-8 border-mandarin/20 hover:-translate-y-1 hover:border-mandarin/40 transition-all duration-300">
-              <h3 className="font-display font-light text-2xl text-deepAmber mb-4">
+            <Card className="h-full p-8 border-divider hover:-translate-y-1 hover:border-primary/40 transition-all duration-300">
+              <h3 className="font-display font-light text-2xl text-heading mb-4">
                 {pillar.title}
               </h3>
-              <p className="font-sans font-light text-sm text-deepAmber/80 leading-relaxed">
+              <p className="font-sans font-light text-sm text-heading/80 leading-relaxed">
                 {pillar.description}
               </p>
             </Card>

@@ -40,7 +40,7 @@ export function TopLeftCorner({ className = "" }: { className?: string }) {
         viewBox="0 0 350 450" 
         fill="none" 
         xmlns="http://www.w3.org/2000/svg" 
-        className="w-full h-full text-[#C79A4B] opacity-[0.35] group-hover:opacity-[0.45] transition-opacity duration-1000 animate-float-tl"
+        className="w-full h-full text-secondary opacity-[0.35] group-hover:opacity-[0.45] transition-opacity duration-1000 animate-float-tl"
       >
         <g stroke="currentColor" strokeWidth="1.25" strokeLinecap="round" strokeLinejoin="round">
           {/* Main Branches */}
@@ -130,7 +130,7 @@ export function BottomRightCorner({ className = "" }: { className?: string }) {
         viewBox="0 0 350 450" 
         fill="none" 
         xmlns="http://www.w3.org/2000/svg" 
-        className="w-full h-full text-[#C79A4B] opacity-[0.35] group-hover:opacity-[0.45] transition-opacity duration-1000 animate-float-br"
+        className="w-full h-full text-secondary opacity-[0.35] group-hover:opacity-[0.45] transition-opacity duration-1000 animate-float-br"
       >
         <g stroke="currentColor" strokeWidth="1.25" strokeLinecap="round" strokeLinejoin="round">
           

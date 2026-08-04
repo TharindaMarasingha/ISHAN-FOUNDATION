@@ -61,16 +61,16 @@ export function ContactLayout() {
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-16">
         {/* Left: Contact Form */}
         <RevealOnScroll className="lg:col-span-7">
-          <h2 className="font-display uppercase tracking-widest text-2xl text-deepAmber mb-8">
+          <h2 className="font-display uppercase tracking-widest text-2xl text-heading mb-8">
             Send a Message
           </h2>
 
           {isSuccess ? (
-            <Card className="bg-sacredGold/10 border-sacredGold/30 text-center py-16">
-              <h3 className="font-display italic text-3xl text-burntOrange mb-4">
+            <Card className="bg-softAccent border-secondary/30 text-center py-16">
+              <h3 className="font-display italic text-3xl text-primary mb-4">
                 Thank You
               </h3>
-              <p className="font-sans font-light text-deepAmber">
+              <p className="font-sans font-light text-heading">
                 Your message has been received. Our team will be in touch with you shortly.
               </p>
               <Button
@@ -84,7 +84,7 @@ export function ContactLayout() {
           ) : (
             <form onSubmit={handleSubmit} className="space-y-6">
               <div>
-                <label htmlFor="name" className="block font-sans text-xs uppercase tracking-[0.2em] text-deepAmber mb-2">
+                <label htmlFor="name" className="block font-sans text-xs uppercase tracking-[0.2em] text-heading mb-2">
                   Full Name *
                 </label>
                 <input
@@ -93,7 +93,7 @@ export function ContactLayout() {
                   name="name"
                   value={formData.name}
                   onChange={handleChange}
-                  className={`w-full bg-peach/50 border ${errors.name ? "border-red-500" : "border-burntOrange/20"} px-4 py-3 font-sans font-light text-deepAmber focus:outline-none focus:border-burntOrange focus:ring-1 focus:ring-burntOrange transition-colors`}
+                  className={`w-full bg-peach/50 border ${errors.name ? "border-red-500" : "border-divider"} px-4 py-3 font-sans font-light text-heading focus:outline-none focus:border-primary focus:ring-1 focus:ring-burntOrange transition-colors`}
                   aria-invalid={!!errors.name}
                   aria-describedby={errors.name ? "name-error" : undefined}
                 />
@@ -101,7 +101,7 @@ export function ContactLayout() {
               </div>
 
               <div>
-                <label htmlFor="email" className="block font-sans text-xs uppercase tracking-[0.2em] text-deepAmber mb-2">
+                <label htmlFor="email" className="block font-sans text-xs uppercase tracking-[0.2em] text-heading mb-2">
                   Email Address *
                 </label>
                 <input
@@ -110,7 +110,7 @@ export function ContactLayout() {
                   name="email"
                   value={formData.email}
                   onChange={handleChange}
-                  className={`w-full bg-peach/50 border ${errors.email ? "border-red-500" : "border-burntOrange/20"} px-4 py-3 font-sans font-light text-deepAmber focus:outline-none focus:border-burntOrange focus:ring-1 focus:ring-burntOrange transition-colors`}
+                  className={`w-full bg-peach/50 border ${errors.email ? "border-red-500" : "border-divider"} px-4 py-3 font-sans font-light text-heading focus:outline-none focus:border-primary focus:ring-1 focus:ring-burntOrange transition-colors`}
                   aria-invalid={!!errors.email}
                   aria-describedby={errors.email ? "email-error" : undefined}
                 />
@@ -118,7 +118,7 @@ export function ContactLayout() {
               </div>
 
               <div>
-                <label htmlFor="organization" className="block font-sans text-xs uppercase tracking-[0.2em] text-deepAmber mb-2">
+                <label htmlFor="organization" className="block font-sans text-xs uppercase tracking-[0.2em] text-heading mb-2">
                   Organisation (Optional)
                 </label>
                 <input
@@ -127,12 +127,12 @@ export function ContactLayout() {
                   name="organization"
                   value={formData.organization}
                   onChange={handleChange}
-                  className="w-full bg-peach/50 border border-burntOrange/20 px-4 py-3 font-sans font-light text-deepAmber focus:outline-none focus:border-burntOrange focus:ring-1 focus:ring-burntOrange transition-colors"
+                  className="w-full bg-peach/50 border border-divider px-4 py-3 font-sans font-light text-heading focus:outline-none focus:border-primary focus:ring-1 focus:ring-burntOrange transition-colors"
                 />
               </div>
 
               <div>
-                <label htmlFor="role" className="block font-sans text-xs uppercase tracking-[0.2em] text-deepAmber mb-2">
+                <label htmlFor="role" className="block font-sans text-xs uppercase tracking-[0.2em] text-heading mb-2">
                   I am a... *
                 </label>
                 <div className="relative">
@@ -141,7 +141,7 @@ export function ContactLayout() {
                     name="role"
                     value={formData.role}
                     onChange={handleChange}
-                    className={`w-full appearance-none bg-peach/50 border ${errors.role ? "border-red-500" : "border-burntOrange/20"} px-4 py-3 font-sans font-light text-deepAmber focus:outline-none focus:border-burntOrange focus:ring-1 focus:ring-burntOrange transition-colors rounded-none`}
+                    className={`w-full appearance-none bg-peach/50 border ${errors.role ? "border-red-500" : "border-divider"} px-4 py-3 font-sans font-light text-heading focus:outline-none focus:border-primary focus:ring-1 focus:ring-burntOrange transition-colors rounded-none`}
                     aria-invalid={!!errors.role}
                     aria-describedby={errors.role ? "role-error" : undefined}
                   >
@@ -153,7 +153,7 @@ export function ContactLayout() {
                     <option value="Media">Media</option>
                     <option value="Other">Other</option>
                   </select>
-                  <div className="pointer-events-none absolute inset-y-0 right-0 flex items-center px-4 text-burntOrange">
+                  <div className="pointer-events-none absolute inset-y-0 right-0 flex items-center px-4 text-primary">
                     <svg className="fill-current h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z"/></svg>
                   </div>
                 </div>
@@ -161,7 +161,7 @@ export function ContactLayout() {
               </div>
 
               <div>
-                <label htmlFor="message" className="block font-sans text-xs uppercase tracking-[0.2em] text-deepAmber mb-2">
+                <label htmlFor="message" className="block font-sans text-xs uppercase tracking-[0.2em] text-heading mb-2">
                   Message *
                 </label>
                 <textarea
@@ -170,7 +170,7 @@ export function ContactLayout() {
                   value={formData.message}
                   onChange={handleChange}
                   rows={5}
-                  className={`w-full bg-peach/50 border ${errors.message ? "border-red-500" : "border-burntOrange/20"} px-4 py-3 font-sans font-light text-deepAmber focus:outline-none focus:border-burntOrange focus:ring-1 focus:ring-burntOrange transition-colors resize-y`}
+                  className={`w-full bg-peach/50 border ${errors.message ? "border-red-500" : "border-divider"} px-4 py-3 font-sans font-light text-heading focus:outline-none focus:border-primary focus:ring-1 focus:ring-burntOrange transition-colors resize-y`}
                   aria-invalid={!!errors.message}
                   aria-describedby={errors.message ? "message-error" : undefined}
                 />
@@ -189,27 +189,27 @@ export function ContactLayout() {
         {/* Right: Contact Information */}
         <RevealOnScroll delay={0.2} className="lg:col-span-5 flex flex-col gap-10">
           <div>
-            <h2 className="font-display uppercase tracking-widest text-xl text-deepAmber mb-6 border-b border-burntOrange/20 pb-4">
+            <h2 className="font-display uppercase tracking-widest text-xl text-heading mb-6 border-b border-divider pb-4">
               Direct Contact
             </h2>
             <div className="space-y-4">
               <div className="flex flex-col">
-                <span className="font-sans text-[0.65rem] uppercase tracking-[0.2em] text-burntOrange mb-1">General Inquiries</span>
-                <a href="mailto:contact@ishan.global" className="font-sans font-light text-deepAmber hover:text-burntOrange transition-colors">
+                <span className="font-sans text-[0.65rem] uppercase tracking-[0.2em] text-primary mb-1">General Inquiries</span>
+                <a href="mailto:contact@ishan.global" className="font-sans font-light text-heading hover:text-primary transition-colors">
                   contact@ishan.global
                 </a>
               </div>
               <div className="flex flex-col">
-                <span className="font-sans text-[0.65rem] uppercase tracking-[0.2em] text-burntOrange mb-1">Website</span>
-                <a href="https://ishan.global" target="_blank" rel="noopener noreferrer" className="font-sans font-light text-deepAmber hover:text-burntOrange transition-colors">
+                <span className="font-sans text-[0.65rem] uppercase tracking-[0.2em] text-primary mb-1">Website</span>
+                <a href="https://ishan.global" target="_blank" rel="noopener noreferrer" className="font-sans font-light text-heading hover:text-primary transition-colors">
                   www.ishan.global
                 </a>
               </div>
             </div>
           </div>
 
-          <Card className="bg-deepAmber/5 border-none p-6">
-            <h2 className="font-display uppercase tracking-widest text-lg text-deepAmber mb-6">
+          <Card className="bg-surface border-none p-6">
+            <h2 className="font-display uppercase tracking-widest text-lg text-heading mb-6">
               Explore the Ecosystem
             </h2>
             <nav className="flex flex-col gap-4">
@@ -222,17 +222,17 @@ export function ContactLayout() {
                 <Link
                   key={link.label}
                   href={link.href}
-                  className="font-sans text-sm font-light text-deepAmber hover:text-burntOrange transition-colors flex items-center group"
+                  className="font-sans text-sm font-light text-heading hover:text-primary transition-colors flex items-center group"
                 >
-                  <span className="w-4 h-px bg-burntOrange/30 mr-3 transition-all duration-300 group-hover:w-6 group-hover:bg-burntOrange" />
+                  <span className="w-4 h-px bg-softAccent mr-3 transition-all duration-300 group-hover:w-6 group-hover:bg-cta/90" />
                   {link.label}
                 </Link>
               ))}
             </nav>
           </Card>
 
-          <div className="pt-6 border-t border-burntOrange/10">
-            <p className="font-display italic text-lg text-burntOrange leading-relaxed">
+          <div className="pt-6 border-t border-divider">
+            <p className="font-display italic text-lg text-primary leading-relaxed">
               ISHAN is more than an organization; it is a global movement towards a conscious, harmonised future.
             </p>
           </div>

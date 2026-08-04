@@ -67,8 +67,8 @@ export function PhilosophySection() {
       <div className="absolute inset-0 z-0 pointer-events-none opacity-[0.03] mix-blend-multiply" 
            style={{ backgroundImage: "url('data:image/svg+xml,%3Csvg viewBox=%220 0 200 200%22 xmlns=%22http://www.w3.org/2000/svg%22%3E%3Cfilter id=%22noiseFilter%22%3E%3CfeTurbulence type=%22fractalNoise%22 baseFrequency=%220.8%22 numOctaves=%223%22 stitchTiles=%22stitch%22/%3E%3C/filter%3E%3Crect width=%22100%25%22 height=%22100%25%22 filter=%22url(%23noiseFilter)%22/%3E%3C/svg%3E')" }} 
       />
-      <div className="absolute -top-40 -left-40 w-[600px] h-[600px] bg-[#E8DBCE] rounded-full blur-[120px] opacity-50 pointer-events-none z-0" />
-      <div className="absolute -bottom-40 -right-40 w-[600px] h-[600px] bg-[#E8DBCE] rounded-full blur-[120px] opacity-50 pointer-events-none z-0" />
+      <div className="absolute -top-40 -left-40 w-[600px] h-[600px] bg-surface rounded-full blur-[120px] opacity-50 pointer-events-none z-0" />
+      <div className="absolute -bottom-40 -right-40 w-[600px] h-[600px] bg-surface rounded-full blur-[120px] opacity-50 pointer-events-none z-0" />
 
       <div className="max-w-[1200px] mx-auto px-6 md:px-10 w-full relative z-10">
         <div className="flex flex-col md:flex-row gap-12 md:gap-16 lg:gap-20 items-stretch">
@@ -80,12 +80,12 @@ export function PhilosophySection() {
               initial="hidden" whileInView="visible" viewport={{ once: true, margin: "-50px" }} variants={eyebrowVariants} 
               className="mb-4"
             >
-              <span className="text-[11px] font-sans uppercase tracking-[0.25em] text-[#806C5A] font-semibold">Our Philosophy</span>
+              <span className="text-[11px] font-sans uppercase tracking-[0.25em] text-heading/80 font-semibold">Our Philosophy</span>
             </motion.div>
             
             <motion.h2 
               initial="hidden" whileInView="visible" viewport={{ once: true, margin: "-50px" }} variants={headingVariants} 
-              className="font-display text-[40px] md:text-[48px] lg:text-[56px] text-[#4A2F1C] leading-[1.1] mb-6 tracking-tight"
+              className="font-display text-[40px] md:text-[48px] lg:text-[56px] text-heading leading-[1.1] mb-6 tracking-tight"
             >
               A Philosophy of <br className="hidden md:block"/> Stewardship
             </motion.h2>
@@ -93,15 +93,15 @@ export function PhilosophySection() {
             <div className="flex items-center w-full max-w-[200px] mb-8">
               <motion.div 
                 initial={{ scaleX: 0 }} whileInView={{ scaleX: 1 }} viewport={{ once: true, margin: "-50px" }} transition={{ duration: 0.8, ease: "easeInOut", delay: 0.7 }}
-                className="flex-1 h-[1px] bg-[#DCCDBA] origin-right"
+                className="flex-1 h-[1px] bg-divider origin-right"
               ></motion.div>
               <motion.div 
                 initial={{ opacity: 0, scale: 0 }} whileInView={{ opacity: 1, scale: 1 }} viewport={{ once: true, margin: "-50px" }} transition={{ duration: 0.4, delay: 1.3 }}
-                className="mx-4 w-1.5 h-1.5 rotate-45 bg-[#C7A45A] shrink-0"
+                className="mx-4 w-1.5 h-1.5 rotate-45 bg-secondary shrink-0"
               ></motion.div>
               <motion.div 
                 initial={{ scaleX: 0 }} whileInView={{ scaleX: 1 }} viewport={{ once: true, margin: "-50px" }} transition={{ duration: 0.8, ease: "easeInOut", delay: 0.7 }}
-                className="flex-1 h-[1px] bg-[#DCCDBA] origin-left"
+                className="flex-1 h-[1px] bg-divider origin-left"
               ></motion.div>
             </div>
 
@@ -109,16 +109,16 @@ export function PhilosophySection() {
               initial="hidden" whileInView="visible" viewport={{ once: true, margin: "-50px" }} variants={quoteVariants} 
               className="relative"
             >
-              <span className="absolute -top-10 -left-8 font-display text-[80px] md:text-[100px] text-[#C7A45A] opacity-25 leading-none select-none">“</span>
-              <div className="font-display italic text-[22px] md:text-[24px] lg:text-[26px] text-[#4A2F1C] leading-[1.6] relative z-10 tracking-wide">
+              <span className="absolute -top-10 -left-8 font-display text-[80px] md:text-[100px] text-secondary opacity-25 leading-none select-none">“</span>
+              <div className="font-display italic text-[22px] md:text-[24px] lg:text-[26px] text-heading leading-[1.6] relative z-10 tracking-wide">
                 <p className="mb-6">
                   A steward does not ask,<br/>
-                  <span className="text-[#806C5A]">What can I gain?</span>
+                  <span className="text-heading/80">What can I gain?</span>
                 </p>
                 <p>
                   A steward asks,<br/>
-                  What can I <span className="text-[#C7A45A]">preserve</span>, <span className="text-[#C7A45A]">protect</span>,<br/>
-                  <span className="text-[#C7A45A]">develop</span>, and <span className="text-[#C7A45A]">pass on</span>?
+                  What can I <span className="text-secondary">preserve</span>, <span className="text-secondary">protect</span>,<br/>
+                  <span className="text-secondary">develop</span>, and <span className="text-secondary">pass on</span>?
                 </p>
               </div>
             </motion.div>
@@ -126,7 +126,7 @@ export function PhilosophySection() {
 
           {/* Vertical Divider for Desktop */}
           <div className="hidden md:flex w-[1px] bg-gradient-to-b from-transparent via-[#DCCDBA] to-transparent opacity-60 flex-col items-center justify-center">
-            <div className="w-1.5 h-1.5 rotate-45 bg-[#C7A45A] opacity-70"></div>
+            <div className="w-1.5 h-1.5 rotate-45 bg-secondary opacity-70"></div>
           </div>
 
           {/* Right Column - Principles */}
@@ -139,7 +139,7 @@ export function PhilosophySection() {
                     {/* Icon */}
                     <motion.div 
                       initial="hidden" whileInView="visible" viewport={{ once: true, margin: "-50px" }} variants={getIconVariants(index)}
-                      className="w-[44px] h-[44px] shrink-0 rounded-full border border-[#DCCDBA] flex items-center justify-center text-[#C7A45A] mt-1 transition-colors duration-500 group-hover:bg-[#C7A45A]/5 group-hover:border-[#C7A45A]/50"
+                      className="w-[44px] h-[44px] shrink-0 rounded-full border border-[#DCCDBA] flex items-center justify-center text-secondary mt-1 transition-colors duration-500 group-hover:bg-secondary/5 group-hover:border-[#C7A45A]/50"
                     >
                       <Icon strokeWidth={1.5} size={20} />
                     </motion.div>
@@ -149,19 +149,19 @@ export function PhilosophySection() {
                       initial="hidden" whileInView="visible" viewport={{ once: true, margin: "-50px" }} variants={getTextVariants(index)}
                       className="flex flex-col flex-1"
                     >
-                      <span className="font-sans text-[11px] font-semibold tracking-[0.2em] text-[#C7A45A] opacity-80 mb-1">
+                      <span className="font-sans text-[11px] font-semibold tracking-[0.2em] text-secondary opacity-80 mb-1">
                         0{index + 1}
                       </span>
-                      <span className="font-sans text-[18px] lg:text-[20px] text-[#4A2F1C] font-light tracking-wide mb-3">
+                      <span className="font-sans text-[18px] lg:text-[20px] text-heading font-light tracking-wide mb-3">
                         {point.title}
                       </span>
                       
                       {/* Thin Divider under text */}
                       <motion.div 
                         initial="hidden" whileInView="visible" viewport={{ once: true, margin: "-50px" }} variants={getLineVariants(index)}
-                        className="h-[1px] bg-[#DCCDBA] relative flex items-center transition-opacity duration-500 group-hover:opacity-100"
+                        className="h-[1px] bg-divider relative flex items-center transition-opacity duration-500 group-hover:opacity-100"
                       >
-                        <div className="absolute right-0 w-1.5 h-1.5 rotate-45 bg-[#C7A45A] opacity-60 transition-opacity duration-500 group-hover:opacity-100"></div>
+                        <div className="absolute right-0 w-1.5 h-1.5 rotate-45 bg-secondary opacity-60 transition-opacity duration-500 group-hover:opacity-100"></div>
                       </motion.div>
                     </motion.div>
                   </div>
@@ -255,7 +255,7 @@ export function CircleOfStewardsSection() {
                 animate={{ opacity: 1, y: 0 }}
                 exit={{ opacity: 0, y: -16 }}
                 transition={{ duration: 0.4, ease: "easeOut" }}
-                className={`overflow-hidden relative bg-[rgba(255,255,255,0.75)] border border-[rgba(201,168,76,0.3)] rounded-[24px] px-8 py-10 md:px-[40px] md:py-[48px] min-h-[480px] flex flex-col ${activeMember.isAnchor ? 'border-t-4 border-t-[#C9A84C]' : ''}`}
+                className={`overflow-hidden relative bg-[rgba(255,255,255,0.75)] border border-primary rounded-[24px] px-8 py-10 md:px-[40px] md:py-[48px] min-h-[480px] flex flex-col ${activeMember.isAnchor ? 'border-t-4 border-t-[#C9A84C]' : ''}`}
               >
                 {activeMember.image && (
                   <>
@@ -276,7 +276,7 @@ export function CircleOfStewardsSection() {
                 )}
                 
                 <div className="relative z-20 flex flex-col items-start justify-end flex-grow">
-                  <h4 className="font-forum italic text-[16px] text-[#C9A84C] mb-[4px]">
+                  <h4 className="font-forum italic text-[16px] text-primary mb-[4px]">
                     {activeMember.archetype}
                   </h4>
 
@@ -288,10 +288,10 @@ export function CircleOfStewardsSection() {
                     {activeMember.name}
                   </h3>
 
-                  <div className="w-[40px] h-[1.5px] bg-[#C9A84C] mb-[16px]" />
+                  <div className="w-[40px] h-[1.5px] bg-secondary mb-[16px]" />
 
                   <p className="font-sans font-[300] text-[15px] text-[rgba(255,255,255,0.7)] leading-[1.8]">
-                    <span className="font-medium text-[#C9A84C]">Key Areas:</span> {activeMember.description}
+                    <span className="font-medium text-primary">Key Areas:</span> {activeMember.description}
                   </p>
                 </div>
               </motion.div>
@@ -308,26 +308,26 @@ export function CircleOfStewardsSection() {
                   onClick={() => setActiveIndex(index)}
                   className={`flex items-center gap-3 w-[260px] sm:w-[280px] md:w-full flex-shrink-0 snap-start text-left px-[20px] py-[16px] rounded-[12px] transition-all duration-250 ease-in-out ${
                     isActive
-                      ? "bg-[rgba(255,255,255,0.7)] border border-[rgba(201,168,76,0.35)] shadow-[0_2px_12px_rgba(42,20,8,0.08)]"
-                      : "bg-transparent border border-[rgba(201,168,76,0.12)] hover:border-[rgba(201,168,76,0.25)]"
+                      ? "bg-[rgba(255,255,255,0.7)] border border-primary shadow-[0_2px_12px_rgba(42,20,8,0.08)]"
+                      : "bg-transparent border border-primary hover:border-primary"
                   }`}
                 >
                   <div 
                     className={`w-[44px] h-[44px] flex-shrink-0 rounded-full flex items-center justify-center transition-colors duration-250 ${
-                      isActive ? "border-2 border-[rgba(201,168,76,0.4)]" : "border-2 border-[rgba(201,168,76,0.15)]"
+                      isActive ? "border-2 border-primary" : "border-2 border-primary"
                     }`}
                     style={{ background: 'linear-gradient(135deg, rgba(201,168,76,0.3), rgba(156,63,0,0.2))' }}
                   >
-                    <span className="font-forum text-[14px] text-[#2E1A0E]">{member.initials}</span>
+                    <span className="font-forum text-[14px] text-heading">{member.initials}</span>
                   </div>
 
                   <div className="flex-grow flex flex-col">
-                    <span className="font-sans font-[500] text-[14px] text-[#2E1A0E]">{member.name}</span>
-                    <span className="font-sans font-[300] text-[12px] text-[#8a7a6a] line-clamp-1 md:line-clamp-none">{member.role}</span>
+                    <span className="font-sans font-[500] text-[14px] text-heading">{member.name}</span>
+                    <span className="font-sans font-[300] text-[12px] text-heading/80 line-clamp-1 md:line-clamp-none">{member.role}</span>
                   </div>
 
                   {isActive && (
-                    <div className="w-[6px] h-[6px] rounded-full bg-[#C9A84C] ml-2 flex-shrink-0 hidden md:block" />
+                    <div className="w-[6px] h-[6px] rounded-full bg-secondary ml-2 flex-shrink-0 hidden md:block" />
                   )}
                 </button>
               );
@@ -432,12 +432,12 @@ export function SharedCommitmentSection() {
         />
       </div>
       <div className="max-w-5xl mx-auto relative z-10">
-        <h2 className="font-display font-light text-4xl md:text-5xl text-sacredGold mb-16 [text-shadow:0_2px_14px_rgba(0,0,0,0.5),0_1px_4px_rgba(0,0,0,0.4)]">Our Shared Commitment</h2>
+        <h2 className="font-display font-light text-4xl md:text-5xl text-secondary mb-16 [text-shadow:0_2px_14px_rgba(0,0,0,0.5),0_1px_4px_rgba(0,0,0,0.4)]">Our Shared Commitment</h2>
         
         <RevealOnScroll delay={0.2}>
           <div className="mt-12 flex flex-wrap justify-center gap-4 mb-20">
             {tags.map((t, i) => (
-               <div key={i} className="px-6 py-4 rounded-full bg-[rgba(46,26,14,0.55)] backdrop-blur-sm border border-[rgba(201,168,76,0.3)] text-peach font-sans text-sm uppercase tracking-widest [text-shadow:0_2px_14px_rgba(0,0,0,0.5),0_1px_4px_rgba(0,0,0,0.4)]">
+               <div key={i} className="px-6 py-4 rounded-full bg-[rgba(46,26,14,0.55)] backdrop-blur-sm border border-primary text-white font-sans text-sm uppercase tracking-widest [text-shadow:0_2px_14px_rgba(0,0,0,0.5),0_1px_4px_rgba(0,0,0,0.4)]">
                  {t}
                </div>
             ))}
@@ -445,17 +445,17 @@ export function SharedCommitmentSection() {
         </RevealOnScroll>
 
         <RevealOnScroll delay={0.4}>
-          <div className="pt-16 border-t border-sacredGold/20 min-h-[140px]">
+          <div className="pt-16 border-t border-divider min-h-[140px]">
             <TypewriterQuote 
               text='"This is the spirit of stewardship. This is the leadership philosophy of ISHAN."'
-              className="font-display italic text-3xl md:text-4xl text-sacredGold leading-relaxed max-w-3xl mx-auto [text-shadow:0_2px_14px_rgba(0,0,0,0.5),0_1px_4px_rgba(0,0,0,0.4)]"
+              className="font-display italic text-3xl md:text-4xl text-secondary leading-relaxed max-w-3xl mx-auto [text-shadow:0_2px_14px_rgba(0,0,0,0.5),0_1px_4px_rgba(0,0,0,0.4)]"
             />
           </div>
         </RevealOnScroll>
 
         <RevealOnScroll delay={0.6} className="mt-20 flex flex-col sm:flex-row justify-center gap-4 sm:gap-6 w-full sm:w-auto">
           <Button href="/framework" variant="primary">Explore Our Framework</Button>
-          <Button href="/contact" variant="ghost" className="!bg-[rgba(46,26,14,0.6)] backdrop-blur-sm !border-[1.5px] !border-solid !border-[rgba(245,217,138,0.7)] !text-[#FFF1E6] hover:!bg-[#F5D98A] hover:!text-[#4A2B18] hover:!border-[#F5D98A] transition-all">Connect With Us</Button>
+          <Button href="/contact" variant="ghost" className="!bg-heading/60 backdrop-blur-sm !border-[1.5px] !border-solid !border-primary/70 !text-white hover:!bg-cta hover:!text-heading hover:!border-[#F5D98A] transition-all">Connect With Us</Button>
         </RevealOnScroll>
       </div>
     </section>
