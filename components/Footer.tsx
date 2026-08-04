@@ -6,7 +6,7 @@ import Image from "next/image";
 import { motion } from "framer-motion";
 
 const Instagram = ({ size = 24 }: { size?: number }) => (
-  <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+  <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
     <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
     <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
     <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
@@ -14,38 +14,25 @@ const Instagram = ({ size = 24 }: { size?: number }) => (
 );
 
 const Facebook = ({ size = 24 }: { size?: number }) => (
-  <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+  <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
     <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path>
   </svg>
 );
 
 const Youtube = ({ size = 24 }: { size?: number }) => (
-  <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+  <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
     <path d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33 2.78 2.78 0 0 0 1.94 2c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2 29 29 0 0 0 .46-5.33 29 29 0 0 0-.46-5.33z"></path>
     <polygon points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02"></polygon>
   </svg>
 );
 
 const Linkedin = ({ size = 24 }: { size?: number }) => (
-  <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+  <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
     <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
     <rect x="2" y="9" width="4" height="12"></rect>
     <circle cx="4" cy="4" r="2"></circle>
   </svg>
 );
-
-const footerLinks = [
-  { label: "Home", href: "/" },
-  { label: "About", href: "/about" },
-  { label: "Framework", href: "/framework" },
-  { label: "Leadership", href: "/leadership" },
-  { label: "Ecosystem", href: "/ecosystem" },
-  { label: "Programmes", href: "/programmes" },
-  { label: "Research", href: "/research" },
-  { label: "Partnerships", href: "/partnerships" },
-  { label: "Vision", href: "/vision" },
-  { label: "Support", href: "/support" },
-];
 
 const VALUES = [
   "Pristine Wisdom",
@@ -62,151 +49,173 @@ export default function Footer() {
   const tickerItems = [...VALUES, ...VALUES];
 
   return (
-    <footer className="relative bg-heading border-t border-secondary/30 pt-8 md:pt-12 pb-6 md:pb-8 overflow-hidden z-0">
+    <footer className="relative bg-[#33472C] border-t border-[#9FBB90]/20 pt-6 md:pt-10 pb-6 overflow-hidden z-0 font-sans">
       
       {/* Ambient background glow and texture */}
-      <div className="absolute inset-0 pointer-events-none flex items-center justify-center opacity-[0.03] z-0">
-        <div className="w-[800px] h-[800px] rounded-full bg-[radial-gradient(circle,var(--color-primary)_0%,transparent_70%)] blur-3xl"></div>
-        <div className="absolute inset-0 opacity-20" style={{ backgroundImage: "radial-gradient(circle at center, var(--color-primary) 1px, transparent 1px)", backgroundSize: "40px 40px" }}></div>
+      <div className="absolute inset-0 pointer-events-none flex items-center justify-center opacity-[0.04] z-0">
+        <div className="w-[800px] h-[800px] rounded-full bg-[radial-gradient(circle,#9FBB90_0%,transparent_70%)] blur-3xl"></div>
+        <div className="absolute inset-0 opacity-30" style={{ backgroundImage: "radial-gradient(circle at center, #9FBB90 1px, transparent 1px)", backgroundSize: "40px 40px" }}></div>
       </div>
-
-      {/* Coral-Orange Ambient Glow (Top Right) */}
-      <div className="absolute top-0 right-0 w-[400px] h-[400px] bg-gradient-to-r from-softAccent to-background blur-[120px] opacity-25 mix-blend-screen pointer-events-none translate-x-1/3 -translate-y-1/3 rounded-full z-0"></div>
 
       <div className="relative z-10 max-w-7xl mx-auto px-6 md:px-12">
         
         {/* Ticker Line */}
-        <div className="relative w-full overflow-hidden select-none group mb-4 md:mb-6">
+        <div className="relative w-full overflow-hidden select-none group mb-8 md:mb-10">
           <motion.div
             className="flex whitespace-nowrap w-max items-center"
             animate={{ x: ["0%", "-50%"] }}
             transition={{
               repeat: Infinity,
               ease: "linear",
-              duration: 22,
+              duration: 25,
             }}
           >
             {tickerItems.map((val, idx) => (
               <React.Fragment key={idx}>
-                <span className="text-[10px] uppercase tracking-[0.2em] text-surface/70 px-4 md:px-5">
+                <span className="text-[10px] uppercase tracking-[0.2em] text-[#F5F1E9]/50 px-4 md:px-5">
                   {val}
                 </span>
-                <span className="text-surface/30 text-[8px]">·</span>
+                <span className="text-[#F5F1E9]/20 text-[8px]">·</span>
               </React.Fragment>
             ))}
           </motion.div>
         </div>
 
-        {/* Divider below ticker */}
-        <div className="w-full h-px bg-gradient-to-r from-transparent via-secondary/30 to-transparent mb-8 md:mb-10" />
-
-        {/* Top Row: Logo & Nav */}
-        <div className="flex flex-col lg:flex-row justify-between items-center lg:items-center gap-0 lg:gap-8">
-          {/* Logo Lockup */}
-          <div className="flex flex-col items-center lg:items-start flex-shrink-0 min-w-[280px]">
+        {/* Main Footer Content */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-8 lg:gap-6 text-left">
+          
+          {/* Brand Column */}
+          <div className="lg:col-span-4 flex flex-col items-start pr-0 lg:pr-6">
             <Image 
-              src="/images/ishan-logo.png" 
+              src="/images/ishanlogo.png" 
               alt="ISHAN Logo" 
               width={600} 
               height={240} 
-              className="object-contain mb-4 h-32 md:h-48 w-auto max-w-full"
+              className="object-contain h-40 md:h-56 w-auto -mt-4 -mb-4 md:-mb-8 -ml-4"
               priority
             />
+            <p className="text-[#F5F1E9]/80 text-[13px] md:text-[14px] leading-[1.8] max-w-[320px] font-light">
+              Harmonising Humanity with Nature through Wisdom, Wellness, and Collective Responsibility.
+            </p>
             
             {/* Social Links */}
-            <div className="flex items-center justify-center lg:justify-start gap-3 mt-4">
-              <a href="https://www.instagram.com/ishan_retreats/" target="_blank" rel="noopener noreferrer" className="w-9 h-9 rounded-full border border-secondary/30 flex items-center justify-center text-surface/90 hover:border-[#D94F9D] hover:text-[#D94F9D] hover:scale-105 transition-all duration-300">
-                <Instagram size={18} />
+            <div className="flex items-center gap-3 mt-6">
+              <a href="https://www.instagram.com/ishan_retreats/" target="_blank" rel="noopener noreferrer" className="w-9 h-9 rounded-full border border-[#9FBB90]/30 flex items-center justify-center text-[#F5F1E9]/90 hover:border-[#F5F1E9] hover:bg-[#F5F1E9] hover:text-[#33472C] hover:scale-105 transition-all duration-300">
+                <Instagram size={16} />
               </a>
-              <a href="#" target="_blank" rel="noopener noreferrer" className="w-9 h-9 rounded-full border border-secondary/30 flex items-center justify-center text-surface/90 hover:border-[#D94F9D] hover:text-[#D94F9D] hover:scale-105 transition-all duration-300">
-                <Facebook size={18} />
+              <a href="#" target="_blank" rel="noopener noreferrer" className="w-9 h-9 rounded-full border border-[#9FBB90]/30 flex items-center justify-center text-[#F5F1E9]/90 hover:border-[#F5F1E9] hover:bg-[#F5F1E9] hover:text-[#33472C] hover:scale-105 transition-all duration-300">
+                <Facebook size={16} />
               </a>
-              <a href="#" target="_blank" rel="noopener noreferrer" className="w-9 h-9 rounded-full border border-secondary/30 flex items-center justify-center text-surface/90 hover:border-[#D94F9D] hover:text-[#D94F9D] hover:scale-105 transition-all duration-300">
-                <Youtube size={18} />
+              <a href="#" target="_blank" rel="noopener noreferrer" className="w-9 h-9 rounded-full border border-[#9FBB90]/30 flex items-center justify-center text-[#F5F1E9]/90 hover:border-[#F5F1E9] hover:bg-[#F5F1E9] hover:text-[#33472C] hover:scale-105 transition-all duration-300">
+                <Youtube size={16} />
               </a>
-              <a href="#" target="_blank" rel="noopener noreferrer" className="w-9 h-9 rounded-full border border-secondary/30 flex items-center justify-center text-surface/90 hover:border-[#D94F9D] hover:text-[#D94F9D] hover:scale-105 transition-all duration-300">
-                <Linkedin size={18} />
+              <a href="#" target="_blank" rel="noopener noreferrer" className="w-9 h-9 rounded-full border border-[#9FBB90]/30 flex items-center justify-center text-[#F5F1E9]/90 hover:border-[#F5F1E9] hover:bg-[#F5F1E9] hover:text-[#33472C] hover:scale-105 transition-all duration-300">
+                <Linkedin size={16} />
               </a>
             </div>
           </div>
 
-          {/* Mobile-only Divider (Logo -> Nav) */}
-          <div className="w-full h-px bg-secondary/30 block lg:hidden my-4" />
-
-          {/* Right Column: Nav & Contact */}
-          <div className="flex flex-col items-center lg:items-end gap-0 lg:gap-8 mt-0 w-full lg:w-auto">
-            {/* Nav Links */}
-            <div className="grid grid-cols-2 gap-x-4 gap-y-3 lg:flex lg:flex-wrap justify-items-center lg:justify-end lg:gap-x-6 lg:gap-y-4 w-full lg:w-auto text-center lg:text-left">
-              {footerLinks.map((link) => {
-                if (link.label === "Support") {
-                  return (
-                    <Link
-                      key={link.label}
-                      href={link.href}
-                      className="text-[10px] tracking-[0.15em] uppercase text-surface/90 hover:text-[#D94F9D] transition-colors duration-300 border border-secondary/30 lg:border-none rounded-full px-4 py-1.5 lg:px-0 lg:py-0 flex items-center justify-center lg:block w-fit mx-auto lg:mx-0 col-span-2 lg:col-span-1 mt-1 lg:mt-0"
-                    >
-                      {link.label}
-                    </Link>
-                  );
-                }
-                return (
-                  <Link
-                    key={link.label}
-                    href={link.href}
-                    className="text-[10px] tracking-[0.15em] uppercase text-surface/90 hover:text-[#D94F9D] transition-colors duration-300 py-1 lg:py-0"
-                  >
-                    {link.label}
+          {/* Explore Column */}
+          <div className="lg:col-span-2 flex flex-col items-start lg:pl-4">
+            <h4 className="text-[#9FBB90] text-[11px] font-bold tracking-[0.15em] uppercase mb-4">Explore</h4>
+            <ul className="flex flex-col gap-3.5">
+              {[
+                { label: 'About Ishan', href: '/about' },
+                { label: 'Framework', href: '/framework' },
+                { label: 'Leadership', href: '/leadership' },
+                { label: 'Ecosystem', href: '/ecosystem' },
+                { label: 'Programmes', href: '/programmes' }
+              ].map((item) => (
+                <li key={item.label}>
+                  <Link href={item.href} className="text-[#F5F1E9]/75 text-[13px] hover:text-[#F5F1E9] hover:translate-x-1 inline-block transition-all duration-300">
+                    {item.label}
                   </Link>
-                );
-              })}
-            </div>
-            
-            {/* Mobile-only Divider (Nav -> Contact) */}
-            <div className="w-full h-px bg-secondary/30 block lg:hidden my-4" />
+                </li>
+              ))}
+            </ul>
+          </div>
 
-            {/* Contact Info Block */}
-            <div className="flex flex-row justify-between lg:flex-col items-center lg:items-end w-full lg:w-auto lg:gap-1.5">
-              <a 
-                href="https://ishanfoundation.lk"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-[10px] lg:text-[11px] tracking-[0.04em] uppercase text-surface/90 hover:text-[#D94F9D] transition-colors duration-300 hover:underline decoration-[#D94F9D] underline-offset-4"
-              >
+          {/* Resources Column */}
+          <div className="lg:col-span-2 flex flex-col items-start">
+            <h4 className="text-[#9FBB90] text-[11px] font-bold tracking-[0.15em] uppercase mb-4">Resources</h4>
+            <ul className="flex flex-col gap-3.5">
+              {[
+                { label: 'Research', href: '/research' },
+                { label: 'Partnerships', href: '/partnerships' },
+                { label: 'Vision', href: '/vision' },
+                { label: 'Support', href: '/support' }
+              ].map((item) => (
+                <li key={item.label}>
+                  <Link href={item.href} className="text-[#F5F1E9]/75 text-[13px] hover:text-[#F5F1E9] hover:translate-x-1 inline-block transition-all duration-300">
+                    {item.label}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          {/* Contact & Newsletter Column */}
+          <div className="lg:col-span-4 flex flex-col items-start lg:pl-4">
+            <h4 className="text-[#9FBB90] text-[11px] font-bold tracking-[0.15em] uppercase mb-4">Contact</h4>
+            <div className="flex flex-col gap-2.5 mb-6">
+              <a href="https://ishanfoundation.lk" target="_blank" rel="noopener noreferrer" className="text-[#F5F1E9]/80 text-[12px] tracking-[0.05em] uppercase hover:text-[#F5F1E9] transition-colors duration-300 hover:underline decoration-[#9FBB90]/50 underline-offset-4">
                 ishanfoundation.lk
               </a>
-              <a 
-                href="mailto:info@ishanfoundation.lk"
-                className="text-[10px] lg:text-[11px] tracking-[0.04em] uppercase text-surface/90 hover:text-[#D94F9D] transition-colors duration-300 hover:underline decoration-[#D94F9D] underline-offset-4"
-              >
+              <a href="mailto:info@ishanfoundation.lk" className="text-[#F5F1E9]/80 text-[12px] tracking-[0.05em] uppercase hover:text-[#F5F1E9] transition-colors duration-300 hover:underline decoration-[#9FBB90]/50 underline-offset-4">
                 info@ishanfoundation.lk
               </a>
+            </div>
+
+            <h4 className="text-[#9FBB90] text-[11px] font-bold tracking-[0.15em] uppercase mb-3">Stay Connected</h4>
+            <p className="text-[#F5F1E9]/70 text-[13px] font-light mb-4">
+              Receive updates, insights and upcoming programme news.
+            </p>
+            <div className="flex w-full max-w-sm h-[42px] group">
+              <input 
+                type="email" 
+                placeholder="Email Address" 
+                className="flex-1 bg-white/5 border border-white/10 border-r-0 rounded-l-full px-5 text-[13px] text-[#F5F1E9] placeholder:text-[#F5F1E9]/40 focus:outline-none focus:border-[#9FBB90]/60 focus:bg-white/10 transition-all duration-300"
+              />
+              <button 
+                className="px-6 rounded-r-full text-[11px] font-bold tracking-[0.1em] uppercase text-[#33472C] bg-[#9FBB90] transition-all duration-300 relative overflow-hidden hover:brightness-105 flex items-center justify-center flex-shrink-0 shadow-md"
+              >
+                <span className="relative z-10">Subscribe</span>
+              </button>
             </div>
           </div>
         </div>
 
-        {/* Divider between Nav and Copyright */}
-        <div className="w-full h-px bg-gradient-to-r from-transparent via-secondary/30 to-transparent my-6 md:my-8" />
+        {/* Divider */}
+        <div className="w-full h-px bg-gradient-to-r from-[#9FBB90]/10 via-[#9FBB90]/30 to-[#9FBB90]/10 my-8 md:my-10" />
 
         {/* Bottom Row */}
-        <div className="flex flex-col md:flex-row justify-between items-center md:items-end gap-1.5 md:gap-6 text-center md:text-left">
+        <div className="flex flex-col lg:flex-row justify-between items-center lg:items-end gap-6 lg:gap-4 text-center lg:text-left">
           {/* Left Side: Tagline and Copyright */}
-          <div className="flex flex-col items-center md:items-start gap-1 md:gap-2">
-            <p className="text-surface/90 italic text-[15px] md:text-[16px] font-display tracking-wide">
+          <div className="flex flex-col items-center lg:items-start gap-4 lg:gap-3">
+            <p className="text-[#F5F1E9] italic text-[16px] md:text-[18px] font-display tracking-wide text-center lg:text-left">
               One Humanity · One Nature · One Conscious Future
             </p>
-            <p className="text-surface/70 text-[9px] uppercase tracking-[0.2em]">
-              © 2026 ISHAN – International Society of Holistic Awareness & Naturology. All Rights Reserved.
-            </p>
+            <div className="flex flex-col xl:flex-row items-center gap-3 xl:gap-4 text-[#F5F1E9]/60 text-[9px] md:text-[10px] uppercase tracking-[0.1em] md:tracking-[0.15em]">
+              <span>© 2026 ISHAN – International Society of Holistic Awareness & Natur(al)ogy. All Rights Reserved.</span>
+              <span className="hidden xl:inline">|</span>
+              <div className="flex flex-wrap justify-center items-center gap-x-3 gap-y-2 mt-1 xl:mt-0">
+                <Link href="/privacy" className="hover:text-white transition-colors duration-300">Privacy Policy</Link>
+                <span>·</span>
+                <Link href="/terms" className="hover:text-white transition-colors duration-300">Terms of Use</Link>
+                <span>·</span>
+                <Link href="/cookie" className="hover:text-white transition-colors duration-300">Cookie Policy</Link>
+              </div>
+            </div>
           </div>
           
           {/* Right Side: Kaldor Credit */}
-          <div className="text-surface/70 text-[10px] md:text-[11px] uppercase tracking-[0.2em] mt-1 md:mt-0">
+          <div className="text-[#F5F1E9]/60 text-[10px] uppercase tracking-[0.2em] flex-shrink-0 mb-2 lg:mb-0">
             Developed by{" "}
             <a 
               href="https://www.kaldor.dev/" 
               target="_blank" 
               rel="noopener noreferrer" 
-              className="hover:text-[#D94F9D] hover:underline decoration-[#D94F9D] underline-offset-4 transition-colors duration-300"
+              className="text-[#9FBB90] hover:text-[#F5F1E9] hover:underline decoration-[#9FBB90] underline-offset-4 transition-colors duration-300 font-medium ml-1"
             >
               Kaldor
             </a>
