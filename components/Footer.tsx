@@ -62,7 +62,7 @@ export default function Footer() {
   const tickerItems = [...VALUES, ...VALUES];
 
   return (
-    <footer className="relative bg-surface border-t border-divider pt-8 md:pt-12 pb-6 md:pb-8 overflow-hidden z-0">
+    <footer className="relative bg-heading border-t border-secondary/30 pt-8 md:pt-12 pb-6 md:pb-8 overflow-hidden z-0">
       
       {/* Ambient background glow and texture */}
       <div className="absolute inset-0 pointer-events-none flex items-center justify-center opacity-[0.03] z-0">
@@ -75,6 +75,31 @@ export default function Footer() {
 
       <div className="relative z-10 max-w-7xl mx-auto px-6 md:px-12">
         
+        {/* Ticker Line */}
+        <div className="relative w-full overflow-hidden select-none group mb-4 md:mb-6">
+          <motion.div
+            className="flex whitespace-nowrap w-max items-center"
+            animate={{ x: ["0%", "-50%"] }}
+            transition={{
+              repeat: Infinity,
+              ease: "linear",
+              duration: 22,
+            }}
+          >
+            {tickerItems.map((val, idx) => (
+              <React.Fragment key={idx}>
+                <span className="text-[10px] uppercase tracking-[0.2em] text-surface/70 px-4 md:px-5">
+                  {val}
+                </span>
+                <span className="text-surface/30 text-[8px]">·</span>
+              </React.Fragment>
+            ))}
+          </motion.div>
+        </div>
+
+        {/* Divider below ticker */}
+        <div className="w-full h-px bg-gradient-to-r from-transparent via-secondary/30 to-transparent mb-8 md:mb-10" />
+
         {/* Top Row: Logo & Nav */}
         <div className="flex flex-col lg:flex-row justify-between items-center lg:items-center gap-0 lg:gap-8">
           {/* Logo Lockup */}
@@ -90,23 +115,23 @@ export default function Footer() {
             
             {/* Social Links */}
             <div className="flex items-center justify-center lg:justify-start gap-3 mt-4">
-              <a href="https://www.instagram.com/ishan_retreats/" target="_blank" rel="noopener noreferrer" className="w-9 h-9 rounded-full border border-divider flex items-center justify-center text-heading hover:border-primary hover:text-primary hover:scale-105 transition-all duration-300">
+              <a href="https://www.instagram.com/ishan_retreats/" target="_blank" rel="noopener noreferrer" className="w-9 h-9 rounded-full border border-secondary/30 flex items-center justify-center text-surface/90 hover:border-[#D94F9D] hover:text-[#D94F9D] hover:scale-105 transition-all duration-300">
                 <Instagram size={18} />
               </a>
-              <a href="#" target="_blank" rel="noopener noreferrer" className="w-9 h-9 rounded-full border border-divider flex items-center justify-center text-heading hover:border-primary hover:text-primary hover:scale-105 transition-all duration-300">
+              <a href="#" target="_blank" rel="noopener noreferrer" className="w-9 h-9 rounded-full border border-secondary/30 flex items-center justify-center text-surface/90 hover:border-[#D94F9D] hover:text-[#D94F9D] hover:scale-105 transition-all duration-300">
                 <Facebook size={18} />
               </a>
-              <a href="#" target="_blank" rel="noopener noreferrer" className="w-9 h-9 rounded-full border border-divider flex items-center justify-center text-heading hover:border-primary hover:text-primary hover:scale-105 transition-all duration-300">
+              <a href="#" target="_blank" rel="noopener noreferrer" className="w-9 h-9 rounded-full border border-secondary/30 flex items-center justify-center text-surface/90 hover:border-[#D94F9D] hover:text-[#D94F9D] hover:scale-105 transition-all duration-300">
                 <Youtube size={18} />
               </a>
-              <a href="#" target="_blank" rel="noopener noreferrer" className="w-9 h-9 rounded-full border border-divider flex items-center justify-center text-heading hover:border-primary hover:text-primary hover:scale-105 transition-all duration-300">
+              <a href="#" target="_blank" rel="noopener noreferrer" className="w-9 h-9 rounded-full border border-secondary/30 flex items-center justify-center text-surface/90 hover:border-[#D94F9D] hover:text-[#D94F9D] hover:scale-105 transition-all duration-300">
                 <Linkedin size={18} />
               </a>
             </div>
           </div>
 
           {/* Mobile-only Divider (Logo -> Nav) */}
-          <div className="w-full h-px bg-divider block lg:hidden my-4" />
+          <div className="w-full h-px bg-secondary/30 block lg:hidden my-4" />
 
           {/* Right Column: Nav & Contact */}
           <div className="flex flex-col items-center lg:items-end gap-0 lg:gap-8 mt-0 w-full lg:w-auto">
@@ -118,7 +143,7 @@ export default function Footer() {
                     <Link
                       key={link.label}
                       href={link.href}
-                      className="text-[10px] tracking-[0.15em] uppercase text-heading/70 hover:text-primary transition-colors duration-300 border border-primary/50 lg:border-none rounded-full px-4 py-1.5 lg:px-0 lg:py-0 flex items-center justify-center lg:block w-fit mx-auto lg:mx-0 col-span-2 lg:col-span-1 mt-1 lg:mt-0"
+                      className="text-[10px] tracking-[0.15em] uppercase text-surface/90 hover:text-[#D94F9D] transition-colors duration-300 border border-secondary/30 lg:border-none rounded-full px-4 py-1.5 lg:px-0 lg:py-0 flex items-center justify-center lg:block w-fit mx-auto lg:mx-0 col-span-2 lg:col-span-1 mt-1 lg:mt-0"
                     >
                       {link.label}
                     </Link>
@@ -128,7 +153,7 @@ export default function Footer() {
                   <Link
                     key={link.label}
                     href={link.href}
-                    className="text-[10px] tracking-[0.15em] uppercase text-heading/70 hover:text-primary transition-colors duration-300 py-1 lg:py-0"
+                    className="text-[10px] tracking-[0.15em] uppercase text-surface/90 hover:text-[#D94F9D] transition-colors duration-300 py-1 lg:py-0"
                   >
                     {link.label}
                   </Link>
@@ -137,7 +162,7 @@ export default function Footer() {
             </div>
             
             {/* Mobile-only Divider (Nav -> Contact) */}
-            <div className="w-full h-px bg-divider block lg:hidden my-4" />
+            <div className="w-full h-px bg-secondary/30 block lg:hidden my-4" />
 
             {/* Contact Info Block */}
             <div className="flex flex-row justify-between lg:flex-col items-center lg:items-end w-full lg:w-auto lg:gap-1.5">
@@ -145,13 +170,13 @@ export default function Footer() {
                 href="https://ishanfoundation.lk"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-[10px] lg:text-[11px] tracking-[0.04em] uppercase text-heading/80 hover:text-primary transition-colors duration-300 hover:underline decoration-primary underline-offset-4"
+                className="text-[10px] lg:text-[11px] tracking-[0.04em] uppercase text-surface/90 hover:text-[#D94F9D] transition-colors duration-300 hover:underline decoration-[#D94F9D] underline-offset-4"
               >
                 ishanfoundation.lk
               </a>
               <a 
                 href="mailto:info@ishanfoundation.lk"
-                className="text-[10px] lg:text-[11px] tracking-[0.04em] uppercase text-heading/80 hover:text-primary transition-colors duration-300 hover:underline decoration-primary underline-offset-4"
+                className="text-[10px] lg:text-[11px] tracking-[0.04em] uppercase text-surface/90 hover:text-[#D94F9D] transition-colors duration-300 hover:underline decoration-[#D94F9D] underline-offset-4"
               >
                 info@ishanfoundation.lk
               </a>
@@ -159,54 +184,29 @@ export default function Footer() {
           </div>
         </div>
 
-        {/* Top Divider */}
-        <div className="w-full h-px bg-gradient-to-r from-transparent via-divider to-transparent my-4 md:my-6 block lg:block hidden" />
-
-        {/* Ticker Line */}
-        <div className="relative w-full overflow-hidden select-none group mt-4 lg:mt-0">
-          <motion.div
-            className="flex whitespace-nowrap w-max items-center"
-            animate={{ x: ["0%", "-50%"] }}
-            transition={{
-              repeat: Infinity,
-              ease: "linear",
-              duration: 22,
-            }}
-          >
-            {tickerItems.map((val, idx) => (
-              <React.Fragment key={idx}>
-                <span className="text-[10px] uppercase tracking-[0.2em] text-heading/50 px-4 md:px-5">
-                  {val}
-                </span>
-                <span className="text-heading/30 text-[8px]">·</span>
-              </React.Fragment>
-            ))}
-          </motion.div>
-        </div>
-
-        {/* Bottom Divider */}
-        <div className="w-full h-px bg-gradient-to-r from-transparent via-divider to-transparent my-4 md:my-6" />
+        {/* Divider between Nav and Copyright */}
+        <div className="w-full h-px bg-gradient-to-r from-transparent via-secondary/30 to-transparent my-6 md:my-8" />
 
         {/* Bottom Row */}
         <div className="flex flex-col md:flex-row justify-between items-center md:items-end gap-1.5 md:gap-6 text-center md:text-left">
           {/* Left Side: Tagline and Copyright */}
           <div className="flex flex-col items-center md:items-start gap-1 md:gap-2">
-            <p className="text-primary/90 italic text-[15px] md:text-[16px] font-display tracking-wide">
+            <p className="text-surface/90 italic text-[15px] md:text-[16px] font-display tracking-wide">
               One Humanity · One Nature · One Conscious Future
             </p>
-            <p className="text-heading/50 text-[9px] uppercase tracking-[0.2em]">
+            <p className="text-surface/70 text-[9px] uppercase tracking-[0.2em]">
               © 2026 ISHAN – International Society of Holistic Awareness & Naturology. All Rights Reserved.
             </p>
           </div>
           
           {/* Right Side: Kaldor Credit */}
-          <div className="text-heading/60 text-[10px] md:text-[11px] uppercase tracking-[0.2em] mt-1 md:mt-0">
+          <div className="text-surface/70 text-[10px] md:text-[11px] uppercase tracking-[0.2em] mt-1 md:mt-0">
             Developed by{" "}
             <a 
               href="https://www.kaldor.dev/" 
               target="_blank" 
               rel="noopener noreferrer" 
-              className="hover:text-primary hover:underline decoration-primary underline-offset-4 transition-colors duration-300"
+              className="hover:text-[#D94F9D] hover:underline decoration-[#D94F9D] underline-offset-4 transition-colors duration-300"
             >
               Kaldor
             </a>

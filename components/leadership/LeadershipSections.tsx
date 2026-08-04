@@ -125,7 +125,7 @@ export function PhilosophySection() {
           </div>
 
           {/* Vertical Divider for Desktop */}
-          <div className="hidden md:flex w-[1px] bg-gradient-to-b from-transparent via-[#DCCDBA] to-transparent opacity-60 flex-col items-center justify-center">
+          <div className="hidden md:flex w-[1px] bg-gradient-to-b from-transparent via-divider to-transparent opacity-60 flex-col items-center justify-center">
             <div className="w-1.5 h-1.5 rotate-45 bg-secondary opacity-70"></div>
           </div>
 
@@ -139,7 +139,7 @@ export function PhilosophySection() {
                     {/* Icon */}
                     <motion.div 
                       initial="hidden" whileInView="visible" viewport={{ once: true, margin: "-50px" }} variants={getIconVariants(index)}
-                      className="w-[44px] h-[44px] shrink-0 rounded-full border border-[#DCCDBA] flex items-center justify-center text-secondary mt-1 transition-colors duration-500 group-hover:bg-secondary/5 group-hover:border-[#C7A45A]/50"
+                      className="w-[44px] h-[44px] shrink-0 rounded-full border border-divider flex items-center justify-center text-secondary mt-1 transition-colors duration-500 group-hover:bg-secondary/5 group-hover:border-primary/50"
                     >
                       <Icon strokeWidth={1.5} size={20} />
                     </motion.div>
@@ -233,7 +233,7 @@ export function CircleOfStewardsSection() {
     <section 
       className="pt-[100px] pb-24 px-6 md:px-12 relative overflow-hidden"
       style={{
-        background: 'linear-gradient(160deg, #FFF8F2 0%, #FDF0E6 40%, #FFF8F2 70%, #FAE8D4 100%)'
+        background: 'var(--color-surface)'
       }}
     >
       <div className="max-w-screen-xl mx-auto relative z-10">
@@ -255,7 +255,7 @@ export function CircleOfStewardsSection() {
                 animate={{ opacity: 1, y: 0 }}
                 exit={{ opacity: 0, y: -16 }}
                 transition={{ duration: 0.4, ease: "easeOut" }}
-                className={`overflow-hidden relative bg-[rgba(255,255,255,0.75)] border border-primary rounded-[24px] px-8 py-10 md:px-[40px] md:py-[48px] min-h-[480px] flex flex-col ${activeMember.isAnchor ? 'border-t-4 border-t-[#C9A84C]' : ''}`}
+                className={`overflow-hidden relative bg-[rgba(255,255,255,0.75)] border border-primary rounded-[24px] px-8 py-10 md:px-[40px] md:py-[48px] min-h-[480px] flex flex-col ${activeMember.isAnchor ? 'border-t-4 border-t-primary' : ''}`}
               >
                 {activeMember.image && (
                   <>
@@ -455,7 +455,7 @@ export function SharedCommitmentSection() {
 
         <RevealOnScroll delay={0.6} className="mt-20 flex flex-col sm:flex-row justify-center gap-4 sm:gap-6 w-full sm:w-auto">
           <Button href="/framework" variant="primary">Explore Our Framework</Button>
-          <Button href="/contact" variant="ghost" className="!bg-heading/60 backdrop-blur-sm !border-[1.5px] !border-solid !border-primary/70 !text-white hover:!bg-cta hover:!text-heading hover:!border-[#F5D98A] transition-all">Connect With Us</Button>
+          <Button href="/contact" variant="ghost">Connect With Us</Button>
         </RevealOnScroll>
       </div>
     </section>

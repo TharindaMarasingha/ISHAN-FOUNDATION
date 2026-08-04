@@ -9,7 +9,7 @@ const STATS = [
 
 export function StatsScale() {
   return (
-    <section className="py-24 px-6 md:px-12 bg-darkBrown border-y border-divider">
+    <section className="py-24 px-6 md:px-12 bg-heading border-y border-divider">
       <div className="max-w-7xl mx-auto">
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 md:gap-12">
           {STATS.map((stat, index) => (

@@ -190,7 +190,7 @@ export default function Navbar() {
           <div className="flex items-center gap-4">
             <Link href="/contact" className="hidden md:block">
               <MagneticButton>
-                <div className="px-4 py-[7px] rounded-full bg-cta text-white font-sans font-semibold text-[11px] uppercase tracking-[0.1em] hover:shadow-lg hover:-translate-y-0.5 transition-all duration-300">
+                <div className="px-4 py-[7px] rounded-full bg-[image:var(--gradient-cta)] text-white font-sans font-semibold text-[11px] uppercase tracking-[0.1em] hover:shadow-lg hover:-translate-y-0.5 hover:brightness-105 transition-all duration-300 [text-shadow:0_1px_2px_rgba(0,0,0,0.3)]">
                   Connect
                 </div>
               </MagneticButton>
@@ -264,7 +264,7 @@ export default function Navbar() {
               <div className="mt-4 p-6">
                 <Link
                   href="/contact"
-                  className="block w-full text-center bg-cta text-white rounded-xl py-3 uppercase tracking-widest font-sans font-semibold text-sm hover:shadow-lg transition-all duration-300"
+                  className="block w-full text-center bg-[image:var(--gradient-cta)] text-white rounded-xl py-3 uppercase tracking-widest font-sans font-semibold text-sm hover:shadow-lg hover:brightness-105 transition-all duration-300 [text-shadow:0_1px_2px_rgba(0,0,0,0.3)]"
                 >
                   Connect
                 </Link>

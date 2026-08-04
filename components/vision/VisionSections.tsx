@@ -63,7 +63,7 @@ export function ThreeErasSection() {
       <div className="mt-16 grid grid-cols-1 lg:grid-cols-3 gap-8">
         {eras.map((era, index) => (
           <RevealOnScroll key={era.title} delay={index * 0.15}>
-            <Card className="h-full flex flex-col p-8 border-t-4 border-t-burntOrange">
+            <Card className="h-full flex flex-col p-8 border-t-4 border-t-primary">
               <h3 className="font-display text-xl text-heading mb-2">{era.title}</h3>
               <h4 className="font-sans font-medium text-sm text-primary uppercase tracking-widest mb-6 pb-4 border-b border-divider">{era.subtitle}</h4>
               <ul className="space-y-3 flex-grow">
@@ -111,7 +111,7 @@ export function StrategicPrioritiesSection() {
 
 export function VisionCTASection() {
   return (
-    <section className="py-32 px-6 bg-darkBrown text-center overflow-hidden relative">
+    <section className="py-32 px-6 bg-heading text-center overflow-hidden relative">
       <div className="absolute inset-0 z-0 bg-cover bg-center opacity-10" style={{ backgroundImage: "url('/images/who-we-serve-bg.webp')" }} />
       <div className="max-w-4xl mx-auto relative z-10 flex flex-col items-center">
         <RevealOnScroll>

@@ -3,39 +3,7 @@ import React from "react";
 export function TopLeftCorner({ className = "" }: { className?: string }) {
   return (
     <div className={`pointer-events-none absolute z-0 ${className}`}>
-      <style>{`
-        @keyframes float-corner-tl {
-          0%, 100% { transform: translate(0, 0); }
-          50% { transform: translate(3px, 4px); }
-        }
-        @keyframes sway-tl {
-          0%, 100% { transform: rotate(0deg); }
-          50% { transform: rotate(2deg); }
-        }
-        @keyframes sway-tl-2 {
-          0%, 100% { transform: rotate(0deg); }
-          50% { transform: rotate(-1.5deg); }
-        }
-        @keyframes sway-tl-3 {
-          0%, 100% { transform: rotate(0deg); }
-          50% { transform: rotate(2.5deg); }
-        }
-        .animate-float-tl {
-          animation: float-corner-tl 16s ease-in-out infinite;
-        }
-        .animate-sway-1 {
-          animation: sway-tl 14s ease-in-out infinite;
-          transform-origin: top;
-        }
-        .animate-sway-2 {
-          animation: sway-tl-2 17s ease-in-out infinite 1s;
-          transform-origin: top;
-        }
-        .animate-sway-3 {
-          animation: sway-tl-3 13s ease-in-out infinite 2s;
-          transform-origin: top;
-        }
-      `}</style>
+
       <svg 
         viewBox="0 0 350 450" 
         fill="none" 
@@ -96,36 +64,7 @@ export function TopLeftCorner({ className = "" }: { className?: string }) {
 export function BottomRightCorner({ className = "" }: { className?: string }) {
   return (
     <div className={`pointer-events-none absolute z-0 ${className}`}>
-      <style>{`
-        @keyframes float-corner-br {
-          0%, 100% { transform: translate(0, 0); }
-          50% { transform: translate(-3px, -4px); }
-        }
-        @keyframes sway-br {
-          0%, 100% { transform: rotate(0deg); }
-          50% { transform: rotate(-2deg); }
-        }
-        @keyframes sway-br-2 {
-          0%, 100% { transform: rotate(0deg); }
-          50% { transform: rotate(1.5deg); }
-        }
-        @keyframes sway-br-3 {
-          0%, 100% { transform: rotate(0deg); }
-          50% { transform: rotate(-2.5deg); }
-        }
-        .animate-float-br {
-          animation: float-corner-br 15s ease-in-out infinite;
-        }
-        .animate-sway-br-1 {
-          animation: sway-br 15s ease-in-out infinite;
-        }
-        .animate-sway-br-2 {
-          animation: sway-br-2 18s ease-in-out infinite 1s;
-        }
-        .animate-sway-br-3 {
-          animation: sway-br-3 14s ease-in-out infinite 2s;
-        }
-      `}</style>
+
       <svg 
         viewBox="0 0 350 450" 
         fill="none" 

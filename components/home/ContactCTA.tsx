@@ -55,10 +55,10 @@ export function ContactCTA() {
           </p>
           
           <div className="flex flex-col sm:flex-row items-center justify-center gap-6 mb-8 md:mb-16">
-            <Button variant="primary" href="/contact" className="bg-cta text-white hover:bg-cta/90">
+            <Button variant="primary" href="/contact">
               Register Interest
             </Button>
-            <Button variant="ghost" href="/about" className="border-secondary text-secondary hover:border-softApricot hover:text-white">
+            <Button variant="ghost" href="/about">
               About ISHAN
             </Button>
           </div>

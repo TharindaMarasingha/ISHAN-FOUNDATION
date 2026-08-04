@@ -93,7 +93,7 @@ export function ContactLayout() {
                   name="name"
                   value={formData.name}
                   onChange={handleChange}
-                  className={`w-full bg-peach/50 border ${errors.name ? "border-red-500" : "border-divider"} px-4 py-3 font-sans font-light text-heading focus:outline-none focus:border-primary focus:ring-1 focus:ring-burntOrange transition-colors`}
+                  className={`w-full bg-surface border ${errors.name ? "border-red-500" : "border-divider"} px-4 py-3 font-sans font-light text-heading focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-colors`}
                   aria-invalid={!!errors.name}
                   aria-describedby={errors.name ? "name-error" : undefined}
                 />
@@ -110,7 +110,7 @@ export function ContactLayout() {
                   name="email"
                   value={formData.email}
                   onChange={handleChange}
-                  className={`w-full bg-peach/50 border ${errors.email ? "border-red-500" : "border-divider"} px-4 py-3 font-sans font-light text-heading focus:outline-none focus:border-primary focus:ring-1 focus:ring-burntOrange transition-colors`}
+                  className={`w-full bg-surface border ${errors.email ? "border-red-500" : "border-divider"} px-4 py-3 font-sans font-light text-heading focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-colors`}
                   aria-invalid={!!errors.email}
                   aria-describedby={errors.email ? "email-error" : undefined}
                 />
@@ -127,7 +127,7 @@ export function ContactLayout() {
                   name="organization"
                   value={formData.organization}
                   onChange={handleChange}
-                  className="w-full bg-peach/50 border border-divider px-4 py-3 font-sans font-light text-heading focus:outline-none focus:border-primary focus:ring-1 focus:ring-burntOrange transition-colors"
+                  className="w-full bg-surface border border-divider px-4 py-3 font-sans font-light text-heading focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-colors"
                 />
               </div>
 
@@ -141,7 +141,7 @@ export function ContactLayout() {
                     name="role"
                     value={formData.role}
                     onChange={handleChange}
-                    className={`w-full appearance-none bg-peach/50 border ${errors.role ? "border-red-500" : "border-divider"} px-4 py-3 font-sans font-light text-heading focus:outline-none focus:border-primary focus:ring-1 focus:ring-burntOrange transition-colors rounded-none`}
+                    className={`w-full appearance-none bg-surface border ${errors.role ? "border-red-500" : "border-divider"} px-4 py-3 font-sans font-light text-heading focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-colors rounded-none`}
                     aria-invalid={!!errors.role}
                     aria-describedby={errors.role ? "role-error" : undefined}
                   >
@@ -170,7 +170,7 @@ export function ContactLayout() {
                   value={formData.message}
                   onChange={handleChange}
                   rows={5}
-                  className={`w-full bg-peach/50 border ${errors.message ? "border-red-500" : "border-divider"} px-4 py-3 font-sans font-light text-heading focus:outline-none focus:border-primary focus:ring-1 focus:ring-burntOrange transition-colors resize-y`}
+                  className={`w-full bg-surface border ${errors.message ? "border-red-500" : "border-divider"} px-4 py-3 font-sans font-light text-heading focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-colors resize-y`}
                   aria-invalid={!!errors.message}
                   aria-describedby={errors.message ? "message-error" : undefined}
                 />
@@ -224,7 +224,7 @@ export function ContactLayout() {
                   href={link.href}
                   className="font-sans text-sm font-light text-heading hover:text-primary transition-colors flex items-center group"
                 >
-                  <span className="w-4 h-px bg-softAccent mr-3 transition-all duration-300 group-hover:w-6 group-hover:bg-cta/90" />
+                  <span className="w-4 h-px bg-softAccent mr-3 transition-all duration-300 group-hover:w-6 group-hover:bg-[image:var(--gradient-cta)]" />
                   {link.label}
                 </Link>
               ))}

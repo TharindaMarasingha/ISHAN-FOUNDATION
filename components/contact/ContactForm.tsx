@@ -62,7 +62,7 @@ export function ContactForm() {
             name="name"
             value={formData.name}
             onChange={handleChange}
-            className={`bg-peach border ${errors.name ? 'border-red-500/50' : 'border-divider'} rounded-sm px-4 py-3 font-sans font-light text-heading focus:outline-none focus:border-primary focus:ring-1 focus:ring-burntOrange/50 transition-colors`}
+            className={`bg-surface border ${errors.name ? 'border-red-500/50' : 'border-divider'} rounded-sm px-4 py-3 font-sans font-light text-heading focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary/50 transition-colors`}
             placeholder="Jane Doe"
             aria-invalid={!!errors.name}
             aria-describedby={errors.name ? "name-error" : undefined}
@@ -80,7 +80,7 @@ export function ContactForm() {
             name="email"
             value={formData.email}
             onChange={handleChange}
-            className={`bg-peach border ${errors.email ? 'border-red-500/50' : 'border-divider'} rounded-sm px-4 py-3 font-sans font-light text-heading focus:outline-none focus:border-primary focus:ring-1 focus:ring-burntOrange/50 transition-colors`}
+            className={`bg-surface border ${errors.email ? 'border-red-500/50' : 'border-divider'} rounded-sm px-4 py-3 font-sans font-light text-heading focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary/50 transition-colors`}
             placeholder="jane@example.com"
             aria-invalid={!!errors.email}
             aria-describedby={errors.email ? "email-error" : undefined}
@@ -100,7 +100,7 @@ export function ContactForm() {
             name="organisation"
             value={formData.organisation}
             onChange={handleChange}
-            className="bg-peach border border-divider rounded-sm px-4 py-3 font-sans font-light text-heading focus:outline-none focus:border-primary focus:ring-1 focus:ring-burntOrange/50 transition-colors"
+            className="bg-surface border border-divider rounded-sm px-4 py-3 font-sans font-light text-heading focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary/50 transition-colors"
             placeholder="Your Company / Institution"
           />
         </div>
@@ -114,7 +114,7 @@ export function ContactForm() {
             name="role"
             value={formData.role}
             onChange={handleChange}
-            className={`bg-peach border ${errors.role ? 'border-red-500/50' : 'border-divider'} rounded-sm px-4 py-3 font-sans font-light text-heading focus:outline-none focus:border-primary focus:ring-1 focus:ring-burntOrange/50 transition-colors appearance-none`}
+            className={`bg-surface border ${errors.role ? 'border-red-500/50' : 'border-divider'} rounded-sm px-4 py-3 font-sans font-light text-heading focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary/50 transition-colors appearance-none`}
             aria-invalid={!!errors.role}
             aria-describedby={errors.role ? "role-error" : undefined}
           >
@@ -145,7 +145,7 @@ export function ContactForm() {
           value={formData.message}
           onChange={handleChange}
           rows={5}
-          className={`bg-peach border ${errors.message ? 'border-red-500/50' : 'border-divider'} rounded-sm px-4 py-3 font-sans font-light text-heading focus:outline-none focus:border-primary focus:ring-1 focus:ring-burntOrange/50 transition-colors resize-y min-h-[120px]`}
+          className={`bg-surface border ${errors.message ? 'border-red-500/50' : 'border-divider'} rounded-sm px-4 py-3 font-sans font-light text-heading focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary/50 transition-colors resize-y min-h-[120px]`}
           placeholder="How can we collaborate?"
           aria-invalid={!!errors.message}
           aria-describedby={errors.message ? "message-error" : undefined}

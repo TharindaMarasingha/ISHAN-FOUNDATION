@@ -42,11 +42,11 @@ export function Vision() {
             <circle cx="50" cy="50" r="48" fill="none" stroke="currentColor" strokeWidth="0.5" strokeDasharray="2 1" />
             
             {/* Internal Zones (Hexagonal Geometry) */}
-            <polygon points="50,10 85,30 85,70 50,90 15,70 15,30" fill="none" stroke="var(--color-burntOrange)" strokeWidth="0.5" className="opacity-30" />
+            <polygon points="50,10 85,30 85,70 50,90 15,70 15,30" fill="none" stroke="var(--color-primary)" strokeWidth="0.5" className="opacity-30" />
             
             {/* Central Node */}
             <circle cx="50" cy="50" r="15" fill="none" stroke="var(--color-deepAmber)" strokeWidth="0.8" className="opacity-50" />
-            <circle cx="50" cy="50" r="5" fill="var(--color-sacredGold)" className="opacity-20" />
+            <circle cx="50" cy="50" r="5" fill="var(--color-primary)" className="opacity-20" />
             
             {/* Pathways / Radiating Lines */}
             <line x1="50" y1="50" x2="50" y2="10" stroke="currentColor" strokeWidth="0.3" />
@@ -54,7 +54,7 @@ export function Vision() {
             <line x1="50" y1="50" x2="15" y2="70" stroke="currentColor" strokeWidth="0.3" />
             
             {/* Scattered Nodes */}
-            <circle cx="35" cy="35" r="3" fill="var(--color-burntOrange)" className="opacity-40" />
+            <circle cx="35" cy="35" r="3" fill="var(--color-primary)" className="opacity-40" />
             <circle cx="65" cy="35" r="4" fill="currentColor" className="opacity-60" />
             <circle cx="50" cy="75" r="3" fill="var(--color-deepAmber)" className="opacity-40" />
           </motion.svg>

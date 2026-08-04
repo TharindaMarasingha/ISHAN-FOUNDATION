@@ -10,7 +10,7 @@ const STATS = [
 
 export function ScaleStats() {
   return (
-    <section className="bg-darkBrown py-32 px-6">
+    <section className="bg-heading py-32 px-6">
       <div className="max-w-7xl mx-auto">
         <SectionHeading
           eyebrow="The Scale"

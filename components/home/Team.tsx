@@ -66,10 +66,7 @@ export function Team() {
 
   return (
     <section 
-      className="pt-[100px] pb-24 px-6 md:px-12 relative overflow-hidden"
-      style={{
-        background: 'linear-gradient(160deg, #FFF8F2 0%, #FDF0E6 40%, #FFF8F2 70%, #FAE8D4 100%)'
-      }}
+      className="pt-[100px] pb-24 px-6 md:px-12 relative overflow-hidden bg-background"
     >
       <motion.img 
         src="/ff.svg"
@@ -101,7 +98,7 @@ export function Team() {
                 animate={{ opacity: 1, y: 0 }}
                 exit={{ opacity: 0, y: -16 }}
                 transition={{ duration: 0.4, ease: "easeOut" }}
-                className={`overflow-hidden relative bg-[rgba(255,255,255,0.75)] border border-primary rounded-[24px] px-8 py-10 md:px-[40px] md:py-[48px] min-h-[480px] flex flex-col ${activeMember.isAnchor ? 'border-t-4 border-t-[#C9A84C]' : ''}`}
+                className="overflow-hidden relative bg-background/80 rounded-[24px] px-8 py-10 md:px-[40px] md:py-[48px] min-h-[480px] flex flex-col"
               >
                 {/* Background image for spotlight */}
                 {activeMember.image && (
@@ -117,7 +114,7 @@ export function Team() {
                     <div 
                       className="absolute inset-0 z-10"
                       style={{
-                        background: 'linear-gradient(to bottom, rgba(0,0,0,0.0) 0%, rgba(0,0,0,0.15) 40%, rgba(20,8,2,0.82) 70%, rgba(20,8,2,0.95) 100%)'
+                        background: 'linear-gradient(to bottom, rgba(0,0,0,0) 0%, rgba(0,0,0,0) 45%, rgba(51,71,44,0.8) 75%, rgba(51,71,44,1) 100%)'
                       }}
                     />
                   </>
@@ -126,22 +123,30 @@ export function Team() {
                 <div className="relative z-20 flex flex-col items-start justify-end flex-grow">
                   
                   {/* Nationality Pill */}
-                  <div className="inline-flex mt-auto mb-[20px] px-[16px] py-[6px] rounded-full bg-softAccent border border-primary font-sans text-[11px] uppercase tracking-widest text-primary">
+                  <div className="inline-flex mt-auto mb-[20px] px-[16px] py-[6px] rounded-full bg-[rgba(51,71,44,0.6)] backdrop-blur-sm border border-secondary/50 font-sans text-[11px] uppercase tracking-widest text-surface">
                     {activeMember.nationality}
                   </div>
 
                   {/* Archetype */}
-                  <h4 className="font-forum italic text-[16px] text-primary mb-[4px]">
+                  <h4 
+                    className="font-forum italic text-[16px] text-surface mb-[4px]"
+                    style={{ textShadow: '0 1px 3px rgba(0,0,0,0.5)' }}
+                  >
                     {activeMember.archetype}
                   </h4>
 
                   {/* Role */}
-                  <p className="font-sans text-[11px] uppercase tracking-[0.15em] text-[rgba(255,255,255,0.6)] mb-[12px]">
+                  <p 
+                    className="font-sans text-[11px] uppercase tracking-[0.15em] text-white/80 mb-[12px]"
+                    style={{ textShadow: '0 1px 3px rgba(0,0,0,0.5)' }}
+                  >
                     {activeMember.role}
                   </p>
 
                   {/* Name */}
-                  <h3 className="font-forum text-[36px] font-[400] text-white leading-[1.1] mb-[16px]">
+                  <h3 
+                    className="font-forum text-[36px] font-[400] text-white leading-[1.1] mb-[16px]"
+                  >
                     {activeMember.name}
                   </h3>
 
@@ -149,7 +154,7 @@ export function Team() {
                   <div className="w-[40px] h-[1.5px] bg-secondary mb-[16px]" />
 
                   {/* Description */}
-                  <p className="font-sans font-[300] text-[15px] text-[rgba(255,255,255,0.7)] leading-[1.8]">
+                  <p className="font-sans font-[300] text-[15px] text-white/90 leading-[1.8]">
                     {activeMember.description}
                   </p>
                 </div>
@@ -167,16 +172,15 @@ export function Team() {
                   onClick={() => setActiveIndex(index)}
                   className={`flex items-center gap-3 w-[260px] sm:w-[280px] md:w-full flex-shrink-0 snap-start text-left px-[20px] py-[16px] rounded-[12px] transition-all duration-250 ease-in-out ${
                     isActive
-                      ? "bg-[rgba(255,255,255,0.7)] border border-primary shadow-[0_2px_12px_rgba(42,20,8,0.08)]"
+                      ? "bg-background/80 border border-primary shadow-[0_2px_12px_rgba(51,71,44,0.08)]"
                       : "bg-transparent border border-primary hover:border-primary"
                   }`}
                 >
                   {/* Small Avatar */}
                   <div 
-                    className={`w-[44px] h-[44px] flex-shrink-0 rounded-full flex items-center justify-center transition-colors duration-250 ${
+                    className={`w-[44px] h-[44px] flex-shrink-0 rounded-full flex items-center justify-center transition-colors duration-250 bg-softAccent/40 ${
                       isActive ? "border-2 border-primary" : "border-2 border-primary"
                     }`}
-                    style={{ background: 'linear-gradient(135deg, rgba(201,168,76,0.3), rgba(156,63,0,0.2))' }}
                   >
                     <span className="font-forum text-[14px] text-heading">{member.initials}</span>
                   </div>

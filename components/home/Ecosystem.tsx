@@ -93,7 +93,7 @@ function EcosystemCard({ card, index, delay }: { card: EcosystemData; index: num
             
             {card.title === "Samanvaya" && (
               <div 
-                className="absolute top-[48px] right-[40px] flex items-center gap-[6px] rounded-full border border-[#9C3F00]/20 z-10"
+                className="absolute top-[48px] right-[40px] flex items-center gap-[6px] rounded-full border border-red-600/20 z-10"
                 style={{ 
                   backgroundColor: 'rgba(255,241,230,0.85)',
                   padding: '5px 12px' 
@@ -102,12 +102,12 @@ function EcosystemCard({ card, index, delay }: { card: EcosystemData; index: num
                 <div className="relative flex items-center justify-center w-[9px] h-[9px]">
                   {!shouldReduceMotion && (
                     <span 
-                      className="absolute inset-0 rounded-full bg-[#D96C00] opacity-40 animate-ping"
+                      className="absolute inset-0 rounded-full bg-red-600 opacity-40 animate-ping"
                       style={{ animationDuration: '2s' }}
                     />
                   )}
                   <motion.div 
-                    className="relative w-[9px] h-[9px] rounded-full bg-[#D96C00]"
+                    className="relative w-[9px] h-[9px] rounded-full bg-red-600"
                     animate={shouldReduceMotion ? {} : { 
                       scale: [1, 1.3, 1],
                       opacity: [1, 0.4, 1] 
@@ -119,7 +119,7 @@ function EcosystemCard({ card, index, delay }: { card: EcosystemData; index: num
                     }}
                   />
                 </div>
-                <span className="text-primary text-[10.5px] uppercase font-sans tracking-[0.05em] font-medium leading-none mt-[1px]">
+                <span className="text-red-600 text-[10.5px] uppercase font-sans tracking-[0.05em] font-medium leading-none mt-[1px]">
                   IN PROGRESS
                 </span>
               </div>
@@ -166,10 +166,7 @@ export function Ecosystem() {
   return (
     <section 
       id="ecosystem" 
-      className="pt-[100px] pb-20 px-6 md:px-12"
-      style={{
-        backgroundColor: '#FCF6F0'
-      }}
+      className="pt-[100px] pb-20 px-6 md:px-12 bg-background"
     >
       <div className="max-w-7xl mx-auto">
         <div className="mb-16 relative flex justify-center text-center">

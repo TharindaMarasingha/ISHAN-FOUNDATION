@@ -91,7 +91,7 @@ export function CollaborationAndContributionSection() {
               </h3>
               <div className="flex flex-wrap gap-3 mb-10">
                 {areas.map((area) => (
-                  <span key={area} className="px-4 py-2 rounded-full bg-darkBrown/5 border border-darkBrown/10 text-xs text-heading tracking-widest uppercase hover:bg-darkBrown/10 transition-colors">
+                  <span key={area} className="px-4 py-2 rounded-full bg-heading/5 border border-heading/10 text-xs text-heading tracking-widest uppercase hover:bg-heading/10 transition-colors">
                     {area}
                   </span>
                 ))}
@@ -124,7 +124,7 @@ export function CollaborationAndContributionSection() {
 
 export function PartnershipsCTASection() {
   return (
-    <section className="py-32 px-6 bg-darkBrown text-center overflow-hidden relative">
+    <section className="py-32 px-6 bg-heading text-center overflow-hidden relative">
       <div className="absolute inset-0 z-0 bg-cover bg-center opacity-10" style={{ backgroundImage: "url('/images/who-we-serve-bg.webp')" }} />
       <div className="max-w-4xl mx-auto relative z-10 flex flex-col items-center">
         <RevealOnScroll>

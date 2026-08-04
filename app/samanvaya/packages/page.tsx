@@ -301,8 +301,8 @@ export default function PackagesPage() {
                       onClick={() => handleReserveClick(pkg.id)}
                       className={`w-full py-4 rounded-full font-sans text-xs uppercase tracking-widest transition-colors duration-300 ${
                         pkg.popular 
-                          ? 'bg-cta text-white hover:bg-cta/90' 
-                          : 'bg-transparent border border-primary text-primary hover:bg-cta hover:text-white'
+                          ? 'bg-[image:var(--gradient-cta)] text-white hover:brightness-105 [text-shadow:0_1px_3px_rgba(0,0,0,0.3)]' 
+                          : 'bg-transparent border border-primary text-primary hover:bg-[image:var(--gradient-cta)] hover:border-transparent hover:text-white hover:[text-shadow:0_1px_3px_rgba(0,0,0,0.3)]'
                       }`}
                     >
                       Reserve my spot
@@ -453,7 +453,7 @@ export default function PackagesPage() {
                 { title: 'Central Heritage', days: '8 Days', dests: '4', price: 'USD 1,250', addons: false },
                 { title: 'Whole Island', days: '14 Days', dests: '7', price: 'USD 2,100', addons: true, popular: true },
               ].map((pkg, i) => (
-                <div key={i} className={`bg-white rounded-3xl border ${pkg.popular ? 'border-mandarin shadow-md shadow-mandarin/10 bg-softAccent/40' : 'border-divider shadow-sm'} p-6`}>
+                <div key={i} className={`bg-white rounded-3xl border ${pkg.popular ? 'border-primary shadow-md shadow-primary/10 bg-softAccent/40' : 'border-divider shadow-sm'} p-6`}>
                   <h4 className="font-display text-2xl text-heading mb-4">{pkg.title}</h4>
                   <ul className="space-y-3 font-sans text-sm text-heading/80">
                     <li className="flex justify-between border-b border-divider pb-2"><span className="font-medium">Duration</span> <span>{pkg.days}</span></li>
@@ -483,7 +483,7 @@ export default function PackagesPage() {
             <h3 className="text-center font-display text-3xl md:text-4xl text-heading mb-12">How it works</h3>
             
             <div className="flex flex-col md:flex-row justify-between relative">
-              <div className="hidden md:block absolute top-8 left-[10%] right-[10%] h-[1px] bg-cta/20 z-0"></div>
+              <div className="hidden md:block absolute top-8 left-[10%] right-[10%] h-[1px] bg-primary/20 z-0"></div>
               
               {[
                 { num: '01', title: 'Choose your journey', desc: 'Pick the package that fits your time and goals.' },
@@ -570,7 +570,7 @@ export default function PackagesPage() {
             
             <button 
               onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
-              className="inline-block px-10 py-4 rounded-full font-sans text-xs uppercase tracking-widest bg-cta text-white hover:bg-cta/90 transition-colors shadow-md"
+              className="inline-block px-10 py-4 rounded-full font-sans text-xs uppercase tracking-widest bg-[image:var(--gradient-cta)] text-white hover:brightness-105 transition-all shadow-md [text-shadow:0_1px_3px_rgba(0,0,0,0.3)]"
             >
               Reserve your spot
             </button>

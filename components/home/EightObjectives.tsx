@@ -117,25 +117,14 @@ export function EightObjectives() {
 
   return (
     <section 
-      className="relative pt-24 pb-20 px-6 md:px-12 overflow-hidden z-20"
-      style={{
-        background: 'linear-gradient(180deg, #FFF7F0 0%, #FDF7F1 20%, #F5EBE1 100%)' // Warm gradient matching FourPillars
-      }}
+      className="relative pt-24 pb-20 px-6 md:px-12 overflow-hidden z-20 bg-background"
     >
-      {/* Sacred Geometry Background Pattern */}
-      <div 
-        className="absolute inset-0 z-0 opacity-10 pointer-events-none mix-blend-multiply"
-        style={{
-          backgroundImage: `url("data:image/svg+xml,%3Csvg width='120' height='120' viewBox='0 0 120 120' xmlns='http://www.w3.org/2000/svg'%3E%3Cg stroke='%23C9A84C' stroke-width='0.5' fill='none' fill-rule='evenodd'%3E%3Ccircle cx='60' cy='60' r='50'/%3E%3Ccircle cx='60' cy='60' r='30'/%3E%3Cpolygon points='60,10 103,35 103,85 60,110 17,85 17,35'/%3E%3Ccircle cx='60' cy='60' r='2' fill='%23C9A84C'/%3E%3C/g%3E%3C/svg%3E")`,
-          backgroundSize: "120px 120px",
-          backgroundRepeat: "repeat",
-        }}
-      />
+
 
       {/* Bottom SVG Layer Break (Inverted) */}
       <div className="absolute bottom-[-1px] left-0 w-full leading-[0] z-10 pointer-events-none rotate-180">
-        <svg viewBox="0 0 1440 60" preserveAspectRatio="none" className="w-full h-[60px] md:h-[80px]">
-          <path d="M0,40 C360,80 1080,0 1440,40 L1440,0 L0,0 Z" fill="#FCF6F0"/>
+        <svg viewBox="0 0 1440 60" preserveAspectRatio="none" className="w-full h-[60px] md:h-[80px] text-background">
+          <path d="M0,40 C360,80 1080,0 1440,40 L1440,0 L0,0 Z" fill="currentColor"/>
         </svg>
       </div>
 

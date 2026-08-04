@@ -4,7 +4,7 @@ import { RevealOnScroll } from "../ui/RevealOnScroll";
 
 export function VisionQuote() {
   return (
-    <section className="py-32 px-6 md:px-12 bg-surface border-y border-divider relative overflow-hidden flex items-center justify-center">
+    <section className="py-32 px-6 md:px-12 bg-background border-y border-divider relative overflow-hidden flex items-center justify-center">
       
       {/* Top-Left Decorative SVG */}
       <img 

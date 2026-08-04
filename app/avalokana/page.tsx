@@ -80,10 +80,10 @@ export default function AvalokanaPage() {
           align="center"
         />
         <RevealOnScroll delay={0.2} className="mt-12 flex flex-col sm:flex-row gap-4 sm:gap-6 w-full sm:w-auto">
-          <Button href="/samanvaya" variant="primary" className="bg-cta text-white hover:bg-cta/90">
+          <Button href="/samanvaya" variant="primary">
             Explore Samanvaya
           </Button>
-          <Button href="/contact" variant="ghost" className="border-primary text-primary hover:bg-primary hover:text-white">
+          <Button href="/contact" variant="ghost">
             Register Interest
           </Button>
         </RevealOnScroll>

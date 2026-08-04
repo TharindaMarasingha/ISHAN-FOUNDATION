@@ -19,7 +19,7 @@ const CARDS = [
 const renderCardContent = (card: { title: string; description: string }) => (
   <div className="relative mx-auto w-full max-w-lg">
     {/* The Beige Card */}
-    <div className="relative z-10 p-10 bg-surface border-[2.5px] border-primary rounded-[2.5rem] shadow-sm flex flex-col justify-center min-h-[35vh]">
+    <div className="relative z-10 p-10 bg-[#F5F1E9] border-[2.5px] border-secondary rounded-[2.5rem] shadow-sm flex flex-col justify-center min-h-[35vh]">
       
       <div className="relative z-20">
         <h3 className="font-display uppercase tracking-widest text-heading text-xl mb-4 font-bold">
@@ -32,8 +32,8 @@ const renderCardContent = (card: { title: string; description: string }) => (
     </div>
 
     {/* Top Left Quote */}
-    <div className="absolute -top-6 -left-6 z-20 drop-shadow-md">
-      <svg width="80" height="80" viewBox="0 0 100 100" fill="#FCEBDD" stroke="#6A4024" strokeWidth="4" xmlns="http://www.w3.org/2000/svg">
+    <div className="absolute -top-6 -left-6 z-20 drop-shadow-md text-[#F5F1E9]">
+      <svg width="80" height="80" viewBox="0 0 100 100" fill="currentColor" className="stroke-secondary" strokeWidth="4" xmlns="http://www.w3.org/2000/svg">
         <path d="M 35,55 C 48,55 50,35 35,35 C 20,35 20,55 35,55 C 40,55 40,70 25,80" strokeLinecap="round" strokeLinejoin="round"/>
         <path d="M 75,55 C 88,55 90,35 75,35 C 60,35 60,55 75,55 C 80,55 80,70 65,80" strokeLinecap="round" strokeLinejoin="round"/>
         {/* Shading hashes */}
@@ -42,8 +42,8 @@ const renderCardContent = (card: { title: string; description: string }) => (
     </div>
 
     {/* Bottom Right Quote (Rotated) */}
-    <div className="absolute -bottom-6 -right-6 z-20 drop-shadow-md rotate-180">
-      <svg width="80" height="80" viewBox="0 0 100 100" fill="#FCEBDD" stroke="#6A4024" strokeWidth="4" xmlns="http://www.w3.org/2000/svg">
+    <div className="absolute -bottom-6 -right-6 z-20 drop-shadow-md rotate-180 text-[#F5F1E9]">
+      <svg width="80" height="80" viewBox="0 0 100 100" fill="currentColor" className="stroke-secondary" strokeWidth="4" xmlns="http://www.w3.org/2000/svg">
         <path d="M 35,55 C 48,55 50,35 35,35 C 20,35 20,55 35,55 C 40,55 40,70 25,80" strokeLinecap="round" strokeLinejoin="round"/>
         <path d="M 75,55 C 88,55 90,35 75,35 C 60,35 60,55 75,55 C 80,55 80,70 65,80" strokeLinecap="round" strokeLinejoin="round"/>
         {/* Shading hashes */}
@@ -114,7 +114,7 @@ export function WhoWeAre() {
   });
 
   return (
-    <section ref={containerRef} className="relative bg-surface lg:h-[500vh] lg:-mb-[100vh] py-20 lg:py-0">
+    <section ref={containerRef} className="relative bg-background lg:h-[500vh] lg:-mb-[100vh] py-20 lg:py-0">
       <div className="lg:sticky lg:top-0 lg:h-screen w-full flex flex-col justify-center overflow-hidden">
         
         {/* Cultural Golden Mandala on the far right edge of the screen */}

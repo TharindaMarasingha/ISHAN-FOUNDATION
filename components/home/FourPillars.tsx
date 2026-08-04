@@ -34,7 +34,7 @@ const PILLARS = [
 export function FourPillars() {
   return (
     <section 
-      className="py-24 px-6 md:px-12 border-t border-divider overflow-hidden relative z-20 bg-surface group"
+      className="py-24 px-6 md:px-12 border-t border-divider overflow-hidden relative z-20 bg-background group"
     >
       {/* Left-side radial glow mimicking the hero section */}
       <div 

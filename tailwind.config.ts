@@ -16,7 +16,11 @@ const config: Config = {
         primary: "var(--color-primary)",
         heading: "var(--color-heading)",
         softAccent: "var(--color-soft-accent)",
-        cta: "var(--color-cta)",
+        bodyText: "var(--color-body-text)",
+        lotusBloom: "var(--color-lotus-bloom)",
+      },
+      backgroundImage: {
+        'gradient-cta': 'var(--gradient-cta)',
       },
       fontFamily: {
         display: ["var(--font-forum)", "serif"],

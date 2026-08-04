@@ -49,10 +49,10 @@ export default function USSPage() {
           align="center"
         />
         <RevealOnScroll delay={0.2} className="mt-12 flex flex-col sm:flex-row gap-4 sm:gap-6 w-full sm:w-auto">
-          <Button href="/contact" variant="primary" className="bg-cta text-white hover:bg-cta/90">
+          <Button href="/contact" variant="primary">
             Research With Us
           </Button>
-          <Button href="/" variant="ghost" className="border-primary text-primary hover:border-primary hover:text-heading">
+          <Button href="/" variant="ghost">
             Back to Home
           </Button>
         </RevealOnScroll>

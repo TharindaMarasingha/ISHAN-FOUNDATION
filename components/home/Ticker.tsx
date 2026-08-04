@@ -21,7 +21,7 @@ export function Ticker() {
   const tickerItems = [...VALUES, ...VALUES];
 
   return (
-    <div className="w-full bg-surface border-y border-divider py-4 overflow-hidden flex items-center group relative z-10">
+    <div className="w-full bg-[#F5F1E9] border-y border-divider py-4 overflow-hidden flex items-center group relative z-10">
       <motion.div
         className="flex whitespace-nowrap items-center"
         animate={{ x: prefersReducedMotion ? 0 : ["0%", "-50%"] }}

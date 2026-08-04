@@ -83,7 +83,7 @@ export function Approach() {
     <section 
       className="pt-[100px] pb-24 px-6 md:px-12 overflow-hidden relative"
       style={{
-        background: 'linear-gradient(160deg, #FDF0E6 0%, #FFF8F2 40%, #FEF3E8 70%, #FAE8D4 100%)'
+        background: 'var(--color-surface)'
       }}
     >
       <motion.img 
@@ -119,7 +119,7 @@ export function Approach() {
           {/* Vertical Timeline Connector (Desktop Only) */}
           <div className="hidden md:block absolute top-0 bottom-0 left-1/2 -translate-x-1/2 w-[2px]">
             <motion.div 
-              className="w-full h-full bg-gradient-to-b from-transparent via-[#C9A84C] to-transparent origin-top"
+              className="w-full h-full bg-gradient-to-b from-transparent via-primary to-transparent origin-top"
               initial={{ scaleY: 0 }}
               whileInView={{ scaleY: 1 }}
               viewport={{ once: true, amount: 0.1 }}

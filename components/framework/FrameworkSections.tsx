@@ -28,7 +28,7 @@ export function GoldenCircleSection() {
       <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
         {circles.map((item, index) => (
           <RevealOnScroll key={item.title} delay={index * 0.15}>
-            <Card className="h-full !p-0 border-t-4 border-t-burntOrange text-center">
+            <Card className="h-full !p-0 border-t-4 border-t-primary text-center">
               <div className="absolute inset-0 z-0">
                 <Image
                   src={item.image}
@@ -163,7 +163,7 @@ export function PurusharthaSection() {
                       </defs>
                       <path 
                         d="M 60 30 Q 150 30 200 0 Q 250 30 340 30 Q 370 30 370 60 Q 370 120 400 150 Q 370 180 370 240 Q 370 270 340 270 Q 250 270 200 300 Q 150 270 60 270 Q 30 270 30 240 Q 30 180 0 150 Q 30 120 30 60 Q 30 30 60 30 Z" 
-                        className="fill-transparent stroke-burntOrange/15" 
+                        className="fill-transparent stroke-primary/15" 
                         strokeWidth="1.5" 
                         strokeLinejoin="round" 
                       />
@@ -386,7 +386,7 @@ export function FrameworkCTASection() {
           <Button 
             href="/" 
             variant="ghost" 
-            className="!bg-heading/70 sm:!bg-softAccent/15 !border-heading sm:!border-primary/70 !border-[1.5px] !text-white hover:!bg-cta hover:!text-heading hover:!border-[#F5D98A] [text-shadow:0_1px_4px_rgba(0,0,0,0.5)] sm:[text-shadow:0_1px_4px_rgba(46,26,14,0.6)] hover:[text-shadow:none]"
+            className="!bg-heading/70 sm:!bg-softAccent/15 !border-heading sm:!border-primary/70 !border-[1.5px] !text-white hover:!bg-[image:var(--gradient-cta)] hover:!text-heading hover:!border-[#F5D98A] [text-shadow:0_1px_4px_rgba(0,0,0,0.5)] sm:[text-shadow:0_1px_4px_rgba(46,26,14,0.6)] hover:[text-shadow:none]"
           >
             Back to Home
           </Button>

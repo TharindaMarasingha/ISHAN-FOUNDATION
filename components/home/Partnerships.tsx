@@ -52,10 +52,7 @@ const QUOTE_TEXT = `"We do not merely conduct programmes. We cultivate transform
 export function Partnerships() {
   return (
     <section 
-      className="py-24 px-6 md:px-12"
-      style={{
-        background: 'linear-gradient(135deg, rgba(255, 200, 150, 0.12) 0%, rgba(255, 255, 255, 0.6) 50%, rgba(255, 220, 180, 0.1) 100%)'
-      }}
+      className="py-24 px-6 md:px-12 bg-background"
     >
       <div className="max-w-7xl mx-auto">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-16 md:gap-24">
@@ -71,7 +68,7 @@ export function Partnerships() {
               </p>
               <div className="flex flex-wrap gap-3 mb-10">
                 {PARTNER_TYPES.map((pt) => (
-                  <span key={pt} className="px-4 py-1.5 rounded-full bg-darkBrown/5 text-xs text-heading tracking-widest uppercase">
+                  <span key={pt} className="px-4 py-1.5 rounded-full bg-heading/5 text-xs text-heading tracking-widest uppercase">
                     {pt}
                   </span>
                 ))}

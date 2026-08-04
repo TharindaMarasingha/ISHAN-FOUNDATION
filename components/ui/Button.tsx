@@ -24,12 +24,12 @@ export function Button({
   magnetic = true,
 }: ButtonProps) {
   const baseClasses =
-    "inline-block uppercase text-xs tracking-[0.15em] px-10 py-4 transition-colors duration-300 rounded-full";
+    "inline-block text-xs font-sans tracking-[0.15em] px-10 py-4 transition-all duration-300 rounded-full";
   
   const variantClasses =
     variant === "primary"
-      ? "bg-cta text-white hover:bg-cta/90 disabled:opacity-50 disabled:hover:bg-cta"
-      : "bg-transparent border border-primary text-primary hover:bg-primary hover:text-white disabled:opacity-50 disabled:hover:border-primary disabled:hover:text-primary disabled:hover:bg-transparent";
+      ? "bg-[image:var(--gradient-cta)] text-white font-bold hover:brightness-105 hover:[box-shadow:0_0_20px_rgba(217,79,157,0.4)] disabled:opacity-40 disabled:hover:brightness-100 disabled:hover:[box-shadow:none] [text-shadow:0_1px_3px_rgba(0,0,0,0.3)] shadow-md"
+      : "bg-transparent border-[1.5px] border-secondary text-heading hover:bg-divider disabled:opacity-40 disabled:hover:bg-transparent disabled:hover:border-secondary disabled:hover:text-heading";
 
   const combinedClasses = `${baseClasses} ${variantClasses} ${className} ${disabled ? 'cursor-not-allowed' : ''}`;
 

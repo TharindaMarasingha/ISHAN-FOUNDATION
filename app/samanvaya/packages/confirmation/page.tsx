@@ -32,7 +32,7 @@ export default async function ConfirmationPage({ searchParams }: Props) {
         )}
         
         <div className="flex justify-center">
-          <Button href="/" variant="primary" className="bg-cta text-white hover:bg-cta/90">
+          <Button href="/" variant="primary">
             Return Home
           </Button>
         </div>

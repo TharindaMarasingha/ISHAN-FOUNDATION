@@ -37,7 +37,7 @@ export function TheExperience() {
             <React.Fragment key={step.number}>
               <RevealOnScroll delay={index * 0.15} className="flex-1 w-full max-w-[200px] text-center">
                 <div className="flex flex-col items-center group">
-                  <div className="w-16 h-16 rounded-full border border-divider flex items-center justify-center mb-6 group-hover:border-primary transition-colors duration-500 bg-peach relative">
+                  <div className="w-16 h-16 rounded-full border border-divider flex items-center justify-center mb-6 group-hover:border-primary transition-colors duration-500 bg-surface relative">
                     <span className="font-display italic text-2xl text-heading">{step.number}</span>
                   </div>
                   <h4 className="font-display uppercase tracking-widest text-heading text-lg mb-2">

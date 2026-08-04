@@ -44,7 +44,7 @@ export function FoundingTrinity() {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {YOGINIS.map((yogini, index) => (
             <RevealOnScroll key={yogini.name} delay={index * 0.15} className="h-full">
-              <div className="h-full flex flex-col items-center text-center p-8 sm:p-10 border border-divider bg-darkBrown/5 transition-all duration-300 hover:-translate-y-1.5 hover:border-primary/50 hover:shadow-[0_10px_30px_rgba(46,26,14,0.05)]">
+              <div className="h-full flex flex-col items-center text-center p-8 sm:p-10 border border-divider bg-heading/5 transition-all duration-300 hover:-translate-y-1.5 hover:border-primary/50 hover:shadow-[0_10px_30px_rgba(46,26,14,0.05)]">
                 
                 <span className="font-display text-4xl text-secondary mb-6 leading-none">
                   {yogini.symbol}

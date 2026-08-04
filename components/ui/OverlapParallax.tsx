@@ -25,7 +25,7 @@ export function OverlapParallax({ baseContent, overlapContent }: OverlapParallax
   const y = useTransform(scrollYProgress, [0, 1], ["0vh", "100vh"]);
 
   return (
-    <div className="relative z-10 bg-surface overflow-hidden">
+    <div className="relative z-10 bg-transparent overflow-hidden">
       <motion.div 
         style={{ y }} 
         className="relative z-0"
@@ -35,7 +35,7 @@ export function OverlapParallax({ baseContent, overlapContent }: OverlapParallax
       
       <div 
         ref={overlapRef} 
-        className="relative z-20 shadow-md rounded-t-[40px] overflow-hidden bg-surface"
+        className="relative z-20 shadow-md rounded-t-[40px] overflow-hidden bg-background"
       >
         {overlapContent}
       </div>

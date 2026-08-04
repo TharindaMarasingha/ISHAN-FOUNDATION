@@ -8,7 +8,9 @@
   --color-primary: #5C8151;
   --color-heading: #33472C;
   --color-soft-accent: #F3D8DB;
-  --color-cta: #DE5680;
+  --color-body-text: #55624D;
+  --color-lotus-bloom: #DE5680;
+  --gradient-cta: linear-gradient(135deg, #D94F9D 0%, #E8A56F 55%, #F4C6A1 100%);
 }
 
 :root {
@@ -19,7 +21,9 @@
   --color-primary: #5C8151;
   --color-heading: #33472C;
   --color-soft-accent: #F3D8DB;
-  --color-cta: #DE5680;
+  --color-body-text: #55624D;
+  --color-lotus-bloom: #DE5680;
+  --gradient-cta: linear-gradient(135deg, #D94F9D 0%, #E8A56F 55%, #F4C6A1 100%);
 }
 
 html {
@@ -29,7 +33,7 @@ html {
 body {
   background: var(--color-background);
   background-attachment: fixed;
-  color: var(--color-heading);
+  color: var(--color-body-text);
   font-weight: 300;
   line-height: 1.7;
   min-height: 100vh;
@@ -42,4 +46,66 @@ body {
 
 .font-display {
   font-family: var(--font-forum);
+}
+
+/* Corner Ornaments Animations */
+@keyframes float-corner-tl {
+  0%, 100% { transform: translate(0, 0); }
+  50% { transform: translate(3px, 4px); }
+}
+@keyframes sway-tl {
+  0%, 100% { transform: rotate(0deg); }
+  50% { transform: rotate(2deg); }
+}
+@keyframes sway-tl-2 {
+  0%, 100% { transform: rotate(0deg); }
+  50% { transform: rotate(-1.5deg); }
+}
+@keyframes sway-tl-3 {
+  0%, 100% { transform: rotate(0deg); }
+  50% { transform: rotate(2.5deg); }
+}
+.animate-float-tl {
+  animation: float-corner-tl 16s ease-in-out infinite;
+}
+.animate-sway-1 {
+  animation: sway-tl 14s ease-in-out infinite;
+  transform-origin: top;
+}
+.animate-sway-2 {
+  animation: sway-tl-2 17s ease-in-out infinite 1s;
+  transform-origin: top;
+}
+.animate-sway-3 {
+  animation: sway-tl-3 13s ease-in-out infinite 2s;
+  transform-origin: top;
+}
+
+@keyframes float-corner-br {
+  0%, 100% { transform: translate(0, 0); }
+  50% { transform: translate(-3px, -4px); }
+}
+@keyframes sway-br {
+  0%, 100% { transform: rotate(0deg); }
+  50% { transform: rotate(-2deg); }
+}
+@keyframes sway-br-2 {
+  0%, 100% { transform: rotate(0deg); }
+  50% { transform: rotate(1.5deg); }
+}
+@keyframes sway-br-3 {
+  0%, 100% { transform: rotate(0deg); }
+  50% { transform: rotate(-2.5deg); }
+}
+.animate-float-br {
+  animation: float-corner-br 15s ease-in-out infinite;
+}
+.animate-sway-br-1 {
+  animation: sway-br 15s ease-in-out infinite;
+}
+.animate-sway-br-2 {
+  animation: sway-br-2 18s ease-in-out infinite 1s;
+}
+.animate-sway-br-3 {
+  animation: sway-br-3 14s ease-in-out infinite 2s;
 }

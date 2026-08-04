@@ -64,7 +64,7 @@ export default function SamanvayaPage() {
           </p>
 
           <div className="mt-8">
-            <Button href="/samanvaya/packages" variant="primary" className="bg-cta text-white hover:bg-cta/90">
+            <Button href="/samanvaya/packages" variant="primary">
               See the Packages
             </Button>
           </div>
@@ -100,10 +100,10 @@ export default function SamanvayaPage() {
           align="center"
         />
         <RevealOnScroll delay={0.2} className="mt-12 flex flex-col sm:flex-row gap-4 sm:gap-6 w-full sm:w-auto">
-          <Button href="/contact" variant="primary" className="bg-cta text-white hover:bg-cta/90">
+          <Button href="/contact" variant="primary">
             Register Interest
           </Button>
-          <Button href="/" variant="ghost" className="border-primary text-primary hover:bg-primary hover:text-white">
+          <Button href="/" variant="ghost">
             Back to Home
           </Button>
         </RevealOnScroll>

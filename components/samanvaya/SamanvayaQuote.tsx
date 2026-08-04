@@ -2,7 +2,7 @@ import { RevealOnScroll } from "../ui/RevealOnScroll";
 
 export function SamanvayaQuote() {
   return (
-    <section className="bg-darkBrown py-32 px-6 flex items-center justify-center relative overflow-hidden">
+    <section className="bg-heading py-32 px-6 flex items-center justify-center relative overflow-hidden">
       <div className="max-w-4xl mx-auto text-center relative z-10 flex flex-col items-center">
         <span className="font-display text-9xl text-secondary absolute -top-16 left-1/2 -translate-x-1/2 pointer-events-none">
           &quot;

@@ -123,7 +123,7 @@ export function VisionMissionSection() {
     <section className="pt-8 pb-24 px-6 max-w-7xl mx-auto overflow-hidden">
       <div className="flex flex-col gap-12 relative">
         {/* Vertical connector line */}
-        <div className="hidden md:block absolute left-1/2 top-1/2 -translate-y-1/2 -translate-x-1/2 w-[2px] h-[60px] bg-gradient-to-b from-[#D89E4D] via-[#A46A2B] to-[#D89E4D] opacity-50 z-10"></div>
+        <div className="hidden md:block absolute left-1/2 top-1/2 -translate-y-1/2 -translate-x-1/2 w-[2px] h-[60px] bg-gradient-to-b from-primary via-primary to-primary opacity-50 z-10"></div>
 
         {/* VISION ROW */}
         <RevealOnScroll>
@@ -132,10 +132,10 @@ export function VisionMissionSection() {
             <div className="w-full md:w-[60%] relative py-8">
 
               <div className="relative z-10">
-                <div className="font-sans text-[10px] uppercase tracking-[0.2em] text-[#A46A2B] mb-3">
+                <div className="font-sans text-[10px] uppercase tracking-[0.2em] text-primary mb-3">
                   Our Vision
                 </div>
-                <div className="w-[40px] h-[2px] bg-[#D89E4D] mb-8"></div>
+                <div className="w-[40px] h-[2px] bg-primary mb-8"></div>
                 <h3 className="font-display text-[42px] text-heading mb-6">Vision</h3>
                 <p className="font-display italic text-[17px] text-heading/80 leading-[1.8] max-w-lg">
                   To cultivate a world where humanity and nature exist in conscious harmony through wisdom, wellness, compassion, responsibility, and sustainable living.
@@ -163,10 +163,10 @@ export function VisionMissionSection() {
             <div className="w-full md:w-[60%] relative py-8 flex flex-col md:items-end md:text-right">
 
               <div className="relative z-10 flex flex-col md:items-end">
-                <div className="font-sans text-[10px] uppercase tracking-[0.2em] text-[#D89E4D] mb-3">
+                <div className="font-sans text-[10px] uppercase tracking-[0.2em] text-primary mb-3">
                   Our Mission
                 </div>
-                <div className="w-[40px] h-[2px] bg-[#A46A2B] mb-8"></div>
+                <div className="w-[40px] h-[2px] bg-primary mb-8"></div>
                 <h3 className="font-display text-[42px] text-heading mb-6">Mission</h3>
                 <p className="font-display italic text-[17px] text-heading/80 leading-[1.8] max-w-lg">
                   To inspire, educate, and empower individuals, institutions, organizations, and communities through integrated initiatives that promote holistic wellbeing, ethical leadership, environmental stewardship, conscious living, and sustainable development.
@@ -223,7 +223,7 @@ export function OurPurposeSection() {
         {purposes.map((p, i) => (
           <RevealOnScroll key={i} delay={i * 0.05}>
             <div className="flex items-start gap-4">
-              <span className="text-[#C9984A] text-lg leading-none mt-1">✦</span>
+              <span className="text-primary text-lg leading-none mt-1">✦</span>
               <p className="font-sans font-light text-[17px] text-heading/80 leading-[1.8]">
                 {p}
               </p>
@@ -277,7 +277,7 @@ export function OurPhilosophySection() {
                 >
                   {/* Number (Left, 15%) */}
                   <div className="w-full md:w-[15%] mb-4 md:mb-0">
-                    <span className="font-display text-[48px] md:text-[80px] font-normal leading-none transition-colors duration-300 text-[rgba(216,158,77,0.25)] group-hover:text-[#D89E4D]">
+                    <span className="font-display text-[48px] md:text-[80px] font-normal leading-none transition-colors duration-300 text-[rgba(216,158,77,0.25)] group-hover:text-primary">
                       {number}
                     </span>
                   </div>
@@ -291,7 +291,7 @@ export function OurPhilosophySection() {
                         </p>
                       </div>
                     ) : isLast ? (
-                      <p className="font-sans font-normal italic text-[16px] text-[#A46A2B] leading-[1.85]">
+                      <p className="font-sans font-normal italic text-[16px] text-primary leading-[1.85]">
                         {text}
                       </p>
                     ) : (
@@ -619,7 +619,7 @@ export function CoreValuesSection() {
                   transition: "transform 0.38s cubic-bezier(.34,1.56,.64,1)",
                 }}>
                   <button
-                    className="flex flex-col items-center justify-center gap-1.5 cursor-pointer select-none bg-white outline-none focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#C9A84C] focus-visible:ring-offset-2 focus-visible:ring-offset-transparent"
+                    className="flex flex-col items-center justify-center gap-1.5 cursor-pointer select-none bg-white outline-none focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 focus-visible:ring-offset-transparent"
                     style={{
                       width: 110,
                       height: 55,
@@ -756,8 +756,8 @@ export function OurCommitmentSection() {
       <div className="max-w-6xl mx-auto relative z-10">
         
         {/* TOP: Large centered display text */}
-        <h2 className="font-display font-light text-[48px] md:text-[56px] text-darkBrown mb-8 text-center">Our Commitment</h2>
-        <div className="w-[80px] h-[1px] bg-sacredGold mx-auto mb-20"></div>
+        <h2 className="font-display font-light text-[48px] md:text-[56px] text-heading mb-8 text-center">Our Commitment</h2>
+        <div className="w-[80px] h-[1px] bg-primary mx-auto mb-20"></div>
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24 items-center mb-16">
           {/* Left Column: Commitment List */}
@@ -771,7 +771,7 @@ export function OurCommitmentSection() {
                      className="flex items-start py-[18px] border-b border-primary/15 last:border-b-0"
                    >
                      <span className="font-sans text-[14px] text-secondary mr-5 mt-[2px] flex-shrink-0">✦</span> 
-                     <span className={`font-sans font-light text-[16px] leading-[1.6] ${isLast ? 'italic text-primary font-normal' : 'text-darkBrown'}`}>
+                     <span className={`font-sans font-light text-[16px] leading-[1.6] ${isLast ? 'italic text-primary font-normal' : 'text-heading'}`}>
                        {c}
                      </span>
                    </li>
@@ -792,7 +792,7 @@ export function OurCommitmentSection() {
               />
 
               {/* Soft Gradient Overlay */}
-              <div className="absolute inset-0 bg-gradient-to-tr from-softApricot via-sacredGold to-burntOrange opacity-20 mix-blend-overlay pointer-events-none"></div>
+              <div className="absolute inset-0 bg-gradient-to-tr from-softAccent via-primary to-primary opacity-20 mix-blend-overlay pointer-events-none"></div>
 
               {/* Decorative Circle Accent */}
               <div className="absolute -bottom-16 -right-16 w-64 h-64 rounded-full border-[1px] border-warmGilt/30 pointer-events-none z-10"></div>
@@ -805,12 +805,12 @@ export function OurCommitmentSection() {
         <RevealOnScroll delay={0.6}>
           <div className="relative pt-8 max-w-4xl mx-auto text-center">
             {/* Gold Divider Line */}
-            <div className="w-full h-px bg-gradient-to-r from-transparent via-sacredGold/40 to-transparent my-12" />
+            <div className="w-full h-px bg-gradient-to-r from-transparent via-primary/40 to-transparent my-12" />
             
             <p className="relative z-10 font-display italic text-[24px] md:text-[28px] text-heading leading-[1.6]">
               "Because when humanity and nature flourish together, everyone benefits."
             </p>
-            <div className="relative z-10 mt-8 font-sans text-[12px] text-darkBrown/60 uppercase tracking-[0.2em]">
+            <div className="relative z-10 mt-8 font-sans text-[12px] text-heading/60 uppercase tracking-[0.2em]">
               — ISHAN Foundation
             </div>
           </div>

@@ -18,13 +18,13 @@ export function Hero() {
   
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
   const [isHoveredOrDragged, setIsHoveredOrDragged] = useState(false);
-  const images = ["/images/h1.webp", "/images/h2.webp", "/images/h3.webp", "/images/h4.webp"];
+  const images = ["/images/h1.webp", "/images/h2.webp", "/images/h3.webp", "/images/h4.webp", "/images/h5.webp"];
 
   useEffect(() => {
     if (prefersReducedMotion || isHoveredOrDragged) return;
     const interval = setInterval(() => {
       setCurrentImageIndex((prev) => (prev + 1) % images.length);
-    }, 10000); // 10 seconds per slide for a slower, unhurried pace
+    }, 5000); // 5 seconds per slide for a visible slideshow pace
     return () => clearInterval(interval);
   }, [images.length, prefersReducedMotion, isHoveredOrDragged]);
 
@@ -83,6 +83,7 @@ export function Hero() {
                 sizes="100vw"
                 className="object-cover object-center pointer-events-none"
                 priority
+                unoptimized
               />
             </motion.div>
           </AnimatePresence>
@@ -99,7 +100,7 @@ export function Hero() {
             <div 
               key={idx}
               className={`h-2 rounded-full transition-all duration-500 ${
-                idx === currentImageIndex ? "w-6 bg-sacredGold" : "w-2 bg-white/50"
+                idx === currentImageIndex ? "w-6 bg-primary" : "w-2 bg-white/50"
               }`}
             />
           ))}
@@ -108,9 +109,9 @@ export function Hero() {
 
       {/* MOBILE FLOATING ACCENT DOTS */}
       <div className="md:hidden absolute inset-0 pointer-events-none z-10">
-        <div className="absolute top-[120px] left-[22px] w-2 h-2 bg-sacredGold rounded-full opacity-50" />
-        <div className="absolute top-[180px] right-[30px] w-1.5 h-1.5 bg-cta rounded-full opacity-40" />
-        <div className="absolute top-[55%] right-[20px] w-2.5 h-2.5 bg-sacredGold rounded-full opacity-30" />
+        <div className="absolute top-[120px] left-[22px] w-2 h-2 bg-primary rounded-full opacity-50" />
+        <div className="absolute top-[180px] right-[30px] w-1.5 h-1.5 bg-[image:var(--gradient-cta)] rounded-full opacity-40" />
+        <div className="absolute top-[55%] right-[20px] w-2.5 h-2.5 bg-primary rounded-full opacity-30" />
       </div>
 
       {/* Desktop Right Background Image Slideshow */}
@@ -132,6 +133,7 @@ export function Hero() {
                 sizes="100vw"
                 className="object-cover object-right"
                 priority
+                unoptimized
               />
             </motion.div>
           </AnimatePresence>
@@ -161,28 +163,26 @@ export function Hero() {
       <div className="relative z-20 w-full max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-2 pt-28 md:pt-32 lg:pt-40 pb-8 md:pb-20">
         
         {/* Left Column: Text Content */}
-        <div className="flex flex-col items-start justify-center text-left md:pl-0 lg:-ml-8 w-full max-w-2xl mx-auto md:mr-auto">
-          
-          <motion.p
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, ease: "easeOut" }}
-            className="font-sans text-[8px] md:font-light text-white/70 md:text-[#8A8A8A] md:text-[10px] tracking-[0.18em] md:tracking-[0.3em] uppercase mb-3 md:mb-8 md:-mt-8 max-w-full"
-          >
-            International Society of Holistic Awareness & Naturology
-          </motion.p>
-
+        <div 
+          className="flex flex-col items-start justify-center text-left md:pl-0 lg:-ml-8 w-full max-w-2xl mx-auto md:mr-auto"
+          style={{
+            '--hero-gradient': 'linear-gradient(135deg, #D94F9D 0%, #E8A56F 50%, #F4C6A1 100%)',
+            '--hero-heading-color': '#294A32',
+            '--hero-eyebrow-color': 'rgba(41, 74, 50, 0.85)',
+            '--hero-subtitle-color': 'rgba(41, 74, 50, 0.85)',
+          } as React.CSSProperties}
+        >
           <motion.div 
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1, delay: 0.1, ease: "easeOut" }}
-            className="p-2 md:p-0 mb-8 mt-12 md:mt-0 md:mb-0 relative z-20 w-full"
+            className="p-2 md:p-0 mb-8 mt-6 md:mt-0 md:mb-0 relative z-20 w-full"
           >
             <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
-            className="flex flex-col items-start mb-4 overflow-hidden max-w-full"
+            className="flex flex-col items-start mb-2 md:mb-1 max-w-full"
           >
             <h1 
               style={{
@@ -190,7 +190,7 @@ export function Hero() {
                 fontWeight: 400,
                 paddingRight: '0.2em'
               }}
-              className={`${greatVibes.className} leading-none text-[56px] text-white md:text-heading md:text-[clamp(6rem,15vw,12rem)] drop-shadow-md md:drop-shadow-none`}
+              className={`${greatVibes.className} leading-none text-[56px] text-white md:text-[color:var(--hero-heading-color)] md:text-[clamp(6rem,15vw,12rem)] drop-shadow-md md:drop-shadow-none`}
             >
               Ishan
             </h1>
@@ -200,9 +200,9 @@ export function Hero() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 1, delay: 0.4 }}
-            className="font-sans italic text-[17px] text-white md:text-[#6B6B6B] md:text-xl max-w-[280px] md:max-w-lg leading-[1.5] md:leading-normal mb-[14px] md:mb-3 tracking-wide drop-shadow-sm md:drop-shadow-none"
+            className="font-sans text-[8px] md:font-light text-white/70 md:text-[color:var(--hero-eyebrow-color)] md:text-[10px] tracking-[0.18em] md:tracking-[0.3em] uppercase mb-[14px] md:mb-5 max-w-full"
           >
-            Harmonising Humanity with Nature through Wisdom, Wellness, and Collective Responsibility
+            International Society of Holistic Awareness & Naturology
           </motion.p>
 
           <motion.p
@@ -222,20 +222,20 @@ export function Hero() {
           >
             {/* MOBILE BUTTONS */}
             <div className="flex flex-col items-stretch gap-4 w-full md:hidden">
-              <Link href="#ecosystem" className="w-full text-center bg-cta text-white px-10 py-4 rounded-full font-sans font-semibold tracking-[0.15em] uppercase text-xs shadow-md">
+              <Link href="#ecosystem" className="w-full text-center bg-[image:var(--hero-gradient)] text-white px-10 py-4 rounded-full font-sans font-bold tracking-[0.15em] uppercase text-xs shadow-md hover:brightness-105 hover:[box-shadow:0_0_20px_rgba(217,79,157,0.4)] transition-all [text-shadow:0_1px_3px_rgba(0,0,0,0.3)]">
                 EXPLORE OUR WORK &rarr;
               </Link>
-              <Link href="/about" className="w-full text-center bg-cta text-white px-10 py-4 rounded-full font-sans font-semibold tracking-[0.15em] uppercase text-xs shadow-md">
+              <Link href="/about" className="w-full text-center bg-[image:var(--hero-gradient)] text-white px-10 py-4 rounded-full font-sans font-bold tracking-[0.15em] uppercase text-xs shadow-md hover:brightness-105 hover:[box-shadow:0_0_20px_rgba(217,79,157,0.4)] transition-all [text-shadow:0_1px_3px_rgba(0,0,0,0.3)]">
                 ABOUT ISHAN &rarr;
               </Link>
             </div>
 
             {/* DESKTOP BUTTONS */}
             <div className="hidden md:flex flex-row items-center justify-start gap-4">
-              <Link href="#ecosystem" className="w-auto text-center min-w-[180px] bg-cta text-white border-none px-8 py-3.5 rounded-full hover:shadow-xl hover:-translate-y-0.5 transition-all duration-300 font-sans font-medium tracking-wide uppercase text-[13px] flex items-center justify-center">
+              <Link href="#ecosystem" className="w-auto text-center min-w-[180px] bg-[image:var(--hero-gradient)] text-white border-none px-8 py-3.5 rounded-full hover:[box-shadow:0_0_20px_rgba(217,79,157,0.4)] hover:-translate-y-0.5 hover:brightness-105 transition-all duration-300 font-sans font-bold tracking-wide uppercase text-[13px] flex items-center justify-center [text-shadow:0_1px_3px_rgba(0,0,0,0.3)]">
                 Explore Our Work
               </Link>
-              <Link href="/about" className="w-auto text-center min-w-[180px] bg-cta text-white border-none px-8 py-3.5 rounded-full hover:shadow-xl hover:-translate-y-0.5 transition-all duration-300 font-sans font-medium tracking-wide uppercase text-[13px] flex items-center justify-center">
+              <Link href="/about" className="w-auto text-center min-w-[180px] bg-[image:var(--hero-gradient)] text-white border-none px-8 py-3.5 rounded-full hover:[box-shadow:0_0_20px_rgba(217,79,157,0.4)] hover:-translate-y-0.5 hover:brightness-105 transition-all duration-300 font-sans font-bold tracking-wide uppercase text-[13px] flex items-center justify-center [text-shadow:0_1px_3px_rgba(0,0,0,0.3)]">
                 About ISHAN
               </Link>
             </div>

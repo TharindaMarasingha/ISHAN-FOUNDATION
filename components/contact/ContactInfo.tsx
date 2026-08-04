@@ -25,7 +25,7 @@ export function ContactInfo() {
       </div>
 
       {/* Ecosystem Links */}
-      <div className="flex flex-col space-y-6 p-8 bg-darkBrown/5 border border-divider">
+      <div className="flex flex-col space-y-6 p-8 bg-heading/5 border border-divider">
         <h4 className="font-display italic text-xl text-heading mb-2">Explore the Ecosystem</h4>
         <nav className="flex flex-col space-y-4">
           <Link href="/arogya" className="font-sans font-light text-sm text-heading hover:text-primary flex items-center justify-between group">

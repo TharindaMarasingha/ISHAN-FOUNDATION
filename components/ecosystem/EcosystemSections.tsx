@@ -89,7 +89,7 @@ export function EcosystemSections() {
             />
           </div>
           <RevealOnScroll>
-            <Card className="p-8 md:p-12 border-t-4 border-t-sacredGold border-divider hover:-translate-y-1 transition-all duration-300">
+            <Card className="p-8 md:p-12 border-t-4 border-t-primary border-divider hover:-translate-y-1 transition-all duration-300">
               <h3 className="font-display font-light text-3xl md:text-4xl text-heading mb-6">
                 ISHAN — The Parent Institution
               </h3>
@@ -271,10 +271,10 @@ export function EcosystemSections() {
             align="center"
           />
           <RevealOnScroll delay={0.2} className="mt-12 flex flex-col sm:flex-row gap-4 sm:gap-6 w-full sm:w-auto">
-            <Button href="/contact" variant="primary" className="bg-cta text-white hover:bg-cta/90">
+            <Button href="/contact" variant="primary">
               Connect With Us
             </Button>
-            <Button href="/support" variant="ghost" className="border-secondary text-secondary hover:border-softApricot hover:text-white">
+            <Button href="/support" variant="ghost">
               Support Our Mission
             </Button>
           </RevealOnScroll>
