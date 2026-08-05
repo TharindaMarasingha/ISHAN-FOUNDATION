@@ -36,11 +36,11 @@ function TypewriterQuote({ text }: { text: string }) {
       variants={container}
       initial="hidden"
       animate={isInView ? "visible" : "hidden"}
-      className="font-display italic text-2xl md:text-3xl text-heading leading-relaxed tracking-wide"
+      className="font-display italic text-[26px] leading-[1.65] md:text-3xl text-heading md:leading-relaxed tracking-wide px-2 md:px-0"
     >
       {text.split("").map((char, index) => (
         <motion.span variants={child} key={index}>
-          {char === "\n" ? <br /> : char === " " ? "\u00A0" : char}
+          {char === "\n" ? <br /> : char === " " ? " " : char}
         </motion.span>
       ))}
     </motion.h4>
@@ -55,38 +55,54 @@ export function Partnerships() {
       className="py-24 px-6 md:px-12 bg-background"
     >
       <div className="max-w-7xl mx-auto">
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-16 md:gap-24">
+        <div className="flex flex-col md:grid md:grid-cols-2 gap-20 md:gap-24">
           
           {/* Left Column */}
-          <div className="flex flex-col space-y-8">
+          <div className="flex flex-col">
             <RevealOnScroll>
-              <h3 className="font-display font-light text-4xl md:text-5xl text-heading mb-4">
+              <h3 className="font-display font-light text-[40px] leading-[1.1] md:text-5xl text-heading mb-6 md:mb-4">
                 Join the Movement
               </h3>
-              <p className="font-sans font-light text-heading/80 leading-relaxed mb-6">
+              <p className="font-sans font-light text-[16px] leading-[1.65] text-heading/90 md:text-base md:text-heading/80 md:leading-relaxed mb-10 md:mb-6">
                 Meaningful change begins with individuals who choose to live consciously and serve selflessly. Whether you are a student, professional, educator, healthcare practitioner, researcher, entrepreneur, policymaker, community leader, organization, or institution, there is a place for you within the ISHAN ecosystem.
               </p>
-              <div className="flex flex-wrap gap-3 mb-10">
+              <div className="flex flex-wrap gap-2.5 md:gap-3 mb-14 md:mb-10">
                 {PARTNER_TYPES.map((pt) => (
-                  <span key={pt} className="px-4 py-1.5 rounded-full bg-heading/5 text-xs text-heading tracking-widest uppercase">
+                  <span 
+                    key={pt} 
+                    className="flex items-center justify-center min-h-[44px] md:min-h-0 px-5 md:px-4 py-2 md:py-1.5 rounded-full bg-heading/5 border border-heading/10 md:border-transparent text-[12px] md:text-xs text-heading/90 tracking-widest uppercase shadow-sm md:shadow-none active:scale-[0.98] md:active:scale-100 transition-all duration-300"
+                  >
                     {pt}
                   </span>
                 ))}
               </div>
-              <Button variant="primary" href="/contact">Connect With Us →</Button>
+              <div className="w-full sm:w-[85%] md:w-auto">
+                <Button 
+                  variant="primary" 
+                  href="/contact"
+                  className="w-full md:w-auto text-center py-[17px] md:py-4 text-[13px] md:text-xs shadow-[0_8px_20px_-8px_rgba(241,143,164,0.4)] md:shadow-md active:scale-[0.98] md:active:scale-100"
+                >
+                  Connect With Us →
+                </Button>
+              </div>
             </RevealOnScroll>
           </div>
 
           {/* Right Column */}
           <div className="flex flex-col">
             <RevealOnScroll delay={0.2}>
-              <h3 className="font-display font-light text-2xl md:text-3xl text-heading mb-8">
+              <h3 className="font-display font-light text-[30px] leading-[1.2] md:text-3xl text-heading mb-8">
                 You Can Contribute Through
               </h3>
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-y-6 gap-x-8">
+              <div className="flex flex-col md:grid md:grid-cols-2 gap-y-3 md:gap-y-6 md:gap-x-8">
                 {CONTRIBUTIONS.map((item) => (
-                  <div key={item} className="flex items-center text-sm font-sans font-light text-heading/80">
-                    <span className="text-secondary mr-3">✦</span>
+                  <div 
+                    key={item} 
+                    className="group flex items-center min-h-[48px] md:min-h-0 py-3 md:py-0 px-4 md:px-0 bg-heading/[0.03] md:bg-transparent rounded-xl md:rounded-none border border-heading/[0.04] md:border-transparent text-[15.5px] md:text-sm font-sans font-light text-heading/90 md:text-heading/80 active:bg-heading/[0.06] md:active:bg-transparent transition-colors cursor-default"
+                  >
+                    <span className="text-secondary/80 md:text-secondary mr-4 md:mr-3 text-lg md:text-base group-active:scale-110 md:group-active:scale-100 transition-transform">
+                      ✦
+                    </span>
                     {item}
                   </div>
                 ))}
@@ -97,7 +113,7 @@ export function Partnerships() {
         </div>
 
         {/* Quote Block */}
-        <div className="mt-20 pt-16 border-t border-divider text-center max-w-4xl mx-auto min-h-[160px]">
+        <div className="mt-28 md:mt-20 pt-16 md:pt-16 border-t border-divider text-center max-w-4xl mx-auto min-h-[160px] px-2 md:px-0">
           <TypewriterQuote text={QUOTE_TEXT} />
         </div>
 

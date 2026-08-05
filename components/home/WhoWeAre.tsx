@@ -19,13 +19,13 @@ const CARDS = [
 const renderCardContent = (card: { title: string; description: string }) => (
   <div className="relative mx-auto w-full max-w-lg">
     {/* The Beige Card */}
-    <div className="relative z-10 p-10 bg-[#F5F1E9] border-[2.5px] border-secondary rounded-[2.5rem] shadow-sm flex flex-col justify-center min-h-[35vh]">
+    <div className="relative z-10 p-6 md:p-10 bg-[#F5F1E9] border-[2.5px] border-secondary rounded-[2rem] md:rounded-[2.5rem] shadow-sm flex flex-col justify-center min-h-[30vh] md:min-h-[35vh]">
       
       <div className="relative z-20">
-        <h3 className="font-display uppercase tracking-widest text-heading text-xl mb-4 font-bold">
+        <h3 className="font-display uppercase tracking-widest text-heading text-lg md:text-xl mb-2 md:mb-4 font-bold">
           {card.title}
         </h3>
-        <p className="font-sans font-light text-base text-heading/80 leading-relaxed">
+        <p className="font-sans font-light text-sm md:text-base text-heading/80 leading-relaxed">
           {card.description}
         </p>
       </div>
@@ -114,8 +114,8 @@ export function WhoWeAre() {
   });
 
   return (
-    <section ref={containerRef} className="relative bg-background lg:h-[500vh] lg:-mb-[100vh] py-20 lg:py-0">
-      <div className="lg:sticky lg:top-0 lg:h-screen w-full flex flex-col justify-center overflow-hidden">
+    <section ref={containerRef} className="relative bg-background h-[500vh] -mb-[100vh]">
+      <div className="sticky top-0 h-screen w-full flex flex-col justify-center overflow-hidden py-10 lg:py-0">
         
         {/* Cultural Golden Mandala on the far right edge of the screen */}
         <div className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-[20%] md:translate-x-[10%] pointer-events-none z-0">
@@ -124,32 +124,32 @@ export function WhoWeAre() {
 
         {/* Content Container */}
         <div className="px-6 md:px-12 max-w-7xl mx-auto w-full relative z-10">
-          <div className="grid grid-cols-1 lg:grid-cols-[0.85fr_1.15fr] gap-16 items-center w-full">
+          <div className="grid grid-cols-1 lg:grid-cols-[0.85fr_1.15fr] gap-4 lg:gap-16 items-center w-full">
           {/* Left Column */}
-          <div className="flex flex-col space-y-8">
+          <div className="flex flex-col space-y-3 lg:space-y-8">
             <RevealOnScroll className="flex flex-col items-start">
               <span
-                className="font-display italic tracking-[0.2em] text-sm uppercase mb-4 text-left text-primary"
+                className="font-display italic tracking-[0.2em] text-xs lg:text-sm uppercase mb-2 lg:mb-4 text-left text-primary"
               >
                 Who We Are
               </span>
               <h2
-                className="font-display font-light text-4xl md:text-5xl lg:text-6xl mb-6 text-left text-heading"
+                className="font-display font-light text-3xl md:text-5xl lg:text-6xl mb-3 lg:mb-6 text-left text-heading"
               >
                 Welcome to ISHAN
               </h2>
             </RevealOnScroll>
             <RevealOnScroll delay={0.1}>
-              <p className="font-sans font-light text-heading/80 leading-relaxed text-lg">
+              <p className="font-sans font-light text-heading/80 leading-relaxed text-sm md:text-base lg:text-lg">
                 ISHAN (International Society of Holistic Awareness & Naturology) is a global institution committed to advancing humanity and nature through wisdom, wellness, education, ethical leadership, sustainability, and conscious community development.
               </p>
             </RevealOnScroll>
             <RevealOnScroll delay={0.15}>
-              <p className="font-sans font-light text-heading/80 leading-relaxed">
+              <p className="font-sans font-light text-heading/80 leading-relaxed text-sm md:text-base">
                 We believe that the wellbeing of humanity and the wellbeing of nature are inseparable. Every individual, every community, and every ecosystem is interconnected, and lasting progress can only be achieved when this interconnectedness is understood, respected, and nurtured.
               </p>
             </RevealOnScroll>
-            <RevealOnScroll delay={0.2}>
+            <RevealOnScroll delay={0.2} className="hidden md:block">
               <p className="font-sans font-light text-heading/80 leading-relaxed">
                 Rooted in timeless wisdom and enriched by modern knowledge, ISHAN develops transformative programmes, research, educational initiatives, partnerships, and sustainable systems that empower individuals and institutions to create meaningful impact for present and future generations.
               </p>
@@ -164,8 +164,8 @@ export function WhoWeAre() {
             </RevealOnScroll>
           </div>
 
-          {/* Desktop Right Column: Sticky Card Stack */}
-          <div className="hidden lg:block relative h-[50vh] w-full">
+          {/* Right Column: Sticky Card Stack (Desktop & Mobile) */}
+          <div className="relative h-[45vh] lg:h-[50vh] w-full mt-4 lg:mt-0">
             {CARDS.map((card, index) => (
               <CardItem
                 key={card.title}
@@ -174,15 +174,6 @@ export function WhoWeAre() {
                 totalCards={CARDS.length}
                 smoothProgress={smoothProgress}
               />
-            ))}
-          </div>
-
-          {/* Mobile Right Column: Static List */}
-          <div className="lg:hidden flex flex-col gap-12 mt-12 w-full relative z-20">
-            {CARDS.map((card) => (
-              <div key={card.title} className="w-full">
-                {renderCardContent(card)}
-              </div>
             ))}
           </div>
           </div>

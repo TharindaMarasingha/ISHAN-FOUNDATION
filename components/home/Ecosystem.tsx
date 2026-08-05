@@ -91,48 +91,48 @@ function EcosystemCard({ card, index, delay }: { card: EcosystemData; index: num
           {/* CONTENT HALF */}
           <div className={`w-full md:w-1/2 py-[48px] px-[40px] flex flex-col justify-start items-start relative ${imageLeft ? 'md:order-2' : 'md:order-1'}`}>
             
-            {card.title === "Samanvaya" && (
-              <div 
-                className="absolute top-[48px] right-[40px] flex items-center gap-[6px] rounded-full border border-red-600/20 z-10"
-                style={{ 
-                  backgroundColor: 'rgba(255,241,230,0.85)',
-                  padding: '5px 12px' 
-                }}
-              >
-                <div className="relative flex items-center justify-center w-[9px] h-[9px]">
-                  {!shouldReduceMotion && (
-                    <span 
-                      className="absolute inset-0 rounded-full bg-red-600 opacity-40 animate-ping"
-                      style={{ animationDuration: '2s' }}
-                    />
-                  )}
-                  <motion.div 
-                    className="relative w-[9px] h-[9px] rounded-full bg-red-600"
-                    animate={shouldReduceMotion ? {} : { 
-                      scale: [1, 1.3, 1],
-                      opacity: [1, 0.4, 1] 
-                    }}
-                    transition={shouldReduceMotion ? {} : { 
-                      duration: 1.8, 
-                      repeat: Infinity, 
-                      ease: "easeInOut" 
-                    }}
-                  />
-                </div>
-                <span className="text-red-600 text-[10.5px] uppercase font-sans tracking-[0.05em] font-medium leading-none mt-[1px]">
-                  IN PROGRESS
+            <div className="flex flex-col md:flex-row md:items-start md:justify-between w-full gap-4 md:gap-2 mb-2">
+              <div className="hidden md:flex flex-1">
+                <span 
+                  className="inline-block border font-sans text-[11px] uppercase tracking-[0.2em] rounded-2xl px-4 py-2 leading-[1.6]"
+                  style={{ borderColor: card.accentColor, color: card.accentColor }}
+                >
+                  {card.tag}
                 </span>
               </div>
-            )}
 
-            <span 
-              className="inline-block border font-sans text-[11px] uppercase tracking-[0.2em] rounded-full px-4 py-1.5"
-              style={{ borderColor: card.accentColor, color: card.accentColor }}
-            >
-              {card.tag}
-            </span>
+              {card.title === "Samanvaya" && (
+                <div 
+                  className="inline-flex items-center gap-[6px] md:rounded-full border-0 md:border md:border-red-600/20 shrink-0 bg-transparent md:bg-[#fff1e6]/85 p-0 md:px-[12px] md:py-[5px]"
+                >
+                  <div className="relative flex items-center justify-center w-[9px] h-[9px]">
+                    {!shouldReduceMotion && (
+                      <span 
+                        className="absolute inset-0 rounded-full bg-red-600 opacity-40 animate-ping"
+                        style={{ animationDuration: '2s' }}
+                      />
+                    )}
+                    <motion.div 
+                      className="relative w-[9px] h-[9px] rounded-full bg-red-600"
+                      animate={shouldReduceMotion ? {} : { 
+                        scale: [1, 1.3, 1],
+                        opacity: [1, 0.4, 1] 
+                      }}
+                      transition={shouldReduceMotion ? {} : { 
+                        duration: 1.8, 
+                        repeat: Infinity, 
+                        ease: "easeInOut" 
+                      }}
+                    />
+                  </div>
+                  <span className="text-red-600 text-[10.5px] uppercase font-sans tracking-[0.05em] font-medium leading-none mt-[1px]">
+                    IN PROGRESS
+                  </span>
+                </div>
+              )}
+            </div>
 
-            <h3 className="font-forum text-[32px] text-heading font-normal mt-4">
+            <h3 className="font-forum text-[32px] text-heading font-normal mt-2 md:mt-4">
               {card.title}
             </h3>
 
@@ -140,16 +140,24 @@ function EcosystemCard({ card, index, delay }: { card: EcosystemData; index: num
               {card.subtitle}
             </p>
 
-            <p className="font-sans font-light text-[15px] text-heading/80 leading-[1.7] mt-5 line-clamp-3">
+            <p 
+              className="font-sans font-light text-[15px] text-heading/80 leading-[1.7] mt-5"
+              style={{
+                display: '-webkit-box',
+                WebkitLineClamp: 3,
+                WebkitBoxOrient: 'vertical',
+                overflow: 'hidden'
+              }}
+            >
               {card.description}
             </p>
 
             <div 
-              className="font-sans font-medium text-[13px] mt-auto pt-6 flex items-center"
+              className="font-sans font-medium text-[13px] mt-auto pt-6 flex items-center flex-wrap"
               style={{ color: card.accentColor }}
             >
-              Explore {card.title.split(' ')[0]} 
-              <span className="ml-1.5 inline-block transition-transform duration-300 group-hover/link:translate-x-[4px]">→</span>
+              Explore {card.title} 
+              <span className="ml-1.5 inline-block transition-transform duration-300 group-hover/link:translate-x-[4px] whitespace-nowrap">→</span>
             </div>
 
           </div>

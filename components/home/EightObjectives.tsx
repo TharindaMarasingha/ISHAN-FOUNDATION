@@ -117,7 +117,7 @@ export function EightObjectives() {
 
   return (
     <section 
-      className="relative pt-24 pb-20 px-6 md:px-12 overflow-hidden z-20 bg-background"
+      className="relative pt-32 md:pt-40 pb-20 px-6 md:px-12 overflow-hidden z-20 bg-background"
     >
 
 
@@ -181,14 +181,16 @@ export function EightObjectives() {
                     />
 
                     {/* Visual Hint (Expand Icon) */}
-                    <div className="absolute top-4 left-4 z-20">
-                        <Expand className={`w-5 h-5 text-white transition-opacity duration-300 ${isMobile ? 'opacity-60' : 'opacity-0 group-hover:opacity-100'}`} />
+                    <div className="absolute top-4 left-4 z-20 flex items-center justify-center w-11 h-11 rounded-full bg-black/30 backdrop-blur-sm transition-all duration-300 active:scale-95 group-hover:bg-black/50 md:opacity-0 group-hover:opacity-100">
+                        <Expand className="w-5 h-5 text-white" />
                     </div>
 
                     <div
                         className="absolute inset-0 flex flex-col justify-between p-5 pointer-events-none"
                     >
-                        <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/30 to-transparent pointer-events-none" />
+                        <div className="absolute inset-0 bg-black/20 pointer-events-none" />
+                        <div className="absolute inset-0 bg-gradient-to-t from-black/95 via-black/50 to-transparent pointer-events-none" />
+                        <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-transparent to-transparent pointer-events-none" />
                         
                         {/* Number / Top Right */}
                         <div className="relative z-10 self-end">
@@ -197,10 +199,16 @@ export function EightObjectives() {
                         
                         {/* Text Bottom */}
                         <div className="relative z-10 mt-auto">
-                            <h3 className="text-white text-lg sm:text-xl font-display uppercase tracking-widest font-medium mb-1 line-clamp-2">
+                            <h3 
+                                className="text-white text-lg sm:text-xl font-display uppercase tracking-widest font-medium mb-1"
+                                style={{ display: '-webkit-box', WebkitLineClamp: 2, WebkitBoxOrient: 'vertical', overflow: 'hidden' }}
+                            >
                                 {item.title}
                             </h3>
-                            <p className="text-white/80 font-light text-sm sm:text-base mt-1 line-clamp-3">
+                            <p 
+                                className="text-white/80 font-light text-sm sm:text-base mt-1"
+                                style={{ display: '-webkit-box', WebkitLineClamp: 3, WebkitBoxOrient: 'vertical', overflow: 'hidden' }}
+                            >
                                 {item.desc}
                             </p>
                         </div>

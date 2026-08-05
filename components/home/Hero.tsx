@@ -17,25 +17,31 @@ export function Hero() {
   const sectionRef = useRef<HTMLElement>(null);
   
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
+  const [currentMobileIndex, setCurrentMobileIndex] = useState(0);
   const [isHoveredOrDragged, setIsHoveredOrDragged] = useState(false);
-  const images = ["/images/h1.webp", "/images/h2.webp", "/images/h3.webp", "/images/h4.webp", "/images/h5.webp"];
+  
+  const desktopImages = ["/images/h1.webp", "/images/h2.webp", "/images/h3.webp", "/images/h4.webp", "/images/h5.webp"];
+  const mobileImages = ["/images/m1.webp", "/images/m2.webp", "/images/m3.webp", "/images/m4.webp", "/images/m5.webp", "/images/m6.webp"];
 
   useEffect(() => {
     if (prefersReducedMotion || isHoveredOrDragged) return;
     const interval = setInterval(() => {
-      setCurrentImageIndex((prev) => (prev + 1) % images.length);
-    }, 5000); // 5 seconds per slide for a visible slideshow pace
+      setCurrentImageIndex((prev) => (prev + 1) % desktopImages.length);
+      setCurrentMobileIndex((prev) => (prev + 1) % mobileImages.length);
+    }, 4500); // 4.5 seconds per slide for a visible slideshow pace
     return () => clearInterval(interval);
-  }, [images.length, prefersReducedMotion, isHoveredOrDragged]);
+  }, [desktopImages.length, mobileImages.length, prefersReducedMotion, isHoveredOrDragged]);
 
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const handleDragEnd = (e: any, { offset }: any) => {
     setIsHoveredOrDragged(false);
     const swipe = offset.x;
     if (swipe < -50) {
-      setCurrentImageIndex((prev) => (prev + 1) % images.length);
+      setCurrentImageIndex((prev) => (prev + 1) % desktopImages.length);
+      setCurrentMobileIndex((prev) => (prev + 1) % mobileImages.length);
     } else if (swipe > 50) {
-      setCurrentImageIndex((prev) => (prev - 1 + images.length) % images.length);
+      setCurrentImageIndex((prev) => (prev - 1 + desktopImages.length) % desktopImages.length);
+      setCurrentMobileIndex((prev) => (prev - 1 + mobileImages.length) % mobileImages.length);
     }
   };
 
@@ -58,10 +64,51 @@ export function Hero() {
       />
 
       {/* MOBILE HERO (Strictly Mobile) */}
-      <div className="md:hidden absolute inset-0 z-20 flex flex-col w-full h-full bg-[#F5F1E9] overflow-hidden">
+      <div className="md:hidden absolute inset-0 z-20 w-full h-full overflow-hidden">
         
-        {/* Top Text Content Area */}
-        <div className="flex flex-col items-center text-center px-6 pt-[120px] pb-4 z-20 flex-shrink-0">
+        {/* 1. Bottom Layer: Full Background Image Slideshow */}
+        <div className="absolute inset-0 z-0">
+          {prefersReducedMotion ? (
+            <Image
+              src={mobileImages[0]}
+              alt="Hero Background"
+              fill
+              sizes="100vw"
+              className="object-cover object-center"
+              priority
+              unoptimized
+            />
+          ) : (
+            mobileImages.map((src, i) => (
+              <Image
+                key={src}
+                src={src}
+                alt={`Hero Background ${i + 1}`}
+                fill
+                sizes="100vw"
+                className="object-cover object-center"
+                style={{ 
+                  opacity: i === currentMobileIndex ? 1 : 0, 
+                  transition: 'opacity 1.5s ease-in-out',
+                  zIndex: i === currentMobileIndex ? 10 : 0 
+                }}
+                priority={i === 0 || i === currentMobileIndex || i === (currentMobileIndex + 1) % mobileImages.length}
+                unoptimized
+              />
+            ))
+          )}
+        </div>
+
+        {/* 2. Middle Layer: Gradient Overlay Scrim */}
+        <div 
+          className="absolute inset-0 z-10 pointer-events-none" 
+          style={{ 
+            background: 'linear-gradient(to bottom, rgba(245, 241, 233, 0.95) 0%, rgba(245, 241, 233, 0.8) 40%, rgba(245, 241, 233, 0.3) 75%, rgba(245, 241, 233, 0) 100%)' 
+          }} 
+        />
+        
+        {/* 3. Top Layer: Text & Content Area */}
+        <div className="absolute inset-0 z-20 flex flex-col items-center justify-start text-center px-6 pt-[160px] pb-12 overflow-y-auto">
           <h1 
             style={{
               letterSpacing: '0em',
@@ -71,61 +118,29 @@ export function Hero() {
           >
             Ishan
           </h1>
-          <p className="font-sans text-[#8A8A8A] text-[9px] tracking-[0.15em] uppercase mb-5 max-w-[280px]">
+          <p className="font-sans text-[#294A32]/80 font-medium text-[9px] tracking-[0.15em] uppercase mb-5 max-w-[280px]">
             INTERNATIONAL SOCIETY FOR SELF AWARENESS & WELL BEING
           </p>
-          <p className="font-sans font-light text-[13px] text-[#8A8A8A] leading-[1.6] mb-8 max-w-[300px]">
+          <p className="font-sans font-medium text-[13px] text-[#294A32]/80 leading-[1.6] mb-8 max-w-[300px]">
             ISHAN is a global meditation community dedicated to awakening humanity and nature through wisdom, education, ethical leadership, sustainability, and conscious community development.
           </p>
           
-          <div className="flex flex-col w-full gap-5 max-w-[280px]">
+          <div className="flex flex-col w-full gap-5 max-w-[280px] mt-6">
             <Link 
               href="#ecosystem" 
               className="w-full text-center text-white px-8 py-3.5 rounded-full font-sans font-bold tracking-[0.1em] uppercase text-[12px] shadow-md hover:brightness-105 transition-all"
-              style={{ background: 'linear-gradient(135deg, #D94F9D 0%, #E8A56F 50%, #F4C6A1 100%)' }}
+              style={{ background: 'linear-gradient(180deg, #BEDD8A 0%, #F18FA4 100%)' }}
             >
               EXPLORE OUR WORK
             </Link>
             <Link 
               href="/about" 
               className="w-full text-center text-white px-8 py-3.5 rounded-full font-sans font-bold tracking-[0.1em] uppercase text-[12px] shadow-md hover:brightness-105 transition-all"
-              style={{ background: 'linear-gradient(135deg, #D94F9D 0%, #E8A56F 50%, #F4C6A1 100%)' }}
+              style={{ background: 'linear-gradient(180deg, #BEDD8A 0%, #F18FA4 100%)' }}
             >
               ABOUT ISHAN
             </Link>
           </div>
-        </div>
-        
-        {/* Curved Shape */}
-        <div className="relative z-10 w-full flex-shrink-0 -mb-[1px]">
-          <svg viewBox="0 0 100 20" preserveAspectRatio="none" className="w-full h-20 md:h-24 block">
-            <path d="M0,0 L100,0 Q50,20 0,0 Z" fill="#F5F1E9" />
-          </svg>
-        </div>
-
-        {/* Background Image Slideshow at the bottom */}
-        <div className="relative w-full flex-grow z-0">
-          <AnimatePresence mode="wait">
-            <motion.div
-              key={currentImageIndex}
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              exit={{ opacity: 0 }}
-              transition={{ duration: 2 }}
-              className="absolute inset-0"
-            >
-              <Image
-                src={images[currentImageIndex]}
-                alt={`Hero Background ${currentImageIndex + 1}`}
-                fill
-                sizes="100vw"
-                className="object-cover object-[75%_center]"
-                priority
-                unoptimized
-              />
-            </motion.div>
-          </AnimatePresence>
-          <div className="absolute inset-0 bg-gradient-to-b from-[#F5F1E9]/20 to-transparent pointer-events-none" />
         </div>
       </div>
 
@@ -142,7 +157,7 @@ export function Hero() {
               className="absolute inset-0"
             >
               <Image
-                src={images[currentImageIndex]}
+                src={desktopImages[currentImageIndex]}
                 alt={`Hero Background ${currentImageIndex + 1}`}
                 fill
                 sizes="100vw"
@@ -181,7 +196,7 @@ export function Hero() {
         <div 
           className="flex flex-col items-start justify-center text-left md:pl-0 lg:-ml-8 w-full max-w-2xl mx-auto md:mr-auto"
           style={{
-            '--hero-gradient': 'linear-gradient(135deg, #D94F9D 0%, #E8A56F 50%, #F4C6A1 100%)',
+            '--hero-gradient': 'linear-gradient(180deg, #BEDD8A 0%, #F18FA4 100%)',
             '--hero-heading-color': '#294A32',
             '--hero-eyebrow-color': 'rgba(41, 74, 50, 0.85)',
             '--hero-subtitle-color': 'rgba(41, 74, 50, 0.85)',
@@ -239,10 +254,10 @@ export function Hero() {
 
             {/* DESKTOP BUTTONS */}
             <div className="hidden md:flex flex-row items-center justify-start gap-4">
-              <Link href="#ecosystem" className="w-auto text-center min-w-[180px] bg-[image:var(--hero-gradient)] text-white border-none px-8 py-3.5 rounded-full hover:[box-shadow:0_0_20px_rgba(217,79,157,0.4)] hover:-translate-y-0.5 hover:brightness-105 transition-all duration-300 font-sans font-bold tracking-wide uppercase text-[13px] flex items-center justify-center [text-shadow:0_1px_3px_rgba(0,0,0,0.3)]">
+              <Link href="#ecosystem" className="w-auto text-center min-w-[180px] bg-[image:var(--hero-gradient)] text-white border-none px-8 py-3.5 rounded-full hover:[box-shadow:0_0_20px_rgba(241,143,164,0.4)] hover:-translate-y-0.5 hover:brightness-105 transition-all duration-300 font-sans font-bold tracking-wide uppercase text-[13px] flex items-center justify-center [text-shadow:0_1px_3px_rgba(0,0,0,0.3)]">
                 Explore Our Work
               </Link>
-              <Link href="/about" className="w-auto text-center min-w-[180px] bg-[image:var(--hero-gradient)] text-white border-none px-8 py-3.5 rounded-full hover:[box-shadow:0_0_20px_rgba(217,79,157,0.4)] hover:-translate-y-0.5 hover:brightness-105 transition-all duration-300 font-sans font-bold tracking-wide uppercase text-[13px] flex items-center justify-center [text-shadow:0_1px_3px_rgba(0,0,0,0.3)]">
+              <Link href="/about" className="w-auto text-center min-w-[180px] bg-[image:var(--hero-gradient)] text-white border-none px-8 py-3.5 rounded-full hover:[box-shadow:0_0_20px_rgba(241,143,164,0.4)] hover:-translate-y-0.5 hover:brightness-105 transition-all duration-300 font-sans font-bold tracking-wide uppercase text-[13px] flex items-center justify-center [text-shadow:0_1px_3px_rgba(0,0,0,0.3)]">
                 About ISHAN
               </Link>
             </div>

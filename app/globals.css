@@ -10,7 +10,7 @@
   --color-soft-accent: #F3D8DB;
   --color-body-text: #55624D;
   --color-lotus-bloom: #DE5680;
-  --gradient-cta: linear-gradient(135deg, #D94F9D 0%, #E8A56F 55%, #F4C6A1 100%);
+  --gradient-cta: linear-gradient(180deg, #BEDD8A 0%, #F18FA4 100%);
 }
 
 :root {
@@ -23,7 +23,7 @@
   --color-soft-accent: #F3D8DB;
   --color-body-text: #55624D;
   --color-lotus-bloom: #DE5680;
-  --gradient-cta: linear-gradient(135deg, #D94F9D 0%, #E8A56F 55%, #F4C6A1 100%);
+  --gradient-cta: linear-gradient(180deg, #BEDD8A 0%, #F18FA4 100%);
 }
 
 html {

@@ -160,7 +160,7 @@ export function EcosystemSections() {
                       {/* CONTENT HALF */}
                       <div className={`w-full md:w-1/2 py-[48px] px-[40px] flex flex-col justify-start items-start ${imageLeft ? 'md:order-2' : 'md:order-1'}`}>
                         <span 
-                          className="inline-block border font-sans text-[10px] md:text-[11px] uppercase tracking-[0.2em] rounded-full px-4 py-1.5"
+                          className="hidden md:inline-block border font-sans text-[10px] md:text-[11px] uppercase tracking-[0.2em] rounded-full px-4 py-1.5"
                           style={{ borderColor: card.accentColor, color: card.accentColor }}
                         >
                           {card.tag}

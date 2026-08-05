@@ -129,7 +129,7 @@ export function Team() {
 
                   {/* Archetype */}
                   <h4 
-                    className="font-forum italic text-[16px] text-surface mb-[4px]"
+                    className="font-forum italic text-[16px] text-surface mb-[8px] leading-[1.3]"
                     style={{ textShadow: '0 1px 3px rgba(0,0,0,0.5)' }}
                   >
                     {activeMember.archetype}
@@ -137,7 +137,7 @@ export function Team() {
 
                   {/* Role */}
                   <p 
-                    className="font-sans text-[11px] uppercase tracking-[0.15em] text-white/80 mb-[12px]"
+                    className="font-sans text-[11px] uppercase tracking-[0.15em] text-white/80 mb-[16px] leading-[1.5]"
                     style={{ textShadow: '0 1px 3px rgba(0,0,0,0.5)' }}
                   >
                     {activeMember.role}
@@ -187,8 +187,13 @@ export function Team() {
 
                   {/* Content Column */}
                   <div className="flex-grow flex flex-col">
-                    <span className="font-sans font-[500] text-[14px] text-heading">{member.name}</span>
-                    <span className="font-sans font-[300] text-[12px] text-heading/80 line-clamp-1 md:line-clamp-none">{member.role}</span>
+                    <span className="font-sans font-[500] text-[14px] text-heading leading-tight mb-[2px]">{member.name}</span>
+                    <span 
+                      className="font-sans font-[300] text-[12px] text-heading/80 leading-snug"
+                      style={{ display: '-webkit-box', WebkitLineClamp: 2, WebkitBoxOrient: 'vertical', overflow: 'hidden' }}
+                    >
+                      {member.role}
+                    </span>
                   </div>
 
                   {/* Right side: Nationality */}

@@ -4,13 +4,13 @@ import { RevealOnScroll } from "../ui/RevealOnScroll";
 
 export function VisionQuote() {
   return (
-    <section className="py-32 px-6 md:px-12 bg-background border-y border-divider relative overflow-hidden flex items-center justify-center">
+    <section className="py-36 md:py-32 px-6 md:px-12 bg-background border-y border-divider relative overflow-hidden flex items-center justify-center">
       
       {/* Top-Left Decorative SVG */}
       <img 
         src="/b1.svg" 
         alt="" 
-        className="absolute top-0 left-0 w-[180px] md:w-[280px] opacity-[0.15] mix-blend-multiply pointer-events-none select-none z-0"
+        className="absolute top-0 left-0 w-[180px] md:w-[280px] opacity-[0.06] md:opacity-[0.15] mix-blend-multiply pointer-events-none select-none z-0"
         aria-hidden="true"
       />
 
@@ -18,7 +18,7 @@ export function VisionQuote() {
       <img 
         src="/b2.svg" 
         alt="" 
-        className="absolute bottom-0 right-0 w-[180px] md:w-[280px] opacity-[0.15] mix-blend-multiply pointer-events-none select-none z-0"
+        className="absolute bottom-0 right-0 w-[180px] md:w-[280px] opacity-[0.06] md:opacity-[0.15] mix-blend-multiply pointer-events-none select-none z-0"
         aria-hidden="true"
       />
 
@@ -27,11 +27,11 @@ export function VisionQuote() {
         &ldquo;
       </div>
 
-      <RevealOnScroll className="relative z-10 max-w-4xl mx-auto text-center">
-        <blockquote className="font-display italic text-3xl md:text-4xl lg:text-5xl text-heading leading-snug md:leading-snug mb-10">
+      <RevealOnScroll className="relative z-10 max-w-4xl mx-auto text-center px-2 md:px-0">
+        <blockquote className="font-display italic text-[32px] leading-[1.45] md:text-4xl lg:text-5xl text-heading md:leading-snug mb-12 md:mb-10">
           &quot;To cultivate a world where humanity and nature exist in conscious harmony — through wisdom, wellness, compassion, responsibility, and sustainable living.&quot;
         </blockquote>
-        <div className="text-[0.65rem] md:text-xs uppercase tracking-widest text-primary">
+        <div className="text-[11px] md:text-xs uppercase tracking-widest text-primary font-medium md:font-normal">
           ISHAN — Vision Statement
         </div>
       </RevealOnScroll>

@@ -264,8 +264,8 @@ export default function Navbar() {
               <div className="mt-6 px-6 pb-8">
                 <Link
                   href="/contact"
-                  className="flex items-center justify-center w-full text-white rounded-full py-3.5 uppercase tracking-[0.15em] font-sans font-bold text-[11px] shadow-md hover:shadow-lg hover:brightness-105 transition-all duration-300"
-                  style={{ backgroundImage: 'linear-gradient(135deg, #D94F9D 0%, #E8A56F 50%, #F4C6A1 100%)' }}
+                  className="flex items-center justify-center w-[160px] ml-4 text-white rounded-full py-3.5 uppercase tracking-[0.15em] font-sans font-bold text-[11px] shadow-md hover:shadow-lg hover:brightness-105 transition-all duration-300"
+                  style={{ backgroundImage: 'var(--gradient-cta)' }}
                 >
                   Connect
                 </Link>
