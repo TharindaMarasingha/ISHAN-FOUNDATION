@@ -28,7 +28,7 @@ export function Button({
   
   const variantClasses =
     variant === "primary"
-      ? "bg-[image:var(--gradient-cta)] text-white font-bold hover:brightness-105 hover:[box-shadow:0_0_20px_rgba(241,143,164,0.4)] disabled:opacity-40 disabled:hover:brightness-100 disabled:hover:[box-shadow:none] [text-shadow:0_1px_3px_rgba(0,0,0,0.3)] shadow-md"
+      ? "bg-[#DE5680] text-white font-bold hover:brightness-95 hover:-translate-y-0.5 hover:shadow-[0_8px_20px_rgba(222,86,128,0.25)] disabled:opacity-40 disabled:hover:brightness-100 disabled:hover:[box-shadow:none] disabled:hover:translate-y-0 [text-shadow:0_1px_3px_rgba(0,0,0,0.3)] shadow-md transition-all duration-300"
       : "bg-transparent border-[1.5px] border-secondary text-heading hover:bg-divider disabled:opacity-40 disabled:hover:bg-transparent disabled:hover:border-secondary disabled:hover:text-heading";
 
   const combinedClasses = `${baseClasses} ${variantClasses} ${className} ${disabled ? 'cursor-not-allowed' : ''}`;

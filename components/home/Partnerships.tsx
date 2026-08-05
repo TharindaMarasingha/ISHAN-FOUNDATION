@@ -21,7 +21,7 @@ function TypewriterQuote({ text }: { text: string }) {
     hidden: { opacity: 0 },
     visible: {
       opacity: 1,
-      transition: { staggerChildren: 0.02, delayChildren: 0.4 },
+      transition: { staggerChildren: 0.015, delayChildren: 0.4 },
     },
   };
 
@@ -36,12 +36,25 @@ function TypewriterQuote({ text }: { text: string }) {
       variants={container}
       initial="hidden"
       animate={isInView ? "visible" : "hidden"}
-      className="font-display italic text-[26px] leading-[1.65] md:text-3xl text-heading md:leading-relaxed tracking-wide px-2 md:px-0"
+      className="font-display italic text-[24px] md:text-[30px] leading-[1.6] text-heading tracking-normal px-4 md:px-0 text-center"
+      style={{ letterSpacing: "-0.01em" }}
     >
-      {text.split("").map((char, index) => (
-        <motion.span variants={child} key={index}>
-          {char === "\n" ? <br /> : char === " " ? " " : char}
-        </motion.span>
+      {text.split("\n").map((line, lineIndex, lineArr) => (
+        <React.Fragment key={`line-${lineIndex}`}>
+          {line.split(" ").map((word, wordIndex, wordArr) => (
+            <React.Fragment key={`word-${lineIndex}-${wordIndex}`}>
+              <span className="inline-block whitespace-nowrap">
+                {word.split("").map((char, charIndex) => (
+                  <motion.span variants={child} key={`char-${lineIndex}-${wordIndex}-${charIndex}`}>
+                    {char}
+                  </motion.span>
+                ))}
+              </span>
+              {wordIndex < wordArr.length - 1 && " "}
+            </React.Fragment>
+          ))}
+          {lineIndex < lineArr.length - 1 && <br />}
+        </React.Fragment>
       ))}
     </motion.h4>
   );
@@ -113,7 +126,7 @@ export function Partnerships() {
         </div>
 
         {/* Quote Block */}
-        <div className="mt-28 md:mt-20 pt-16 md:pt-16 border-t border-divider text-center max-w-4xl mx-auto min-h-[160px] px-2 md:px-0">
+        <div className="hidden md:block mt-28 md:mt-20 pt-16 md:pt-16 border-t border-divider text-center max-w-4xl mx-auto min-h-[160px] px-2 md:px-0">
           <TypewriterQuote text={QUOTE_TEXT} />
         </div>
 

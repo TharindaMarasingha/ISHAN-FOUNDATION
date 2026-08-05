@@ -59,7 +59,7 @@ export function Hero() {
       <div 
         className="absolute inset-0 pointer-events-none z-0"
         style={{
-          background: 'radial-gradient(ellipse 60% 80% at 0% 50%, rgba(255, 160, 100, 0.25) 0%, rgba(255, 200, 150, 0.12) 40%, transparent 70%)'
+          background: 'radial-gradient(ellipse 60% 80% at 0% 50%, rgba(159, 187, 144, 0.25) 0%, rgba(220, 233, 215, 0.12) 40%, transparent 70%)'
         }}
       />
 
@@ -128,17 +128,22 @@ export function Hero() {
           <div className="flex flex-col w-full gap-5 max-w-[280px] mt-6">
             <Link 
               href="#ecosystem" 
-              className="w-full text-center text-white px-8 py-3.5 rounded-full font-sans font-bold tracking-[0.1em] uppercase text-[12px] shadow-md hover:brightness-105 transition-all"
-              style={{ background: 'linear-gradient(180deg, #BEDD8A 0%, #F18FA4 100%)' }}
+              className="w-full bg-[#DE5680] text-center text-white px-8 py-3.5 rounded-full font-sans font-bold tracking-[0.1em] uppercase text-[12px] shadow-md hover:shadow-[0_8px_20px_rgba(222,86,128,0.25)] hover:-translate-y-0.5 hover:brightness-95 transition-all duration-300"
             >
               EXPLORE OUR WORK
             </Link>
             <Link 
               href="/about" 
-              className="w-full text-center text-white px-8 py-3.5 rounded-full font-sans font-bold tracking-[0.1em] uppercase text-[12px] shadow-md hover:brightness-105 transition-all"
-              style={{ background: 'linear-gradient(180deg, #BEDD8A 0%, #F18FA4 100%)' }}
+              className="group relative w-full text-center overflow-hidden rounded-full border border-[#9FBB90] hover:border-[#DE5680] bg-transparent px-8 py-3.5 font-sans font-bold tracking-[0.1em] uppercase text-[12px] text-[#294A32] shadow-sm hover:shadow-[0_8px_20px_rgba(222,86,128,0.25)] hover:-translate-y-0.5 transition-all duration-300 flex items-center justify-center"
             >
-              ABOUT ISHAN
+              <span className="relative z-10 inline-block translate-x-0 transition-all duration-300 group-hover:translate-x-8 group-hover:opacity-0">
+                ABOUT ISHAN
+              </span>
+              <div className="absolute top-0 z-10 flex h-full w-full translate-x-8 items-center justify-center gap-2 text-white opacity-0 transition-all duration-300 group-hover:translate-x-0 group-hover:opacity-100 [text-shadow:0_1px_3px_rgba(0,0,0,0.3)]">
+                <span>ABOUT ISHAN</span>
+                <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+              </div>
+              <div className="absolute left-[8%] top-[50%] h-2 w-2 -translate-y-1/2 rounded-full bg-[#DE5680] transition-all duration-500 ease-out group-hover:left-[-50px] group-hover:top-[-50px] group-hover:h-[400px] group-hover:w-[400px] group-hover:-translate-y-0 z-0"></div>
             </Link>
           </div>
         </div>
@@ -178,14 +183,14 @@ export function Hero() {
           className="w-full h-full drop-shadow-[10px_0_15px_rgba(0,0,0,0.05)]"
         >
           <defs>
-            <linearGradient id="orangeGradient" x1="0%" y1="0%" x2="100%" y2="100%">
-              <stop offset="0%" stopColor="#ffb88e" />
-              <stop offset="25%" stopColor="#fff8f5" />
-              <stop offset="75%" stopColor="#fff8f5" />
-              <stop offset="100%" stopColor="#ff9a5e" />
+            <linearGradient id="brandGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" stopColor="#9FBB90" />
+              <stop offset="25%" stopColor="#F5F1E9" />
+              <stop offset="75%" stopColor="#F5F1E9" />
+              <stop offset="100%" stopColor="#9FBB90" />
             </linearGradient>
           </defs>
-          <path d="M 0 0 L 100 0 C 100 25, 75 40, 75 50 C 75 60, 100 75, 100 100 L 0 100 Z" fill="url(#orangeGradient)" />
+          <path d="M 0 0 L 100 0 C 100 25, 75 40, 75 50 C 75 60, 100 75, 100 100 L 0 100 Z" fill="url(#brandGradient)" />
         </svg>
       </div>
 
@@ -196,7 +201,7 @@ export function Hero() {
         <div 
           className="flex flex-col items-start justify-center text-left md:pl-0 lg:-ml-8 w-full max-w-2xl mx-auto md:mr-auto"
           style={{
-            '--hero-gradient': 'linear-gradient(180deg, #BEDD8A 0%, #F18FA4 100%)',
+            '--hero-gradient': 'linear-gradient(135deg, #9FBB90 0%, #DE5680 100%)',
             '--hero-heading-color': '#294A32',
             '--hero-eyebrow-color': 'rgba(41, 74, 50, 0.85)',
             '--hero-subtitle-color': 'rgba(41, 74, 50, 0.85)',
@@ -254,11 +259,18 @@ export function Hero() {
 
             {/* DESKTOP BUTTONS */}
             <div className="hidden md:flex flex-row items-center justify-start gap-4">
-              <Link href="#ecosystem" className="w-auto text-center min-w-[180px] bg-[image:var(--hero-gradient)] text-white border-none px-8 py-3.5 rounded-full hover:[box-shadow:0_0_20px_rgba(241,143,164,0.4)] hover:-translate-y-0.5 hover:brightness-105 transition-all duration-300 font-sans font-bold tracking-wide uppercase text-[13px] flex items-center justify-center [text-shadow:0_1px_3px_rgba(0,0,0,0.3)]">
+              <Link href="#ecosystem" className="w-auto text-center min-w-[180px] bg-[#DE5680] text-white border-none px-8 py-3.5 rounded-full hover:shadow-[0_8px_20px_rgba(222,86,128,0.25)] hover:-translate-y-0.5 hover:brightness-95 transition-all duration-300 font-sans font-bold tracking-wide uppercase text-[13px] flex items-center justify-center [text-shadow:0_1px_3px_rgba(0,0,0,0.3)]">
                 Explore Our Work
               </Link>
-              <Link href="/about" className="w-auto text-center min-w-[180px] bg-[image:var(--hero-gradient)] text-white border-none px-8 py-3.5 rounded-full hover:[box-shadow:0_0_20px_rgba(241,143,164,0.4)] hover:-translate-y-0.5 hover:brightness-105 transition-all duration-300 font-sans font-bold tracking-wide uppercase text-[13px] flex items-center justify-center [text-shadow:0_1px_3px_rgba(0,0,0,0.3)]">
-                About ISHAN
+              <Link href="/about" className="group relative w-auto min-w-[180px] overflow-hidden rounded-full border border-[#9FBB90] hover:border-[#DE5680] bg-transparent px-8 py-3.5 hover:shadow-[0_8px_20px_rgba(222,86,128,0.25)] hover:-translate-y-0.5 transition-all duration-300 flex items-center justify-center font-sans font-bold tracking-wide uppercase text-[13px] text-[#294A32]">
+                <span className="relative z-10 inline-block translate-x-0 transition-all duration-300 group-hover:translate-x-8 group-hover:opacity-0">
+                  About ISHAN
+                </span>
+                <div className="absolute top-0 z-10 flex h-full w-full translate-x-8 items-center justify-center gap-2 text-white opacity-0 transition-all duration-300 group-hover:translate-x-0 group-hover:opacity-100 [text-shadow:0_1px_3px_rgba(0,0,0,0.3)]">
+                  <span>ABOUT ISHAN</span>
+                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+                </div>
+                <div className="absolute left-[8%] top-[50%] h-2 w-2 -translate-y-1/2 rounded-full bg-[#DE5680] transition-all duration-500 ease-out group-hover:left-[-50px] group-hover:top-[-50px] group-hover:h-[400px] group-hover:w-[400px] group-hover:-translate-y-0 z-0"></div>
               </Link>
             </div>
           </motion.div>

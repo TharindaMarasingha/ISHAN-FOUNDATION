@@ -123,7 +123,7 @@ export function WhoWeAre() {
         </div>
 
         {/* Content Container */}
-        <div className="px-6 md:px-12 max-w-7xl mx-auto w-full relative z-10">
+        <div className="px-6 md:px-12 max-w-7xl mx-auto w-full relative z-10 pt-20 md:pt-0">
           <div className="grid grid-cols-1 lg:grid-cols-[0.85fr_1.15fr] gap-4 lg:gap-16 items-center w-full">
           {/* Left Column */}
           <div className="flex flex-col space-y-3 lg:space-y-8">

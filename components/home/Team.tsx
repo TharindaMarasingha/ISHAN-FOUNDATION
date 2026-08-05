@@ -170,26 +170,32 @@ export function Team() {
                 <button
                   key={index}
                   onClick={() => setActiveIndex(index)}
-                  className={`flex items-center gap-3 w-[260px] sm:w-[280px] md:w-full flex-shrink-0 snap-start text-left px-[20px] py-[16px] rounded-[12px] transition-all duration-250 ease-in-out ${
+                  className={`group flex items-center gap-4 w-[260px] sm:w-[280px] md:w-full flex-shrink-0 snap-start text-left px-5 py-4 rounded-[12px] transition-all duration-300 ease-out border ${
                     isActive
-                      ? "bg-background/80 border border-primary shadow-[0_2px_12px_rgba(51,71,44,0.08)]"
-                      : "bg-transparent border border-primary hover:border-primary"
+                      ? "bg-white border-[#9FBB90] shadow-[0_4px_20px_rgba(51,71,44,0.08)] scale-[1.01]"
+                      : "bg-transparent border-[#9FBB90]/40 hover:border-[#9FBB90]/80 hover:bg-white/40"
                   }`}
                 >
                   {/* Small Avatar */}
                   <div 
-                    className={`w-[44px] h-[44px] flex-shrink-0 rounded-full flex items-center justify-center transition-colors duration-250 bg-softAccent/40 ${
-                      isActive ? "border-2 border-primary" : "border-2 border-primary"
+                    className={`w-[48px] h-[48px] flex-shrink-0 rounded-full flex items-center justify-center transition-all duration-300 ${
+                      isActive 
+                        ? "bg-[#DCE9D7] border border-[#33472C]/20 shadow-sm" 
+                        : "bg-[#F5F1E9] border border-[#9FBB90]/30 group-hover:border-[#9FBB90]/60"
                     }`}
                   >
-                    <span className="font-forum text-[14px] text-heading">{member.initials}</span>
+                    <span className={`font-forum text-[15px] transition-colors duration-300 ${isActive ? "text-[#33472C]" : "text-[#33472C]/70"}`}>
+                      {member.initials}
+                    </span>
                   </div>
 
                   {/* Content Column */}
-                  <div className="flex-grow flex flex-col">
-                    <span className="font-sans font-[500] text-[14px] text-heading leading-tight mb-[2px]">{member.name}</span>
+                  <div className="flex-grow flex flex-col justify-center">
+                    <span className={`font-sans font-[500] text-[15px] transition-colors duration-300 leading-tight mb-1 ${isActive ? "text-[#33472C]" : "text-[#33472C]/80"}`}>
+                      {member.name}
+                    </span>
                     <span 
-                      className="font-sans font-[300] text-[12px] text-heading/80 leading-snug"
+                      className="font-sans font-[300] text-[12.5px] text-[#33472C]/70 leading-snug"
                       style={{ display: '-webkit-box', WebkitLineClamp: 2, WebkitBoxOrient: 'vertical', overflow: 'hidden' }}
                     >
                       {member.role}
@@ -197,20 +203,17 @@ export function Team() {
                   </div>
 
                   {/* Right side: Nationality */}
-                  <div className="flex-shrink-0 hidden sm:block">
-                    <div className={`px-2.5 py-1 rounded-[6px] border text-[10px] font-medium uppercase tracking-wider transition-colors duration-250 ${
+                  <div className="flex-shrink-0 hidden sm:flex items-center gap-3">
+                    <div className={`px-3 py-1.5 rounded-[8px] border text-[9.5px] font-bold uppercase tracking-widest transition-all duration-300 ${
                       isActive 
-                        ? "bg-softAccent border-primary text-primary" 
-                        : "bg-softAccent border-primary text-heading/80"
+                        ? "bg-[#F5F1E9] border-[#9FBB90]/50 text-[#33472C]" 
+                        : "bg-transparent border-[#9FBB90]/30 text-[#33472C]/60"
                     }`}>
                       {member.nationality}
                     </div>
+                    {/* Active Indicator Dot */}
+                    <div className={`w-1.5 h-1.5 rounded-full transition-all duration-300 hidden md:block ${isActive ? "bg-[#9FBB90] opacity-100 scale-100" : "bg-transparent opacity-0 scale-50"}`} />
                   </div>
-
-                  {/* Active Indicator Chevron/Dot */}
-                  {isActive && (
-                    <div className="w-[6px] h-[6px] rounded-full bg-secondary ml-2 flex-shrink-0 hidden md:block" />
-                  )}
                 </button>
               );
             })}
