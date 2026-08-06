@@ -8,12 +8,22 @@ export function PageHero() {
   return (
     <section className="relative w-full overflow-hidden" style={{ minHeight: '100vh', marginTop: '0', paddingTop: '0', top: '0' }}>
       <div className="absolute inset-0" style={{ top: 0, left: 0, right: 0, bottom: 0 }}>
+        {/* Desktop Image */}
         <Image
-          src="/images/about-hero.webp"
-          alt="ISHAN About"
+          src="/images/about.webp"
+          alt="ISHAN About Desktop"
           fill
           priority
-          className="object-cover object-center"
+          className="object-cover object-center hidden md:block"
+          sizes="100vw"
+        />
+        {/* Mobile Image */}
+        <Image
+          src="/images/aboutm.webp"
+          alt="ISHAN About Mobile"
+          fill
+          priority
+          className="object-cover object-center block md:hidden"
           sizes="100vw"
         />
       </div>

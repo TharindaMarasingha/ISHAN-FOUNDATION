@@ -183,6 +183,7 @@ const TEAM = [
     name: "Shreeji Sevakanand 'Buddhu'",
     initials: "SJ",
     description: "Vision · Purpose · Wisdom · Ethics · Institutional Integrity · Research & Development · Leadership Philosophy · Long-term Legacy · Quality & Standards",
+    nationality: "India",
     isAnchor: true,
     image: "/images/team-sevakanand.jpg",
     alt: "Shreeji Sevakanand 'Buddhu' — India, Lion Capital of Ashoka emblem"
@@ -193,6 +194,7 @@ const TEAM = [
     name: "Dr. Hon. S. Kobayashi (Yogeshwari)",
     initials: "SK",
     description: "Education · Mentorship · Leadership Development · Research · Curriculum Design · Knowledge Systems · Character Development · Institutional Learning",
+    nationality: "Japan",
     isAnchor: false,
     image: "/images/imb.webp"
   },
@@ -202,6 +204,7 @@ const TEAM = [
     name: "Master Indrani Sharma (Adiyogini)",
     initials: "IS",
     description: "Coaching · Training · Programme Delivery · Retreat Design · Facilitation · Experiential Learning · Holistic Wellbeing · Personal Transformation",
+    nationality: "Nepal",
     isAnchor: false,
     image: "/images/imc.webp"
   },
@@ -211,6 +214,7 @@ const TEAM = [
     name: "Ranga Soysa",
     initials: "RS",
     description: "Strategic Planning · Institutional Development · Governance · Operations · Systems Management · Financial Planning · Sustainability · International Operations",
+    nationality: "Sri Lanka",
     isAnchor: false,
     image: "/images/imd.webp"
   },
@@ -220,6 +224,7 @@ const TEAM = [
     name: "Mansoor Ali",
     initials: "MA",
     description: "Business Development · Strategic Partnerships · International Collaboration · Community Development · Brand Growth · Resource Mobilisation · Outreach",
+    nationality: "India",
     isAnchor: false,
     image: "/images/ime.webp"
   }
@@ -233,7 +238,7 @@ export function CircleOfStewardsSection() {
     <section 
       className="pt-[100px] pb-24 px-6 md:px-12 relative overflow-hidden"
       style={{
-        background: 'var(--color-surface)'
+        background: '#FFFFFF'
       }}
     >
       <div className="max-w-screen-xl mx-auto relative z-10">
@@ -246,7 +251,7 @@ export function CircleOfStewardsSection() {
 
         <div className="flex flex-col md:flex-row gap-12 md:gap-8 lg:gap-16 items-start">
           
-          {/* LEFT SIDE — FEATURED SPOTLIGHT CARD */}
+          {/* LEFT SIDE — FEATURED SPOTLIGHT CARD (55%) */}
           <div className="w-full md:w-[55%] relative min-h-[480px]">
             <AnimatePresence mode="wait">
               <motion.div
@@ -255,8 +260,9 @@ export function CircleOfStewardsSection() {
                 animate={{ opacity: 1, y: 0 }}
                 exit={{ opacity: 0, y: -16 }}
                 transition={{ duration: 0.4, ease: "easeOut" }}
-                className={`overflow-hidden relative bg-[rgba(255,255,255,0.75)] border border-primary rounded-[24px] px-8 py-10 md:px-[40px] md:py-[48px] min-h-[480px] flex flex-col ${activeMember.isAnchor ? 'border-t-4 border-t-primary' : ''}`}
+                className="overflow-hidden relative bg-[rgba(255,255,255,0.75)] rounded-[24px] px-8 py-10 md:px-[40px] md:py-[48px] min-h-[480px] flex flex-col"
               >
+                {/* Background image for spotlight */}
                 {activeMember.image && (
                   <>
                     <Image
@@ -266,39 +272,59 @@ export function CircleOfStewardsSection() {
                       sizes="(max-width: 768px) 100vw, 50vw"
                       className="object-cover object-center z-0"
                     />
+                    {/* Dark gradient overlay so white text is readable at the bottom */}
                     <div 
                       className="absolute inset-0 z-10"
                       style={{
-                        background: 'linear-gradient(to bottom, rgba(0,0,0,0.0) 0%, rgba(0,0,0,0.15) 40%, rgba(20,8,2,0.82) 70%, rgba(20,8,2,0.95) 100%)'
+                        background: 'linear-gradient(to bottom, rgba(0,0,0,0) 0%, rgba(0,0,0,0) 45%, rgba(51,71,44,0.8) 75%, rgba(51,71,44,1) 100%)'
                       }}
                     />
                   </>
                 )}
                 
                 <div className="relative z-20 flex flex-col items-start justify-end flex-grow">
-                  <h4 className="font-forum italic text-[16px] text-primary mb-[4px]">
+                  
+                  {/* Nationality Pill */}
+                  <div className="inline-flex mt-auto mb-[20px] px-[16px] py-[6px] rounded-full bg-[rgba(51,71,44,0.6)] backdrop-blur-sm border border-secondary/50 font-sans text-[11px] uppercase tracking-widest text-surface">
+                    {activeMember.nationality}
+                  </div>
+
+                  {/* Archetype */}
+                  <h4 
+                    className="font-forum italic text-[16px] text-surface mb-[8px] leading-[1.3]"
+                    style={{ textShadow: '0 1px 3px rgba(0,0,0,0.5)' }}
+                  >
                     {activeMember.archetype}
                   </h4>
 
-                  <p className="font-sans text-[11px] uppercase tracking-[0.15em] text-[rgba(255,255,255,0.6)] mb-[12px]">
+                  {/* Role */}
+                  <p 
+                    className="font-sans text-[11px] uppercase tracking-[0.15em] text-white/80 mb-[16px] leading-[1.5]"
+                    style={{ textShadow: '0 1px 3px rgba(0,0,0,0.5)' }}
+                  >
                     Stewardship: {activeMember.role}
                   </p>
 
-                  <h3 className="font-forum text-[36px] font-[400] text-white leading-[1.1] mb-[16px]">
+                  {/* Name */}
+                  <h3 
+                    className="font-forum text-[36px] font-[400] text-white leading-[1.1] mb-[16px]"
+                  >
                     {activeMember.name}
                   </h3>
 
+                  {/* Gold line */}
                   <div className="w-[40px] h-[1.5px] bg-secondary mb-[16px]" />
 
-                  <p className="font-sans font-[300] text-[15px] text-[rgba(255,255,255,0.7)] leading-[1.8]">
-                    <span className="font-medium text-primary">Key Areas:</span> {activeMember.description}
+                  {/* Description */}
+                  <p className="font-sans font-[300] text-[14px] text-white/90 leading-[1.6]">
+                    <span className="font-medium text-white">Key Areas:</span> {activeMember.description}
                   </p>
                 </div>
               </motion.div>
             </AnimatePresence>
           </div>
 
-          {/* RIGHT SIDE — MEMBER SELECTOR LIST */}
+          {/* RIGHT SIDE — MEMBER SELECTOR LIST (45%) */}
           <div className="w-full md:w-[45%] flex flex-row md:flex-col gap-3 overflow-x-auto md:overflow-visible pb-4 md:pb-0 snap-x">
             {TEAM.map((member, index) => {
               const isActive = activeIndex === index;
@@ -306,29 +332,50 @@ export function CircleOfStewardsSection() {
                 <button
                   key={index}
                   onClick={() => setActiveIndex(index)}
-                  className={`flex items-center gap-3 w-[260px] sm:w-[280px] md:w-full flex-shrink-0 snap-start text-left px-[20px] py-[16px] rounded-[12px] transition-all duration-250 ease-in-out ${
+                  className={`group flex items-center gap-4 w-[260px] sm:w-[280px] md:w-full flex-shrink-0 snap-start text-left px-5 py-4 rounded-[12px] transition-all duration-300 ease-out border ${
                     isActive
-                      ? "bg-[rgba(255,255,255,0.7)] border border-primary shadow-[0_2px_12px_rgba(42,20,8,0.08)]"
-                      : "bg-transparent border border-primary hover:border-primary"
+                      ? "bg-white border-[#9FBB90] shadow-[0_4px_20px_rgba(51,71,44,0.08)] scale-[1.01]"
+                      : "bg-transparent border-[#9FBB90]/40 hover:border-[#9FBB90]/80 hover:bg-white/40"
                   }`}
                 >
+                  {/* Small Avatar */}
                   <div 
-                    className={`w-[44px] h-[44px] flex-shrink-0 rounded-full flex items-center justify-center transition-colors duration-250 ${
-                      isActive ? "border-2 border-primary" : "border-2 border-primary"
+                    className={`w-[48px] h-[48px] flex-shrink-0 rounded-full flex items-center justify-center transition-all duration-300 ${
+                      isActive 
+                        ? "bg-[#DCE9D7] border border-[#33472C]/20 shadow-sm" 
+                        : "bg-[#F5F1E9] border border-[#9FBB90]/30 group-hover:border-[#9FBB90]/60"
                     }`}
-                    style={{ background: 'linear-gradient(135deg, rgba(201,168,76,0.3), rgba(156,63,0,0.2))' }}
                   >
-                    <span className="font-forum text-[14px] text-heading">{member.initials}</span>
+                    <span className={`font-forum text-[15px] transition-colors duration-300 ${isActive ? "text-[#33472C]" : "text-[#33472C]/70"}`}>
+                      {member.initials}
+                    </span>
                   </div>
 
-                  <div className="flex-grow flex flex-col">
-                    <span className="font-sans font-[500] text-[14px] text-heading">{member.name}</span>
-                    <span className="font-sans font-[300] text-[12px] text-heading/80 line-clamp-1 md:line-clamp-none">{member.role}</span>
+                  {/* Content Column */}
+                  <div className="flex-grow flex flex-col justify-center">
+                    <span className={`font-sans font-[500] text-[15px] transition-colors duration-300 leading-tight mb-1 ${isActive ? "text-[#33472C]" : "text-[#33472C]/80"}`}>
+                      {member.name}
+                    </span>
+                    <span 
+                      className="font-sans font-[300] text-[12.5px] text-[#33472C]/70 leading-snug"
+                      style={{ display: '-webkit-box', WebkitLineClamp: 2, WebkitBoxOrient: 'vertical', overflow: 'hidden' }}
+                    >
+                      {member.role}
+                    </span>
                   </div>
 
-                  {isActive && (
-                    <div className="w-[6px] h-[6px] rounded-full bg-secondary ml-2 flex-shrink-0 hidden md:block" />
-                  )}
+                  {/* Right side: Nationality */}
+                  <div className="flex-shrink-0 hidden sm:flex items-center gap-3">
+                    <div className={`px-3 py-1.5 rounded-[8px] border text-[9.5px] font-bold uppercase tracking-widest transition-all duration-300 ${
+                      isActive 
+                        ? "bg-[#F5F1E9] border-[#9FBB90]/50 text-[#33472C]" 
+                        : "bg-transparent border-[#9FBB90]/30 text-[#33472C]/60"
+                    }`}>
+                      {member.nationality}
+                    </div>
+                    {/* Active Indicator Dot */}
+                    <div className={`w-1.5 h-1.5 rounded-full transition-all duration-300 hidden md:block ${isActive ? "bg-[#9FBB90] opacity-100 scale-100" : "bg-transparent opacity-0 scale-50"}`} />
+                  </div>
                 </button>
               );
             })}
@@ -346,17 +393,17 @@ export function GoldenCircleLeadershipSection() {
       {
         title: "WHY",
         description: "The Grandmaster — Protects the purpose. Preserves the wisdom. Guards the integrity.",
-        media: "/images/golden-circle-why.jpg",
+        media: "/images/lwhy.webp",
       },
       {
         title: "HOW",
         description: "The Masters — Develop people. Deliver transformation. Create future leaders.",
-        media: "/images/golden-circle-how.jpg",
+        media: "/images/lhow.webp",
       },
       {
         title: "WHAT",
         description: "The Leaders — Build institutions. Expand partnerships. Create sustainable impact.",
-        media: "/images/golden-circle-what.jpg",
+        media: "/images/lwhat.webp",
       },
     ],
   };
@@ -430,14 +477,16 @@ export function SharedCommitmentSection() {
           className="object-cover"
           unoptimized
         />
+        {/* Soft dark overlay for text legibility */}
+        <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-black/60 z-10" />
       </div>
-      <div className="max-w-5xl mx-auto relative z-10">
-        <h2 className="font-display font-light text-4xl md:text-5xl text-secondary mb-16 [text-shadow:0_2px_14px_rgba(0,0,0,0.5),0_1px_4px_rgba(0,0,0,0.4)]">Our Shared Commitment</h2>
+      <div className="max-w-5xl mx-auto relative z-20">
+        <h2 className="font-display font-light text-4xl md:text-5xl text-white mb-16 drop-shadow-xl translate-z-10 relative">Our Shared Commitment</h2>
         
         <RevealOnScroll delay={0.2}>
           <div className="mt-12 flex flex-wrap justify-center gap-4 mb-20">
             {tags.map((t, i) => (
-               <div key={i} className="px-6 py-4 rounded-full bg-[rgba(46,26,14,0.55)] backdrop-blur-sm border border-primary text-white font-sans text-sm uppercase tracking-widest [text-shadow:0_2px_14px_rgba(0,0,0,0.5),0_1px_4px_rgba(0,0,0,0.4)]">
+               <div key={i} className="px-6 py-4 rounded-full bg-white/10 backdrop-blur-md border border-white/80 shadow-[0_8px_32px_rgba(0,0,0,0.25)] text-white font-sans text-sm uppercase tracking-widest hover:bg-white/20 transition-all duration-300">
                  {t}
                </div>
             ))}
@@ -445,17 +494,17 @@ export function SharedCommitmentSection() {
         </RevealOnScroll>
 
         <RevealOnScroll delay={0.4}>
-          <div className="pt-16 border-t border-divider min-h-[140px]">
+          <div className="pt-16 min-h-[140px] relative translate-z-10">
             <TypewriterQuote 
               text='"This is the spirit of stewardship. This is the leadership philosophy of ISHAN."'
-              className="font-display italic text-3xl md:text-4xl text-secondary leading-relaxed max-w-3xl mx-auto [text-shadow:0_2px_14px_rgba(0,0,0,0.5),0_1px_4px_rgba(0,0,0,0.4)]"
+              className="font-display italic text-3xl md:text-4xl text-white leading-relaxed max-w-3xl mx-auto drop-shadow-2xl"
             />
           </div>
         </RevealOnScroll>
 
-        <RevealOnScroll delay={0.6} className="mt-20 flex flex-col sm:flex-row justify-center gap-4 sm:gap-6 w-full sm:w-auto">
+        <RevealOnScroll delay={0.6} className="mt-20 flex flex-col sm:flex-row justify-center gap-4 sm:gap-6 w-full sm:w-auto relative translate-z-10">
           <Button href="/framework" variant="primary">Explore Our Framework</Button>
-          <Button href="/contact" variant="ghost">Connect With Us</Button>
+          <a href="/contact" className="inline-flex items-center justify-center h-12 px-8 rounded-full border-2 border-white text-white font-sans uppercase tracking-[0.15em] text-[11px] hover:bg-white hover:text-black transition-all duration-300 shadow-[0_0_15px_rgba(255,255,255,0.3)]">Connect With Us</a>
         </RevealOnScroll>
       </div>
     </section>
