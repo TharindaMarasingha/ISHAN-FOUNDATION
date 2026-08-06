@@ -19,7 +19,7 @@ export function WaysToContributeSection() {
   ];
 
   return (
-    <section className="py-24 px-6 max-w-7xl mx-auto">
+    <section className="py-24 px-6 max-w-7xl mx-auto bg-white">
       <SectionHeading heading="Ways to Contribute" align="center" />
       <div className="mt-16 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
         {contributions.map((item, index) => (

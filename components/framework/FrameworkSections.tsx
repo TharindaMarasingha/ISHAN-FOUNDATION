@@ -6,29 +6,38 @@ import { SectionHeading } from "../ui/SectionHeading";
 import { RevealOnScroll } from "../ui/RevealOnScroll";
 import { Card } from "../ui/Card";
 import { Button } from "../ui/Button";
+import { BorderTrail } from "../ui/border-trail";
 
 export function GoldenCircleSection() {
   const circles = [
-    { title: "WHY", subtitle: "Our Purpose", desc: "To harmonise humanity and nature through wisdom, wellness, ethical leadership, sustainability, and conscious community development.", image: "/images/framework-why-bg.webp" },
-    { title: "HOW", subtitle: "Our Approach", desc: "Timeless Wisdom · Preventive Wellness · Holistic Wellbeing · Ethical Leadership · Research & Education · Sustainable Systems · Community Development · Environmental Stewardship · International Collaboration", image: "/images/framework-how-bg.webp" },
-    { title: "WHAT", subtitle: "Our Work", desc: "Educational Programmes · Retreats & Immersions · Leadership Development · Research & Publications · Community Initiatives · Environmental Projects · Institutional Partnerships · Conscious Living Experiences", image: "/images/framework-what-bg.webp" }
+    { title: "WHY", subtitle: "Our Purpose", desc: "To harmonise humanity and nature through wisdom, wellness, ethical leadership, sustainability, and conscious community development.", image: "/images/why.webp" },
+    { title: "HOW", subtitle: "Our Approach", desc: "Timeless Wisdom · Preventive Wellness · Holistic Wellbeing · Ethical Leadership · Research & Education · Sustainable Systems · Community Development · Environmental Stewardship · International Collaboration", image: "/images/how.webp" },
+    { title: "WHAT", subtitle: "Our Work", desc: "Educational Programmes · Retreats & Immersions · Leadership Development · Research & Publications · Community Initiatives · Environmental Projects · Institutional Partnerships · Conscious Living Experiences", image: "/images/what.webp" }
   ];
 
   return (
-    <section className="py-24 px-6 max-w-7xl mx-auto">
-      <div className="max-w-4xl mx-auto text-center mb-16">
-        <SectionHeading heading="Purpose Before Process. Meaning Before Method." align="center" />
-        <RevealOnScroll delay={0.2}>
-          <p className="mt-8 text-heading font-sans font-light text-lg leading-relaxed">
-            Every enduring institution begins with purpose. The ISHAN Golden Circle aligns every initiative with a clear sense of purpose before defining methods or programmes.
-          </p>
-        </RevealOnScroll>
-      </div>
+    <section className="py-24 px-6 bg-white w-full">
+      <div className="max-w-7xl mx-auto">
+        <div className="max-w-4xl mx-auto text-center mb-16">
+          <SectionHeading heading="Purpose Before Process. Meaning Before Method." align="center" />
+          <RevealOnScroll delay={0.2}>
+            <p className="mt-8 text-heading font-sans font-light text-lg leading-relaxed">
+              Every enduring institution begins with purpose. The ISHAN Golden Circle aligns every initiative with a clear sense of purpose before defining methods or programmes.
+            </p>
+          </RevealOnScroll>
+        </div>
 
       <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
         {circles.map((item, index) => (
           <RevealOnScroll key={item.title} delay={index * 0.15}>
-            <Card className="h-full !p-0 border-t-4 border-t-primary text-center">
+            <Card className="h-full !p-0 text-center relative rounded-2xl overflow-hidden border border-divider">
+              <BorderTrail
+                style={{
+                  boxShadow:
+                    "0px 0px 60px 30px rgba(201,168,76, 0.4), 0 0 100px 60px rgba(201,168,76, 0.3), 0 0 140px 90px rgba(201,168,76, 0.2)",
+                }}
+                size={120}
+              />
               <div className="absolute inset-0 z-0">
                 <Image
                   src={item.image}
@@ -55,6 +64,7 @@ export function GoldenCircleSection() {
           </RevealOnScroll>
         ))}
       </div>
+      </div>
     </section>
   );
 }
@@ -68,7 +78,7 @@ export function IkigaiSection() {
   ];
 
   return (
-    <section className="relative py-24 px-6 bg-surface border-y border-divider overflow-hidden">
+    <section className="relative py-24 px-6 bg-white border-y border-divider overflow-hidden">
       {/* Decorative flower SVG at absolute left */}
       <img 
         src="/flower.svg" 
@@ -81,7 +91,7 @@ export function IkigaiSection() {
         <div className="mt-16 grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto">
           {qa.map((item, index) => (
             <RevealOnScroll key={index} delay={index * 0.1}>
-              <div className="flex flex-col p-8 bg-white rounded-2xl border border-divider shadow-sm h-full">
+              <div className="flex flex-col p-8 bg-surface rounded-2xl border border-divider shadow-sm h-full">
                 <h4 className="font-display text-2xl text-primary mb-4">{item.q}</h4>
                 <p className="font-sans font-light text-lg text-heading leading-relaxed">{item.a}</p>
               </div>
@@ -188,7 +198,7 @@ export function InstitutionalPillarsSection() {
   ];
 
   return (
-    <section className="relative py-24 px-6 bg-surface border-y border-divider overflow-hidden">
+    <section className="relative py-24 px-6 bg-white border-y border-divider overflow-hidden">
       {/* Decorative fe.svg at absolute top-left */}
       <img 
         src="/fe.svg" 
@@ -202,7 +212,7 @@ export function InstitutionalPillarsSection() {
         <div className="mt-16 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
           {pillars.map((pillar, index) => (
             <RevealOnScroll key={pillar.number} delay={index * 0.1} className="h-full">
-              <div className="flex items-start flex-col p-8 bg-white border border-divider rounded-2xl h-full shadow-sm hover:shadow-md transition-shadow">
+              <div className="flex items-start flex-col p-8 bg-surface border border-divider rounded-2xl h-full shadow-sm hover:shadow-md transition-shadow">
                 <span className="font-display text-4xl text-primary mb-4">{pillar.number}</span>
                 <h4 className="font-sans font-semibold text-lg text-heading mb-2 uppercase tracking-wide">{pillar.title}</h4>
                 <p className="font-sans font-light text-sm text-heading leading-relaxed">{pillar.description}</p>
@@ -319,13 +329,13 @@ export function HierarchyOfNeedsSection() {
   ];
 
   return (
-    <section className="py-24 px-6 bg-surface border-y border-divider">
+    <section className="py-24 px-6 bg-white border-y border-divider">
       <div className="max-w-4xl mx-auto">
         <SectionHeading heading="From Survival to Conscious Contribution" align="center" />
         <div className="mt-16 flex flex-col gap-4">
           {levels.map((item, index) => (
             <RevealOnScroll key={item.level} delay={index * 0.1}>
-              <div className="flex flex-col md:flex-row items-start md:items-center p-6 bg-white border border-divider rounded-2xl shadow-sm hover:shadow-md transition-shadow gap-4 md:gap-8">
+              <div className="flex flex-col md:flex-row items-start md:items-center p-6 bg-surface border border-divider rounded-2xl shadow-sm hover:shadow-md transition-shadow gap-4 md:gap-8">
                 <div className="flex-shrink-0 text-primary font-display text-2xl w-24">
                   {item.level}
                 </div>
@@ -346,7 +356,7 @@ export function HierarchyOfNeedsSection() {
 
 export function FrameworkCTASection() {
   return (
-    <section className="relative w-full py-32 px-6 overflow-hidden">
+    <section className="relative w-full py-32 md:py-48 px-6 overflow-hidden">
       {/* Background Image Layer */}
       <div className="absolute inset-0 z-0">
         <Image
@@ -356,41 +366,47 @@ export function FrameworkCTASection() {
           className="object-cover"
           unoptimized
         />
-        {/* Localized Subtle Glow Overlay */}
+        {/* Cool-green energy haze overlay for high contrast on the left */}
         <div 
-          className="absolute inset-0"
+          className="absolute inset-0 z-10"
           style={{
-            background: 'radial-gradient(ellipse at center, rgba(255, 241, 230, 0.35) 0%, transparent 40%)'
+            background: 'linear-gradient(to right, rgba(48, 77, 48, 0.5) 0%, rgba(48, 77, 48, 0.15) 50%, transparent 80%)'
           }}
         />
       </div>
 
       {/* Content Layer */}
-      <div className="relative z-10 max-w-4xl mx-auto text-center flex flex-col items-center">
-        <div 
-          className="text-center mx-auto"
-          style={{ textShadow: '0 2px 12px rgba(46,26,14,0.5), 0 1px 4px rgba(46,26,14,0.4)' }}
-        >
-          <span className="font-display italic text-white tracking-[0.2em] text-sm uppercase mb-4 block">
+      <div className="relative z-20 max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-end h-full">
+        {/* Left Side Content */}
+        <div className="flex flex-col items-start max-w-2xl">
+          <span className="font-display italic text-white/90 tracking-[0.2em] text-sm md:text-base uppercase mb-6 drop-shadow-md block">
             Take the Next Step
           </span>
-          <h2 className="font-display font-light text-primary text-4xl md:text-5xl lg:text-6xl mb-6">
+          <h2 className="font-sans font-medium text-white text-5xl md:text-6xl lg:text-7xl mb-6 drop-shadow-[0_0_15px_rgba(255,255,255,0.3)]">
             Experience the Framework
           </h2>
-          <p className="font-sans font-light text-white max-w-xl mx-auto leading-relaxed">
+          <p className="font-sans font-light text-white text-lg md:text-xl leading-relaxed mb-10 drop-shadow-md">
             See how our philosophy comes to life across our different initiatives and environments.
           </p>
+          <Button 
+            href="/ecosystem" 
+            variant="primary"
+            className="!rounded-full !px-8 !py-4 shadow-[0_0_20px_rgba(48,77,48,0.5)] hover:shadow-[0_0_30px_rgba(48,77,48,0.8)] transition-all"
+          >
+            Explore Our Ecosystem
+          </Button>
         </div>
-        <RevealOnScroll delay={0.2} className="mt-12 flex flex-col sm:flex-row gap-4 sm:gap-6 w-full sm:w-auto">
-          <Button href="/ecosystem" variant="primary">Explore Our Ecosystem</Button>
+
+        {/* Right Side / Lower Right Secondary Button */}
+        <div className="mt-12 md:mt-0 self-start md:self-end">
           <Button 
             href="/" 
             variant="ghost" 
-            className="!bg-heading/70 sm:!bg-softAccent/15 !border-heading sm:!border-primary/70 !border-[1.5px] !text-white hover:!bg-[image:var(--gradient-cta)] hover:!text-heading hover:!border-[#F5D98A] [text-shadow:0_1px_4px_rgba(0,0,0,0.5)] sm:[text-shadow:0_1px_4px_rgba(46,26,14,0.6)] hover:[text-shadow:none]"
+            className="backdrop-blur-md !bg-white/10 !border-white/30 !text-white hover:!bg-white/20 transition-all rounded-xl"
           >
             Back to Home
           </Button>
-        </RevealOnScroll>
+        </div>
       </div>
     </section>
   );

@@ -127,20 +127,20 @@ export function Hero() {
           
           <div className="flex flex-col w-full gap-5 max-w-[280px] mt-6">
             <Link 
-              href="#ecosystem" 
+              href="/about" 
               className="w-full bg-[#DE5680] text-center text-white px-8 py-3.5 rounded-full font-sans font-bold tracking-[0.1em] uppercase text-[12px] shadow-md hover:shadow-[0_8px_20px_rgba(222,86,128,0.25)] hover:-translate-y-0.5 hover:brightness-95 transition-all duration-300"
             >
-              EXPLORE OUR WORK
+              ABOUT ISHAN
             </Link>
             <Link 
-              href="/about" 
+              href="#ecosystem" 
               className="group relative w-full text-center overflow-hidden rounded-full border border-[#9FBB90] hover:border-[#DE5680] bg-transparent px-8 py-3.5 font-sans font-bold tracking-[0.1em] uppercase text-[12px] text-[#294A32] shadow-sm hover:shadow-[0_8px_20px_rgba(222,86,128,0.25)] hover:-translate-y-0.5 transition-all duration-300 flex items-center justify-center"
             >
               <span className="relative z-10 inline-block translate-x-0 transition-all duration-300 group-hover:translate-x-8 group-hover:opacity-0">
-                ABOUT ISHAN
+                EXPLORE OUR WORK
               </span>
               <div className="absolute top-0 z-10 flex h-full w-full translate-x-8 items-center justify-center gap-2 text-white opacity-0 transition-all duration-300 group-hover:translate-x-0 group-hover:opacity-100 [text-shadow:0_1px_3px_rgba(0,0,0,0.3)]">
-                <span>ABOUT ISHAN</span>
+                <span>EXPLORE OUR WORK</span>
                 <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
               </div>
               <div className="absolute left-[8%] top-[50%] h-2 w-2 -translate-y-1/2 rounded-full bg-[#DE5680] transition-all duration-500 ease-out group-hover:left-[-50px] group-hover:top-[-50px] group-hover:h-[400px] group-hover:w-[400px] group-hover:-translate-y-0 z-0"></div>
@@ -259,15 +259,15 @@ export function Hero() {
 
             {/* DESKTOP BUTTONS */}
             <div className="hidden md:flex flex-row items-center justify-start gap-4">
-              <Link href="#ecosystem" className="w-auto text-center min-w-[180px] bg-[#DE5680] text-white border-none px-8 py-3.5 rounded-full hover:shadow-[0_8px_20px_rgba(222,86,128,0.25)] hover:-translate-y-0.5 hover:brightness-95 transition-all duration-300 font-sans font-bold tracking-wide uppercase text-[13px] flex items-center justify-center [text-shadow:0_1px_3px_rgba(0,0,0,0.3)]">
-                Explore Our Work
+              <Link href="/about" className="w-auto text-center min-w-[180px] bg-[#DE5680] text-white border-none px-8 py-3.5 rounded-full hover:shadow-[0_8px_20px_rgba(222,86,128,0.25)] hover:-translate-y-0.5 hover:brightness-95 transition-all duration-300 font-sans font-bold tracking-wide uppercase text-[13px] flex items-center justify-center [text-shadow:0_1px_3px_rgba(0,0,0,0.3)]">
+                About ISHAN
               </Link>
-              <Link href="/about" className="group relative w-auto min-w-[180px] overflow-hidden rounded-full border border-[#9FBB90] hover:border-[#DE5680] bg-transparent px-8 py-3.5 hover:shadow-[0_8px_20px_rgba(222,86,128,0.25)] hover:-translate-y-0.5 transition-all duration-300 flex items-center justify-center font-sans font-bold tracking-wide uppercase text-[13px] text-[#294A32]">
+              <Link href="#ecosystem" className="group relative w-auto min-w-[180px] overflow-hidden rounded-full border border-[#9FBB90] hover:border-[#DE5680] bg-transparent px-8 py-3.5 hover:shadow-[0_8px_20px_rgba(222,86,128,0.25)] hover:-translate-y-0.5 transition-all duration-300 flex items-center justify-center font-sans font-bold tracking-wide uppercase text-[13px] text-[#294A32]">
                 <span className="relative z-10 inline-block translate-x-0 transition-all duration-300 group-hover:translate-x-8 group-hover:opacity-0">
-                  About ISHAN
+                  Explore Our Work
                 </span>
                 <div className="absolute top-0 z-10 flex h-full w-full translate-x-8 items-center justify-center gap-2 text-white opacity-0 transition-all duration-300 group-hover:translate-x-0 group-hover:opacity-100 [text-shadow:0_1px_3px_rgba(0,0,0,0.3)]">
-                  <span>ABOUT ISHAN</span>
+                  <span>EXPLORE OUR WORK</span>
                   <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
                 </div>
                 <div className="absolute left-[8%] top-[50%] h-2 w-2 -translate-y-1/2 rounded-full bg-[#DE5680] transition-all duration-500 ease-out group-hover:left-[-50px] group-hover:top-[-50px] group-hover:h-[400px] group-hover:w-[400px] group-hover:-translate-y-0 z-0"></div>

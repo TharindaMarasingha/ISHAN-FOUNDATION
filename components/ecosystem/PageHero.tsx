@@ -36,8 +36,8 @@ export function PageHero() {
           transition={{ duration: 1, ease: "easeOut", delay: 0.2 }}
           className="font-display font-normal leading-tight text-white text-4xl md:text-5xl lg:text-6xl max-w-3xl mb-4"
         >
-          <span className="text-white block">One Vision. Multiple Initiatives.</span>
-          <span className="text-primary block">Shared Purpose.</span>
+          <span className="text-[#F5F1E9] block">One Vision. Multiple Initiatives.</span>
+          <span className="text-[#F3D8DB] [text-shadow:0_2px_4px_rgba(0,0,0,0.5)] block">Shared Purpose.</span>
         </motion.h1>
 
         <motion.p

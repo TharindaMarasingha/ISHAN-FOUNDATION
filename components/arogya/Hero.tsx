@@ -32,7 +32,7 @@ export function Hero() {
           className="font-display font-light text-5xl md:text-7xl lg:text-8xl text-heading tracking-wide mb-2"
         >
           Arogya Ashram<br />
-          <span className="text-primary">International</span>
+          <span className="text-[#F3D8DB] [text-shadow:0_2px_4px_rgba(0,0,0,0.5)]">International</span>
         </motion.h1>
 
         <motion.p

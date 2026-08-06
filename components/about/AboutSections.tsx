@@ -50,7 +50,7 @@ function TypewriterText({ text, className }: { text: string; className?: string 
 
 export function OurStorySection() {
   return (
-    <section className="relative w-full overflow-hidden">
+    <section className="relative w-full overflow-hidden bg-white">
       {/* Decorative flower SVG at absolute left of screen */}
       <img 
         src="/flower.svg" 
@@ -676,17 +676,56 @@ export function CoreValuesSection() {
         </div>
 
         {/* MOBILE LIST (Hidden on Desktop/Tablet) */}
-        <div className="mt-2 mb-12 flex flex-col gap-4 w-full px-6 md:hidden">
-          {values.map(({ label, Icon, color }, i) => (
-            <div key={i} className="flex items-center gap-4 bg-white/80 backdrop-blur-sm border border-divider p-4 rounded-xl shadow-sm">
-              <div className="flex items-center justify-center w-10 h-10">
-                 <Icon size={20} color={color.startsWith('rgba') ? '#A0720A' : color} strokeWidth={1.5} />
-              </div>
-              <span className="font-sans font-medium text-heading uppercase tracking-widest text-sm">
-                 {label}
-              </span>
-            </div>
-          ))}
+        <div className="mt-8 mb-16 w-full px-4 md:hidden relative flex gap-4" style={{ perspective: '1000px' }}>
+          {/* Left Column */}
+          <div className="flex-1 flex flex-col gap-6">
+            {["Integrity", "Compassion", "Responsibility", "Collaboration", "Sustainability", "Excellence"].map((label, i) => {
+              const v = values.find(x => x.label === label);
+              if (!v) return null;
+              const scale = [1, 0.92, 1.05, 0.95, 1, 0.9][i % 6];
+              const zDepth = [0, -20, 10, -10, 0, -15][i % 6];
+              return (
+                <div key={i} className="flex flex-col items-center justify-center p-5 bg-white rounded-2xl shadow-lg border border-primary/10 relative"
+                  style={{
+                    transform: `translateZ(${zDepth}px) scale(${scale})`,
+                    animation: `cvCardFloat ${4 + (i%3)}s ease-in-out ${i*0.3}s infinite`,
+                    boxShadow: zDepth > 0 ? '0 15px 35px rgba(48,77,48,0.15)' : '0 5px 15px rgba(48,77,48,0.08)',
+                    zIndex: zDepth > 0 ? 10 : 1
+                  }}
+                >
+                  <v.Icon size={24} className="text-primary mb-3" strokeWidth={1.5} />
+                  <span className="font-sans font-bold text-primary uppercase text-[10px] tracking-widest text-center">
+                    {v.label}
+                  </span>
+                </div>
+              );
+            })}
+          </div>
+
+          {/* Right Column (Staggered) */}
+          <div className="flex-1 flex flex-col gap-6 mt-12">
+            {["Wisdom", "Authenticity", "Respect", "Service", "Innovation", "Humility"].map((label, i) => {
+              const v = values.find(x => x.label === label);
+              if (!v) return null;
+              const scale = [0.95, 1, 0.9, 1.05, 0.92, 1][i % 6];
+              const zDepth = [-10, 0, -15, 15, -20, 0][i % 6];
+              return (
+                <div key={i} className="flex flex-col items-center justify-center p-5 bg-white rounded-2xl shadow-lg border border-primary/10 relative"
+                  style={{
+                    transform: `translateZ(${zDepth}px) scale(${scale})`,
+                    animation: `cvCardFloat ${4.5 + (i%3)}s ease-in-out ${i*0.4 + 0.5}s infinite`,
+                    boxShadow: zDepth > 0 ? '0 15px 35px rgba(48,77,48,0.15)' : '0 5px 15px rgba(48,77,48,0.08)',
+                    zIndex: zDepth > 0 ? 10 : 1
+                  }}
+                >
+                  <v.Icon size={24} className="text-primary mb-3" strokeWidth={1.5} />
+                  <span className="font-sans font-bold text-primary uppercase text-[10px] tracking-widest text-center">
+                    {v.label}
+                  </span>
+                </div>
+              );
+            })}
+          </div>
         </div>
       </div>
 
@@ -721,12 +760,12 @@ export function IshanWaySection() {
   ];
 
   return (
-    <section className="py-24 px-6 max-w-7xl mx-auto bg-surface border-y border-divider mb-24">
+    <section className="py-24 px-6 max-w-7xl mx-auto bg-white border-y border-divider mb-24">
       <SectionHeading heading="The ISHAN Way" align="center" />
       <div className="mt-16 flex flex-col gap-6 max-w-4xl mx-auto">
         {steps.map((s, i) => (
            <RevealOnScroll key={i} delay={i * 0.1}>
-             <div className="flex flex-col md:flex-row gap-6 items-start md:items-center p-8 bg-white border border-divider rounded-2xl shadow-sm">
+             <div className="flex flex-col md:flex-row gap-6 items-start md:items-center p-8 bg-surface border border-divider rounded-2xl shadow-sm">
                <div className="font-display text-2xl text-primary min-w-[140px] uppercase tracking-widest">{s.title}</div>
                <div className="text-heading font-sans font-light text-lg">{s.desc}</div>
              </div>

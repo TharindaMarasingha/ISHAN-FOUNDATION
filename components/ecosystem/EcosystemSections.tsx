@@ -80,7 +80,7 @@ export function EcosystemSections() {
   return (
     <div className="flex flex-col">
       {/* SECTION 1: ISHAN PARENT INSTITUTION */}
-      <section className="py-24 px-6 md:px-12 bg-surface">
+      <section className="py-24 px-6 md:px-12 bg-white">
         <div className="max-w-5xl mx-auto">
           <div className="mb-12">
             <SectionHeading

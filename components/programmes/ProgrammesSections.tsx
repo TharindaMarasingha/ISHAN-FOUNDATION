@@ -39,7 +39,7 @@ export function CoreProgrammesSection() {
   ];
 
   return (
-    <section className="py-24 px-6 bg-surface border-y border-divider">
+    <section className="py-24 px-6 bg-white border-b border-divider">
       <div className="max-w-7xl mx-auto">
         <SectionHeading heading="Core Programme Areas" align="center" />
         <div className="mt-16 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">

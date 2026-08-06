@@ -67,7 +67,7 @@ export function PhilosophySection() {
       <div className="absolute inset-0 z-0 pointer-events-none opacity-[0.03] mix-blend-multiply" 
            style={{ backgroundImage: "url('data:image/svg+xml,%3Csvg viewBox=%220 0 200 200%22 xmlns=%22http://www.w3.org/2000/svg%22%3E%3Cfilter id=%22noiseFilter%22%3E%3CfeTurbulence type=%22fractalNoise%22 baseFrequency=%220.8%22 numOctaves=%223%22 stitchTiles=%22stitch%22/%3E%3C/filter%3E%3Crect width=%22100%25%22 height=%22100%25%22 filter=%22url(%23noiseFilter)%22/%3E%3C/svg%3E')" }} 
       />
-      <div className="absolute -top-40 -left-40 w-[600px] h-[600px] bg-surface rounded-full blur-[120px] opacity-50 pointer-events-none z-0" />
+      <div className="absolute -top-40 -left-40 w-[600px] h-[600px] bg-white rounded-full blur-[120px] opacity-50 pointer-events-none z-0" />
       <div className="absolute -bottom-40 -right-40 w-[600px] h-[600px] bg-surface rounded-full blur-[120px] opacity-50 pointer-events-none z-0" />
 
       <div className="max-w-[1200px] mx-auto px-6 md:px-10 w-full relative z-10">

@@ -23,7 +23,7 @@ export function Hero() {
           transition={{ duration: 1, ease: "easeOut", delay: 0.2 }}
           className="font-display font-light text-5xl md:text-7xl lg:text-8xl text-heading tracking-wide mb-6"
         >
-          Connect With <span className="text-primary">ISHAN</span>
+          Connect With <span className="text-[#F3D8DB] [text-shadow:0_2px_4px_rgba(0,0,0,0.5)]">ISHAN</span>
         </motion.h1>
 
         <motion.p

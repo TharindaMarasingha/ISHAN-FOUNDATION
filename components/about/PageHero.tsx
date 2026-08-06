@@ -28,22 +28,15 @@ export function PageHero() {
       />
       <ParallaxBackground fadeRange={[100, 600]} driftRate={0.1} />
       <div className="relative z-10 flex flex-col justify-end pb-16 pl-12 md:pb-20 md:pl-16" style={{ minHeight: '100vh' }}>
-        <motion.span
-          initial={{ opacity: 0, y: 10 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, ease: "easeOut" }}
-          className="inline-flex w-fit border border-primary rounded-full px-4 py-1.5 text-primary text-xs uppercase tracking-[0.18em] font-sans mb-4"
-        >
-          About ISHAN
-        </motion.span>
-        
         <motion.h1
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1, ease: "easeOut", delay: 0.2 }}
           className="font-display font-normal leading-tight text-white text-4xl md:text-5xl lg:text-6xl max-w-3xl mb-4"
         >
-          <span className="text-white block">Who We Are</span>
+          <span className="text-[#F5F1E9] block">
+            Who <span className="text-[#F3D8DB] [text-shadow:0_2px_4px_rgba(0,0,0,0.5)]">We</span> Are
+          </span>
         </motion.h1>
 
         <motion.h2

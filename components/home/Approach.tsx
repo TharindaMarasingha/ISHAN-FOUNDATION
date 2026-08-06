@@ -81,10 +81,7 @@ export function Approach() {
 
   return (
     <section 
-      className="pt-[100px] pb-24 px-6 md:px-12 overflow-hidden relative"
-      style={{
-        background: 'var(--color-surface)'
-      }}
+      className="pt-[100px] pb-24 px-6 md:px-12 overflow-hidden relative bg-white"
     >
       <motion.img 
         src="/download.svg"
@@ -145,7 +142,7 @@ export function Approach() {
                     viewport={{ once: true, amount: 0.1 }}
                     transition={{ duration: 0.9, ease: "easeOut", delay: isMobile ? 0 : index * 0.1 }}
                   >
-                    <div className="w-full md:max-w-[380px] bg-[rgba(255,255,255,0.82)] border border-primary rounded-[16px] pt-[28px] px-[28px] pb-[24px] shadow-[0_2px_12px_rgba(42,20,8,0.07),0_6px_24px_rgba(42,20,8,0.05)] overflow-hidden relative group hover:-translate-y-1 hover:shadow-[0_4px_20px_rgba(42,20,8,0.1),0_10px_32px_rgba(42,20,8,0.08)] transition-all duration-300 ease-out">
+                    <div className="w-full md:max-w-[380px] bg-surface border border-primary rounded-[16px] pt-[28px] px-[28px] pb-[24px] shadow-[0_2px_12px_rgba(42,20,8,0.07),0_6px_24px_rgba(42,20,8,0.05)] overflow-hidden relative group hover:-translate-y-1 hover:shadow-[0_4px_20px_rgba(42,20,8,0.1),0_10px_32px_rgba(42,20,8,0.08)] transition-all duration-300 ease-out">
                       
                       <h4 className="font-sans font-[600] text-[10px] uppercase tracking-[0.18em] text-primary mb-[10px]">
                         STEP {step.number}

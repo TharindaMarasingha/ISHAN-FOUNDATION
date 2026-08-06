@@ -14,7 +14,7 @@ export function WhoWePartnerWithSection() {
   ];
 
   return (
-    <section className="py-24 px-6 max-w-6xl mx-auto text-center">
+    <section className="py-24 px-6 max-w-6xl mx-auto text-center bg-white">
       <SectionHeading heading="Who We Partner With" align="center" />
       <RevealOnScroll delay={0.2}>
         <div className="mt-12 flex flex-wrap justify-center gap-3">

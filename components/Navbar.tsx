@@ -83,6 +83,8 @@ export default function Navbar() {
   }, [pathname]);
 
   const isMoreActive = moreLinks.some(link => pathname === link.href);
+  const darkHeroPages = ['/about', '/framework', '/leadership', '/ecosystem', '/programmes', '/research', '/partnerships', '/vision', '/support'];
+  const isDarkHeader = darkHeroPages.includes(pathname) && !isScrolled;
 
   return (
     <>
@@ -95,18 +97,14 @@ export default function Navbar() {
           animate={{
             backgroundColor: isScrolled 
               ? 'rgba(255,255,255,0.96)'
-              : (isMounted && isMobile)
-                ? 'rgba(255,255,255,0.85)'
-                : 'rgba(255,255,255,0)',
+              : 'rgba(255,255,255,0)',
             borderColor: isScrolled
               ? 'var(--color-divider)'
-              : (isMounted && isMobile)
-                ? 'rgba(220,233,215,0.5)'
-                : 'rgba(220,233,215,0)',
+              : 'rgba(220,233,215,0)',
             backdropFilter: isScrolled ? "blur(20px) saturate(160%)" : "blur(16px) saturate(160%)",
           }}
           transition={{ duration: 0.5, ease: "easeInOut" }}
-          className="rounded-full w-full pointer-events-auto border md:border-none px-4 py-2.5 md:py-2 shadow-[0_4px_24px_rgba(0,0,0,0.06)] flex items-center justify-between transition-all duration-500"
+          className="rounded-full w-full pointer-events-auto border px-4 py-2.5 md:py-2 shadow-[0_4px_24px_rgba(0,0,0,0.06)] flex items-center justify-between transition-all duration-500"
         style={{
           borderWidth: "1px",
           borderStyle: "solid",
@@ -127,13 +125,17 @@ export default function Navbar() {
           <div className="hidden md:flex items-center justify-start flex-grow gap-4 md:gap-6 ml-6 md:ml-10 mr-4">
             {primaryLinks.map((link) => {
               const isActive = pathname === link.href;
+              
               return (
                 <Link
                   key={link.label}
                   href={link.href}
                   className={`font-sans font-normal text-[10px] uppercase tracking-[0.06em] transition-colors duration-300 ${
-                    isActive ? "text-primary" : "text-heading hover:text-primary"
+                    isActive 
+                      ? "text-primary" 
+                      : (isDarkHeader ? "text-white/80 hover:text-white" : "text-heading hover:text-primary")
                   }`}
+                  style={isDarkHeader && !isActive ? { textShadow: '0 1px 3px rgba(0,0,0,0.5)' } : {}}
                 >
                   {link.label}
                 </Link>
@@ -145,8 +147,11 @@ export default function Navbar() {
               <button
                 onClick={() => setIsMoreOpen(!isMoreOpen)}
                 className={`flex items-center gap-1 font-sans font-normal text-[10px] uppercase tracking-[0.06em] transition-colors duration-300 outline-none ${
-                  isMoreActive || isMoreOpen ? "text-primary" : "text-heading hover:text-primary"
+                  isMoreActive || isMoreOpen 
+                    ? "text-primary"
+                    : (isDarkHeader ? "text-white/80 hover:text-white" : "text-heading hover:text-primary")
                 }`}
+                style={(isDarkHeader && !(isMoreActive || isMoreOpen)) ? { textShadow: '0 1px 3px rgba(0,0,0,0.5)' } : {}}
               >
                 MORE <ChevronDown size={12} className={`transition-transform duration-300 ${isMoreOpen ? 'rotate-180' : ''}`} />
               </button>
@@ -198,7 +203,7 @@ export default function Navbar() {
 
             {/* Mobile Menu Toggle */}
             <button
-              className="flex md:hidden text-heading hover:text-primary p-1"
+              className={`flex md:hidden p-1 transition-colors ${isDarkHeader ? 'text-white hover:text-white/80' : 'text-heading hover:text-primary'}`}
               onClick={() => setIsMobileMenuOpen(true)}
               aria-label="Open Menu"
             >

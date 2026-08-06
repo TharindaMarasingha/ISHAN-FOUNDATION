@@ -58,7 +58,7 @@ export function ThreeErasSection() {
   ];
 
   return (
-    <section className="py-24 px-6 max-w-7xl mx-auto">
+    <section className="py-24 px-6 max-w-7xl mx-auto bg-white">
       <SectionHeading heading="A Vision in Three Eras" align="center" />
       <div className="mt-16 grid grid-cols-1 lg:grid-cols-3 gap-8">
         {eras.map((era, index) => (

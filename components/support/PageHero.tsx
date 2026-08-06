@@ -43,8 +43,8 @@ export function PageHero() {
           transition={{ duration: 1, ease: "easeOut", delay: 0.2 }}
           className="font-display font-normal leading-tight text-white text-4xl md:text-5xl lg:text-6xl max-w-3xl mb-4"
         >
-          <span className="text-white block">Become a Steward of</span>
-          <span className="text-primary block">Positive Change</span>
+          <span className="text-[#F5F1E9] block">Become a Steward of</span>
+          <span className="text-[#F3D8DB] [text-shadow:0_2px_4px_rgba(0,0,0,0.5)] block">Positive Change</span>
         </motion.h1>
 
         <motion.p
