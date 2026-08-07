@@ -51,7 +51,7 @@ export function PhilosophySection() {
   });
 
   return (
-    <section className="relative w-full py-20 md:py-24 lg:py-32 overflow-hidden flex items-center justify-center min-h-[85vh] bg-white">
+    <section className="relative w-full pt-32 pb-48 md:py-24 lg:py-32 overflow-hidden flex items-start md:items-center justify-center min-h-screen bg-white">
       {/* Decorative Flower */}
       <motion.img 
         src="/flower.svg"
@@ -71,7 +71,7 @@ export function PhilosophySection() {
       <div className="absolute -bottom-40 -right-40 w-[600px] h-[600px] bg-surface rounded-full blur-[120px] opacity-50 pointer-events-none z-0" />
 
       <div className="max-w-[1200px] mx-auto px-6 md:px-10 w-full relative z-10">
-        <div className="flex flex-col md:flex-row gap-12 md:gap-16 lg:gap-20 items-stretch">
+        <div className="flex flex-col md:flex-row gap-24 md:gap-16 lg:gap-20 items-stretch">
           
           {/* Left Column - Philosophy */}
           <div className="w-full md:w-[45%] flex flex-col justify-center">
@@ -159,7 +159,7 @@ export function PhilosophySection() {
                       {/* Thin Divider under text */}
                       <motion.div 
                         initial="hidden" whileInView="visible" viewport={{ once: true, margin: "-50px" }} variants={getLineVariants(index)}
-                        className="h-[1px] bg-divider relative flex items-center transition-opacity duration-500 group-hover:opacity-100"
+                        className="h-[1px] bg-divider relative flex items-center transition-opacity duration-500 group-hover:opacity-100 -mr-6 md:mr-0"
                       >
                         <div className="absolute right-0 w-1.5 h-1.5 rotate-45 bg-secondary opacity-60 transition-opacity duration-500 group-hover:opacity-100"></div>
                       </motion.div>
@@ -426,7 +426,10 @@ function TypewriterQuote({ text, className }: { text: string; className: string 
   const [isTyping, setIsTyping] = useState(false);
 
   useEffect(() => {
-    if (shouldReduceMotion) {
+    // Check if we are on mobile to disable typing animation
+    const isMobile = typeof window !== 'undefined' && window.innerWidth < 768;
+    
+    if (shouldReduceMotion || isMobile) {
       // eslint-disable-next-line react-hooks/set-state-in-effect
       setDisplayedText(text);
       return;
@@ -461,40 +464,25 @@ function TypewriterQuote({ text, className }: { text: string; className: string 
 }
 
 export function SharedCommitmentSection() {
-  const tags = [
-    "Preserve Wisdom", "Develop People", "Build Institutions", 
-    "Strengthen Communities", "Protect Nature", "Inspire Conscious Leadership", 
-    "Serve Humanity", "Create a Legacy for Future Generations"
-  ];
 
   return (
-    <section className="py-32 px-6 text-center overflow-hidden relative">
+    <section className="relative w-full px-6 py-24 md:py-24 flex flex-col items-center justify-center text-center overflow-hidden">
       <div className="absolute inset-0 z-0">
         <Image
-          src="/images/leadership-commitment-bg.webp"
+          src="/images/lecta.webp"
           alt="Leadership Commitment Background"
           fill
           className="object-cover"
           unoptimized
         />
         {/* Soft dark overlay for text legibility */}
-        <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-black/60 z-10" />
+        <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-black/30 z-10" />
       </div>
       <div className="max-w-5xl mx-auto relative z-20">
-        <h2 className="font-display font-light text-4xl md:text-5xl text-white mb-16 drop-shadow-xl translate-z-10 relative">Our Shared Commitment</h2>
-        
-        <RevealOnScroll delay={0.2}>
-          <div className="mt-12 flex flex-wrap justify-center gap-4 mb-20">
-            {tags.map((t, i) => (
-               <div key={i} className="px-6 py-4 rounded-full bg-white/10 backdrop-blur-md border border-white/80 shadow-[0_8px_32px_rgba(0,0,0,0.25)] text-white font-sans text-sm uppercase tracking-widest hover:bg-white/20 transition-all duration-300">
-                 {t}
-               </div>
-            ))}
-          </div>
-        </RevealOnScroll>
+        <h2 className="font-display font-light text-4xl md:text-5xl text-white mb-8 md:mb-12 drop-shadow-xl translate-z-10 relative">Our Shared Commitment</h2>
 
         <RevealOnScroll delay={0.4}>
-          <div className="pt-16 min-h-[140px] relative translate-z-10">
+          <div className="pt-8 md:pt-4 min-h-[120px] relative translate-z-10">
             <TypewriterQuote 
               text='"This is the spirit of stewardship. This is the leadership philosophy of ISHAN."'
               className="font-display italic text-3xl md:text-4xl text-white leading-relaxed max-w-3xl mx-auto drop-shadow-2xl"
@@ -502,9 +490,9 @@ export function SharedCommitmentSection() {
           </div>
         </RevealOnScroll>
 
-        <RevealOnScroll delay={0.6} className="mt-20 flex flex-col sm:flex-row justify-center gap-4 sm:gap-6 w-full sm:w-auto relative translate-z-10">
-          <Button href="/framework" variant="primary">Explore Our Framework</Button>
-          <a href="/contact" className="inline-flex items-center justify-center h-12 px-8 rounded-full border-2 border-white text-white font-sans uppercase tracking-[0.15em] text-[11px] hover:bg-white hover:text-black transition-all duration-300 shadow-[0_0_15px_rgba(255,255,255,0.3)]">Connect With Us</a>
+        <RevealOnScroll delay={0.6} className="mt-16 md:mt-12 flex flex-col sm:flex-row items-stretch sm:items-center justify-center gap-4 sm:gap-6 w-full sm:w-auto relative translate-z-10">
+          <Button href="/framework" variant="primary" className="w-full sm:w-auto flex justify-center text-center">Explore Our Framework</Button>
+          <a href="/contact" className="w-full sm:w-auto inline-flex items-center justify-center text-center h-12 px-10 rounded-full border-[1.5px] border-white text-white font-sans uppercase tracking-[0.15em] text-[11px] hover:bg-white hover:text-black transition-all duration-300 shadow-[0_0_15px_rgba(255,255,255,0.3)]">Connect With Us</a>
         </RevealOnScroll>
       </div>
     </section>

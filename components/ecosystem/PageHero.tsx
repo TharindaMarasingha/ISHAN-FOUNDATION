@@ -8,17 +8,28 @@ export function PageHero() {
   return (
     <section className="relative w-full overflow-hidden" style={{ minHeight: '100vh', marginTop: '0', paddingTop: '0', top: '0' }}>
       <div className="absolute inset-0" style={{ top: 0, left: 0, right: 0, bottom: 0 }}>
-        <Image
-          src="/images/ecosystem-hero.webp"
-          alt="ISHAN Ecosystem"
-          fill
-          priority
-          className="object-cover object-center"
-          sizes="100vw"
-        />
+        <div className="hidden md:block absolute inset-0">
+          <Image
+            src="/images/eco.webp"
+            alt="ISHAN Ecosystem"
+            fill
+            priority
+            className="object-cover object-center"
+            sizes="100vw"
+          />
+        </div>
+        <div className="block md:hidden absolute inset-0">
+          <Image
+            src="/images/ecom.webp"
+            alt="ISHAN Ecosystem Mobile"
+            fill
+            priority
+            className="object-cover object-center"
+            sizes="100vw"
+          />
+        </div>
       </div>
-      <div className="absolute inset-0 bg-gradient-to-b from-[rgba(10,4,2,0.3)] via-[rgba(10,4,2,0.45)] to-[rgba(10,4,2,0.75)]" />
-      <div className="absolute inset-0 bg-gradient-to-r from-[rgba(10,4,2,0.7)] via-[rgba(10,4,2,0.3)] to-transparent" />
+      <div className="absolute inset-0 bg-gradient-to-b from-transparent via-[rgba(10,4,2,0.1)] to-[rgba(10,4,2,0.4)]" />
       <ParallaxBackground fadeRange={[100, 600]} driftRate={0.1} />
       <div className="relative z-10 flex flex-col justify-end pb-16 pl-12 md:pb-20 md:pl-16" style={{ minHeight: '100vh' }}>
 

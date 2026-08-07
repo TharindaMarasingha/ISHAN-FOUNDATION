@@ -23,7 +23,7 @@ export default function LeadershipPage() {
       
       {/* Wrapper to isolate the sticky parallax effect between Philosophy and Circle of Stewards */}
       <div className="relative w-full">
-        <div className="sticky top-0 z-0">
+        <div className="relative md:sticky top-0 z-0">
           <PhilosophySection />
         </div>
         <div className="relative z-10 shadow-[0_-15px_40px_rgba(0,0,0,0.1)] rounded-t-3xl">
