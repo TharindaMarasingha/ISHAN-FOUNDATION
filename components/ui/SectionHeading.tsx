@@ -39,7 +39,7 @@ export function SectionHeading({
       </h2>
       {description && (
         <p
-          className={`font-sans font-light ${descColor} max-w-xl leading-relaxed ${alignClass}`}
+          className={`font-sans font-light ${descColor} max-w-xl leading-relaxed ${alignClass} px-6 sm:px-0`}
         >
           {description}
         </p>

@@ -34,13 +34,13 @@ export default function SamanvayaPage() {
             alt="Samanvaya Transformational Retreat (Mobile)"
             fill
             priority
-            className="object-cover object-center block md:hidden"
+            className="object-cover object-top block md:hidden"
             sizes="100vw"
           />
         </div>
         <div className="absolute inset-0 bg-gradient-to-b from-transparent via-[rgba(10,4,2,0.3)] to-[rgba(10,4,2,0.8)]" />
         
-        <div className="relative z-10 flex flex-col justify-end pt-32 pb-16 pl-12 md:pb-20 md:pl-16" style={{ minHeight: '100vh' }}>
+        <div className="relative z-10 flex flex-col justify-end pt-32 pb-16 px-6 md:pb-20 md:pl-16" style={{ minHeight: '100vh' }}>
 
           
           <h1>
@@ -68,8 +68,8 @@ export default function SamanvayaPage() {
             Each experience is thoughtfully designed to restore balance across the physical, emotional, intellectual, financial, and spiritual dimensions of life.
           </p>
 
-          <div className="mt-8">
-            <Button href="/samanvaya/packages" variant="primary">
+          <div className="mt-8 flex flex-col w-full sm:w-auto">
+            <Button href="/samanvaya/packages" variant="primary" className="w-full sm:w-auto text-center">
               See the Packages
             </Button>
           </div>
@@ -77,17 +77,16 @@ export default function SamanvayaPage() {
       </section>
       
       <TheExperience />
-      <GoldDivider />
       
       <IncludedPillars />
       
       {/* Vision Quote Section */}
-      <section className="py-32 px-6 md:px-12 bg-surface border-y border-divider relative overflow-hidden flex items-center justify-center">
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 font-display text-[25rem] text-primary opacity-[0.03] pointer-events-none select-none leading-none">
+      <section className="py-24 md:py-32 px-6 md:px-12 bg-white border-y border-divider relative overflow-hidden flex items-center justify-center">
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 font-display text-[15rem] md:text-[25rem] text-primary opacity-[0.03] pointer-events-none select-none leading-none">
           &ldquo;
         </div>
         <RevealOnScroll className="relative z-10 max-w-4xl mx-auto text-center">
-          <blockquote className="font-display italic text-3xl md:text-4xl lg:text-5xl text-heading leading-snug md:leading-snug mb-10">
+          <blockquote className="font-display italic text-2xl md:text-4xl lg:text-5xl text-heading leading-snug md:leading-snug mb-8 md:mb-10">
             "Samanvaya is not simply a retreat. It is a journey towards harmony within oneself, with others, and with nature. A journey from Pancha Tattva to Sampurna Sattva."
           </blockquote>
           <div className="text-[0.65rem] md:text-xs uppercase tracking-widest text-primary">
@@ -97,7 +96,7 @@ export default function SamanvayaPage() {
       </section>
 
       {/* Closing CTA */}
-      <section className="relative w-full py-32 px-6 overflow-hidden flex flex-col items-center justify-center">
+      <section className="relative w-full py-24 md:py-32 px-4 md:px-6 overflow-hidden flex flex-col items-center justify-center">
         <div className="absolute inset-0">
           <Image
             src="/images/samand.webp"
@@ -107,9 +106,9 @@ export default function SamanvayaPage() {
             sizes="100vw"
           />
         </div>
-        <div className="absolute inset-0 bg-[rgba(10,4,2,0.65)]" />
+        <div className="absolute inset-0 bg-[rgba(10,4,2,0.35)]" />
         
-        <div className="relative z-10 max-w-4xl mx-auto text-center flex flex-col items-center">
+        <div className="relative z-10 w-full max-w-4xl mx-auto text-center flex flex-col items-center">
           <SectionHeading
             eyebrow="Answer the Call"
             heading="Step Into Stillness"
@@ -117,11 +116,11 @@ export default function SamanvayaPage() {
             align="center"
             theme="dark"
           />
-          <RevealOnScroll delay={0.2} className="mt-12 flex flex-col sm:flex-row gap-4 sm:gap-6 w-full sm:w-auto">
-            <Button href="/contact" variant="primary">
+          <RevealOnScroll delay={0.2} className="mt-10 md:mt-12 flex flex-col sm:flex-row gap-4 w-full px-2 sm:px-0 sm:w-auto">
+            <Button href="/contact" variant="primary" className="w-full sm:w-auto text-center">
               Register Interest
             </Button>
-            <Button href="/" variant="ghost" className="text-white border-white hover:bg-white/10">
+            <Button href="/" variant="ghost" className="w-full sm:w-auto text-center text-white border-white hover:bg-white/10">
               Back to Home
             </Button>
           </RevealOnScroll>

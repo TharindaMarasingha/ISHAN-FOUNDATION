@@ -31,7 +31,7 @@ const PILLARS = [
 
 export function IncludedPillars() {
   return (
-    <section className="py-24 px-6 max-w-7xl mx-auto">
+    <section className="pt-12 pb-24 px-6 max-w-7xl mx-auto">
       <div className="mb-16">
         <SectionHeading
           align="center"
@@ -44,14 +44,21 @@ export function IncludedPillars() {
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
         {PILLARS.map((pillar, index) => (
           <RevealOnScroll key={pillar.title} delay={index * 0.1} className="h-full">
-            <Card className="h-full p-8 border-divider hover:-translate-y-1 hover:border-primary/40 transition-all duration-300">
-              <h3 className="font-display font-light text-2xl text-heading mb-4">
-                {pillar.title}
-              </h3>
-              <p className="font-sans font-light text-sm text-heading/80 leading-relaxed">
-                {pillar.description}
-              </p>
-            </Card>
+            <div className="group relative h-full flex flex-col p-10 bg-[#FAFAFA] hover:bg-white transition-all duration-500 ease-out hover:-translate-y-1.5 hover:shadow-[0_20px_40px_rgba(46,26,14,0.08)] overflow-hidden">
+              {/* Ghost Number */}
+              <div className="absolute -bottom-4 right-2 font-display text-[8rem] leading-none text-primary opacity-[0.02] group-hover:opacity-[0.04] transition-opacity duration-500 pointer-events-none select-none z-0">
+                {String(index + 1).padStart(2, '0')}
+              </div>
+              
+              <div className="relative z-10 flex flex-col h-full">
+                <h3 className="font-display font-light text-2xl text-heading mb-4">
+                  {pillar.title}
+                </h3>
+                <p className="font-sans font-light text-sm text-heading/80 leading-relaxed">
+                  {pillar.description}
+                </p>
+              </div>
+            </div>
           </RevealOnScroll>
         ))}
       </div>
