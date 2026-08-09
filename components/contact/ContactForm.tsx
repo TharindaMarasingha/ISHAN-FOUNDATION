@@ -135,7 +135,7 @@ export function ContactForm() {
         </div>
       </div>
 
-      <div className="flex flex-col space-y-2 flex-grow">
+      <div className="flex flex-col space-y-2">
         <label htmlFor="message" className="font-sans text-xs uppercase tracking-widest text-heading">
           Message <span className="text-primary">*</span>
         </label>

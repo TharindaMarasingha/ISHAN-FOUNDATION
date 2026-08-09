@@ -83,7 +83,7 @@ export default function Navbar() {
   }, [pathname]);
 
   const isMoreActive = moreLinks.some(link => pathname === link.href);
-  const darkHeroPages = ['/about', '/framework', '/leadership', '/ecosystem', '/programmes', '/research', '/partnerships', '/vision', '/support'];
+  const darkHeroPages = ['/about', '/framework', '/leadership', '/ecosystem', '/programmes', '/research', '/partnerships', '/vision', '/support', '/contact'];
   const isDarkHeader = darkHeroPages.includes(pathname) && !isScrolled;
 
   return (
