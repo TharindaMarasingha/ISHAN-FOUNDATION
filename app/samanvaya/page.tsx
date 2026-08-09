@@ -22,44 +22,49 @@ export default function SamanvayaPage() {
       <section className="relative w-full overflow-hidden" style={{ minHeight: '100vh' }}>
         <div className="absolute inset-0">
           <Image
-            src="/images/samanvaya-hero.webp"
-            alt="Samanvaya Transformational Retreat"
+            src="/images/saman.webp"
+            alt="Samanvaya Transformational Retreat (Desktop)"
             fill
             priority
-            className="object-cover object-center"
+            className="object-cover object-center hidden md:block"
+            sizes="100vw"
+          />
+          <Image
+            src="/images/samanm.webp"
+            alt="Samanvaya Transformational Retreat (Mobile)"
+            fill
+            priority
+            className="object-cover object-center block md:hidden"
             sizes="100vw"
           />
         </div>
-        <div className="absolute inset-0 bg-[rgba(10,4,2,0.55)]" />
-        <div className="absolute inset-0 bg-gradient-to-r from-[rgba(10,4,2,0.80)] via-[rgba(10,4,2,0.45)] to-transparent" />
+        <div className="absolute inset-0 bg-gradient-to-b from-transparent via-[rgba(10,4,2,0.3)] to-[rgba(10,4,2,0.8)]" />
         
         <div className="relative z-10 flex flex-col justify-end pt-32 pb-16 pl-12 md:pb-20 md:pl-16" style={{ minHeight: '100vh' }}>
-          <span className="inline-flex w-fit border border-primary rounded-full px-4 py-1.5 mb-3 text-primary text-xs uppercase tracking-wider">
-            From Pancha Tattva to Sampurna Sattva
-          </span>
+
           
           <h1>
-            <span className="text-white block font-display font-normal leading-tight text-3xl md:text-4xl lg:text-5xl max-w-3xl">
+            <span className="text-[#F5F1E9] block font-display font-normal leading-tight text-3xl md:text-4xl lg:text-5xl max-w-3xl [text-shadow:0_2px_4px_rgba(0,0,0,0.5)]">
               Samanvaya
             </span>
-            <span className="text-primary block font-display font-normal leading-tight text-3xl md:text-4xl lg:text-5xl">
+            <span className="text-[#F3D8DB] [text-shadow:0_2px_4px_rgba(0,0,0,0.5)] block font-display font-normal leading-tight text-3xl md:text-4xl lg:text-5xl">
               Transformational Retreat
             </span>
           </h1>
 
-          <p className="font-display italic text-white/80 text-xl md:text-2xl leading-relaxed mt-4 mb-3 max-w-2xl">
+          <p className="font-display italic text-white/90 text-xl md:text-2xl leading-relaxed mt-4 mb-3 max-w-2xl [text-shadow:0_1px_2px_rgba(0,0,0,0.5)]">
             ISHAN's Flagship Transformational Retreat
           </p>
 
-          <p className="font-sans font-light text-white/65 text-sm md:text-base leading-relaxed max-w-xl mt-2">
+          <p className="font-sans font-light text-white/80 text-sm md:text-base leading-relaxed max-w-xl mt-2 [text-shadow:0_1px_2px_rgba(0,0,0,0.5)]">
             Inspired by the timeless wisdom of the five elements, Samanvaya guides participants on a journey towards integrated wellbeing and complete human development.
           </p>
 
-          <p className="font-sans font-light text-white/65 text-sm md:text-base leading-relaxed max-w-xl mt-2">
+          <p className="font-sans font-light text-white/80 text-sm md:text-base leading-relaxed max-w-xl mt-2 [text-shadow:0_1px_2px_rgba(0,0,0,0.5)]">
             Combines yoga, meditation, breathwork, mindful movement, contemplative practices, nature connection, leadership development, experiential learning, and conscious living.
           </p>
 
-          <p className="font-sans font-light text-white/65 text-sm md:text-base leading-relaxed max-w-xl mt-2">
+          <p className="font-sans font-light text-white/80 text-sm md:text-base leading-relaxed max-w-xl mt-2 [text-shadow:0_1px_2px_rgba(0,0,0,0.5)]">
             Each experience is thoughtfully designed to restore balance across the physical, emotional, intellectual, financial, and spiritual dimensions of life.
           </p>
 
@@ -92,21 +97,35 @@ export default function SamanvayaPage() {
       </section>
 
       {/* Closing CTA */}
-      <section className="py-32 px-6 max-w-4xl mx-auto text-center flex flex-col items-center">
-        <SectionHeading
-          eyebrow="Answer the Call"
-          heading="Step Into Stillness"
-          description="Spaces for our upcoming immersions are strictly limited to preserve the intimacy and depth of the experience. Register your interest below to receive details on upcoming dates."
-          align="center"
-        />
-        <RevealOnScroll delay={0.2} className="mt-12 flex flex-col sm:flex-row gap-4 sm:gap-6 w-full sm:w-auto">
-          <Button href="/contact" variant="primary">
-            Register Interest
-          </Button>
-          <Button href="/" variant="ghost">
-            Back to Home
-          </Button>
-        </RevealOnScroll>
+      <section className="relative w-full py-32 px-6 overflow-hidden flex flex-col items-center justify-center">
+        <div className="absolute inset-0">
+          <Image
+            src="/images/samand.webp"
+            alt="Step Into Stillness Background"
+            fill
+            className="object-cover object-center"
+            sizes="100vw"
+          />
+        </div>
+        <div className="absolute inset-0 bg-[rgba(10,4,2,0.65)]" />
+        
+        <div className="relative z-10 max-w-4xl mx-auto text-center flex flex-col items-center">
+          <SectionHeading
+            eyebrow="Answer the Call"
+            heading="Step Into Stillness"
+            description="Spaces for our upcoming immersions are strictly limited to preserve the intimacy and depth of the experience. Register your interest below to receive details on upcoming dates."
+            align="center"
+            theme="dark"
+          />
+          <RevealOnScroll delay={0.2} className="mt-12 flex flex-col sm:flex-row gap-4 sm:gap-6 w-full sm:w-auto">
+            <Button href="/contact" variant="primary">
+              Register Interest
+            </Button>
+            <Button href="/" variant="ghost" className="text-white border-white hover:bg-white/10">
+              Back to Home
+            </Button>
+          </RevealOnScroll>
+        </div>
       </section>
     </div>
   );
