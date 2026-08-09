@@ -8,34 +8,30 @@ export function PageHero() {
   return (
     <section className="relative w-full overflow-hidden" style={{ minHeight: '100vh', marginTop: '0', paddingTop: '0', top: '0' }}>
       <div className="absolute inset-0" style={{ top: 0, left: 0, right: 0, bottom: 0 }}>
+        {/* Desktop Image */}
         <Image
-          src="/images/programmes-hero.webp"
+          src="/images/program.webp"
           alt="ISHAN Programmes"
           fill
           priority
-          className="object-cover object-center"
+          className="object-cover object-center hidden md:block"
+          sizes="100vw"
+        />
+        {/* Mobile Image */}
+        <Image
+          src="/images/programm.webp"
+          alt="ISHAN Programmes Mobile"
+          fill
+          priority
+          className="object-cover object-center block md:hidden"
           sizes="100vw"
         />
       </div>
-      <div className="absolute inset-0 bg-gradient-to-b from-[rgba(10,4,2,0.3)] via-[rgba(10,4,2,0.45)] to-[rgba(10,4,2,0.75)]" />
-      <div className="absolute inset-0 bg-gradient-to-r from-[rgba(10,4,2,0.7)] via-[rgba(10,4,2,0.3)] to-transparent" />
-      {/* Left-side radial glow */}
-      <div 
-        className="absolute inset-0 pointer-events-none z-0"
-        style={{
-          background: 'radial-gradient(ellipse 60% 80% at 0% 50%, rgba(255, 160, 100, 0.25) 0%, rgba(255, 200, 150, 0.12) 40%, transparent 70%)'
-        }}
-      />
+      {/* Subtle bottom gradient for text legibility */}
+      <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-black/40" />
       <ParallaxBackground fadeRange={[100, 600]} driftRate={0.1} />
       <div className="relative z-10 flex flex-col justify-end pb-16 pl-12 md:pb-20 md:pl-16" style={{ minHeight: '100vh' }}>
-        <motion.span
-          initial={{ opacity: 0, y: 10 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, ease: "easeOut" }}
-          className="inline-flex w-fit border border-primary rounded-full px-4 py-1.5 text-primary text-xs uppercase tracking-[0.18em] font-sans mb-4"
-        >
-          Programmes & Experiences
-        </motion.span>
+
         
         <motion.h1
           initial={{ opacity: 0, y: 20 }}

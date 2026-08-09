@@ -1,8 +1,7 @@
 import { PageHero } from "@/components/programmes/PageHero";
 import { 
   CoreProgrammesSection, 
-  ProfessionalDevelopmentSection, 
-  TrainingSection, 
+  ProfessionalDevelopmentAndCertificationSection, 
   ProgrammesCTASection 
 } from "@/components/programmes/ProgrammesSections";
 
@@ -21,8 +20,7 @@ export default function ProgrammesPage() {
     <div className="-mt-24">
       <PageHero />
       <CoreProgrammesSection />
-      <ProfessionalDevelopmentSection />
-      <TrainingSection />
+      <ProfessionalDevelopmentAndCertificationSection />
       <ProgrammesCTASection />
     </div>
   );
