@@ -68,8 +68,8 @@ export default function SamanvayaPage() {
             Each experience is thoughtfully designed to restore balance across the physical, emotional, intellectual, financial, and spiritual dimensions of life.
           </p>
 
-          <div className="mt-8 flex flex-col w-full sm:w-auto">
-            <Button href="/samanvaya/packages" variant="primary" className="w-full sm:w-auto text-center">
+          <div className="mt-8">
+            <Button href="/samanvaya/packages" variant="primary">
               See the Packages
             </Button>
           </div>
