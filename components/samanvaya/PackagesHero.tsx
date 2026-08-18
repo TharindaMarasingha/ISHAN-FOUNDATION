@@ -4,7 +4,7 @@ import React, { useState, useEffect } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { ChevronDown, ArrowRight } from "lucide-react";
-import { motion, useReducedMotion } from "framer-motion";
+import { motion, useReducedMotion, Variants } from "framer-motion";
 
 export function PackagesHero() {
   const prefersReducedMotion = useReducedMotion();
@@ -13,7 +13,7 @@ export function PackagesHero() {
   const fullQuote = "\"A life becomes timeless when its wisdom continues to live through its contribution.\"";
 
   // Animation variants
-  const containerVariants = {
+  const containerVariants: Variants = {
     hidden: { opacity: 0 },
     visible: {
       opacity: 1,
@@ -24,12 +24,12 @@ export function PackagesHero() {
     },
   };
 
-  const itemVariants = {
+  const itemVariants: Variants = {
     hidden: { opacity: 0, y: shouldReduceMotion ? 0 : 12 },
-    visible: { 
-      opacity: 1, 
+    visible: {
+      opacity: 1,
       y: 0,
-      transition: { duration: 0.6, ease: "easeOut" } 
+      transition: { duration: 0.6, ease: "easeOut" }
     },
   };
 
