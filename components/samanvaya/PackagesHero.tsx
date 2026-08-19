@@ -111,7 +111,7 @@ export function PackagesHero() {
           {/* CTA Button */}
           <motion.div variants={itemVariants}>
             <Link 
-              href="/about" 
+              href="#packages-content" 
               className="inline-flex items-center justify-center bg-[#DE5680] text-white px-[28px] py-[12px] rounded-full font-sans text-[14px] font-medium tracking-wide shadow-md hover:scale-[1.02] hover:bg-[#c94a70] focus:outline-none focus:ring-2 focus:ring-[#DE5680] focus:ring-offset-2 focus:ring-offset-black/50 transition-all duration-300 group"
             >
               Begin the Journey

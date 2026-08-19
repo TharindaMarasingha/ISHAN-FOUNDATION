@@ -7,6 +7,7 @@ import { SectionHeading } from "@/components/ui/SectionHeading";
 import { RevealOnScroll } from "@/components/ui/RevealOnScroll";
 import Script from "next/script";
 import { PackagesHero } from "@/components/samanvaya/PackagesHero";
+import { TopographicJourney } from "@/components/samanvaya/TopographicJourney";
 
 const packages = [
   {
@@ -16,7 +17,7 @@ const packages = [
     location: "Galle & Mirissa Coast",
     price: 1000,
     route: ["Negombo", "Mirissa", "Ella", "Kandy", "Negombo"],
-    image: "/images/saman.webp",
+    image: "/images/sp1.webp",
     elements: ["Water", "Air"],
     benefits: [
       "Daily sunrise yoga by the ocean",
@@ -30,26 +31,6 @@ const packages = [
     ),
   },
   {
-    id: "central_heritage",
-    name: "Central Heritage Trail",
-    days: "8 Days",
-    location: "Kandy & Cultural Triangle",
-    price: 1200,
-    route: ["Negombo", "Kandy", "Sigiriya", "Anuradhapura", "Negombo"],
-    image: "/images/samanc.webp",
-    elements: ["Earth", "Fire"],
-    benefits: [
-      "Immersive ancient temple visits",
-      "Silent nature walks in the hills",
-      "Evening philosophical discourses",
-    ],
-    icon: (
-      <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
-      </svg>
-    ),
-  },
-  {
     id: "whole_island",
     name: "Whole Island Immersion",
     days: "14 Days",
@@ -57,7 +38,7 @@ const packages = [
     price: 2500,
     popular: true,
     route: ["Negombo", "Mirissa", "Ella", "Kandy", "Sigiriya", "Anuradhapura", "Negombo"],
-    image: "/images/samand.webp",
+    image: "/images/sp2.webp",
     elements: ["Water", "Air", "Earth"],
     benefits: [
       "Complete 5-elements integration",
@@ -67,6 +48,26 @@ const packages = [
     icon: (
       <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+      </svg>
+    ),
+  },
+  {
+    id: "central_heritage",
+    name: "Central Heritage Trail",
+    days: "8 Days",
+    location: "Kandy & Cultural Triangle",
+    price: 1200,
+    route: ["Negombo", "Kandy", "Sigiriya", "Anuradhapura", "Negombo"],
+    image: "/images/sp3.webp",
+    elements: ["Earth", "Fire"],
+    benefits: [
+      "Immersive ancient temple visits",
+      "Silent nature walks in the hills",
+      "Evening philosophical discourses",
+    ],
+    icon: (
+      <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
       </svg>
     ),
   },
@@ -219,15 +220,9 @@ export default function PackagesPage() {
 
       <PackagesHero />
 
-      <div id="packages-content" className="pt-20 md:pt-32 pb-24 bg-white relative overflow-clip">
-        {/* Decorative Lotus SVG */}
-        <div className="absolute left-0 top-[8%] md:top-[4%] -translate-x-[50%] md:-translate-x-[45%] pointer-events-none z-0 opacity-20">
-          <img 
-            src="/lotus.svg" 
-            alt="Lotus decoration" 
-            className="w-[300px] md:w-[450px] lg:w-[650px] h-auto transform rotate-6" 
-          />
-        </div>
+      <div id="packages-content" className="pt-32 md:pt-[120px] pb-24 bg-white relative overflow-clip">
+
+
         
         <div className="max-w-7xl mx-auto px-6 md:px-12 relative z-10">
         <div className="text-center mb-12">
@@ -242,29 +237,30 @@ export default function PackagesPage() {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-20">
           {packages.map((pkg, index) => (
             <RevealOnScroll key={pkg.id} delay={index * 0.1}>
-              <div className={`relative flex flex-col h-full bg-surface rounded-3xl overflow-hidden border ${pkg.popular ? 'border-primary shadow-lg shadow-primary/20 scale-105 z-10' : 'border-divider'}`}>
+              <div className={`relative flex flex-col h-full rounded-3xl ${pkg.popular ? 'p-[2px] bg-gradient-to-br from-[#9FBB90] to-[#d4af37] shadow-xl md:-translate-y-4 z-20' : 'bg-transparent border border-divider shadow-sm z-10'}`}>
                 
                 {pkg.popular && (
-                  <div className="absolute top-0 inset-x-0 bg-primary text-white text-xs font-sans font-bold uppercase tracking-widest py-1.5 text-center rounded-t-3xl z-20">
+                  <div className="absolute -top-4 left-1/2 -translate-x-1/2 bg-[#1a362d] text-white text-xs font-sans font-bold uppercase tracking-widest py-1.5 px-6 text-center rounded-full z-30 whitespace-nowrap shadow-md">
                     Most Popular
                   </div>
                 )}
                 
-                <div className="relative h-48 w-full overflow-hidden shrink-0">
+                <div className="relative flex flex-col h-full bg-[#F7F4EC] rounded-[22px] overflow-hidden">
+                  <div className="relative h-48 mx-4 mt-4 overflow-hidden shrink-0 rounded-2xl shadow-[0_8px_30px_rgb(0,0,0,0.12)]">
                   <div className="absolute inset-0 bg-black/10 z-10 transition-opacity hover:opacity-0 duration-500"></div>
                   <Image src={pkg.image || "/images/saman.webp"} alt={pkg.name} fill className="object-cover transition-transform duration-700 hover:scale-105" />
-                  <div className="absolute bottom-3 left-3 z-20 flex flex-wrap gap-1.5">
-                    {pkg.elements?.map((el: string, idx: number) => (
-                      <span key={idx} className="bg-white/80 backdrop-blur-md text-heading text-[10px] uppercase tracking-widest px-2.5 py-1 rounded-full font-sans font-medium shadow-sm">
-                        {el}
-                      </span>
-                    ))}
-                  </div>
+
                 </div>
+
                 
-                <div className={`p-8 flex-grow flex flex-col`}>
-                  <div className="flex items-center justify-between mb-4">
+                  <div className={`p-10 flex-grow flex flex-col`}>
+                  <div className="flex items-center gap-3 mb-4 mt-2">
                     <div className="text-primary">{pkg.icon}</div>
+                    {pkg.elements && pkg.elements.length > 0 && (
+                      <div className="text-[10px] font-sans text-primary/80 font-bold tracking-[0.2em] uppercase">
+                        {pkg.elements.join(" · ")}
+                      </div>
+                    )}
                   </div>
                   
                   <div className="text-xs font-sans text-primary font-semibold tracking-widest uppercase mb-2">
@@ -317,19 +313,25 @@ export default function PackagesPage() {
                       onClick={() => handleReserveClick(pkg.id)}
                       className={`w-full py-4 rounded-full font-sans text-xs uppercase tracking-widest transition-colors duration-300 ${
                         pkg.popular 
-                          ? 'bg-[#DE5680] text-white hover:brightness-105 [text-shadow:0_1px_3px_rgba(0,0,0,0.3)]' 
-                          : 'bg-transparent border border-primary text-primary hover:bg-[#DE5680] hover:border-transparent hover:text-white hover:[text-shadow:0_1px_3px_rgba(0,0,0,0.3)]'
+                          ? 'bg-[#1a362d] text-white hover:brightness-125 [text-shadow:0_1px_3px_rgba(0,0,0,0.3)]' 
+                          : 'bg-transparent border border-green-900 text-green-900 hover:bg-green-900 hover:text-white'
                       }`}
                     >
                       Reserve my spot
                     </button>
                   </div>
                 </div>
+                </div>
               </div>
             </RevealOnScroll>
           ))}
         </div>
 
+        </div>
+
+        <TopographicJourney />
+
+        <div className="max-w-7xl mx-auto px-6 md:px-12 relative z-10 pt-24">
         {/* What's included */}
         <RevealOnScroll delay={0.2} className="mb-20">
           <div className="max-w-4xl mx-auto">
