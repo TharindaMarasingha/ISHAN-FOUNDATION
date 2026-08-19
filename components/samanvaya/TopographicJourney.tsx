@@ -58,7 +58,7 @@ export function TopographicJourney() {
   const activeNode = trailNodes[activeIndex];
 
   return (
-    <section className="relative w-full h-[900px] md:h-screen min-h-[800px] max-h-[1200px] overflow-hidden bg-black text-white">
+    <section className="relative w-full h-[85vh] md:h-screen min-h-[600px] md:min-h-[800px] max-h-[1200px] overflow-hidden bg-black text-white">
       
       {/* 1. Dynamic Background Images */}
       {trailNodes.map((node, index) => (
@@ -79,34 +79,37 @@ export function TopographicJourney() {
       ))}
 
       {/* 2. Gradient Overlay for Text Readability */}
-      <div className="absolute inset-0 bg-gradient-to-t md:bg-gradient-to-r from-black/70 via-black/20 to-transparent z-0"></div>
+      <div className="absolute inset-0 bg-gradient-to-t md:bg-gradient-to-r from-black/90 md:from-black/70 via-black/40 md:via-black/20 to-transparent z-0"></div>
       <div className="absolute inset-0 bg-black/10 z-0"></div>
 
       <div className="absolute inset-0 max-w-7xl mx-auto px-6 lg:px-12 z-10 flex flex-col md:flex-row h-full">
         
         {/* 3. Left Content Area */}
-        <div className="w-full md:w-1/2 lg:w-5/12 h-full flex flex-col justify-end md:justify-center pb-32 md:pb-0 pt-20">
+        <div className="relative z-10 w-full md:w-1/2 lg:w-5/12 h-full flex flex-col justify-end md:justify-center pb-32 md:pb-0 pt-20">
           
-          <div className="inline-block px-4 py-1.5 rounded-full border border-white/30 text-xs font-sans uppercase tracking-widest mb-6 w-max backdrop-blur-sm bg-black/20">
+          {/* Glassmorphism Badge */}
+          <div className="w-max px-4 py-1.5 mb-6 rounded-full bg-white/10 backdrop-blur-md border border-white/20 text-white text-[10px] md:text-xs font-bold tracking-widest uppercase">
             Samanvaya Immersions
           </div>
           
-          <h2 className="font-display text-5xl md:text-6xl lg:text-7xl leading-tight mb-6 text-white drop-shadow-lg">
-            The island becomes part of the journey.
+          {/* Typography */}
+          <h2 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-display text-white leading-tight mb-4 drop-shadow-lg">
+            The island <br className="md:hidden" />
+            becomes part of <br className="md:hidden" />
+            the journey.
           </h2>
           
-          <p className="font-sans text-lg md:text-xl text-white/90 font-light leading-relaxed mb-10 drop-shadow-md min-h-[120px]">
+          <p className="font-sans text-sm md:text-xl text-white/90 font-light leading-relaxed mb-8 max-w-sm md:max-w-none drop-shadow-md min-h-[80px] md:min-h-[120px]">
             {activeNode.description}
           </p>
           
+          {/* Glassmorphism Button */}
           <Link 
             href="#reserve"
-            className="group flex items-center gap-3 w-max px-8 py-4 rounded-full bg-white/10 backdrop-blur-md border border-white/20 hover:bg-white hover:text-black transition-all duration-300"
+            className="group flex items-center justify-center md:justify-start gap-3 w-full sm:w-auto md:w-max px-8 py-4 rounded-full bg-white/10 backdrop-blur-md border border-white/30 text-white hover:bg-white/20 hover:text-white transition-all duration-300"
           >
-            <span className="font-sans text-sm uppercase tracking-widest font-medium">Explore Packages</span>
-            <svg className="w-5 h-5 transform group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M17 8l4 4m0 0l-4 4m4-4H3" />
-            </svg>
+            <span className="font-sans text-xs uppercase tracking-widest font-bold">Explore Packages</span>
+            <span className="font-sans text-lg">&rarr;</span>
           </Link>
         </div>
 
@@ -179,17 +182,19 @@ export function TopographicJourney() {
               <button
                 key={`mob-${node.id}`}
                 onClick={() => setActiveIndex(index)}
-                className={`snap-center shrink-0 relative rounded-full overflow-hidden transition-all duration-300 ${
-                  isActive ? "w-20 h-20 ring-4 ring-white/40" : "w-16 h-16 opacity-60"
+                className={`snap-center shrink-0 relative rounded-full transition-all duration-300 ${
+                  isActive ? "w-16 h-16 p-1 border-2 border-white/80" : "w-14 h-14 opacity-60 hover:opacity-100"
                 }`}
               >
-                <Image
-                  src={node.image}
-                  alt={node.name}
-                  fill
-                  className="object-cover"
-                  sizes="80px"
-                />
+                <div className="relative w-full h-full rounded-full overflow-hidden">
+                  <Image
+                    src={node.image}
+                    alt={node.name}
+                    fill
+                    className="object-cover"
+                    sizes="64px"
+                  />
+                </div>
               </button>
             );
           })}
