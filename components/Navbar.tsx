@@ -132,10 +132,10 @@ export default function Navbar() {
                   href={link.href}
                   className={`font-sans font-normal text-[10px] uppercase tracking-[0.06em] transition-colors duration-300 ${
                     isActive 
-                      ? "text-primary" 
+                      ? (isDarkHeader ? "text-white font-medium" : "text-primary") 
                       : (isDarkHeader ? "text-white/80 hover:text-white" : "text-heading hover:text-primary")
                   }`}
-                  style={isDarkHeader && !isActive ? { textShadow: '0 1px 3px rgba(0,0,0,0.5)' } : {}}
+                  style={isDarkHeader ? { textShadow: '0 1px 3px rgba(0,0,0,0.5)' } : {}}
                 >
                   {link.label}
                 </Link>
@@ -148,10 +148,10 @@ export default function Navbar() {
                 onClick={() => setIsMoreOpen(!isMoreOpen)}
                 className={`flex items-center gap-1 font-sans font-normal text-[10px] uppercase tracking-[0.06em] transition-colors duration-300 outline-none ${
                   isMoreActive || isMoreOpen 
-                    ? "text-primary"
+                    ? (isDarkHeader ? "text-white font-medium" : "text-primary")
                     : (isDarkHeader ? "text-white/80 hover:text-white" : "text-heading hover:text-primary")
                 }`}
-                style={(isDarkHeader && !(isMoreActive || isMoreOpen)) ? { textShadow: '0 1px 3px rgba(0,0,0,0.5)' } : {}}
+                style={isDarkHeader ? { textShadow: '0 1px 3px rgba(0,0,0,0.5)' } : {}}
               >
                 MORE <ChevronDown size={12} className={`transition-transform duration-300 ${isMoreOpen ? 'rotate-180' : ''}`} />
               </button>

@@ -9,7 +9,7 @@ export function PageHero() {
     <section className="relative w-full overflow-hidden" style={{ minHeight: '100vh', marginTop: '0', paddingTop: '0', top: '0' }}>
       <div className="absolute inset-0" style={{ top: 0, left: 0, right: 0, bottom: 0 }}>
         <Image
-          src="/images/support-hero.webp"
+          src="/images/suport.webp"
           alt="ISHAN Support"
           fill
           priority
@@ -27,31 +27,29 @@ export function PageHero() {
         }}
       />
       <ParallaxBackground fadeRange={[100, 600]} driftRate={0.1} />
-      <div className="relative z-10 flex flex-col justify-end pb-16 pl-12 md:pb-20 md:pl-16" style={{ minHeight: '100vh' }}>
-        <motion.span
-          initial={{ opacity: 0, y: 10 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, ease: "easeOut" }}
-          className="inline-flex w-fit border border-primary rounded-full px-4 py-1.5 text-primary text-xs uppercase tracking-[0.18em] font-sans mb-4"
-        >
-          Support Our Mission
-        </motion.span>
-        
+      <div className="relative z-10 flex flex-col justify-end w-full px-6 pb-24 pt-32 max-w-[95%] sm:max-w-sm md:pb-20 md:px-16 md:max-w-3xl" style={{ minHeight: '100vh' }}>
         <motion.h1
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1, ease: "easeOut", delay: 0.2 }}
-          className="font-display font-normal leading-tight text-white text-4xl md:text-5xl lg:text-6xl max-w-3xl mb-4"
+          className="text-4xl sm:text-5xl lg:text-6xl font-display text-[#F8F7F2] leading-tight mb-4 drop-shadow-xl"
         >
-          <span className="text-[#F5F1E9] block">Become a Steward of</span>
-          <span className="text-[#F3D8DB] [text-shadow:0_2px_4px_rgba(0,0,0,0.5)] block">Positive Change</span>
+          Become a Steward of <br className="hidden md:block" /> Positive Change
         </motion.h1>
+
+        {/* Global Editorial Divider */}
+        <motion.div
+          initial={{ opacity: 0, scaleX: 0 }}
+          animate={{ opacity: 1, scaleX: 1 }}
+          transition={{ duration: 1, ease: "easeOut", delay: 0.3 }}
+          className="w-12 h-px bg-[#F8F7F2]/40 mb-6 origin-left"
+        ></motion.div>
 
         <motion.p
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 1, ease: "easeOut", delay: 0.4 }}
-          className="font-sans font-light text-white/65 text-sm md:text-base leading-relaxed max-w-xl"
+          className="text-[#F8F7F2]/70 font-light text-sm md:text-base leading-relaxed drop-shadow-sm pr-2 max-w-xl"
         >
           Every meaningful transformation begins with individuals who choose to care, contribute, and take responsibility. ISHAN is more than an institution — it is a global movement.
         </motion.p>
