@@ -3,9 +3,7 @@ import {
   AreasOfResearchSection, 
   EducationApproachSection, 
   PublicationsSection, 
-  DigitalLearningSection, 
-  KnowledgeResourcesSection, 
-  ResearchCTASection 
+  ResourcesAndCTASection
 } from "@/components/research/ResearchSections";
 
 import { Metadata } from 'next';
@@ -25,9 +23,7 @@ export default function ResearchPage() {
       <AreasOfResearchSection />
       <EducationApproachSection />
       <PublicationsSection />
-      <DigitalLearningSection />
-      <KnowledgeResourcesSection />
-      <ResearchCTASection />
+      <ResourcesAndCTASection />
     </div>
   );
 }
