@@ -17,7 +17,7 @@ export default function ContactPage() {
   return (
     <>
       <div className="-mt-24">
-        <section className="relative w-full overflow-hidden" style={{ minHeight: '100vh' }}>
+        <section className="relative w-full min-h-[100svh] flex flex-col justify-end overflow-hidden" style={{ minHeight: '100vh' }}>
           <div className="absolute inset-0">
             <Image
               src="/images/cone.webp"
@@ -28,24 +28,28 @@ export default function ContactPage() {
               sizes="100vw"
             />
           </div>
-          <div className="absolute inset-0 bg-gradient-to-b from-transparent via-[rgba(10,4,2,0.3)] to-[rgba(10,4,2,0.8)]" />
           
-          <div className="relative z-10 flex flex-col justify-end pb-16 pl-12 md:pb-20 md:pl-16" style={{ minHeight: '100vh' }}>
+          {/* Mobile Standard Scrim (Adjusted to keep BG visible). Desktop uses original gradient */}
+          <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent md:bg-gradient-to-b md:from-transparent md:via-[rgba(10,4,2,0.3)] md:to-[rgba(10,4,2,0.8)]" />
+          
+          <div className="relative z-10 w-full px-6 pb-24 pt-32 md:pb-20 md:pl-16 md:px-12 max-w-[95%] sm:max-w-sm md:max-w-3xl">
 
-            <h1>
-              <span className="text-[#F5F1E9] block font-display font-normal leading-tight text-4xl md:text-5xl lg:text-6xl max-w-4xl [text-shadow:0_2px_4px_rgba(0,0,0,0.5)]">
-                Connect With
+            <h1 className="font-display font-normal leading-tight text-white text-4xl sm:text-5xl md:text-6xl mb-4 drop-shadow-lg [text-shadow:0_2px_4px_rgba(0,0,0,0.5)]">
+              <span className="text-[#F8F7F2] block">
+                Connect With <br className="md:hidden" />
               </span>
-              <span className="text-[#F3D8DB] [text-shadow:0_2px_4px_rgba(0,0,0,0.5)] block font-display font-normal leading-tight text-4xl md:text-5xl lg:text-6xl">
+              <span className="text-[#F3D8DB] block">
                 ISHAN
               </span>
             </h1>
 
-            <p className="font-display italic text-white/90 text-xl md:text-2xl leading-relaxed mt-4 mb-3 max-w-2xl [text-shadow:0_1px_2px_rgba(0,0,0,0.5)]">
+            <p className="font-display italic text-[#F8F7F2]/90 text-base md:text-xl md:text-2xl leading-relaxed mb-6 max-w-2xl drop-shadow [text-shadow:0_1px_2px_rgba(0,0,0,0.5)]">
               Let's Build the Future Together
             </p>
 
-            <p className="font-sans font-light text-white/80 text-sm md:text-base leading-relaxed max-w-xl mt-2 [text-shadow:0_1px_2px_rgba(0,0,0,0.5)]">
+            <div className="w-12 h-px bg-[#F8F7F2]/40 mb-6"></div>
+
+            <p className="font-sans font-light text-[#F8F7F2]/70 text-sm md:text-base leading-relaxed max-w-xl drop-shadow-sm pr-2 md:pr-0 [text-shadow:0_1px_2px_rgba(0,0,0,0.5)]">
               Every meaningful journey begins with a conversation. Whether you are an individual seeking personal growth, an institution exploring collaboration, a professional looking to contribute, or an organisation committed to creating positive impact, we welcome the opportunity to connect with you.
             </p>
           </div>

@@ -19,62 +19,65 @@ export const metadata: Metadata = {
 export default function SamanvayaPage() {
   return (
     <div className="-mt-24">
-      <section className="relative w-full overflow-hidden" style={{ minHeight: '100vh' }}>
-        <div className="absolute inset-0">
-          <Image
-            src="/images/saman.webp"
-            alt="Samanvaya Transformational Retreat (Desktop)"
-            fill
-            priority
-            className="object-cover object-center hidden md:block"
-            sizes="100vw"
-          />
-          <Image
-            src="/images/samanm.webp"
-            alt="Samanvaya Transformational Retreat (Mobile)"
-            fill
-            priority
-            className="object-cover object-top block md:hidden"
-            sizes="100vw"
-          />
-        </div>
-        <div className="absolute inset-0 bg-gradient-to-b from-transparent via-[rgba(10,4,2,0.3)] to-[rgba(10,4,2,0.8)]" />
-        
-        <div className="relative z-10 flex flex-col justify-end pt-32 pb-16 px-6 md:pb-20 md:pl-16" style={{ minHeight: '100vh' }}>
-
-          
-          <h1>
-            <span className="text-[#F5F1E9] block font-display font-normal leading-tight text-3xl md:text-4xl lg:text-5xl max-w-3xl [text-shadow:0_2px_4px_rgba(0,0,0,0.5)]">
-              Samanvaya
-            </span>
-            <span className="text-[#F3D8DB] [text-shadow:0_2px_4px_rgba(0,0,0,0.5)] block font-display font-normal leading-tight text-3xl md:text-4xl lg:text-5xl">
-              Transformational Retreat
-            </span>
-          </h1>
-
-          <p className="font-display italic text-white/90 text-xl md:text-2xl leading-relaxed mt-4 mb-3 max-w-2xl [text-shadow:0_1px_2px_rgba(0,0,0,0.5)]">
-            ISHAN's Flagship Transformational Retreat
-          </p>
-
-          <p className="font-sans font-light text-white/80 text-sm md:text-base leading-relaxed max-w-xl mt-2 [text-shadow:0_1px_2px_rgba(0,0,0,0.5)]">
-            Inspired by the timeless wisdom of the five elements, Samanvaya guides participants on a journey towards integrated wellbeing and complete human development.
-          </p>
-
-          <p className="font-sans font-light text-white/80 text-sm md:text-base leading-relaxed max-w-xl mt-2 [text-shadow:0_1px_2px_rgba(0,0,0,0.5)]">
-            Combines yoga, meditation, breathwork, mindful movement, contemplative practices, nature connection, leadership development, experiential learning, and conscious living.
-          </p>
-
-          <p className="font-sans font-light text-white/80 text-sm md:text-base leading-relaxed max-w-xl mt-2 [text-shadow:0_1px_2px_rgba(0,0,0,0.5)]">
-            Each experience is thoughtfully designed to restore balance across the physical, emotional, intellectual, financial, and spiritual dimensions of life.
-          </p>
-
-          <div className="mt-8">
-            <Button href="/samanvaya/packages" variant="primary">
-              See the Packages
-            </Button>
+        <section className="relative w-full min-h-[100svh] flex flex-col justify-end overflow-hidden" style={{ minHeight: '100vh' }}>
+          <div className="absolute inset-0">
+            <Image
+              src="/images/saman.webp"
+              alt="Samanvaya Transformational Retreat (Desktop)"
+              fill
+              priority
+              className="object-cover object-center hidden md:block"
+              sizes="100vw"
+            />
+            <Image
+              src="/images/samanm.webp"
+              alt="Samanvaya Transformational Retreat (Mobile)"
+              fill
+              priority
+              className="object-cover object-top block md:hidden"
+              sizes="100vw"
+            />
           </div>
-        </div>
-      </section>
+          
+          {/* Mobile Soft Natural Scrim. Desktop uses original gradient */}
+          <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent md:bg-gradient-to-b md:from-transparent md:via-[rgba(10,4,2,0.3)] md:to-[rgba(10,4,2,0.8)]" />
+          
+          <div className="relative z-10 w-full px-6 pb-24 pt-32 md:pb-20 md:pl-16 md:px-12 max-w-[95%] sm:max-w-sm md:max-w-3xl">
+
+            <h1 className="text-4xl sm:text-5xl md:text-6xl font-serif text-[#F8F7F2] leading-tight mb-2 drop-shadow-lg font-display">
+              Samanvaya
+            </h1>
+            <h2 className="text-2xl sm:text-3xl md:text-5xl font-serif text-[#F3D8DB] mb-4 drop-shadow-md font-display">
+              Transformational Retreat
+            </h2>
+
+            <p className="text-[#F8F7F2]/90 font-serif italic text-sm md:text-2xl leading-relaxed mb-6 drop-shadow font-display">
+              ISHAN's Flagship Transformational Retreat
+            </p>
+
+            {/* The Editorial Divider */}
+            <div className="w-12 h-px bg-[#F8F7F2]/40 mb-6"></div>
+
+            {/* The Transparent Text Block */}
+            <div className="space-y-4 mb-10 max-w-xl">
+              <p className="text-[#F8F7F2]/80 font-light text-[13px] md:text-base leading-relaxed drop-shadow-md font-sans">
+                Inspired by the timeless wisdom of the five elements, Samanvaya guides participants on a journey towards integrated wellbeing and complete human development.
+              </p>
+              <p className="text-[#F8F7F2]/80 font-light text-[13px] md:text-base leading-relaxed drop-shadow-md font-sans">
+                Combines yoga, meditation, breathwork, mindful movement, contemplative practices, nature connection, leadership development, experiential learning, and conscious living.
+              </p>
+              <p className="text-[#F8F7F2]/80 font-light text-[13px] md:text-base leading-relaxed drop-shadow-md font-sans">
+                Each experience is thoughtfully designed to restore balance across the physical, emotional, intellectual, financial, and spiritual dimensions of life.
+              </p>
+            </div>
+
+            <div className="w-full sm:w-auto">
+              <Button href="/samanvaya/packages" className="w-full sm:w-auto bg-[#D45B7E] hover:bg-[#b84a68] text-white px-8 py-3.5 rounded-full font-medium transition-all shadow-lg text-sm tracking-wide">
+                See the Packages
+              </Button>
+            </div>
+          </div>
+        </section>
       
       <TheExperience />
       

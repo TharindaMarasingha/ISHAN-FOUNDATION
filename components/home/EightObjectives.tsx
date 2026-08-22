@@ -137,9 +137,9 @@ export function EightObjectives() {
           />
         </div>
 
-        {/* Gallery Grid */}
+        {/* Desktop View: Gallery Grid */}
         <motion.div
-            className="grid grid-cols-1 sm:grid-cols-3 md:grid-cols-4 gap-3 auto-rows-[200px]"
+            className="hidden md:grid grid-cols-3 md:grid-cols-4 gap-3 auto-rows-[200px]"
             initial="hidden"
             animate="visible"
             variants={{
@@ -153,7 +153,7 @@ export function EightObjectives() {
             {OBJECTIVES.map((item, index) => (
                 <motion.div
                     key={item.id}
-                    className={`relative overflow-hidden rounded-2xl cursor-pointer group ${item.span}`}
+                    className={`relative overflow-hidden rounded-2xl cursor-pointer group ${item.span} shadow-lg`}
                     style={{ willChange: "transform, opacity" }}
                     onClick={() => setActiveImage({ src: item.url, title: item.title })}
                     variants={{
@@ -170,13 +170,12 @@ export function EightObjectives() {
                             }
                         }
                     }}
-                    whileHover={{ scale: 1.02 }}
                 >
                     <Image 
                       src={item.url} 
                       fill 
                       sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-                      className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" 
+                      className="absolute inset-0 w-full h-full object-cover transition-transform duration-1000 ease-in-out group-hover:scale-110" 
                       alt={item.title} 
                     />
 
@@ -185,28 +184,27 @@ export function EightObjectives() {
                         <Expand className="w-5 h-5 text-white" />
                     </div>
 
+                    {/* The Brand Tint Scrim (The Color Fix) */}
+                    <div className="absolute inset-0 bg-gradient-to-t from-[#1F2A21] via-[#1F2A21]/70 to-transparent opacity-90 transition-opacity duration-500 group-hover:opacity-100 pointer-events-none"></div>
+
                     <div
-                        className="absolute inset-0 flex flex-col justify-between p-5 pointer-events-none"
+                        className="absolute inset-0 flex flex-col justify-between p-6 pointer-events-none"
                     >
-                        <div className="absolute inset-0 bg-black/20 pointer-events-none" />
-                        <div className="absolute inset-0 bg-gradient-to-t from-black/95 via-black/50 to-transparent pointer-events-none" />
-                        <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-transparent to-transparent pointer-events-none" />
-                        
                         {/* Number / Top Right */}
                         <div className="relative z-10 self-end">
-                          <span className="font-forum text-5xl text-white/50">{String(item.id).padStart(2, '0')}</span>
+                          <span className="font-forum text-4xl sm:text-5xl text-white/50">{String(item.id).padStart(2, '0')}</span>
                         </div>
                         
                         {/* Text Bottom */}
-                        <div className="relative z-10 mt-auto">
+                        <div className="relative z-10 mt-auto transform translate-y-4 group-hover:translate-y-0 transition-transform duration-500">
                             <h3 
-                                className="text-white text-lg sm:text-xl font-display uppercase tracking-widest font-medium mb-1"
+                                className="text-[#F8F7F2] text-lg sm:text-xl md:text-2xl font-display uppercase tracking-widest font-medium mb-1 md:mb-2"
                                 style={{ display: '-webkit-box', WebkitLineClamp: 2, WebkitBoxOrient: 'vertical', overflow: 'hidden' }}
                             >
                                 {item.title}
                             </h3>
                             <p 
-                                className="text-white/80 font-light text-sm sm:text-base mt-1"
+                                className="text-[#F8F7F2]/70 font-sans font-light text-sm sm:text-base leading-relaxed opacity-80 group-hover:opacity-100 transition-opacity duration-500"
                                 style={{ display: '-webkit-box', WebkitLineClamp: 3, WebkitBoxOrient: 'vertical', overflow: 'hidden' }}
                             >
                                 {item.desc}
@@ -216,6 +214,36 @@ export function EightObjectives() {
                 </motion.div>
             ))}
         </motion.div>
+
+        {/* Mobile View: Scannable Text List */}
+        <div className="block md:hidden mt-2">
+          <div className="flex flex-col">
+            {OBJECTIVES.map((item) => (
+              <div key={item.id} className="flex items-start gap-4 py-6 border-b border-divider last:border-b-0">
+                {/* Number/Thumbnail Block */}
+                <div className="w-14 h-14 shrink-0 rounded-full overflow-hidden flex flex-col items-center justify-center relative shadow-inner">
+                  <Image 
+                    src={item.url}
+                    alt={item.title}
+                    fill
+                    className="object-cover opacity-70"
+                    sizes="56px"
+                  />
+                  <div className="absolute inset-0 bg-black/50" />
+                  <span className="relative z-10 text-[#F5F1E9] font-forum text-lg tracking-wider mt-0.5">
+                    {String(item.id).padStart(2, '0')}
+                  </span>
+                </div>
+
+                {/* Text Block */}
+                <div className="flex flex-col pt-1">
+                  <h3 className="text-xl font-display text-heading mb-1.5 leading-tight">{item.title}</h3>
+                  <p className="text-sm text-secondary font-sans font-light leading-relaxed pr-2">{item.desc}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
       </div>
 
       {/* Lightbox Modal */}

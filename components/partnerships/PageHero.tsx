@@ -27,26 +27,25 @@ export function PageHero() {
         }}
       />
       <ParallaxBackground fadeRange={[100, 600]} driftRate={0.1} />
-      <div className="relative z-10 flex flex-col justify-end pb-16 pl-12 md:pb-20 md:pl-16" style={{ minHeight: '100vh' }}>
-        <motion.span
-          initial={{ opacity: 0, y: 10 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, ease: "easeOut" }}
-          className="inline-flex w-fit border border-primary rounded-full px-4 py-1.5 text-primary text-xs uppercase tracking-[0.18em] font-sans mb-4"
-        >
-          Partnerships
-        </motion.span>
+      <div className="relative z-10 flex flex-col justify-end pb-24 pl-6 md:pb-24 md:pl-16" style={{ minHeight: '100vh' }}>
         
         <motion.h1
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1, ease: "easeOut", delay: 0.2 }}
-          className="font-display font-normal leading-tight text-white text-4xl md:text-5xl lg:text-6xl max-w-3xl mb-4"
+          className="font-display font-normal leading-tight text-white text-4xl md:text-5xl lg:text-6xl max-w-3xl mb-6"
         >
-          <span className="text-[#F5F1E9] block">Together, We Create</span>
-          <span className="text-[#F3D8DB] [text-shadow:0_2px_4px_rgba(0,0,0,0.5)] block">Greater Impact.</span>
+          <span className="text-[#F5F1E9]">Together,<br className="md:hidden" /> We Create<br className="md:hidden" /> </span>
+          <span className="text-[#F3D8DB] [text-shadow:0_2px_4px_rgba(0,0,0,0.5)] block md:inline">Greater Impact.</span>
         </motion.h1>
 
+        {/* The Signature Editorial Divider */}
+        <motion.div 
+          initial={{ opacity: 0, width: 0 }}
+          animate={{ opacity: 1, width: 48 }}
+          transition={{ duration: 0.8, ease: "easeOut", delay: 0.3 }}
+          className="h-px bg-[#F8F7F2]/40 mb-6"
+        ></motion.div>
         <motion.p
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}

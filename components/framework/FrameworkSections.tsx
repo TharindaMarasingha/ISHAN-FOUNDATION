@@ -203,7 +203,7 @@ export function InstitutionalPillarsSection() {
       <img 
         src="/fe.svg" 
         alt="" 
-        className="absolute top-0 left-0 w-48 md:w-64 lg:w-80 opacity-[0.15] pointer-events-none select-none z-0"
+        className="hidden md:block absolute top-0 left-0 w-48 md:w-64 lg:w-80 opacity-[0.15] pointer-events-none select-none z-0"
         aria-hidden="true"
       />
       
@@ -356,7 +356,7 @@ export function HierarchyOfNeedsSection() {
 
 export function FrameworkCTASection() {
   return (
-    <section className="relative w-full py-32 md:py-48 px-6 overflow-hidden">
+    <section className="relative w-full py-32 md:py-48 px-6 overflow-hidden min-h-[80svh] flex flex-col md:block justify-center">
       {/* Background Image Layer */}
       <div className="absolute inset-0 z-0">
         <Image
@@ -366,9 +366,13 @@ export function FrameworkCTASection() {
           className="object-cover"
           unoptimized
         />
-        {/* Cool-green energy haze overlay for high contrast on the left */}
+        {/* Mobile: Radial Scrim for text legibility. Desktop: Left-side cool-green energy haze */}
         <div 
-          className="absolute inset-0 z-10"
+          className="absolute inset-0 z-10 md:hidden"
+          style={{ background: 'radial-gradient(circle at center, rgba(0,0,0,0.6) 0%, rgba(0,0,0,0.2) 100%)' }}
+        />
+        <div 
+          className="absolute inset-0 z-10 hidden md:block"
           style={{
             background: 'linear-gradient(to right, rgba(48, 77, 48, 0.5) 0%, rgba(48, 77, 48, 0.15) 50%, transparent 80%)'
           }}
@@ -376,29 +380,49 @@ export function FrameworkCTASection() {
       </div>
 
       {/* Content Layer */}
-      <div className="relative z-20 max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-end h-full">
-        {/* Left Side Content */}
-        <div className="flex flex-col items-start max-w-2xl">
-          <span className="font-display italic text-white/90 tracking-[0.2em] text-sm md:text-base uppercase mb-6 drop-shadow-md block">
+      <div className="relative z-20 max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center md:items-end h-full w-full">
+        {/* Left Side Content (Centered on Mobile) */}
+        <div className="flex flex-col items-center md:items-start text-center md:text-left max-w-2xl w-full">
+          <span className="font-display italic text-white/90 tracking-[0.2em] text-[10px] md:text-base uppercase mb-4 md:mb-6 drop-shadow-md block">
             Take the Next Step
           </span>
-          <h2 className="font-sans font-medium text-white text-5xl md:text-6xl lg:text-7xl mb-6 drop-shadow-[0_0_15px_rgba(255,255,255,0.3)]">
-            Experience the Framework
+          <h2 className="font-display font-light text-[#F8F7F2] md:text-white text-4xl sm:text-5xl md:text-6xl lg:text-7xl mb-6 drop-shadow-lg md:drop-shadow-[0_0_15px_rgba(255,255,255,0.3)]">
+            Experience the <br className="block sm:hidden" /> Framework
           </h2>
-          <p className="font-sans font-light text-white text-lg md:text-xl leading-relaxed mb-10 drop-shadow-md">
+          <p className="font-sans font-light text-[#F8F7F2]/90 md:text-white text-sm sm:text-base md:text-xl leading-relaxed mb-10 drop-shadow-md max-w-sm md:max-w-none">
             See how our philosophy comes to life across our different initiatives and environments.
           </p>
-          <Button 
-            href="/ecosystem" 
-            variant="primary"
-            className="!rounded-full !px-8 !py-4 shadow-[0_0_20px_rgba(48,77,48,0.5)] hover:shadow-[0_0_30px_rgba(48,77,48,0.8)] transition-all"
-          >
-            Explore Our Ecosystem
-          </Button>
+          
+          {/* Mobile Buttons */}
+          <div className="flex flex-col sm:flex-row w-full sm:w-auto gap-4 md:hidden">
+            <Button 
+              href="/ecosystem" 
+              className="w-full sm:w-auto !bg-[#D45B7E] hover:!bg-[#b84a68] text-white !px-8 !py-3.5 !rounded-full font-medium transition-all shadow-lg text-sm tracking-wide"
+            >
+              Explore Our Ecosystem
+            </Button>
+            <Button 
+              href="/" 
+              className="w-full sm:w-auto border border-white/60 hover:!bg-white hover:text-gray-900 text-white !px-8 !py-3.5 !rounded-full font-medium transition-all text-sm tracking-wide backdrop-blur-sm !bg-black/10"
+            >
+              Back to Home
+            </Button>
+          </div>
+
+          {/* Desktop Primary Button */}
+          <div className="hidden md:block">
+            <Button 
+              href="/ecosystem" 
+              variant="primary"
+              className="!rounded-full !px-8 !py-4 shadow-[0_0_20px_rgba(48,77,48,0.5)] hover:shadow-[0_0_30px_rgba(48,77,48,0.8)] transition-all"
+            >
+              Explore Our Ecosystem
+            </Button>
+          </div>
         </div>
 
-        {/* Right Side / Lower Right Secondary Button */}
-        <div className="mt-12 md:mt-0 self-start md:self-end">
+        {/* Right Side / Lower Right Secondary Button (Desktop Only) */}
+        <div className="hidden md:block mt-12 md:mt-0 self-start md:self-end">
           <Button 
             href="/" 
             variant="ghost" 

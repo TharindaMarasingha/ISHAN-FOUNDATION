@@ -75,7 +75,7 @@ export function Team() {
         whileInView={{ opacity: 0.08, x: 0 }}
         viewport={{ once: true, margin: "-100px" }}
         transition={{ duration: 1, ease: "easeOut" }}
-        className="absolute left-[-50px] top-[2%] w-[280px] h-auto pointer-events-none z-0"
+        className="hidden md:block absolute left-[-50px] top-[2%] w-[280px] h-auto pointer-events-none z-0"
       />
       <div className="max-w-screen-xl mx-auto relative z-10">
         <div className="mb-20 max-w-4xl mx-auto text-center relative flex justify-center">
