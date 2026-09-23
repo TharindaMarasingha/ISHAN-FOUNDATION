@@ -44,8 +44,8 @@ function StatCounter({ stat, index }: { stat: StatItem; index: number }) {
   useEffect(() => {
     if (!isInView) return;
     if (prefersReducedMotion) {
-      setCurrentVal(stat.value);
-      return;
+      const t = setTimeout(() => setCurrentVal(stat.value), 0);
+      return () => clearTimeout(t);
     }
 
     let startTime: number | null = null;
