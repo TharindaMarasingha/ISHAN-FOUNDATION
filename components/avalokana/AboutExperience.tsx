@@ -18,16 +18,40 @@ export function AboutExperience() {
         </RevealOnScroll>
       </div>
 
-      <section className="py-24 px-6 md:px-12 bg-surface border-y border-divider relative overflow-hidden flex items-center justify-center rounded-3xl max-w-5xl mx-auto">
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 font-display text-[15rem] md:text-[20rem] text-primary opacity-[0.03] pointer-events-none select-none leading-none">
-          &ldquo;
-        </div>
-        <RevealOnScroll className="relative z-10 max-w-4xl mx-auto text-center">
-          <blockquote className="font-display italic text-2xl md:text-3xl lg:text-4xl text-heading leading-snug md:leading-snug">
-            "Rather than offering an escape from everyday life, Antahakarana Avalokana prepares individuals to return to their families, communities, and professions with renewed awareness, responsibility, and compassion."
-          </blockquote>
+      <div className="px-6 md:px-12 max-w-5xl mx-auto w-full">
+        <RevealOnScroll>
+          <div className="
+            relative
+            bg-[#F9F7F1]
+            p-12 md:p-16
+            rounded-sm
+            shadow-[0_8px_40px_rgba(120,100,70,0.15)]
+            border-4 border-double border-stone-300/70
+          ">
+            {/* Top-left decorative quote */}
+            <span
+              className="absolute top-3 left-5 font-serif leading-none text-[#C49A76]/30 pointer-events-none select-none"
+              style={{ fontSize: "7rem" }}
+              aria-hidden
+            >
+              &ldquo;
+            </span>
+
+            {/* Bottom-right decorative quote */}
+            <span
+              className="absolute bottom-0 right-5 font-serif leading-none text-[#C49A76]/30 pointer-events-none select-none"
+              style={{ fontSize: "7rem" }}
+              aria-hidden
+            >
+              &rdquo;
+            </span>
+
+            <blockquote className="relative z-10 font-display italic text-2xl md:text-3xl text-[#2C3E2D] leading-relaxed text-center">
+              &ldquo;Rather than offering an escape from everyday life, Antahakarana Avalokana prepares individuals to return to their families, communities, and professions with renewed awareness, responsibility, and compassion.&rdquo;
+            </blockquote>
+          </div>
         </RevealOnScroll>
-      </section>
+      </div>
     </section>
   );
 }

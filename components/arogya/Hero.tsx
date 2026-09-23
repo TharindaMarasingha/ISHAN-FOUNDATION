@@ -16,15 +16,7 @@ export function Hero() {
     <section className="relative min-h-[60vh] md:min-h-[70vh] flex flex-col justify-end pb-24 pt-32 px-6 overflow-hidden bg-surface border-b border-divider">
       <ParallaxBackground fadeRange={[100, 600]} driftRate={0.1} />
       <div className="relative z-10 max-w-7xl mx-auto w-full flex flex-col items-start">
-        <motion.span
-          initial={{ opacity: 0, y: 10 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, ease: "easeOut" }}
-          className="inline-block px-4 py-1.5 border border-primary/30 rounded-full font-sans text-[0.65rem] uppercase tracking-[0.2em] text-primary mb-8"
-        >
-          Preventive Wellness · Proactive Wellbeing
-        </motion.span>
-        
+
         <motion.h1
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}

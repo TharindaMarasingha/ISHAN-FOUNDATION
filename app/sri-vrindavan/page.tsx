@@ -3,7 +3,7 @@ import { Vision } from "@/components/sri-vrindavan/Vision";
 import { Zones } from "@/components/sri-vrindavan/Zones";
 import { StatsScale } from "@/components/sri-vrindavan/StatsScale";
 import { Partnership } from "@/components/sri-vrindavan/Partnership";
-import { GoldDivider } from "@/components/ui/GoldDivider";
+import { ThematicQuote } from "@/components/sri-vrindavan/ThematicQuote";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { Button } from "@/components/ui/Button";
 import { RevealOnScroll } from "@/components/ui/RevealOnScroll";
@@ -32,38 +32,34 @@ export default function SriVrindavanPage() {
             sizes="100vw"
           />
         </div>
-        <div className="absolute inset-0 bg-[rgba(10,4,2,0.55)]" />
-        <div className="absolute inset-0 bg-gradient-to-r from-[rgba(10,4,2,0.80)] via-[rgba(10,4,2,0.45)] to-transparent" />
+        {/* Soft directional scrim: keeps the sunrise, mist, & golden architecture luminous while providing contrast for text */}
+        <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/25 to-transparent" />
+        <div className="absolute inset-0 bg-gradient-to-r from-black/60 via-black/20 to-transparent" />
         
-        <div className="relative z-10 flex flex-col justify-end pb-16 pl-12 md:pb-20 md:pl-16" style={{ minHeight: '100vh' }}>
-          <span className="inline-flex w-fit border border-primary rounded-full px-4 py-1.5 mb-4 text-primary text-xs uppercase tracking-wider">
-            A Divine Spiritual Wellness Township
-          </span>
-          
-          <h1>
-            <span className="text-white block font-display font-normal leading-tight text-4xl md:text-5xl lg:text-6xl max-w-3xl">
+        <div className="relative z-10 flex flex-col justify-end pb-16 pl-8 sm:pl-12 md:pb-20 md:pl-16" style={{ minHeight: '100vh' }}>
+          <h1 className="leading-tight">
+            <span className="text-[#F8F7F2] block font-display font-light text-4xl sm:text-5xl md:text-6xl lg:text-7xl leading-tight">
               Sri Vrindavan
             </span>
-            <span className="text-primary block font-display font-normal leading-tight text-4xl md:text-5xl lg:text-6xl">
+            <span className="text-[#F3D8DB] [text-shadow:0_2px_8px_rgba(0,0,0,0.6)] block font-display font-light text-4xl sm:text-5xl md:text-6xl lg:text-7xl">
               Project
             </span>
           </h1>
 
-          <p className="font-display italic text-white/80 text-xl md:text-2xl leading-relaxed mt-4 mb-3 max-w-2xl">
+          <p className="font-display italic text-[#F8F7F2]/90 text-xl md:text-2xl leading-relaxed mt-4 mb-3 max-w-2xl drop-shadow-sm">
             A Vision for Conscious Community Living
           </p>
 
-          <p className="font-sans font-light text-white/65 text-sm md:text-base leading-relaxed max-w-xl mt-2">
-            Sri Vrindavan represents ISHAN's long-term vision for creating a living model of conscious and sustainable community life.
-          </p>
+          <div className="w-12 h-px bg-[#F3D8DB]/50 mb-5" />
 
-          <p className="font-sans font-light text-white/65 text-sm md:text-base leading-relaxed max-w-xl mt-2">
-            Envisioned as an integrated spiritual wellness township where individuals, families, educators, researchers, practitioners, entrepreneurs, and communities can live, learn, work, and grow in harmony with nature.
-          </p>
-
-          <p className="font-sans font-light text-white/65 text-sm md:text-base leading-relaxed max-w-xl mt-2">
-            Designed around principles of wisdom, wellness, sustainability, education, ecological responsibility, and community living.
-          </p>
+          <div className="space-y-3 max-w-xl">
+            <p className="font-sans font-light text-[#F8F7F2]/85 text-sm md:text-base leading-relaxed drop-shadow-sm">
+              Sri Vrindavan represents ISHAN&apos;s long-term vision for creating a living model of conscious and sustainable community life.
+            </p>
+            <p className="font-sans font-light text-[#F8F7F2]/80 text-sm md:text-base leading-relaxed drop-shadow-sm">
+              Envisioned as an integrated spiritual wellness township where individuals, families, educators, researchers, and communities can live, learn, work, and grow in harmony with nature.
+            </p>
+          </div>
         </div>
       </section>
       
@@ -72,21 +68,11 @@ export default function SriVrindavanPage() {
       <StatsScale />
       
       <Zones />
-      <GoldDivider />
       
       <Partnership />
       
-      {/* Quote Section */}
-      <section className="py-32 px-6 md:px-12 bg-surface border-y border-divider relative overflow-hidden flex items-center justify-center">
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 font-display text-[25rem] text-primary opacity-[0.03] pointer-events-none select-none leading-none">
-          &ldquo;
-        </div>
-        <RevealOnScroll className="relative z-10 max-w-4xl mx-auto text-center">
-          <blockquote className="font-display italic text-3xl md:text-4xl lg:text-5xl text-heading leading-snug md:leading-snug">
-            "More than a physical place, Sri Vrindavan is a vision for the future — a living ecosystem where conscious living becomes a shared way of life."
-          </blockquote>
-        </RevealOnScroll>
-      </section>
+      {/* Thematic Statement Quote Feature */}
+      <ThematicQuote />
       
       {/* Closing CTA */}
       <section className="py-32 px-6 max-w-4xl mx-auto text-center flex flex-col items-center">

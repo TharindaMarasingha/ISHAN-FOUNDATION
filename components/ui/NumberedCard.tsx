@@ -19,7 +19,7 @@ export function NumberedCard({
   return (
     <Card className={`relative overflow-hidden group flex flex-col h-full ${className}`}>
       <div
-        className="font-display italic text-6xl md:text-7xl absolute top-4 right-4 text-primary group-hover:text-primary transition-all duration-500 pointer-events-none select-none motion-safe:group-hover:scale-105 motion-safe:group-hover:-translate-y-1 motion-safe:group-hover:-translate-x-1"
+        className="font-display italic text-6xl md:text-7xl absolute bottom-3 right-4 text-primary/10 group-hover:text-primary/20 transition-all duration-500 pointer-events-none select-none motion-safe:group-hover:scale-105 motion-safe:group-hover:-translate-y-1"
         style={accent ? { color: `color-mix(in srgb, ${accent} 10%, transparent)` } : {}}
       >
         {number}

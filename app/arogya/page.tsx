@@ -7,6 +7,8 @@ import { GoldDivider } from "@/components/ui/GoldDivider";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { Button } from "@/components/ui/Button";
 import { RevealOnScroll } from "@/components/ui/RevealOnScroll";
+import { VisionQuote } from "@/components/arogya/VisionQuote";
+import { ArogyaFinalCTA } from "@/components/arogya/ArogyaFinalCTA";
 
 import { Metadata } from 'next';
 
@@ -42,15 +44,12 @@ export default function ArogyaPage() {
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_bottom_left,rgba(20,12,6,0.85)_0%,rgba(20,12,6,0.45)_45%,transparent_80%)]" />
         
         <div className="relative z-10 flex flex-col justify-end pb-16 pl-12 md:pb-20 md:pl-16" style={{ minHeight: '100vh' }}>
-          <span className="inline-flex w-fit border border-primary rounded-full px-4 py-1.5 mb-4 text-primary text-xs uppercase tracking-wider">
-            PREVENTIVE WELLNESS · PROACTIVE WELLBEING
-          </span>
-          
+
           <h1>
             <span className="text-white block font-display font-normal leading-tight text-4xl md:text-5xl lg:text-6xl max-w-3xl">
               Arogya Ashram
             </span>
-            <span className="text-primary block font-display font-normal leading-tight text-4xl md:text-5xl lg:text-6xl">
+            <span className="text-[#F3D8DB] [text-shadow:0_2px_4px_rgba(0,0,0,0.5)] block font-display font-normal leading-tight text-4xl md:text-5xl lg:text-6xl">
               International
             </span>
           </h1>
@@ -65,44 +64,21 @@ export default function ArogyaPage() {
         </div>
       </section>
       
+
       <VisionMission />
-      <GoldDivider />
-      
+
       <FoundingTrinity />
-      <GoldDivider />
-      
+
       <EightPillars />
       
-      {/* Vision Quote Section (reusing the pattern directly here for simplicity and isolation) */}
-      <section className="py-32 px-6 md:px-12 bg-surface border-y border-divider relative overflow-hidden flex items-center justify-center">
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 font-display text-[25rem] text-primary opacity-[0.03] pointer-events-none select-none leading-none">
-          &ldquo;
-        </div>
-        <RevealOnScroll className="relative z-10 max-w-4xl mx-auto text-center">
-          <blockquote className="font-display italic text-3xl md:text-4xl lg:text-5xl text-heading leading-snug md:leading-snug mb-10">
-            "To establish a global humanitarian ecosystem for holistic healing, preventive healthcare, wellness education, sustainable living, integrated healthcare, and conscious human development."
-          </blockquote>
-          <div className="text-[0.65rem] md:text-xs uppercase tracking-widest text-primary">
-            Arogya Ashram International — Vision
-          </div>
-        </RevealOnScroll>
-      </section>
+      {/* Vision Quote Section */}
+      <VisionQuote />
+
 
       <SriLankaHeritage />
 
       {/* Closing CTA */}
-      <section className="py-32 px-6 max-w-4xl mx-auto text-center flex flex-col items-center">
-        <SectionHeading
-          eyebrow="Take the Next Step"
-          heading="Join the Ecosystem"
-          description="Whether you are a wellness practitioner, institutional partner, or a seeker—connect with AAI and become a part of this planetary transformation."
-          align="center"
-        />
-        <RevealOnScroll delay={0.2} className="mt-12 flex flex-col sm:flex-row gap-4 sm:gap-6 w-full sm:w-auto">
-          <Button href="/contact" variant="primary">Register Interest</Button>
-          <Button href="/" variant="ghost">Back to Home</Button>
-        </RevealOnScroll>
-      </section>
+      <ArogyaFinalCTA />
     </div>
   );
 }
