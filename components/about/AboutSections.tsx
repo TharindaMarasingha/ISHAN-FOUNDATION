@@ -212,7 +212,7 @@ export function OurPurposeSection() {
         <Image
           src="/peacock.svg"
           alt="Peacock decoration"
-          fill
+          fill sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
           className="object-contain object-right"
         />
       </div>
@@ -255,7 +255,7 @@ export function OurPhilosophySection() {
             <Image
               src="/wisdom.svg"
               alt="Wisdom decoration"
-              fill
+              fill sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
               className="object-contain object-left"
             />
           </div>
@@ -826,7 +826,7 @@ export function OurCommitmentSection() {
               <Image 
                 src="/images/about-commitment.webp" 
                 alt="Our Commitment" 
-                fill
+                fill sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                 className="object-cover object-center transition-transform duration-700 ease-in-out group-hover:scale-105"
               />
 
@@ -859,3 +859,4 @@ export function OurCommitmentSection() {
     </section>
   );
 }
+

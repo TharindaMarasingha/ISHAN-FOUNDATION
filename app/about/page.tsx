@@ -16,7 +16,7 @@ export const metadata: Metadata = {
   title: 'About',
   description: 'Learn about ISHAN — our story, vision, mission, philosophy, core beliefs, and commitment to harmonising humanity and nature through wisdom and wellness.',
   alternates: {
-    canonical: 'https://ishanfoundation.lk/about',
+    canonical: '/about',
   },
 }
 
@@ -83,3 +83,4 @@ export default function AboutPage() {
     </div>
   );
 }
+

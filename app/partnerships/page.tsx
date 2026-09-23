@@ -12,7 +12,7 @@ export const metadata: Metadata = {
   title: 'Partnerships',
   description: 'Partner with ISHAN — we collaborate with governments, educational institutions, corporations, NGOs, and organisations committed to conscious and sustainable development.',
   alternates: {
-    canonical: 'https://ishanfoundation.lk/partnerships',
+    canonical: '/partnerships',
   },
 }
 
@@ -27,3 +27,4 @@ export default function PartnershipsPage() {
     </div>
   );
 }
+

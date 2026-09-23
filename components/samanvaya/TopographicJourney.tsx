@@ -71,7 +71,7 @@ export function TopographicJourney() {
           <Image
             src={node.image}
             alt={node.name}
-            fill
+            fill sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
             priority={index === 0}
             className="object-cover"
           />
@@ -204,3 +204,4 @@ export function TopographicJourney() {
     </section>
   );
 }
+

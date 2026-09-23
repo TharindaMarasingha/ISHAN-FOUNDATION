@@ -15,7 +15,7 @@ export const metadata: Metadata = {
   title: 'Framework',
   description: 'The ISHAN Framework — a unified model for human, institutional, and societal transformation through purpose, systems, management, and sustainability.',
   alternates: {
-    canonical: 'https://ishanfoundation.lk/framework',
+    canonical: '/framework',
   },
 }
 
@@ -33,3 +33,4 @@ export default function FrameworkPage() {
     </div>
   );
 }
+

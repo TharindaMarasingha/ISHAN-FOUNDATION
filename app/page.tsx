@@ -18,7 +18,7 @@ export const metadata: Metadata = {
   title: 'Home',
   description: 'ISHAN is a global institution committed to advancing humanity and nature through wisdom, wellness, education, ethical leadership, sustainability, and conscious community development.',
   alternates: {
-    canonical: 'https://ishanfoundation.lk',
+    canonical: '/',
   },
 }
 

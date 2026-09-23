@@ -17,7 +17,7 @@ export function ContactCTA() {
         <Image
           src="/images/contact-cta-bg.webp"
           alt="Contact Background"
-          fill
+          fill sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
           className="object-cover"
         />
         {/* Dark Gradient Overlay */}
@@ -68,3 +68,4 @@ export function ContactCTA() {
     </section>
   );
 }
+

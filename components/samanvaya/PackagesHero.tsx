@@ -41,7 +41,7 @@ export function PackagesHero() {
         <Image
           src="/images/pak.webp"
           alt="Sri Lanka Journey"
-          fill
+          fill sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
           priority
           className="object-cover hidden md:block"
         />
@@ -49,7 +49,7 @@ export function PackagesHero() {
         <Image
           src="/images/pakm.webp"
           alt="Sri Lanka Journey"
-          fill
+          fill sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
           priority
           className="object-cover block md:hidden"
         />
@@ -125,3 +125,4 @@ export function PackagesHero() {
     </section>
   );
 }
+

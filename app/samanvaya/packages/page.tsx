@@ -259,7 +259,7 @@ export default function PackagesPage() {
                 <div className="relative flex flex-col h-full bg-[#F7F4EC] rounded-[22px] overflow-hidden">
                   <div className="relative h-64 sm:h-72 md:h-48 mx-4 mt-4 overflow-hidden shrink-0 rounded-2xl shadow-[0_8px_30px_rgb(0,0,0,0.12)]">
                   <div className="absolute inset-0 bg-black/10 z-10 transition-opacity hover:opacity-0 duration-500"></div>
-                  <Image src={pkg.image || "/images/saman.webp"} alt={pkg.name} fill className="object-cover transition-transform duration-700 hover:scale-105" />
+                  <Image src={pkg.image || "/images/saman.webp"} alt={pkg.name} fill sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw" className="object-cover transition-transform duration-700 hover:scale-105" />
 
                 </div>
 
@@ -912,3 +912,4 @@ export default function PackagesPage() {
     </div>
   );
 }
+

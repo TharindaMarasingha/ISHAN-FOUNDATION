@@ -42,7 +42,7 @@ export function GoldenCircleSection() {
                 <Image
                   src={item.image}
                   alt={item.title}
-                  fill
+                  fill sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                   className="object-cover"
                   unoptimized
                 />
@@ -160,7 +160,7 @@ export function PurusharthaSection() {
                       <Image
                         src={aim.image}
                         alt={aim.alt}
-                        fill
+                        fill sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                         className="object-cover transition-transform duration-700 ease-out group-hover:scale-105"
                       />
                     </div>
@@ -286,7 +286,7 @@ export function FiveDimensionsSection() {
             <Image
               src={dim.image}
               alt={dim.alt}
-              fill
+              fill sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
               className="object-cover transition-transform duration-700 ease-in-out group-hover:scale-105"
             />
             
@@ -362,7 +362,7 @@ export function FrameworkCTASection() {
         <Image
           src="/images/framework-cta-bg.webp"
           alt="Framework CTA Background"
-          fill
+          fill sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
           className="object-cover"
           unoptimized
         />
@@ -435,3 +435,4 @@ export function FrameworkCTASection() {
     </section>
   );
 }
+

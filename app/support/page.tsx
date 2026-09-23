@@ -11,7 +11,7 @@ export const metadata: Metadata = {
   title: 'Support Our Mission',
   description: 'Support ISHAN through volunteering, professional expertise, teaching, research, community projects, environmental initiatives, and philanthropic contributions.',
   alternates: {
-    canonical: 'https://ishanfoundation.lk/support',
+    canonical: '/support',
   },
 }
 
@@ -25,3 +25,4 @@ export default function SupportPage() {
     </div>
   );
 }
+

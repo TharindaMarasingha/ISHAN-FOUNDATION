@@ -7,7 +7,7 @@ export const metadata: Metadata = {
   title: 'Our Ecosystem',
   description: 'Explore the ISHAN ecosystem — Arogya Ashram International, Antahakarana Avalokana, Samanvaya, and Sri Vrindavan Project. One vision, multiple initiatives, shared purpose.',
   alternates: {
-    canonical: 'https://ishanfoundation.lk/ecosystem',
+    canonical: '/ecosystem',
   },
 }
 
@@ -19,3 +19,4 @@ export default function EcosystemPage() {
     </div>
   );
 }
+

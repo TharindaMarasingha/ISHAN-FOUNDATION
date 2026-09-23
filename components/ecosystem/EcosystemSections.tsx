@@ -103,7 +103,7 @@ export function EcosystemSections() {
           <Image
             src="/lotus.svg"
             alt="Decorative Lotus"
-            fill
+            fill sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
             className="object-contain"
           />
         </div>
@@ -165,7 +165,7 @@ export function EcosystemSections() {
             <Image
               src={initiative.image}
               alt={initiative.title}
-              fill
+              fill sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
               className="object-cover object-center"
               priority={idx === currentIndex || idx === (currentIndex + 1) % INITIATIVES.length}
             />
@@ -263,7 +263,7 @@ export function EcosystemSections() {
                      <Image
                        src={initiative.image}
                        alt=""
-                       fill
+                       fill sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                        className="object-cover transition-transform duration-700 group-hover:scale-110"
                      />
                      <div className="absolute inset-0 bg-gradient-to-t from-black/95 via-black/50 to-transparent group-hover:from-black/100 transition-colors duration-500" />
@@ -341,7 +341,7 @@ export function EcosystemSections() {
                       <Image
                         src={item.image}
                         alt={item.title}
-                        fill
+                        fill sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                         className="object-cover"
                       />
                       {/* Top Right Corner Cut Overlay */}
@@ -376,7 +376,7 @@ export function EcosystemSections() {
           <Image
             src="/images/ecocta.webp"
             alt="Contact Background"
-            fill
+            fill sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
             className="object-cover"
           />
           {/* Dark Gradient Overlay */}
@@ -416,3 +416,4 @@ export function EcosystemSections() {
     </div>
   );
 }
+

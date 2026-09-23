@@ -14,7 +14,7 @@ export const metadata: Metadata = {
   title: 'Sri Vrindavan Project',
   description: 'Sri Vrindavan — ISHAN\'s vision for Sri Lanka\'s first sacred conscious living township. A 150-acre integrated spiritual wellness community in harmony with nature.',
   alternates: {
-    canonical: 'https://ishanfoundation.lk/sri-vrindavan',
+    canonical: '/sri-vrindavan',
   },
 }
 
@@ -94,3 +94,4 @@ export default function SriVrindavanPage() {
     </div>
   );
 }
+

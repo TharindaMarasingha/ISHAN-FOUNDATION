@@ -16,7 +16,7 @@ export const metadata: Metadata = {
   title: 'Arogya Ashram International',
   description: 'Arogya Ashram International (AAI) — holistic wellness through yoga, meditation, breathwork, Ayurveda, nutrition, and preventive health education in Sri Lanka.',
   alternates: {
-    canonical: 'https://ishanfoundation.lk/arogya',
+    canonical: '/arogya',
   },
 }
 
@@ -82,3 +82,4 @@ export default function ArogyaPage() {
     </div>
   );
 }
+

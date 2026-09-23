@@ -11,7 +11,7 @@ export const metadata: Metadata = {
   title: 'Programmes',
   description: 'ISHAN programmes in preventive wellness, proactive wellbeing, conscious leadership, wisdom education, community development, and nature-based learning.',
   alternates: {
-    canonical: 'https://ishanfoundation.lk/programmes',
+    canonical: '/programmes',
   },
 }
 
@@ -25,3 +25,4 @@ export default function ProgrammesPage() {
     </div>
   );
 }
+

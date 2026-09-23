@@ -9,7 +9,7 @@ export const metadata: Metadata = {
   title: 'Connect With Us',
   description: 'Connect with ISHAN — reach out for programmes, partnerships, research, volunteering, retreats, or to join the movement for humanity and nature.',
   alternates: {
-    canonical: 'https://ishanfoundation.lk/contact',
+    canonical: '/contact',
   },
 }
 
@@ -69,3 +69,4 @@ export default function ContactPage() {
     </>
   );
 }
+

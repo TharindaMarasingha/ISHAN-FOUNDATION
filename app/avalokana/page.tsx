@@ -11,7 +11,7 @@ export const metadata: Metadata = {
   title: 'Antahakarana Avalokana',
   description: 'Antahakarana Avalokana — ISHAN\'s signature inner immersion experience for self-discovery, meditation, contemplation, and conscious transformation.',
   alternates: {
-    canonical: 'https://ishanfoundation.lk/avalokana',
+    canonical: '/avalokana',
   },
 }
 
@@ -65,3 +65,4 @@ export default function AvalokanaPage() {
     </div>
   );
 }
+

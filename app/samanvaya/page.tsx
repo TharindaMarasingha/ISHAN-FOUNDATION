@@ -12,7 +12,7 @@ export const metadata: Metadata = {
   title: 'Samanvaya',
   description: 'Samanvaya — ISHAN\'s flagship transformational retreat from Pancha Tattva to Sampurna Sattva. A journey to integrated wellbeing through the wisdom of the five elements.',
   alternates: {
-    canonical: 'https://ishanfoundation.lk/samanvaya',
+    canonical: '/samanvaya',
   },
 }
 
@@ -132,3 +132,4 @@ export default function SamanvayaPage() {
     </div>
   );
 }
+

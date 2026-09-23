@@ -12,7 +12,7 @@ export const metadata: Metadata = {
   title: 'Leadership',
   description: 'Meet the Circle of Stewards guiding ISHAN — a team of internationally credentialed practitioners, educators, and leaders united in shared purpose.',
   alternates: {
-    canonical: 'https://ishanfoundation.lk/leadership',
+    canonical: '/leadership',
   },
 }
 
@@ -38,3 +38,4 @@ export default function LeadershipPage() {
     </div>
   );
 }
+

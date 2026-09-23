@@ -29,33 +29,21 @@ const tenor = Tenor_Sans({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL('https://ishanfoundation.org'),
+  metadataBase: new URL('https://ishanfoundation.lk'),
   title: {
-    default: 'ISHAN — International Society of Holistic Awareness & Naturology',
+    default: 'ISHAN — International Society of Humanity and Nature',
     template: '%s | ISHAN Foundation'
   },
   description: 'ISHAN is a global institution dedicated to harmonising humanity and nature through wisdom, wellness, ethical leadership, education, research, sustainability, and conscious community development.',
   keywords: [
-    'ISHAN',
-    'ISHAN Foundation',
-    'International Society of Holistic Awareness & Naturology',
-    'Conscious living',
-    'Sustainability',
-    'spiritual wellness',
-    'conscious living',
-    'preventive wellness',
-    'Arogya Ashram International',
-    'Samanvaya retreat',
-    'Sri Vrindavan Project',
-    'wellness education',
-    'conscious community',
-    'sustainable living',
-    'meditation retreat Sri Lanka',
-    'yoga wellness Sri Lanka',
-    'spiritual leadership',
-    'ethical leadership',
-    'wellness organisation',
-    'humanity nature harmony'
+    'ISHAN Foundation', 'International Society of Humanity and Nature',
+    'holistic wellness Sri Lanka', 'spiritual wellness', 'conscious living',
+    'preventive wellness', 'Arogya Ashram International', 
+    'Samanvaya retreat', 'Sri Vrindavan Project', 'wellness education',
+    'conscious community', 'sustainable living', 
+    'meditation retreat Sri Lanka', 'yoga wellness Sri Lanka',
+    'spiritual leadership', 'ethical leadership', 
+    'wellness organisation', 'humanity nature harmony'
   ],
   authors: [{ name: 'ISHAN Foundation' }],
   creator: 'ISHAN Foundation',
@@ -74,29 +62,27 @@ export const metadata: Metadata = {
   openGraph: {
     type: 'website',
     locale: 'en_US',
-    url: 'https://ishanfoundation.org',
+    url: 'https://ishanfoundation.lk',
     siteName: 'ISHAN Foundation',
-    title: 'ISHAN — International Society of Holistic Awareness & Naturology',
-    description: 'ISHAN is a global institution committed to advancing humanity and nature through wisdom, wellness, education, ethical leadership, sustainability, and conscious community development.',
-    images: [
-      {
-        url: 'https://ishanfoundation.org/og-image.jpg',
-        width: 1200,
-        height: 630,
-        alt: 'ISHAN Foundation — International Society of Holistic Awareness & Naturology',
-      },
-    ],
+    title: 'ISHAN — International Society of Humanity and Nature',
+    description: 'A global institution dedicated to harmonising humanity and nature through wisdom, wellness, ethical leadership, and conscious community development.',
+    images: [{
+      url: '/images/og-image.jpg',
+      width: 1200,
+      height: 630,
+      alt: 'ISHAN Foundation',
+    }],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'ISHAN — International Society of Holistic Awareness & Naturology',
-    description: 'ISHAN is a global institution committed to advancing humanity and nature through wisdom, wellness, education, ethical leadership, sustainability, and conscious community development.',
-    images: ['https://ishanfoundation.org/twitter-image.jpg'],
+    title: 'ISHAN — International Society of Humanity and Nature',
+    description: 'A global institution dedicated to harmonising humanity and nature through wisdom, wellness, and conscious community development.',
+    images: ['/images/og-image.jpg'],
   },
   icons: {
-    icon: '/images/ishanlogo.webp',
-    shortcut: '/images/ishanlogo.webp',
-    apple: '/images/ishanlogo.webp',
+    icon: '/images/ishanlogo.png',
+    shortcut: '/images/ishanlogo.png',
+    apple: '/images/ishanlogo.png',
   },
   manifest: '/site.webmanifest',
   other: {
@@ -122,15 +108,14 @@ export default function RootLayout({
               "@context": "https://schema.org",
               "@type": "Organization",
               "name": "ISHAN Foundation",
-              "alternateName": "International Society of Holistic Awareness & Naturology",
-              "url": "https://ishanfoundation.org",
-              "logo": "https://ishanfoundation.lk/images/ishanlogo.webp",
+              "alternateName": "International Society of Humanity and Nature",
+              "url": "https://ishanfoundation.lk",
+              "logo": "https://ishanfoundation.lk/images/ishanlogo.png",
               "description": "A global institution dedicated to harmonising humanity and nature through wisdom, wellness, ethical leadership, education, research, sustainability, and conscious community development.",
               "foundingDate": "2026",
               "address": {
                 "@type": "PostalAddress",
-                "addressCountry": "LK",
-                "addressRegion": "Sri Lanka"
+                "addressCountry": "LK"
               },
               "contactPoint": {
                 "@type": "ContactPoint",
@@ -138,18 +123,11 @@ export default function RootLayout({
                 "email": "info@ishanfoundation.lk",
                 "url": "https://ishanfoundation.lk/contact"
               },
-              "sameAs": [
-                "https://ishanfoundation.lk"
-              ],
               "knowsAbout": [
-                "Holistic Wellness",
-                "Preventive Health",
-                "Yoga and Meditation",
-                "Conscious Living",
-                "Sustainable Development",
-                "Spiritual Education",
-                "Environmental Stewardship",
-                "Leadership Development"
+                "Holistic Wellness", "Preventive Health", 
+                "Yoga and Meditation", "Conscious Living", 
+                "Sustainable Development", "Spiritual Education",
+                "Environmental Stewardship", "Leadership Development"
               ]
             })
           }}
