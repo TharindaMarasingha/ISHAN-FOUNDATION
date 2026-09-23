@@ -6,6 +6,7 @@ import Footer from "@/components/Footer";
 import { ScrollProgress } from "@/components/ui/ScrollProgress";
 import { CursorGlow } from "@/components/ui/CursorGlow";
 import { SmoothScrolling } from "@/components/SmoothScrolling";
+import { CookieConsent } from "@/components/CookieConsent";
 
 const raleway = Raleway({
   variable: "--font-raleway",
@@ -147,6 +148,7 @@ export default function RootLayout({
           </main>
         </SmoothScrolling>
         <Footer />
+        <CookieConsent />
       </body>
     </html>
   );
